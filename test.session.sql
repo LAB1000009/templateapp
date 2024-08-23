@@ -1,0 +1,1 @@
+SELECT * FROM AdminService_Authors

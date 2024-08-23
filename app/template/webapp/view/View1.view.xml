@@ -1,0 +1,48 @@
+<mvc:View controllerName="ui.template.controller.View1"
+	xmlns="sap.m"
+	xmlns:t="sap.ui.table"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:m="sap.m"
+	xmlns:layout="sap.ui.layout"
+	xmlns:semantic="sap.f.semantic"
+	xmlns:u="sap.ui.unified"
+	xmlns:dnd="sap.ui.core.dnd"
+	xmlns:core="sap.ui.core"
+	xmlns:l="sap.ui.layout"
+	xmlns:smartTable="sap.ui.comp.smarttable"
+	>
+	<semantic:SemanticPage
+		class="sapUiNoContentPadding"
+		id="plannerSemanticPage"
+        >
+        <semantic:titleExpandedContent>
+         <HBox width="100%" alignItems="Center" height="50px">
+            <HBox width="100%">
+                <Title text="Title"/>
+            </HBox>    
+            <HBox width="100%" justifyContent="SpaceBetween">
+                <Title text="Title"/>
+                
+                <Title text="Title"/>
+            
+                <Title text="Icon"/>
+            </HBox>
+        </HBox>
+        </semantic:titleExpandedContent>
+        <Page showHeader="false">
+            <footer>
+                <OverflowToolbar>
+                    <content>
+                        <Title text="Copyright @" class="sapUiMediumMarginBegin"/>
+                        <ToolbarSpacer />
+                        <Title text="Copyright @"  titleStyle="H6" />
+                        <ToolbarSpacer />
+                        <Title text="Classification:Stadler Group IT" class="owerviewColorTitle" titleStyle="H6" />
+                        <ToolbarSpacer />
+                        <Title text="Product Owner: Steve Otieno" titleStyle="H6" class="sapUiMediumMarginEnd" />
+                    </content>
+                </OverflowToolbar>
+            </footer>
+        </Page>
+	</semantic:SemanticPage>
+</mvc:View>
