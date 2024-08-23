@@ -18,7 +18,7 @@
         <semantic:titleExpandedContent>
          <HBox width="100%" alignItems="Center" height="50px">
             <HBox width="100%">
-                <Title text="Title"/>
+                <Title text="{treeModel>/headerTitle}"/>
             </HBox>    
             <HBox width="100%" justifyContent="SpaceBetween">
                 <Title text="Title"/>
