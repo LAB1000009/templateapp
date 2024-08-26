@@ -11,126 +11,132 @@
 	xmlns:l="sap.ui.layout"
 	xmlns:smartTable="sap.ui.comp.smarttable"
 	>
-	<semantic:SemanticPage
-		class="sapUiNoContentPadding"
-		id="plannerSemanticPage" >
-        <semantic:titleExpandedContent class="sapUiContentPadding">
-         <HBox width="100%" alignItems="Center" height="50px">
-            <VBox width="50%">
-                <HBox width="100%">
-                    <Title text="{treeModel>/headerTitle}"/>
-                </HBox>
-                <Label text="{treeModel>/headerSubTitle}"/>
-            </VBox>
-            <HBox width="50%" justifyContent="SpaceBetween" alignItems="Center" renderType="Bare">
-                
-                    <Title text="{treeModel>/headerActDate}"/>
+    <VBox renderType="Bare" fitContainer="true">
+        <HBox class="sapUiContentPadding">
+            <HBox width="100%" alignItems="Center" height="50px">
+                <VBox width="50%">
+                    <HBox width="100%">
+                        <Title text="{treeModel>/headerTitle}"/>
+                    </HBox>
+                    <Label text="{treeModel>/headerSubTitle}"/>
+                </VBox>
+                <HBox width="50%" justifyContent="SpaceBetween" alignItems="Center" renderType="Bare">
                     
-                    <Title text="{treeModel>/headerCurrUser}"/>
-                
-                    <Image src="../logo/mosec_logo.png" height="50px"/>
-                    <!-- <Title text="Icon"/> -->
+                        <Title text="{treeModel>/headerActDate}"/>
+                        
+                        <Title text="{treeModel>/headerCurrUser}"/>
+                    
+                        <Image src="../logo/mosec_logo.png" height="50px" class="sapUiTinyMarginEnd"/>
+                        
+                </HBox>
             </HBox>
-        </HBox>
-        </semantic:titleExpandedContent>
-        <Page showHeader="true" class="sapUiContentPadding">
-            <customHeader>
-                <Toolbar width="100%">
-                    <Breadcrumbs currentLocationText="Laptop" separatorStyle="{/selected}" class="sapUiMediumMarginBegin">
-                        <Link press="onPress" text="Products"/>
-                        <Link press="onPress" text="Suppliers"/>
-                        <Link press="onPress" text="Titanium"/>
-                        <Link press="onPress" text="Ultra portable"/>
-                        <Link press="onPress" text="12 inch"/>
-                        <Link press="onPress" text="Super portable deluxe"/>
-                    </Breadcrumbs>
-                </Toolbar>
-            </customHeader>
-            <subHeader>
-                <Toolbar width="100%">
-                <ToolbarSpacer />
-                   <IconTabHeader mode="Inline">
-                        <items>
-                            <IconTabFilter key="info" text="Info" />
-                            <IconTabFilter key="attachments" text="Attachments" count="3" />
-                            <IconTabFilter key="notes" text="Notes" count="12" />
-                            <IconTabFilter key="people" text="People"/>
-                        </items>
-                    </IconTabHeader>
-                </Toolbar>
-            </subHeader>
-            <OverflowToolbar design="Transparent" >
-            <OverflowToolbarToggleButton press="OverflowToolbarToggleButton" pressed="{treeModel>/showSideContent}" icon="sap-icon://bullet-text" class=""/>
-            </OverflowToolbar>
-            <l:DynamicSideContent
-                    id="DynamicSideContent"
-                    class="sapUiDSCExplored"
-                    containerQuery="true"
-                    sideContentFallDown="BelowM"
-                    breakpointChanged="handleBreakpointChangeEvent"
-                    showSideContent="{treeModel>/showSideContent}"
-                    sideContentPosition="Begin">
-                        <Panel class="sapUiTinyMarginBegin sapUiTinyMarginTop">
-                            <VBox>
-                                <Title level="H1" text="Product" />
-                                <Image src="{img>/products/pic1}" densityAware="false" width="10em" />
-                                <Text text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."/>
-                            </VBox>
-                         </Panel>
-                    <l:sideContent >
-                        <Toolbar class="sapUiTinyMarginTop">
-                            <Title text="Filters"/>
-                            <ToolbarSpacer />
-                            <Button text="Close" type="Transparent" press="handleSideContentHide" visible="{= !${media>/phone}}" />
+            </HBox>
+            <Page
+                class="sapUiNoContentPadding"
+                id="plannerSemanticPage" showHeader="false" enableScrolling="false">
+                <Page showHeader="true"  enableScrolling="false">
+                    <customHeader>
+                        <Toolbar width="100%" class="sapUiNoContentPadding">
+                            <Breadcrumbs currentLocationText="Laptop" separatorStyle="{/selected}" class="sapUiTinyMarginBegin">
+                                <Link press="onPress" text="Products"/>
+                                <Link press="onPress" text="Suppliers"/>
+                                <Link press="onPress" text="Titanium"/>
+                                <Link press="onPress" text="Ultra portable"/>
+                                <Link press="onPress" text="12 inch"/>
+                                <Link press="onPress" text="Super portable deluxe"/>
+                            </Breadcrumbs>
                         </Toolbar>
-                        <l:VerticalLayout width="70%" class="sapUiContentPadding sapUiSizeCompact"
-                            >
-                            <VBox>
-                                <Label labelFor="filter1" text="Filter1"/>
-                                <Select id="filter1" width="100%"/>
-                            </VBox>
+                    </customHeader>
+                    <subHeader>
+                        <OverflowToolbar width="100%">
+                        <OverflowToolbarToggleButton press="OverflowToolbarToggleButton" pressed="{treeModel>/showSideContent}" icon="sap-icon://bullet-text" class="sapUiTinyMarginBegi"/>
+                        <ToolbarSpacer />
+                        <IconTabHeader mode="Inline">
+                                <items>
+                                    <IconTabFilter key="info" text="Info" />
+                                    <IconTabFilter key="attachments" text="Attachments" count="3" />
+                                    <IconTabFilter key="notes" text="Notes" count="12" />
+                                    <IconTabFilter key="people" text="People"/>
+                                </items>
+                            </IconTabHeader>
+                        </OverflowToolbar>
+                    </subHeader>
+                    <!-- <OverflowToolbar design="Transparent" class="sapUiNoContentPadding">
+                    <OverflowToolbarToggleButton press="OverflowToolbarToggleButton" pressed="{treeModel>/showSideContent}" icon="sap-icon://bullet-text" />
+                    </OverflowToolbar> -->
+                    <l:DynamicSideContent
+                            id="DynamicSideContent"
+                            class="sapUiContentPadding"
+                            containerQuery="true"
+                            sideContentFallDown="BelowM"
+                            breakpointChanged="handleBreakpointChangeEvent"
+                            showSideContent="{treeModel>/showSideContent}"
+                            sideContentPosition="Begin">
+                            <Panel height="100%">
+                                    <VBox>
+                                        <Title level="H1" text="Product" />
+                                        <Image src="{img>/products/pic1}" densityAware="false" width="10em" />
+                                        <Text text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                                        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."/>
+                                    </VBox>
+                                </Panel>
+                            <l:sideContent >
+                            <Panel height="100%">
+                                <Toolbar >
+                                    <Title text="Filters"/>
+                                    <ToolbarSpacer />
+                                    <Button text="Close" type="Transparent" press="handleSideContentHide" visible="{= !${media>/phone}}" />
+                                </Toolbar>
+                                <l:VerticalLayout width="70%" class="sapUiContentPadding sapUiSizeCompact"
+                                    >
+                                    <VBox>
+                                        <Label labelFor="filter1" text="Filter1"/>
+                                        <Select id="filter1" width="100%"/>
+                                    </VBox>
 
-                            <VBox>
-                                <Label labelFor="filter2" text="filter2"/>
-                                <Select id="filter2" width="100%"/>
-                            </VBox>
+                                    <VBox>
+                                        <Label labelFor="filter2" text="filter2"/>
+                                        <Select id="filter2" width="100%"/>
+                                    </VBox>
 
-                            <VBox>
-                                <Label labelFor="filter3" text="filter3"/>
-                                <Select id="filter3" width="100%"/>
-                            </VBox>
+                                    <VBox>
+                                        <Label labelFor="filter3" text="filter3"/>
+                                        <Select id="filter3" width="100%"/>
+                                    </VBox>
 
-                            <VBox>
-                                <Label labelFor="filter4" text="filter4"/>
-                                <Select id="filter4" width="100%"/>
-                            </VBox>
+                                    <VBox>
+                                        <Label labelFor="filter4" text="filter4"/>
+                                        <Select id="filter4" width="100%"/>
+                                    </VBox>
 
-                            <VBox>
-                                <Label labelFor="filter5" text="filter5"/>
-                                <Select id="filter5" width="100%"/>
-                            </VBox>
-                            
-                        </l:VerticalLayout>
-                    </l:sideContent>
-                </l:DynamicSideContent>
-                <footer>
-                    <OverflowToolbar>
-                        <content>
-                            <Title text="{treeModel>/footerCopyright}" class="sapUiMediumMarginBegin"/>
-                            <ToolbarSpacer />
-                            <Title text="{treeModel>/footerClass}"  titleStyle="H6" />
-                            <ToolbarSpacer />
-                            <Title text="{treeModel>/footerPO}" class="owerviewColorTitle" titleStyle="H6" />
-                            <ToolbarSpacer />
-                            <Title text="{treeModel>/footerDetails}" titleStyle="H6" class="sapUiMediumMarginEnd" />
-                        </content>
-                    </OverflowToolbar>
-                </footer>
+                                    <VBox>
+                                        <Label labelFor="filter5" text="filter5"/>
+                                        <Select id="filter5" width="100%"/>
+                                    </VBox>
+                                    
+                                </l:VerticalLayout>
+                            </Panel>
+                            </l:sideContent>
+                        </l:DynamicSideContent>
+                        
+                    </Page>
+                    
             </Page>
-	</semantic:SemanticPage>
+        
+            <OverflowToolbar>
+                <content>
+                    <Title text="{treeModel>/footerCopyright}" class="sapUiTinyMarginBegin"/>
+                    <ToolbarSpacer />
+                    <Title text="{treeModel>/footerClass}"  titleStyle="H6" />
+                    <ToolbarSpacer />
+                    <Title text="{treeModel>/footerPO}" class="owerviewColorTitle" titleStyle="H6" />
+                    <ToolbarSpacer />
+                    <Title text="{treeModel>/footerDetails}" titleStyle="H6" class="sapUiTinyMarginEnd" />
+                </content>
+            </OverflowToolbar>
+    </VBox>  
 </mvc:View>
