@@ -17,15 +17,20 @@
         >
         <semantic:titleExpandedContent>
          <HBox width="100%" alignItems="Center" height="50px">
-            <HBox width="100%">
-                <Title text="{treeModel>/headerTitle}"/>
-            </HBox>    
-            <HBox width="100%" justifyContent="SpaceBetween">
-                <Title text="Title"/>
+            <VBox width="50%">
+                <HBox width="100%">
+                    <Title text="{treeModel>/headerTitle}"/>
+                </HBox>
+                <Label text="{treeModel>/headerSubTitle}"/>
+            </VBox>
+            <HBox width="50%" justifyContent="SpaceBetween" alignItems="Center" renderType="Bare">
                 
-                <Title text="Title"/>
-            
-                <Title text="Icon"/>
+                    <Title text="{treeModel>/headerActDate}"/>
+                    
+                    <Title text="{treeModel>/headerCurrUser}"/>
+                
+                    <Image src="../logo/mosec_logo.png" height="50px"/>
+                    <!-- <Title text="Icon"/> -->
             </HBox>
         </HBox>
         </semantic:titleExpandedContent>
@@ -33,13 +38,13 @@
             <footer>
                 <OverflowToolbar>
                     <content>
-                        <Title text="Copyright @" class="sapUiMediumMarginBegin"/>
+                        <Title text="{treeModel>/footerCopyright}" class="sapUiMediumMarginBegin"/>
                         <ToolbarSpacer />
-                        <Title text="Copyright @"  titleStyle="H6" />
+                        <Title text="{treeModel>/footerClass}"  titleStyle="H6" />
                         <ToolbarSpacer />
-                        <Title text="Classification:Stadler Group IT" class="owerviewColorTitle" titleStyle="H6" />
+                        <Title text="{treeModel>/footerPO}" class="owerviewColorTitle" titleStyle="H6" />
                         <ToolbarSpacer />
-                        <Title text="Product Owner: Steve Otieno" titleStyle="H6" class="sapUiMediumMarginEnd" />
+                        <Title text="{treeModel>/footerDetails}" titleStyle="H6" class="sapUiMediumMarginEnd" />
                     </content>
                 </OverflowToolbar>
             </footer>

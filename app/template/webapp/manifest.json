@@ -45,6 +45,7 @@
         "sap.ui.generic.app": {},
         "sap.ui.table": {},
         "sap.ushell": {}
+        
       }
     },
     "contentDensities": {
