@@ -11,7 +11,7 @@ function (Controller, JSONModel) {
                 //////////////
                 headerTitle : "HR template",
                 headerSubTitle : "HR dashboard template from Mosec Solutions",
-                headerActDate : "Date: 26.08.2024",
+                headerActDate : new Intl.DateTimeFormat(['ban', 'id']).format(new Date()),
                 headerCurrUser : "User: Steve Otieno",
                 headerIconSrc : "templateapp\img\mosec_logo.png",
                 /////////////////////////
