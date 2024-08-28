@@ -1,0 +1,267 @@
+<core:FragmentDefinition height="100%" 
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns:core="sap.ui.core"
+    xmlns="sap.m" xmlns:tnt="sap.tnt" xmlns:card="sap.f.cards" xmlns:form="sap.ui.layout.form" xmlns:f="sap.f"   xmlns:l="sap.ui.layout">
+  
+    <Page showHeader="false" id="qwe" class='sapUiContentPadding' backgroundDesign="List" >
+		<HBox wrap="Wrap">
+        
+        <VBox justifyContent="Center" wrap="Wrap" class="sapUiLargeMarginEnd">
+        <Link text="Group IT GOALS 2023:" press="onResizableDialogPress"/>
+        </VBox>
+
+        <HBox class="" height= "" width="70%"  wrap="Wrap" justifyContent="SpaceBetween">
+        <VBox justifyContent="SpaceBetween" class="">
+        <ObjectStatus text="| Reduce ACTUAL COSTS by 5% by Dec. 2023" state="Error" active="true" press="onNavigate" class="sapUiSmallMarginBottom"/>
+        <ObjectStatus text="| Reduce OPEX  LICENSE Costs by 10% by Dec. 2023" state="Error" />
+        </VBox>
+
+        <VBox justifyContent="SpaceBetween" class="">
+        <ObjectStatus text="| Reduce ACTUAL COSTS by 5% by Dec. 2023" state="Error" class="sapUiSmallMarginBottom"/>
+       <ObjectStatus text="| Reduce OPEX  LICENSE Costs by 10% by Dec. 2023 " state="Error"/>
+        </VBox>
+        </HBox>
+       
+        
+        </HBox>
+        
+        
+         <VBox height="99%" width="100%" class="sapUiSmallMarginTop">
+         <HBox alignItems="Center" width="101%" >
+         <HBox alignItems="Center"  height="100%" justifyContent="Center" width="2rem" class="yellowBack">
+         <Text  width="1%" text="SNAPSHOT" class="myCustomButton"/>
+         </HBox >
+        <VBox width="99%" >
+		<l:BlockLayout keepFontSize="false" background="Mixed">
+			<l:BlockLayoutRow  rowColorSet="ColorSet2">
+				<l:BlockLayoutCell title=""  backgroundColorSet="ColorSet10" backgroundColorShade="ShadeD">
+                 <VBox width="100%" height= "100%" justifyContent="SpaceBetween">
+                 <Text text='Group IT FTE'/>
+                 <HBox class="sapUiSmallMarginTop">
+                 <Title  titleStyle="H1" text="11"/>
+                 </HBox>
+                  </VBox>
+				</l:BlockLayoutCell>
+
+				<l:BlockLayoutCell title="" backgroundColorSet="ColorSet10" backgroundColorShade="ShadeD">
+                 <VBox width="100%" height= "100%" justifyContent="SpaceBetween">
+                 <Text text='OPEX YTD [in CHF]'/>
+                 <HBox class="sapUiSmallMarginTop">
+                 <Title  titleStyle="H1" text='21m'/>
+                 </HBox>
+                  </VBox>
+				</l:BlockLayoutCell>
+
+                <l:BlockLayoutCell title="" backgroundColorSet="ColorSet10" backgroundColorShade="ShadeD">
+                 <VBox width="100%" height= "100%" justifyContent="SpaceBetween">
+                 <Text text='CAPEX YTD [in CHF]'/>
+                 <HBox class="sapUiSmallMarginTop">
+                 <Title  titleStyle="H1" text='18m'/>
+                 </HBox>
+                  </VBox>
+				</l:BlockLayoutCell>
+
+<l:BlockLayoutCell title="" backgroundColorSet="ColorSet10" backgroundColorShade="ShadeD">
+                 <VBox width="100%" height= "100%" justifyContent="SpaceBetween">
+                 <Text text='Tickets '/>
+                 <HBox class="sapUiSmallMarginTop">
+                 <Title  titleStyle="H1" text='119k'/>
+                 </HBox>
+                  </VBox>
+				</l:BlockLayoutCell>
+
+<l:BlockLayoutCell title="" backgroundColorSet="ColorSet10" backgroundColorShade="ShadeD">
+                 <VBox width="100%" height= "100%" justifyContent="SpaceBetween">
+                 <Text text='Cyber Attacks '/>
+                 <HBox class="sapUiSmallMarginTop">
+                 <Title  titleStyle="H1" text='7'/>
+                 </HBox>
+                  </VBox>
+				</l:BlockLayoutCell>
+
+
+
+
+                
+			</l:BlockLayoutRow>
+			
+		
+		</l:BlockLayout>
+       
+	</VBox>
+     </HBox>
+    <HBox alignItems="Center" width="101%" >
+     <HBox alignItems="Center" height="85%" justifyContent="Center" width="2rem" class="yellowBack">
+         <Text  width="1%" text="ACTIONS" class="myCustomButton"/>
+         </HBox >
+        <VBox width="99%"  >
+		<l:BlockLayout background="Default"   keepFontSize="true">
+
+            <l:BlockLayoutRow   accentCells="Accent1">
+				<l:BlockLayoutCell   title="">
+        <f:GridListItem detailPress="onPressFinanzenCard" type="Active" press="onPressFinanzenCard" >
+                   <VBox width="100%"  height= "180px"  justifyContent="Start">
+                 <Text text='Group IT FTE [in CHF]' class="sapUiSmallMarginTop sapUiSmallMarginBegin"/>
+                 <HBox class="sapUiMediumMarginTop sapUiSmallMarginBegin" >
+                 <ObjectStatus class="titleCard" state="Information" text='34'/>
+                 </HBox>
+                  </VBox>
+                  </f:GridListItem>
+				</l:BlockLayoutCell>
+				<l:BlockLayoutCell   title="">
+        <f:GridListItem detailPress="onPressFinanzenCard" type="Active" press="onPressFinanzenCard" >
+                   <VBox width="100%"  height= "180px"  justifyContent="Start">
+                 <Text text='Group IT FTE [in CHF]' class="sapUiSmallMarginTop sapUiSmallMarginBegin"/>
+                 <HBox class="sapUiMediumMarginTop sapUiSmallMarginBegin" >
+                 <ObjectStatus class="titleCard" state="Information" text='34'/>
+                 </HBox>
+                  </VBox>
+                  </f:GridListItem>
+				</l:BlockLayoutCell>
+				<l:BlockLayoutCell   title="">
+        <f:GridListItem detailPress="onPressFinanzenCard" type="Active" press="onPressFinanzenCard" >
+                   <VBox width="100%"  height= "180px" justifyContent="Start">
+                 <Text text='Group IT FTE [in CHF]' class="sapUiSmallMarginTop sapUiSmallMarginBegin"/>
+                 <HBox class="sapUiMediumMarginTop sapUiSmallMarginBegin">
+                 <ObjectStatus class="titleCard"  state="Success" text='45'/>
+                 </HBox>
+                  </VBox>
+                  </f:GridListItem>
+				</l:BlockLayoutCell>
+                <l:BlockLayoutCell   title="">
+                <f:GridListItem detailPress="onPressFinanzenCard" type="Active" press="onPressFinanzenCard" >
+                   <VBox width="100%"  height= "180px" justifyContent="Start">
+                 <Text text='Group IT FTE [in CHF]' class="sapUiSmallMarginTop sapUiSmallMarginBegin"/>
+                 <HBox class="sapUiMediumMarginTop sapUiSmallMarginBegin">
+                 <ObjectStatus class="titleCard"   state="Warning" text='50'/>
+                 </HBox >
+                  </VBox>
+                  </f:GridListItem>
+				</l:BlockLayoutCell>
+                <l:BlockLayoutCell   title="">
+                <f:GridListItem detailPress="onPressFinanzenCard" type="Active" press="onPressFinanzenCard" >
+                   <VBox width="100%"  height= "180px" justifyContent="Start">
+                 <Text text='Group IT FTE [in CHF]' class="sapUiSmallMarginTop sapUiSmallMarginBegin"/>
+                 <HBox class="sapUiMediumMarginTop sapUiSmallMarginBegin">
+                 <ObjectStatus   state="Indication01" class="titleCard" text='55'/>
+                 </HBox >
+                  </VBox>
+                  </f:GridListItem>
+				</l:BlockLayoutCell>
+                <l:BlockLayoutCell   title="">
+                <f:GridListItem detailPress="onPressFinanzenCard" type="Active" press="onPressFinanzenCard" >
+                   <VBox width="100%"  height= "180px" justifyContent="Start">
+                 <Text text='Group IT FTE [in CHF]' class="sapUiSmallMarginTop sapUiSmallMarginBegin"/>
+                 <HBox class="sapUiMediumMarginTop sapUiSmallMarginBegin">
+                 <ObjectStatus  state="Indication02" class="titleCard" text='76'/>
+                 </HBox>
+                  </VBox>
+                  </f:GridListItem>
+				</l:BlockLayoutCell>
+			</l:BlockLayoutRow>
+			
+		
+		</l:BlockLayout>
+       
+	</VBox>
+     </HBox>
+      <HBox alignItems="Center" width="101%" >
+     <HBox alignItems="Center" height="85%" justifyContent="Center" width="2rem" class="yellowBack">
+         <Text  width="1%" text="ACTIONS" class="myCustomButton"/>
+         </HBox >
+        <VBox width="99%"  >
+		<l:BlockLayout background="Default"   keepFontSize="true">
+
+            <l:BlockLayoutRow   accentCells="Accent1">
+				<l:BlockLayoutCell   title="">
+        <f:GridListItem detailPress="onPressFinanzenCard" type="Active" press="onPressFinanzenCard" >
+                   <VBox width="100%"  height= "180px"  justifyContent="SpaceBetween">
+                 <Text text='Ausfälle Krankheit [Days.]' class="sapUiSmallMarginTop sapUiSmallMarginBegin"/>
+                 <VBox height="100%" justifyContent="SpaceBetween">
+                 <HBox class="sapUiMediumMarginTop sapUiSmallMarginBegin">
+                 <ObjectStatus class="titleCard" text='11'/>
+                 </HBox>
+                  <VBox height="" class="sapUiSmallMarginEnd sapUiSmallMarginBottom" >
+                  <VBox>
+                 <HBox wrap="Wrap" justifyContent="End">
+                 <Text text="AM vs. VM" class="sapUiSmallMarginEnd"/>
+                 <ObjectStatus
+			
+			text="+23%"
+			icon="sap-icon://up"
+			state="Error" />
+                 </HBox>
+                <HBox wrap="Wrap" justifyContent="End" class="sapUiTinyMarginTop">
+                 <Text text="AM vs. VM+1" class="sapUiSmallMarginEnd"/>
+                  <ObjectStatus
+			
+			text="+13%"
+			icon="sap-icon://up"
+			state="Error" />
+                 </HBox>
+                 </VBox>
+                  </VBox>
+                  </VBox>
+                  </VBox>
+                  </f:GridListItem>
+				</l:BlockLayoutCell>
+				<l:BlockLayoutCell   title="">
+        <f:GridListItem detailPress="onPressFinanzenCard" type="Active" press="onPressFinanzenCard" >
+                   <VBox width="100%"  height= "180px"  justifyContent="Start">
+                 <Text text='Group IT FTE [in CHF]' class="sapUiSmallMarginTop sapUiSmallMarginBegin"/>
+                 <HBox class="sapUiMediumMarginTop sapUiSmallMarginBegin" >
+                 <ObjectStatus class="titleCard" state="Information" text='34'/>
+                 </HBox>
+                  </VBox>
+                  </f:GridListItem>
+				</l:BlockLayoutCell>
+				<l:BlockLayoutCell   title="">
+        <f:GridListItem detailPress="onPressFinanzenCard" type="Active" press="onPressFinanzenCard" >
+                   <VBox width="100%"  height= "180px" justifyContent="Start">
+                 <Text text='Group IT FTE [in CHF]' class="sapUiSmallMarginTop sapUiSmallMarginBegin"/>
+                 <HBox class="sapUiMediumMarginTop sapUiSmallMarginBegin">
+                 <ObjectStatus class="titleCard"  state="Success" text='45'/>
+                 </HBox>
+                  </VBox>
+                  </f:GridListItem>
+				</l:BlockLayoutCell>
+                <l:BlockLayoutCell   title="">
+                <f:GridListItem detailPress="onPressFinanzenCard" type="Active" press="onPressFinanzenCard" >
+                   <VBox width="100%"  height= "180px" justifyContent="Start">
+                 <Text text='Group IT FTE [in CHF]' class="sapUiSmallMarginTop sapUiSmallMarginBegin"/>
+                 <HBox class="sapUiMediumMarginTop sapUiSmallMarginBegin">
+                 <ObjectStatus class="titleCard"   state="Warning" text='50'/>
+                 </HBox >
+                  </VBox>
+                  </f:GridListItem>
+				</l:BlockLayoutCell>
+                <l:BlockLayoutCell   title="">
+                <f:GridListItem detailPress="onPressFinanzenCard" type="Active" press="onPressFinanzenCard" >
+                   <VBox width="100%"  height= "180px" justifyContent="Start">
+                 <Text text='Group IT FTE [in CHF]' class="sapUiSmallMarginTop sapUiSmallMarginBegin"/>
+                 <HBox class="sapUiMediumMarginTop sapUiSmallMarginBegin">
+                 <ObjectStatus   state="Indication01" class="titleCard" text='55'/>
+                 </HBox >
+                  </VBox>
+                  </f:GridListItem>
+				</l:BlockLayoutCell>
+                <l:BlockLayoutCell   title="">
+                <f:GridListItem detailPress="onPressFinanzenCard" type="Active" press="onPressFinanzenCard" >
+                   <VBox width="100%"  height= "180px" justifyContent="Start">
+                 <Text text='Group IT FTE [in CHF]' class="sapUiSmallMarginTop sapUiSmallMarginBegin"/>
+                 <HBox class="sapUiMediumMarginTop sapUiSmallMarginBegin">
+                 <ObjectStatus  state="Indication02" class="titleCard" text='76'/>
+                 </HBox>
+                  </VBox>
+                  </f:GridListItem>
+				</l:BlockLayoutCell>
+			</l:BlockLayoutRow>
+			
+		
+		</l:BlockLayout>
+       
+	</VBox>
+     </HBox>
+     </VBox>
+     
+	</Page>
+</core:FragmentDefinition>

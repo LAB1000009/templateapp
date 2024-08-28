@@ -15,88 +15,89 @@
                 </Toolbar>
                 <l:VerticalLayout width="100%" class="sapUiContentPadding sapUiSizeCompact">
                     <HBox>
-                        <VBox width="100%">
+                        <VBox width="100%" alignItems="Center" justifyContent="Center" renderType="Bare">
                             <Label labelFor="filter1" text="Filter1"/>
                             <Select id="filter1" width="100%"/>
                         </VBox>
 
-                        <VBox width="100%">
+                        <VBox width="100%" alignItems="Center">
                             <Label labelFor="filter2" text="filter2"/>
-                            <Select id="filter2" width="100%"/>
+                            <Switch id="filter2" width="100%"/>
+                        </VBox>
+                        <VBox width="100%" alignItems="Center">
+                            <Label labelFor="filter3" text="filter3"/>
+                            <CheckBox id="filter3" width="100%"/>
                         </VBox>
                     </HBox>
                     <Table id="payments-table"
-            inset="false"
-            items="{
-            path: 'treeModel>/payments'
-            }">
-            <headerToolbar>
-                <OverflowToolbar>
-                    <content>
-                        <Title text="Payments" level="H2"/>
-                        <ToolbarSpacer/>
+                            inset="false"
+                            items="{
+                            path: 'treeModel>/payments'
+                            }">
+                            <headerToolbar>
+                                <OverflowToolbar>
+                                    <content>
+                                        <Title text="Payments" level="H2"/>
+                                        <ToolbarSpacer/>
 
-                        <Label visible="false" text="Transaction date" labelFor="dynamic-range"/>
-                        <DynamicDateRange
-                            id="dynamic-range"
-                            change="onChange"
-                            width="{env>/filterInputWidth}"/>
-                    </content>
-                </OverflowToolbar>
-            </headerToolbar>
-		<infoToolbar>
-			<OverflowToolbar>
-				<Label text="List of payments"/>
-			</OverflowToolbar>
-		</infoToolbar>
-		<columns>
-			<Column>
-				<Text text="Transaction date" />
-			</Column>
-			<Column
-				hAlign="Center">
-				<Text text="Transaction type" />
-			</Column>
-			<Column
-				hAlign="End">
-				<Text text="Amount" />
-			</Column>
-		</columns>
-		<items>
-		<ColumnListItem>
-				<cells>
-					<Text
-						text="{ path: 'treeModel>PerfomDateTime', formatter: '._dateFormatter'}" />
-					<Text
-						text="{treeModel>TransactionType}" />
-					<ObjectNumber
-							number="{
-								parts:[{path:'treeModel>Amount'},{path:'treeModel>CurrencyCode'}],
-								type: 'sap.ui.model.type.Currency',
-								formatOptions: {showMeasure: false}
-							}"
-							unit="{treeModel>CurrencyCode}" />
-				</cells>
-			</ColumnListItem>
-		</items>
-	</Table>
-                    
+                                        <Label visible="false" text="Transaction date" labelFor="dynamic-range"/>
+                                        <DynamicDateRange
+                                            id="dynamic-range"
+                                            change="onChange"
+                                            width="{env>/filterInputWidth}"/>
+                                    </content>
+                                </OverflowToolbar>
+                            </headerToolbar>
+                        <infoToolbar>
+                            <OverflowToolbar>
+                                <Label text="List of payments"/>
+                            </OverflowToolbar>
+                        </infoToolbar>
+                        <columns>
+                            <Column>
+                                <Text text="Transaction date" />
+                            </Column>
+                            <Column
+                                hAlign="Center">
+                                <Text text="Transaction type" />
+                            </Column>
+                            <Column
+                                hAlign="End">
+                                <Text text="Amount" />
+                            </Column>
+                        </columns>
+                        <items>
+                        <ColumnListItem>
+                                <cells>
+                                    <Text
+                                        text="{ path: 'treeModel>PerfomDateTime', formatter: '._dateFormatter'}" />
+                                    <Text
+                                        text="{treeModel>TransactionType}" />
+                                    <ObjectNumber
+                                            number="{
+                                                parts:[{path:'treeModel>Amount'},{path:'treeModel>CurrencyCode'}],
+                                                type: 'sap.ui.model.type.Currency',
+                                                formatOptions: {showMeasure: false}
+                                            }"
+                                            unit="{treeModel>CurrencyCode}" />
+                                </cells>
+                            </ColumnListItem>
+                        </items>
+                    </Table>
                 </l:VerticalLayout>
         </Panel>
         <Panel height="100%" class="sapUiContentPadding">
             <layoutData>
                 <l:SplitterLayoutData size="{=!${treeModel>/showSideContent} ? '100%' : '100%'}" resizable="{treeModel>/showSideContent}" />
             </layoutData>
-                <VBox>
-                    <Title level="H1" text="Product" />
-                    <Image src="{img>/products/pic1}" densityAware="false" width="10em" />
-                    <Text text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."/>
-                </VBox>
+                <NavContainer navigationFinished="onNavigationFinished"
+                id="navCon"
+                
+                class="navContainerControl">
+                    <!-- <Page id="chartPage" showHeader="false">
+                       
+                    </Page> -->
+                </NavContainer>
         </Panel>
     </l:Splitter>
 </core:FragmentDefinition>
