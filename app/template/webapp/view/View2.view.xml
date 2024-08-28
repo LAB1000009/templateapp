@@ -34,10 +34,10 @@
             <Page
                 class="sapUiNoContentPadding"
                 id="plannerSemanticPage" showHeader="false" enableScrolling="false">
-                <Page showHeader="true" id="contentPage" enableScrolling="false">
+                <Page id="contentPage" showHeader="true"  enableScrolling="false">
                     <customHeader>
                         <Toolbar width="100%" class="sapUiNoContentPadding">
-                            <Breadcrumbs currentLocationText="Laptop" separatorStyle="{/selected}" class="sapUiTinyMarginBegin">
+                            <Breadcrumbs currentLocationText="Laptop" separatorStyle="{/selected}" class="sapUiTinyMarginTop">
                                 <Link press="onPress" text="Products"/>
                                 <Link press="onPress" text="Suppliers"/>
                                 <Link press="onPress" text="Titanium"/>
@@ -49,7 +49,7 @@
                     </customHeader>
                     <subHeader>
                         <OverflowToolbar width="100%">
-                        <OverflowToolbarToggleButton press="OverflowToolbarToggleButton" pressed="{treeModel>/showSideContent}" icon="sap-icon://bullet-text" class="sapUiTinyMarginBegi"/>
+                            <OverflowToolbarToggleButton press="OverflowToolbarToggleButton" pressed="{treeModel>/showSideContent}" icon="sap-icon://bullet-text" />
                         <ToolbarSpacer />
                         <IconTabHeader mode="Inline">
                                 <items>
@@ -64,12 +64,9 @@
                     <!-- <OverflowToolbar design="Transparent" class="sapUiNoContentPadding">
                     <OverflowToolbarToggleButton press="OverflowToolbarToggleButton" pressed="{treeModel>/showSideContent}" icon="sap-icon://bullet-text" />
                     </OverflowToolbar> -->
-                    
                     </Page>
-                    
-            </Page>
-        
-            <OverflowToolbar design="Transparent">
+                </Page>
+            <OverflowToolbar>
                 <content>
                     <Title text="{treeModel>/footerCopyright}" class="sapUiTinyMarginBegin"/>
                     <ToolbarSpacer />

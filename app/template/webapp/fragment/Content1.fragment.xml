@@ -1,0 +1,64 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core"
+    xmlns:l="sap.ui.layout"
+>
+    <l:DynamicSideContent
+                            id="DynamicSideContent"
+                            class="sapUiContentPadding"
+                            containerQuery="true"
+                            sideContentFallDown="BelowM"
+                            breakpointChanged="handleBreakpointChangeEvent"
+                            showSideContent="{treeModel>/showSideContent}"
+                            sideContentPosition="Begin">
+                            <Panel height="100%">
+                                    <VBox>
+                                        <Title level="H1" text="Product" />
+                                        <Image src="{img>/products/pic1}" densityAware="false" width="10em" />
+                                        <Text text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                                        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."/>
+                                    </VBox>
+                                </Panel>
+                            <l:sideContent >
+                            <Panel height="100%">
+                                <Toolbar >
+                                    <Title text="Filters"/>
+                                    <ToolbarSpacer />
+                                    <Button text="Close" type="Transparent" press="handleSideContentHide" visible="{= !${media>/phone}}" />
+                                </Toolbar>
+                                <l:VerticalLayout width="70%" class="sapUiContentPadding sapUiSizeCompact"
+                                    >
+                                    <VBox>
+                                        <Label labelFor="filter1" text="Filter1"/>
+                                        <Select id="filter1" width="100%"/>
+                                    </VBox>
+
+                                    <VBox>
+                                        <Label labelFor="filter2" text="filter2"/>
+                                        <Select id="filter2" width="100%"/>
+                                    </VBox>
+
+                                    <VBox>
+                                        <Label labelFor="filter3" text="filter3"/>
+                                        <Select id="filter3" width="100%"/>
+                                    </VBox>
+
+                                    <VBox>
+                                        <Label labelFor="filter4" text="filter4"/>
+                                        <Select id="filter4" width="100%"/>
+                                    </VBox>
+
+                                    <VBox>
+                                        <Label labelFor="filter5" text="filter5"/>
+                                        <Select id="filter5" width="100%"/>
+                                    </VBox>
+                                    
+                                </l:VerticalLayout>
+                            </Panel>
+                            </l:sideContent>
+                        </l:DynamicSideContent>
+</core:FragmentDefinition>
