@@ -1056,7 +1056,7 @@ function (Controller, JSONModel, Dialog, Button, UI5Date, DynamicDateRange, Filt
 					this.getView().byId("navCon").addPage(ChartOverview);
 					const oController = sap.ui.controller("ui.template.controller.ChartOverview") ;
 					
-						oController.onInit.call(this);
+						//oController.onInit.call(this);
 					
 				  });
 				});

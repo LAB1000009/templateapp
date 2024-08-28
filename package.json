@@ -6,27 +6,25 @@
   "license": "UNLICENSED",
   "private": true,
   "dependencies": {
-    "@sap/cds": "^8",
-    "@sap/xssec": "^4",
+    "@sap-cloud-sdk/http-client": "2.15.0",
+    "@sap-cloud-sdk/resilience": "3.12.0",
+    "@sap/cds": "^8.1.1",
+    "@sap/cds-dk": "7.6.0",
+    "@sap/cds-odata-v2-adapter-proxy": "^1.9.21",
     "express": "^4"
   },
   "devDependencies": {
-    "@cap-js/cds-types": "^0.6",
-    "@cap-js/sqlite": "^1.7.3",
-    "@sap/cds-dk": "^8",
-    "@sap/ux-specification": "^1.120.17"
+    "@cap-js/sqlite": "^1.7.3"
   },
   "scripts": {
-    "start": "cds-serve",
-    "watch-template": "cds watch --open template/webapp/index.html?sap-ui-xx-viewCache=false"
+    "start": "cds-serve"
   },
-  "sapux": [
-    "app/admin-books",
-    "app/browse",
-    "app/template"
-  ],
   "cds": {
     "requires": {
+      "API_BUSINESS_PARTNER": {
+        "kind": "odata-v2",
+        "model": "srv/external/API_BUSINESS_PARTNER"
+      },
       "db": {
         "kind": "sqlite",
         "credentials": {
