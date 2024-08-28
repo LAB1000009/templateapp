@@ -138,7 +138,7 @@ function (Controller, JSONModel, Dialog, Button, UI5Date, DynamicDateRange, Filt
                 footerClass : "Templates",
                 footerPO : "Steve Otieno",
                 footerDetails : "Dashboard details",
-                ////////////////
+                ////////////////test
                 showSideContent:false,
                 payments:aPayments
     
