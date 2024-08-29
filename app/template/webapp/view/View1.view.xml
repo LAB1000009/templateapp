@@ -61,10 +61,10 @@
                             <ToolbarSpacer />
                             <IconTabHeader mode="Inline" select="onSelectIconTabHeader">
                                     <items>
-                                        <IconTabFilter key="chart" text="Chart" />
-                                        <IconTabFilter key="table" text="Table" />
-                                        <IconTabFilter key="comments" text="Comments" count="12" />
-                                        <IconTabFilter key="support" text="Support"/>
+                                        <IconTabFilter key="Chart" text="Chart" />
+                                        <IconTabFilter key="Table" text="Table" />
+                                        <IconTabFilter key="Comments" text="Comments" count="12" />
+                                        <IconTabFilter key="Support" text="Support"/>
                                     </items>
                             </IconTabHeader>
                         </OverflowToolbar>

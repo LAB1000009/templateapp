@@ -1,5 +1,3 @@
-# yaml-language-server: $schema=https://sap.github.io/ui5-tooling/schema/ui5.yaml.json
-
 specVersion: "3.1"
 metadata:
   name: ui.template
@@ -9,12 +7,12 @@ server:
     - name: fiori-tools-proxy
       afterMiddleware: compression
       configuration:
-        ignoreCertError: false # If set to true, certificate errors will be ignored. E.g. self-signed certificates will be accepted
+        ignoreCertError: true
         ui5:
           path:
             - /resources
             - /test-resources
-          url: https://ui5.sap.com
+          url: https://sapui5.hana.ondemand.com
     - name: fiori-tools-appreload
       afterMiddleware: compression
       configuration:
@@ -26,3 +24,10 @@ server:
       configuration:
         component: ui.template
         ui5Theme: sap_horizon
+    - name: fiori-tools-servestatic
+      beforeMiddleware: fiori-tools-proxy
+      configuration:
+        paths:
+          - path: /resources/sap/ui/myLibrary
+            src: ../sap-ui-myLibrary/src/sap/ui/myLibrary
+            fallthrough: false

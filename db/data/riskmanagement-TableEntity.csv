@@ -1,0 +1,17 @@
+ID;TransactionType;PerfomDateTime;Amount;CurrencyCode
+1;ATM withdrawal;2024-08-28T00:00:00Z;100.00;EUR
+2;payment on POS terminal;2024-08-27T00:00:00Z;18.00;EUR
+3;payment on POS terminal;2024-08-26T00:00:00Z;54.05;EUR
+4;payment on POS terminal;2024-08-25T00:00:00Z;30.00;EUR
+5;payment on POS terminal;2024-08-24T00:00:00Z;105.50;EUR
+6;payment on POS terminal;2024-08-26T00:00:00Z;74.35;EUR
+7;payment on POS terminal;2024-08-26T23:00:00Z;9.50;EUR
+8;payment on POS terminal;2024-08-28T23:00:00Z;3.90;EUR
+9;ATM withdrawal;2024-08-24T22:00:00Z;200.00;EUR
+10;payment on POS terminal;2024-08-25T22:00:00Z;153.80;EUR
+11;payment on POS terminal;2024-08-19T00:00:00Z;5.30;EUR
+12;payment on POS terminal;2024-08-20T00:00:00Z;1.60;EUR
+13;payment on POS terminal;2024-08-29T23:00:00Z;95.60;EUR
+14;ATM withdrawal;2024-08-29T00:00:00Z;400.00;EUR
+15;ATM withdrawal;2021-06-09T15:15:00Z;50.00;EUR
+16;payment on POS terminal;2021-06-08T10:15:00Z;22.34;EUR

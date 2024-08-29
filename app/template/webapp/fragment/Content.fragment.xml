@@ -2,93 +2,97 @@
 	xmlns="sap.m"
 	xmlns:core="sap.ui.core"
     xmlns:l="sap.ui.layout"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:u="sap.ui.unified"
 >
     <l:Splitter height="100%">
         <Panel height="100%" class="sapUiContentPadding" visible="{treeModel>/showSideContent}">
             <layoutData>
                 <l:SplitterLayoutData size="{=!${treeModel>/showSideContent} ? '0%' : '30%'}" />
             </layoutData>
-                <Toolbar >
-                    <Title text="Filters"/>
-                    <ToolbarSpacer />
-                    <Button text="Close" type="Transparent" press="handleSideContentHide" visible="{= !${media>/phone}}" />
-                </Toolbar>
-                <l:VerticalLayout width="100%" class="sapUiContentPadding sapUiSizeCompact">
-                    <HBox>
-                        <VBox width="100%" alignItems="Center" justifyContent="Center" renderType="Bare">
-                            <Label labelFor="filter1" text="Filter1"/>
-                            <Select id="filter1" width="100%"/>
-                        </VBox>
+                   <f:SimpleForm id="SimpleFormChange354wideDual"
+    editable="true"
+    layout="ResponsiveGridLayout"
+    title="Settings"
+    labelSpanXL="4"
+    labelSpanL="3"
+    labelSpanM="4"
+    labelSpanS="12"
+    adjustLabelSpan="false"
+    emptySpanXL="0"
+    emptySpanL="4"
+    emptySpanM="0"
+    emptySpanS="0"
+    columnsXL="2"
+    columnsL="2"
+    columnsM="1"
+    singleContainerFullSize="false" >
+    <f:content>
+        <core:Title text="Filter Settings" />
 
-                        <VBox width="100%" alignItems="Center">
-                            <Label labelFor="filter2" text="filter2"/>
-                            <Switch id="filter2" width="100%"/>
-                        </VBox>
-                        <VBox width="100%" alignItems="Center">
-                            <Label labelFor="filter3" text="filter3"/>
-                            <CheckBox id="filter3" width="100%"/>
-                        </VBox>
-                    </HBox>
-                    <Table id="payments-table"
-                            inset="false"
-                            items="{
-                            path: 'treeModel>/payments'
-                            }">
-                            <headerToolbar>
-                                <OverflowToolbar>
-                                    <content>
-                                        <Title text="Payments" level="H2"/>
-                                        <ToolbarSpacer/>
+        <Label text="Filter1" />
+        <ComboBox id="filter1" width="100%">
+            <items>
+                <core:Item key="Option1" text="Option 1" />
+                <core:Item key="Option2" text="Option 2" />
+                <core:Item key="Option3" text="Option 3" />
+            </items>
+        </ComboBox>
 
-                                        <Label visible="false" text="Transaction date" labelFor="dynamic-range"/>
-                                        <DynamicDateRange
-                                            id="dynamic-range"
-                                            change="onChange"
-                                            width="{env>/filterInputWidth}"/>
-                                    </content>
-                                </OverflowToolbar>
-                            </headerToolbar>
-                        <infoToolbar>
-                            <OverflowToolbar>
-                                <Label text="List of payments"/>
-                            </OverflowToolbar>
-                        </infoToolbar>
-                        <columns>
-                            <Column>
-                                <Text text="Transaction date" />
-                            </Column>
-                            <Column
-                                hAlign="Center">
-                                <Text text="Transaction type" />
-                            </Column>
-                            <Column
-                                hAlign="End">
-                                <Text text="Amount" />
-                            </Column>
-                        </columns>
-                        <items>
-                        <ColumnListItem>
-                                <cells>
-                                    <Text
-                                        text="{ path: 'treeModel>PerfomDateTime', formatter: '._dateFormatter'}" />
-                                    <Text
-                                        text="{treeModel>TransactionType}" />
-                                    <ObjectNumber
-                                            number="{
-                                                parts:[{path:'treeModel>Amount'},{path:'treeModel>CurrencyCode'}],
-                                                type: 'sap.ui.model.type.Currency',
-                                                formatOptions: {showMeasure: false}
-                                            }"
-                                            unit="{treeModel>CurrencyCode}" />
-                                </cells>
-                            </ColumnListItem>
-                        </items>
-                    </Table>
-                </l:VerticalLayout>
+        <Label text="Enable Feature" />
+        <Switch id="filter2" width="100%" />
+
+        <Label text="Receive Notifications" />
+        <CheckBox id="filter3" width="100%" />
+
+        <Label text="Username" />
+        <Input id="username" width="100%" placeholder="Enter your username" />
+
+        <Label text="Select Date" />
+        <DatePicker id="datePicker" width="100%" />
+
+        <core:Title text="Additional Settings" />
+
+        <Label text="Email Address" />
+        <Input id="email" type="Email" width="100%" placeholder="Enter your email" />
+
+        <Label text="Contact Number" />
+        <Input id="phoneNumber" type="Tel" width="100%" placeholder="Enter your phone number" />
+
+        <Label text="Country" />
+        <Select id="country" width="100%">
+            <items>
+                <core:Item key="US" text="United States" />
+                <core:Item key="DE" text="Germany" />
+                <core:Item key="FR" text="France" />
+            </items>
+        </Select>
+
+        <Label text="Contact Method" />
+        <RadioButtonGroup id="contactMethod" columns="2">
+            <buttons>
+                <RadioButton text="Email" />
+                <RadioButton text="Phone" />
+            </buttons>
+        </RadioButtonGroup>
+
+        <Label text="Newsletter Subscription" />
+        <Switch id="subscribeNewsletter" width="100%" />
+
+        <Label text="Rating" />
+        <RatingIndicator id="rating" width="100%" maxValue="5" />
+
+        <Label text="Agreement" />
+        <CheckBox id="agreement" text="I agree to the terms and conditions" />
+
+    </f:content>
+</f:SimpleForm>
+
+
         </Panel>
-        <Panel height="100%" class="sapUiContentPadding">
+        <Panel height="100%" width="auto" class="sapUiContentPadding">
             <layoutData>
-                <l:SplitterLayoutData size="{=!${treeModel>/showSideContent} ? '100%' : '100%'}" resizable="{treeModel>/showSideContent}" />
+                <l:SplitterLayoutData size="{=!${treeModel>/showSideContent} ? '100%' : '70%'}" resizable="{treeModel>/showSideContent}" />
             </layoutData>
                 <NavContainer navigationFinished="onNavigationFinished"
                 id="navCon"

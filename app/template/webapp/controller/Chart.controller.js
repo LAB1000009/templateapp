@@ -12,9 +12,9 @@ sap.ui.define([
 ], function(Controller, BindingMode, JSONModel, FlattenedDataset, FeedItem, ChartFormatter, Format, Device, History) {
 "use strict";
 
-var Controller = Controller.extend("ui.template.controller.ChartOverview", {
+var Controller = Controller.extend("ui.template.controller.Chart", {
 
-    dataPath : "test-resources/sap/viz/demokit/dataset/milk_production_testing_data/date_revenue_cost",
+    dataPath : "https://sapui5.hana.ondemand.com/test-resources/sap/viz/demokit/dataset/milk_production_testing_data/date_revenue_cost",
 
     settingsModel : {
         chartType : {
@@ -931,60 +931,41 @@ var Controller = Controller.extend("ui.template.controller.ChartOverview", {
 
     oVizFrame : null, chartTypeSelect : null, chart : null,
 
-    onInit : function (evt) {
+    onInit: function(oTemplateController) {
         Format.numericFormatter(ChartFormatter.getInstance());
-        // set explored app's demo model on this sample
-        var oModel = new JSONModel(this.settingsModel);
-        oModel.setDefaultBindingMode(BindingMode.OneWay);
-        this.getView().setModel(oModel);
-
-        var oVizFrame = this.oVizFrame = this.getView().byId("idVizFrame");
+    
+        var oData = {
+            chart: {
+                milk: [
+                    { Date: "2024-08-01", Revenue: 500 },
+                    { Date: "2024-08-02", Revenue: 700 },
+                    { Date: "2024-08-03", Revenue: 900 },
+                    { Date: "2024-08-04", Revenue: 700 },
+                    { Date: "2024-08-05", Revenue: 700 }
+                    // Дополнительные данные...
+                ]
+            }
+        };
+    
+        // Создание и установка JSONModel
+        //var oModel = new sap.ui.model.json.JSONModel(this.dataPath + "/column/timeAxis.json");
+        var oModel = new sap.ui.model.json.JSONModel(oData);
+        this.getView().setModel(oModel, "chart");
+    
+        var oVizFrame = this.getPrefixedControl("idVizFrame");
         oVizFrame.setVizProperties(this.settingsModel.chartType.values[3].vizProperties);
-        var dataModel = new JSONModel(this.dataPath + "/column/timeAxis.json");
-        oVizFrame.setModel(dataModel);
-
-        var oPopOver = this.getView().byId("idPopOver");
+    
+        var oPopOver = this.getPrefixedControl("idPopOver");
         oPopOver.connect(oVizFrame.getVizUid());
         oPopOver.setFormatString({
             "Cost": ChartFormatter.DefaultPattern.STANDARDFLOAT,
             "Revenue": ChartFormatter.DefaultPattern.STANDARDFLOAT
         });
-
-        this.initPageSettings(this.getView());
     },
-    initPageSettings : function(oView) {
-        // Hide Settings Panel for phone
-        if (Device.system.phone) {
-            var oSettingsPanel = oView.byId('settingsPanel');
-            if (oSettingsPanel){
-                oSettingsPanel.setExpanded(false);
-            }
-        }
-
-        // try to load sap.suite.ui.commons for using ChartContainer
-        // sap.suite.ui.commons is available in sapui5-sdk-dist but not in demokit
-        var libraries = sap.ui.getVersionInfo().libraries || [];
-        var bSuiteAvailable = libraries.some(function(lib){
-            return lib.name.indexOf("sap.suite.ui.commons") > -1;
-        });
-        if (bSuiteAvailable) {
-            jQuery.sap.require("sap/suite/ui/commons/ChartContainer");
-            var vizframe = oView.byId("idVizFrame");
-            var oChartContainerContent = new sap.suite.ui.commons.ChartContainerContent({
-                icon : "sap-icon://line-chart-time-axis",
-                title : "vizFrame Line Chart Sample",
-                content : [ vizframe ]
-            });
-            var oChartContainer = new sap.suite.ui.commons.ChartContainer({
-                content : [ oChartContainerContent ]
-            });
-            oChartContainer.setShowFullScreen(true);
-            oChartContainer.setAutoAdjustHeight(true);
-            oView.byId('chartFixFlex').setFlexContent(oChartContainer);
-        }
-    },
-    onAfterRendering : function(){
-        this.chartTypeSelect = this.getView().byId('chartTypeSelect');
+    
+    getPrefixedControl: function(id) {
+        // Возвращаем элемент управления с добавленным префиксом "Chart--"
+        return this.getView().byId("Chart--" + id);
     },
     onChartTypeChanged : function(oEvent){
         if (this.oVizFrame){
