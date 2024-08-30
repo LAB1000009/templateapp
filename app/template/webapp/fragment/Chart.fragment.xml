@@ -4,27 +4,24 @@
     xmlns:core="sap.ui.core" xmlns:viz.data="sap.viz.ui5.data" height="100%" >
     <Page class='sapUiContentPadding' backgroundDesign="List"
         showFooter="false" showHeader="false" showSubHeader="true">          
- <VBox>
-    <viz:Popover id="idPopOver" />
-    <viz:VizFrame id="idVizFrame" height="400px" width="100%" vizType="timeseries_column">
-        <viz:dataset>
-            <viz.data:FlattenedDataset data="{chart>/chart/milk}">
-                <viz.data:dimensions>
-                    <viz.data:DimensionDefinition name="Date" value="{chart>Date}" dataType="date" />
-                </viz.data:dimensions>
-                <viz.data:measures>
-                    <viz.data:MeasureDefinition name="Revenue" value="{chart>Revenue}" />
-                </viz.data:measures>
-            </viz.data:FlattenedDataset>
-        </viz:dataset>
-        <viz:feeds>
-            <viz.feeds:FeedItem uid="valueAxis" type="Measure" values="Revenue" />
-            <viz.feeds:FeedItem uid="timeAxis" type="Dimension" values="Date" />
-        </viz:feeds>
-    </viz:VizFrame>
-</VBox>
-
-
-                   
+        <VBox>
+            <viz:Popover id="idPopOver" />
+            <viz:VizFrame id="idVizFrame" height="400px" width="100%" vizType="timeseries_column">
+                <viz:dataset>
+                    <viz.data:FlattenedDataset data="{chart>/chart/milk}">
+                        <viz.data:dimensions>
+                            <viz.data:DimensionDefinition name="Date" value="{chart>Date}" dataType="date" />
+                        </viz.data:dimensions>
+                        <viz.data:measures>
+                            <viz.data:MeasureDefinition name="Revenue" value="{chart>Revenue}" />
+                        </viz.data:measures>
+                    </viz.data:FlattenedDataset>
+                </viz:dataset>
+                <viz:feeds>
+                    <viz.feeds:FeedItem uid="valueAxis" type="Measure" values="Revenue" />
+                    <viz.feeds:FeedItem uid="timeAxis" type="Dimension" values="Date" />
+                </viz:feeds>
+            </viz:VizFrame>
+        </VBox>            
     </Page>
 </core:FragmentDefinition>

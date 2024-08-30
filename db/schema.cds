@@ -55,3 +55,34 @@ entity TableEntity : cuid, managed {
     Amount          : Decimal(10,2);
     CurrencyCode    : String(3);
 }
+
+entity CommentEntity : cuid, managed {
+    Author        : String;       
+    AuthorPicUrl  : String;       
+    Type          : String;       
+    Date          : DateTime;     
+    Text          : String;       
+}
+entity SupportContact : cuid {
+    pageId        : String(100);
+    header        : String(255);
+    title         : String(255);
+    titleUrl      : String(255);
+    description   : String(255);
+    icon          : String(255);
+    displayShape  : String(50);
+    heading       : String(255);
+    label         : String(255);
+    value         : String(255);
+    url           : String(255);
+    elementType   : String(50);
+    pageLinkId    : String(100);
+    emailSubject  : String(255);
+    target        : String(50);
+}
+
+
+
+
+
+

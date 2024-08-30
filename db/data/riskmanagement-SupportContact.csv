@@ -1,0 +1,3 @@
+ID;pageId;header;title;titleUrl;description;icon;displayShape;heading;label;value;url;elementType;pageLinkId;emailSubject;target
+1;page1;Support Page;Global Data Analytics & BI Team;https://stadlerrailag.sharepoint.com/sites/OurTeam;Description of the team;https://example.com/icon.png;Circle;Team Info;Team;Global Data Analytics & BI Team;https://stadlerrailag.sharepoint.com/sites/OurTeam;text;page1;Inquiry;_self
+2;page2;Support Page;Ticket & Support;https://srvch025033219/WebDesk/?tab=Home/Process;Support information;https://example.com/icon2.png;Square;Support Details;Help Desk;HelpDesk https://srvch025033219/WebDesk/?tab=Home/Process;text;page2;Support Request;_blank

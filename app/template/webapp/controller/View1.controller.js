@@ -99,7 +99,8 @@ function (Controller, JSONModel, Dialog, Button, UI5Date, DynamicDateRange, Filt
                 controller: oController
             });
             oFragment.setModel(this.getView().getModel());
-            oFragment.setBindingContext(this.getView().getBindingContext());
+            this.getView().addDependent(oFragment);
+            
             return oFragment;
         },
         

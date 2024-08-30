@@ -947,8 +947,6 @@ var Controller = Controller.extend("ui.template.controller.Chart", {
             }
         };
     
-        // Создание и установка JSONModel
-        //var oModel = new sap.ui.model.json.JSONModel(this.dataPath + "/column/timeAxis.json");
         var oModel = new sap.ui.model.json.JSONModel(oData);
         this.getView().setModel(oModel, "chart");
     
@@ -964,7 +962,6 @@ var Controller = Controller.extend("ui.template.controller.Chart", {
     },
     
     getPrefixedControl: function(id) {
-        // Возвращаем элемент управления с добавленным префиксом "Chart--"
         return this.getView().byId("Chart--" + id);
     },
     onChartTypeChanged : function(oEvent){
