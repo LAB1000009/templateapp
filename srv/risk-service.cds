@@ -14,4 +14,6 @@ service RiskService {
 
     entity ChangeLog as projection on rm.ChangeLog;
     entity TableEntity as projection on rm.TableEntity;
+    entity CommentEntity as projection on rm.CommentEntity;
+    entity SupportContact as projection on rm.SupportContact;
 }
