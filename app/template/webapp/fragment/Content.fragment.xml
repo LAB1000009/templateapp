@@ -1,107 +1,100 @@
-<core:FragmentDefinition
-	xmlns="sap.m"
-	xmlns:core="sap.ui.core"
-    xmlns:l="sap.ui.layout"
-    xmlns:f="sap.ui.layout.form"
-    xmlns:u="sap.ui.unified"
->
-    <l:Splitter height="100%">
-        <Panel height="100%" class="sapUiContentPadding" visible="{treeModel>/showSideContent}">
-            <layoutData>
-                <l:SplitterLayoutData size="{=!${treeModel>/showSideContent} ? '0%' : '30%'}" />
-            </layoutData>
-                   <f:SimpleForm id="SimpleFormChange354wideDual"
-    editable="true"
-    layout="ResponsiveGridLayout"
-    title="Settings"
-    labelSpanXL="4"
-    labelSpanL="3"
-    labelSpanM="4"
-    labelSpanS="12"
-    adjustLabelSpan="false"
-    emptySpanXL="0"
-    emptySpanL="4"
-    emptySpanM="0"
-    emptySpanS="0"
-    columnsXL="2"
-    columnsL="2"
-    columnsM="1"
-    singleContainerFullSize="false" >
-    <f:content>
-        <core:Title text="Filter Settings" />
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout" xmlns:u="sap.ui.unified">
+   <l:Splitter height="100%">
+      <Panel height="100%"  backgroundDesign="Transparent" class="sapUiContentPadding" visible="{treeModel&gt;/showSideContent}">
+         <layoutData>
+            <l:SplitterLayoutData size="{=!${treeModel&gt;/showSideContent} ? '0%' : '30%'}" />
+         </layoutData>
+            <Panel headerText="Filter Settings" expanded="true" expandable="true">
+                <f:SimpleForm 
+                    editable="true" 
+                    layout="ResponsiveGridLayout" 
+                    labelSpanXL="4" 
+                    labelSpanL="3" 
+                    labelSpanM="4" 
+                    labelSpanS="12" 
+                    adjustLabelSpan="false" 
+                    emptySpanXL="0" 
+                    emptySpanL="4" 
+                    emptySpanM="0" 
+                    emptySpanS="0" 
+                    columnsXL="2" 
+                    columnsL="2" 
+                    columnsM="1" 
+                    singleContainerFullSize="false">
+                    <f:content>
+                        <Label text="Filter1" />
+                        <ComboBox width="100%">
+                            <items>
+                                <core:Item key="Option1" text="Option 1" />
+                                <core:Item key="Option2" text="Option 2" />
+                                <core:Item key="Option3" text="Option 3" />
+                            </items>
+                        </ComboBox>
+                        <Label text="Enable Feature" />
+                        <Switch width="100%" />
+                        <Label text="Receive Notifications" />
+                        <CheckBox width="100%" />
+                        <Label text="Username" />
+                        <Input width="100%" placeholder="Enter your username" />
+                        <Label text="Select Date" />
+                        <DatePicker width="100%" />
+                    </f:content>
+                </f:SimpleForm>
+            </Panel>
+            <Panel headerText="Additional Filters" class="sapUiSmallMarginTop" expanded="false" expandable="true">
+                <f:SimpleForm 
+                    editable="true" 
+                    layout="ResponsiveGridLayout" 
+                    labelSpanXL="4" 
+                    labelSpanL="3" 
+                    labelSpanM="4" 
+                    labelSpanS="12" 
+                    adjustLabelSpan="false" 
+                    emptySpanXL="0" 
+                    emptySpanL="4" 
+                    emptySpanM="0" 
+                    emptySpanS="0" 
+                    columnsXL="2" 
+                    columnsL="2" 
+                    columnsM="1" 
+                    singleContainerFullSize="false">
+                    <f:content>
+                        <Label text="Email Address" />
+                        <Input type="Email" width="100%" placeholder="Enter your email" />
+                        <Label text="Contact Number" />
+                        <Input type="Tel" width="100%" placeholder="Enter your phone number" />
+                        <Label text="Country" />
+                        <Select width="100%">
+                            <items>
+                                <core:Item key="US" text="United States" />
+                                <core:Item key="DE" text="Germany" />
+                                <core:Item key="FR" text="France" />
+                            </items>
+                        </Select>
+                        <Label text="Contact Method" />
+                        <RadioButtonGroup columns="2">
+                            <buttons>
+                                <RadioButton text="Email" />
+                                <RadioButton text="Phone" />
+                            </buttons>
+                        </RadioButtonGroup>
+                        <Label text="Newsletter Subscription" />
+                        <Switch width="100%" />
+                        <Label text="Rating" />
+                        <RatingIndicator width="100%" maxValue="5" />
+                        <Label text="Agreement" />
+                        <CheckBox text="I agree to the terms and conditions" />
+                    </f:content>
+                </f:SimpleForm>
+            </Panel>
 
-        <Label text="Filter1" />
-        <ComboBox id="filter1" width="100%">
-            <items>
-                <core:Item key="Option1" text="Option 1" />
-                <core:Item key="Option2" text="Option 2" />
-                <core:Item key="Option3" text="Option 3" />
-            </items>
-        </ComboBox>
-
-        <Label text="Enable Feature" />
-        <Switch id="filter2" width="100%" />
-
-        <Label text="Receive Notifications" />
-        <CheckBox id="filter3" width="100%" />
-
-        <Label text="Username" />
-        <Input id="username" width="100%" placeholder="Enter your username" />
-
-        <Label text="Select Date" />
-        <DatePicker id="datePicker" width="100%" />
-
-        <core:Title text="Additional Settings" />
-
-        <Label text="Email Address" />
-        <Input id="email" type="Email" width="100%" placeholder="Enter your email" />
-
-        <Label text="Contact Number" />
-        <Input id="phoneNumber" type="Tel" width="100%" placeholder="Enter your phone number" />
-
-        <Label text="Country" />
-        <Select id="country" width="100%">
-            <items>
-                <core:Item key="US" text="United States" />
-                <core:Item key="DE" text="Germany" />
-                <core:Item key="FR" text="France" />
-            </items>
-        </Select>
-
-        <Label text="Contact Method" />
-        <RadioButtonGroup id="contactMethod" columns="2">
-            <buttons>
-                <RadioButton text="Email" />
-                <RadioButton text="Phone" />
-            </buttons>
-        </RadioButtonGroup>
-
-        <Label text="Newsletter Subscription" />
-        <Switch id="subscribeNewsletter" width="100%" />
-
-        <Label text="Rating" />
-        <RatingIndicator id="rating" width="100%" maxValue="5" />
-
-        <Label text="Agreement" />
-        <CheckBox id="agreement" text="I agree to the terms and conditions" />
-
-    </f:content>
-</f:SimpleForm>
-
-
-        </Panel>
-        <Panel height="100%" width="auto" class="sapUiContentPadding">
-            <layoutData>
-                <l:SplitterLayoutData size="{=!${treeModel>/showSideContent} ? '100%' : '70%'}" resizable="{treeModel>/showSideContent}" />
-            </layoutData>
-                <NavContainer navigationFinished="onNavigationFinished"
-                id="navCon"
-                
-                class="navContainerControl">
-                    <!-- <Page id="chartPage" showHeader="false">
-                       
-                    </Page> -->
-                </NavContainer>
-        </Panel>
-    </l:Splitter>
+               
+      </Panel>
+      <Panel height="100%" width="auto" class="sapUiContentPadding" backgroundDesign="Transparent">
+         <layoutData>
+            <l:SplitterLayoutData size="{=!${treeModel&gt;/showSideContent} ? '100%' : '70%'}" resizable="{treeModel&gt;/showSideContent}" />
+         </layoutData>
+         <NavContainer navigationFinished="onNavigationFinished" id="navCon" class="navContainerControl" />
+      </Panel>
+   </l:Splitter>
 </core:FragmentDefinition>

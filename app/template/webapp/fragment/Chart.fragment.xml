@@ -2,7 +2,7 @@
     xmlns:viz="sap.viz.ui5.controls" xmlns:layout="sap.ui.layout" 
     xmlns:mvc="sap.ui.core.mvc" xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds"
     xmlns:core="sap.ui.core" xmlns:viz.data="sap.viz.ui5.data" height="100%" >
-    <Page class='sapUiContentPadding' backgroundDesign="List"
+    <Panel class='sapUiContentPadding' headerText="Chart" backgroundDesign="List" height="100%"
         showFooter="false" showHeader="false" showSubHeader="true">          
         <VBox>
             <viz:Popover id="idPopOver" />
@@ -23,5 +23,5 @@
                 </viz:feeds>
             </viz:VizFrame>
         </VBox>            
-    </Page>
+    </Panel>
 </core:FragmentDefinition>

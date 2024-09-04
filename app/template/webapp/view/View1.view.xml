@@ -11,7 +11,7 @@
 	xmlns:l="sap.ui.layout"
 	xmlns:smartTable="sap.ui.comp.smarttable"
 	>
-    <VBox renderType="Bare" fitContainer="true">
+    <VBox renderType="Bare" backgroundDesign="Solid" fitContainer="true">
         <HBox class="sapUiContentPadding">
             <HBox width="100%" alignItems="Center" height="50px">
                 <VBox width="50%">
@@ -33,7 +33,32 @@
             </HBox>
             <Page
                 class="sapUiNoContentPadding"
-                id="plannerSemanticPage" showHeader="false" enableScrolling="false">
+                id="plannerSemanticPage" showHeader="true" enableScrolling="false">
+                 <headerContent>
+                        <OverflowToolbar width="100%" height="auto">
+                            <OverflowToolbarToggleButton press="OverflowToolbarToggleButton" pressed="{treeModel>/showSideContent}" icon="sap-icon://bullet-text" class="sapUiTinyMarginBegi"/>
+                            <VBox>
+                                <Breadcrumbs currentLocationText="Super portable deluxe" separatorStyle="{/selected}" class="sapUiTinyMarginBegin sapUiTinyMarginTop">
+                                        <Link press="onPress" text="Products"/>
+                                        <Link press="onPress" text="Ultra portable"/>
+                                        <Link press="onPress" text="12 inch"/>
+                                        <Link press="onPress" text="Super portable deluxe"/>
+                                </Breadcrumbs>
+                            </VBox>
+                            <ToolbarSpacer />
+                            <IconTabHeader mode="Inline" tabDensityMode="Compact" select="onSelectIconTabHeader">
+                                    <items>
+                                        <IconTabFilter key="Chart" text="Chart" />
+                                        <IconTabFilter key="Table" text="Table" />
+                                        <IconTabFilter key="Cockpit" text="Cockpit" />
+                                        <IconTabFilter key="Dashboard" text="Dashboard" />
+                                        <IconTabFilter key="Comment" text="Comments" count="4" />
+                                        <IconTabFilter key="Report" text="Report" />
+                                        <IconTabFilter key="Support" text="Support"/>
+                                    </items>
+                            </IconTabHeader>
+                        </OverflowToolbar>
+                    </headerContent>
                 <Page showHeader="false" id="contentPage" enableScrolling="false">
                     <!-- <customHeader>
                         <Toolbar width="100%" class="sapUiNoContentPadding">
@@ -47,29 +72,7 @@
                             </Breadcrumbs>
                         </Toolbar>
                     </customHeader> -->
-                    <subHeader>
-                        <OverflowToolbar width="100%">
-                            <OverflowToolbarToggleButton press="OverflowToolbarToggleButton" pressed="{treeModel>/showSideContent}" icon="sap-icon://bullet-text" class="sapUiTinyMarginBegi"/>
-                            <Breadcrumbs currentLocationText="Laptop" separatorStyle="{/selected}" class="sapUiTinyMarginBegin">
-                                    <Link press="onPress" text="Products"/>
-                                    <Link press="onPress" text="Suppliers"/>
-                                    <Link press="onPress" text="Titanium"/>
-                                    <Link press="onPress" text="Ultra portable"/>
-                                    <Link press="onPress" text="12 inch"/>
-                                    <Link press="onPress" text="Super portable deluxe"/>
-                                </Breadcrumbs>
-                            <ToolbarSpacer />
-                            <IconTabHeader mode="Inline" select="onSelectIconTabHeader">
-                                    <items>
-                                        <IconTabFilter key="Chart" text="Chart" />
-                                        <IconTabFilter key="Table" text="Table" />
-                                        <IconTabFilter key="Cockpit" text="Cockpit" />
-                                        <IconTabFilter key="Comment" text="Comments" count="12" />
-                                        <IconTabFilter key="Support" text="Support"/>
-                                    </items>
-                            </IconTabHeader>
-                        </OverflowToolbar>
-                    </subHeader>
+                   
                     <!-- <OverflowToolbar design="Transparent" class="sapUiNoContentPadding">
                     <OverflowToolbarToggleButton press="OverflowToolbarToggleButton" pressed="{treeModel>/showSideContent}" icon="sap-icon://bullet-text" />
                     </OverflowToolbar> -->

@@ -9,8 +9,8 @@
     xmlns:form="sap.ui.layout.form" 
     xmlns:f="sap.f" 
     xmlns:l="sap.ui.layout">
-    <Page showHeader="false" id="cockpitPage" title="Cockpit" backgroundDesign="Transparent">
-        <grid:CSSGrid items="{/Cards}" width="100%" gridTemplateColumns="repeat(auto-fit, 320px)" gridTemplateRows="repeat(4, 150px)" gridGap="2.5rem" gridAutoRows="auto" gridAutoFlow="Row">
+    <Panel  id="cockpitPage" height="100%" headerText="Cockpit" backgroundDesign="Solid">
+        <grid:CSSGrid items="{/Cards}" width="100%" gridTemplateColumns="repeat(auto-fit, 310px)" gridTemplateRows="repeat(5, 150px)" gridGap="1rem" gridAutoRows="auto" gridAutoFlow="Row">
            <f:GridListItem detailPress="onPressFinanzenCard" type="Active" press="onPressFinanzenCard" class="sapUiSmallMarginTop">
 				<VBox width="320px">
 					<HBox class="sapUiSmallMargin" alignItems="Center" justifyContent="SpaceBetween">
@@ -23,7 +23,7 @@
 						<!-- <Button icon="sap-icon://add" id="finanzen" class="sapUiLargeMarginBegin" press="onPressAddBtn" /> -->
 					</HBox>
 					<Toolbar height="1px" />
-					<HBox width="" class="sapUiSmallMargin" justifyContent="SpaceBetween">
+					<HBox width="" class="sapUiTinyMargin sapUiSmallMarginEnd" justifyContent="SpaceBetween">
 						<VBox justifyContent="Center">
 							<Title titleStyle="H3" text="{MainValue}" />
 						</VBox>
@@ -43,5 +43,5 @@
 			</f:GridListItem>
 
         </grid:CSSGrid>
-    </Page>
+    </Panel>
 </core:FragmentDefinition>

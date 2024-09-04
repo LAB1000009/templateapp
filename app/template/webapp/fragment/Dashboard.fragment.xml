@@ -1,267 +1,237 @@
-<core:FragmentDefinition height="100%" 
-    xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns:core="sap.ui.core"
-    xmlns="sap.m" xmlns:tnt="sap.tnt" xmlns:card="sap.f.cards" xmlns:form="sap.ui.layout.form" xmlns:f="sap.f"   xmlns:l="sap.ui.layout">
-  
-    <Page showHeader="false" id="qwe" class='sapUiContentPadding' backgroundDesign="List" >
-		<HBox wrap="Wrap">
-        
-        <VBox justifyContent="Center" wrap="Wrap" class="sapUiLargeMarginEnd">
-        <Link text="Group IT GOALS 2023:" press="onResizableDialogPress"/>
-        </VBox>
-
-        <HBox class="" height= "" width="70%"  wrap="Wrap" justifyContent="SpaceBetween">
-        <VBox justifyContent="SpaceBetween" class="">
-        <ObjectStatus text="| Reduce ACTUAL COSTS by 5% by Dec. 2023" state="Error" active="true" press="onNavigate" class="sapUiSmallMarginBottom"/>
-        <ObjectStatus text="| Reduce OPEX  LICENSE Costs by 10% by Dec. 2023" state="Error" />
-        </VBox>
-
-        <VBox justifyContent="SpaceBetween" class="">
-        <ObjectStatus text="| Reduce ACTUAL COSTS by 5% by Dec. 2023" state="Error" class="sapUiSmallMarginBottom"/>
-       <ObjectStatus text="| Reduce OPEX  LICENSE Costs by 10% by Dec. 2023 " state="Error"/>
-        </VBox>
-        </HBox>
-       
-        
-        </HBox>
-        
-        
-         <VBox height="99%" width="100%" class="sapUiSmallMarginTop">
-         <HBox alignItems="Center" width="101%" >
-         <HBox alignItems="Center"  height="100%" justifyContent="Center" width="2rem" class="yellowBack">
-         <Text  width="1%" text="SNAPSHOT" class="myCustomButton"/>
-         </HBox >
-        <VBox width="99%" >
-		<l:BlockLayout keepFontSize="false" background="Mixed">
-			<l:BlockLayoutRow  rowColorSet="ColorSet2">
-				<l:BlockLayoutCell title=""  backgroundColorSet="ColorSet10" backgroundColorShade="ShadeD">
-                 <VBox width="100%" height= "100%" justifyContent="SpaceBetween">
-                 <Text text='Group IT FTE'/>
-                 <HBox class="sapUiSmallMarginTop">
-                 <Title  titleStyle="H1" text="11"/>
-                 </HBox>
-                  </VBox>
-				</l:BlockLayoutCell>
-
-				<l:BlockLayoutCell title="" backgroundColorSet="ColorSet10" backgroundColorShade="ShadeD">
-                 <VBox width="100%" height= "100%" justifyContent="SpaceBetween">
-                 <Text text='OPEX YTD [in CHF]'/>
-                 <HBox class="sapUiSmallMarginTop">
-                 <Title  titleStyle="H1" text='21m'/>
-                 </HBox>
-                  </VBox>
-				</l:BlockLayoutCell>
-
-                <l:BlockLayoutCell title="" backgroundColorSet="ColorSet10" backgroundColorShade="ShadeD">
-                 <VBox width="100%" height= "100%" justifyContent="SpaceBetween">
-                 <Text text='CAPEX YTD [in CHF]'/>
-                 <HBox class="sapUiSmallMarginTop">
-                 <Title  titleStyle="H1" text='18m'/>
-                 </HBox>
-                  </VBox>
-				</l:BlockLayoutCell>
-
-<l:BlockLayoutCell title="" backgroundColorSet="ColorSet10" backgroundColorShade="ShadeD">
-                 <VBox width="100%" height= "100%" justifyContent="SpaceBetween">
-                 <Text text='Tickets '/>
-                 <HBox class="sapUiSmallMarginTop">
-                 <Title  titleStyle="H1" text='119k'/>
-                 </HBox>
-                  </VBox>
-				</l:BlockLayoutCell>
-
-<l:BlockLayoutCell title="" backgroundColorSet="ColorSet10" backgroundColorShade="ShadeD">
-                 <VBox width="100%" height= "100%" justifyContent="SpaceBetween">
-                 <Text text='Cyber Attacks '/>
-                 <HBox class="sapUiSmallMarginTop">
-                 <Title  titleStyle="H1" text='7'/>
-                 </HBox>
-                  </VBox>
-				</l:BlockLayoutCell>
-
-
-
-
-                
-			</l:BlockLayoutRow>
-			
-		
-		</l:BlockLayout>
-       
-	</VBox>
-     </HBox>
-    <HBox alignItems="Center" width="101%" >
-     <HBox alignItems="Center" height="85%" justifyContent="Center" width="2rem" class="yellowBack">
-         <Text  width="1%" text="ACTIONS" class="myCustomButton"/>
-         </HBox >
-        <VBox width="99%"  >
-		<l:BlockLayout background="Default"   keepFontSize="true">
-
-            <l:BlockLayoutRow   accentCells="Accent1">
-				<l:BlockLayoutCell   title="">
-        <f:GridListItem detailPress="onPressFinanzenCard" type="Active" press="onPressFinanzenCard" >
-                   <VBox width="100%"  height= "180px"  justifyContent="Start">
-                 <Text text='Group IT FTE [in CHF]' class="sapUiSmallMarginTop sapUiSmallMarginBegin"/>
-                 <HBox class="sapUiMediumMarginTop sapUiSmallMarginBegin" >
-                 <ObjectStatus class="titleCard" state="Information" text='34'/>
-                 </HBox>
-                  </VBox>
-                  </f:GridListItem>
-				</l:BlockLayoutCell>
-				<l:BlockLayoutCell   title="">
-        <f:GridListItem detailPress="onPressFinanzenCard" type="Active" press="onPressFinanzenCard" >
-                   <VBox width="100%"  height= "180px"  justifyContent="Start">
-                 <Text text='Group IT FTE [in CHF]' class="sapUiSmallMarginTop sapUiSmallMarginBegin"/>
-                 <HBox class="sapUiMediumMarginTop sapUiSmallMarginBegin" >
-                 <ObjectStatus class="titleCard" state="Information" text='34'/>
-                 </HBox>
-                  </VBox>
-                  </f:GridListItem>
-				</l:BlockLayoutCell>
-				<l:BlockLayoutCell   title="">
-        <f:GridListItem detailPress="onPressFinanzenCard" type="Active" press="onPressFinanzenCard" >
-                   <VBox width="100%"  height= "180px" justifyContent="Start">
-                 <Text text='Group IT FTE [in CHF]' class="sapUiSmallMarginTop sapUiSmallMarginBegin"/>
-                 <HBox class="sapUiMediumMarginTop sapUiSmallMarginBegin">
-                 <ObjectStatus class="titleCard"  state="Success" text='45'/>
-                 </HBox>
-                  </VBox>
-                  </f:GridListItem>
-				</l:BlockLayoutCell>
-                <l:BlockLayoutCell   title="">
-                <f:GridListItem detailPress="onPressFinanzenCard" type="Active" press="onPressFinanzenCard" >
-                   <VBox width="100%"  height= "180px" justifyContent="Start">
-                 <Text text='Group IT FTE [in CHF]' class="sapUiSmallMarginTop sapUiSmallMarginBegin"/>
-                 <HBox class="sapUiMediumMarginTop sapUiSmallMarginBegin">
-                 <ObjectStatus class="titleCard"   state="Warning" text='50'/>
-                 </HBox >
-                  </VBox>
-                  </f:GridListItem>
-				</l:BlockLayoutCell>
-                <l:BlockLayoutCell   title="">
-                <f:GridListItem detailPress="onPressFinanzenCard" type="Active" press="onPressFinanzenCard" >
-                   <VBox width="100%"  height= "180px" justifyContent="Start">
-                 <Text text='Group IT FTE [in CHF]' class="sapUiSmallMarginTop sapUiSmallMarginBegin"/>
-                 <HBox class="sapUiMediumMarginTop sapUiSmallMarginBegin">
-                 <ObjectStatus   state="Indication01" class="titleCard" text='55'/>
-                 </HBox >
-                  </VBox>
-                  </f:GridListItem>
-				</l:BlockLayoutCell>
-                <l:BlockLayoutCell   title="">
-                <f:GridListItem detailPress="onPressFinanzenCard" type="Active" press="onPressFinanzenCard" >
-                   <VBox width="100%"  height= "180px" justifyContent="Start">
-                 <Text text='Group IT FTE [in CHF]' class="sapUiSmallMarginTop sapUiSmallMarginBegin"/>
-                 <HBox class="sapUiMediumMarginTop sapUiSmallMarginBegin">
-                 <ObjectStatus  state="Indication02" class="titleCard" text='76'/>
-                 </HBox>
-                  </VBox>
-                  </f:GridListItem>
-				</l:BlockLayoutCell>
-			</l:BlockLayoutRow>
-			
-		
-		</l:BlockLayout>
-       
-	</VBox>
-     </HBox>
-      <HBox alignItems="Center" width="101%" >
-     <HBox alignItems="Center" height="85%" justifyContent="Center" width="2rem" class="yellowBack">
-         <Text  width="1%" text="ACTIONS" class="myCustomButton"/>
-         </HBox >
-        <VBox width="99%"  >
-		<l:BlockLayout background="Default"   keepFontSize="true">
-
-            <l:BlockLayoutRow   accentCells="Accent1">
-				<l:BlockLayoutCell   title="">
-        <f:GridListItem detailPress="onPressFinanzenCard" type="Active" press="onPressFinanzenCard" >
-                   <VBox width="100%"  height= "180px"  justifyContent="SpaceBetween">
-                 <Text text='Ausfälle Krankheit [Days.]' class="sapUiSmallMarginTop sapUiSmallMarginBegin"/>
-                 <VBox height="100%" justifyContent="SpaceBetween">
-                 <HBox class="sapUiMediumMarginTop sapUiSmallMarginBegin">
-                 <ObjectStatus class="titleCard" text='11'/>
-                 </HBox>
-                  <VBox height="" class="sapUiSmallMarginEnd sapUiSmallMarginBottom" >
-                  <VBox>
-                 <HBox wrap="Wrap" justifyContent="End">
-                 <Text text="AM vs. VM" class="sapUiSmallMarginEnd"/>
-                 <ObjectStatus
-			
-			text="+23%"
-			icon="sap-icon://up"
-			state="Error" />
-                 </HBox>
-                <HBox wrap="Wrap" justifyContent="End" class="sapUiTinyMarginTop">
-                 <Text text="AM vs. VM+1" class="sapUiSmallMarginEnd"/>
-                  <ObjectStatus
-			
-			text="+13%"
-			icon="sap-icon://up"
-			state="Error" />
-                 </HBox>
-                 </VBox>
-                  </VBox>
-                  </VBox>
-                  </VBox>
-                  </f:GridListItem>
-				</l:BlockLayoutCell>
-				<l:BlockLayoutCell   title="">
-        <f:GridListItem detailPress="onPressFinanzenCard" type="Active" press="onPressFinanzenCard" >
-                   <VBox width="100%"  height= "180px"  justifyContent="Start">
-                 <Text text='Group IT FTE [in CHF]' class="sapUiSmallMarginTop sapUiSmallMarginBegin"/>
-                 <HBox class="sapUiMediumMarginTop sapUiSmallMarginBegin" >
-                 <ObjectStatus class="titleCard" state="Information" text='34'/>
-                 </HBox>
-                  </VBox>
-                  </f:GridListItem>
-				</l:BlockLayoutCell>
-				<l:BlockLayoutCell   title="">
-        <f:GridListItem detailPress="onPressFinanzenCard" type="Active" press="onPressFinanzenCard" >
-                   <VBox width="100%"  height= "180px" justifyContent="Start">
-                 <Text text='Group IT FTE [in CHF]' class="sapUiSmallMarginTop sapUiSmallMarginBegin"/>
-                 <HBox class="sapUiMediumMarginTop sapUiSmallMarginBegin">
-                 <ObjectStatus class="titleCard"  state="Success" text='45'/>
-                 </HBox>
-                  </VBox>
-                  </f:GridListItem>
-				</l:BlockLayoutCell>
-                <l:BlockLayoutCell   title="">
-                <f:GridListItem detailPress="onPressFinanzenCard" type="Active" press="onPressFinanzenCard" >
-                   <VBox width="100%"  height= "180px" justifyContent="Start">
-                 <Text text='Group IT FTE [in CHF]' class="sapUiSmallMarginTop sapUiSmallMarginBegin"/>
-                 <HBox class="sapUiMediumMarginTop sapUiSmallMarginBegin">
-                 <ObjectStatus class="titleCard"   state="Warning" text='50'/>
-                 </HBox >
-                  </VBox>
-                  </f:GridListItem>
-				</l:BlockLayoutCell>
-                <l:BlockLayoutCell   title="">
-                <f:GridListItem detailPress="onPressFinanzenCard" type="Active" press="onPressFinanzenCard" >
-                   <VBox width="100%"  height= "180px" justifyContent="Start">
-                 <Text text='Group IT FTE [in CHF]' class="sapUiSmallMarginTop sapUiSmallMarginBegin"/>
-                 <HBox class="sapUiMediumMarginTop sapUiSmallMarginBegin">
-                 <ObjectStatus   state="Indication01" class="titleCard" text='55'/>
-                 </HBox >
-                  </VBox>
-                  </f:GridListItem>
-				</l:BlockLayoutCell>
-                <l:BlockLayoutCell   title="">
-                <f:GridListItem detailPress="onPressFinanzenCard" type="Active" press="onPressFinanzenCard" >
-                   <VBox width="100%"  height= "180px" justifyContent="Start">
-                 <Text text='Group IT FTE [in CHF]' class="sapUiSmallMarginTop sapUiSmallMarginBegin"/>
-                 <HBox class="sapUiMediumMarginTop sapUiSmallMarginBegin">
-                 <ObjectStatus  state="Indication02" class="titleCard" text='76'/>
-                 </HBox>
-                  </VBox>
-                  </f:GridListItem>
-				</l:BlockLayoutCell>
-			</l:BlockLayoutRow>
-			
-		
-		</l:BlockLayout>
-       
-	</VBox>
-     </HBox>
-     </VBox>
-     
-	</Page>
+<?xml version="1.0" encoding="UTF-8"?>
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.suite.ui.microchart" xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns:m="sap.m" height="100%" displayBlock="true">
+   <m:Panel height="100%" id="dashboardm:Page" class="contentPadding" backgroundDesign="List">
+      <m:VBox height="100%" width="100%">
+         <m:HBox>
+            <ColumnMicroChart size="M" press="press" class="sapUiSmallMargin">
+               <columns>
+                  <ColumnMicroChartData value="100" color="Error" />
+                  <ColumnMicroChartData value="60" color="Neutral" />
+               </columns>
+            </ColumnMicroChart>
+            <ColumnMicroChart size="M" press="press" class="sapUiSmallMargin">
+               <columns>
+                  <ColumnMicroChartData value="60" color="Error" />
+                  <ColumnMicroChartData value="80" color="Error" />
+                  <ColumnMicroChartData value="100" color="Error" />
+                  <ColumnMicroChartData value="60" color="Neutral" />
+                  <ColumnMicroChartData value="55" color="Neutral" />
+                  <ColumnMicroChartData value="15" color="Neutral" />
+               </columns>
+            </ColumnMicroChart>
+            <ColumnMicroChart size="S" press="press" class="sapUiSmallMargin">
+               <columns>
+                  <ColumnMicroChartData value="60" color="Error" />
+                  <ColumnMicroChartData value="100" color="Error" />
+                  <ColumnMicroChartData value="-20" color="Error" />
+                  <ColumnMicroChartData value="60" color="Neutral" />
+                  <ColumnMicroChartData value="55" color="Neutral" />
+                  <ColumnMicroChartData value="15" color="Neutral" />
+               </columns>
+            </ColumnMicroChart>
+            <ColumnMicroChart size="S" press="press" class="sapUiSmallMargin">
+               <columns>
+                  <ColumnMicroChartData value="65" color="Error" />
+                  <ColumnMicroChartData value="90" color="Error" />
+                  <ColumnMicroChartData value="75" color="Error" />
+                  <ColumnMicroChartData value="95" color="Error" />
+                  <ColumnMicroChartData value="100" color="Error" />
+                  <ColumnMicroChartData value="90" color="Error" />
+                  <ColumnMicroChartData value="80" color="Error" />
+                  <ColumnMicroChartData value="35" color="Neutral" />
+                  <ColumnMicroChartData value="65" color="Neutral" />
+                  <ColumnMicroChartData value="55" color="Neutral" />
+                  <ColumnMicroChartData value="60" color="Neutral" />
+                  <ColumnMicroChartData value="5" color="Neutral" />
+                  <ColumnMicroChartData value="15" color="Neutral" />
+                  <ColumnMicroChartData value="15" color="Neutral" />
+               </columns>
+            </ColumnMicroChart>
+            <ColumnMicroChart size="S" press="press" class="sapUiSmallMargin">
+               <columns>
+                  <ColumnMicroChartData value="60" color="Good" />
+                  <ColumnMicroChartData value="100" color="Good" />
+                  <ColumnMicroChartData value="-20" color="Error" />
+                  <ColumnMicroChartData value="60" color="Good" />
+                  <ColumnMicroChartData value="55" color="Neutral" />
+                  <ColumnMicroChartData value="15" color="Critical" />
+               </columns>
+            </ColumnMicroChart>
+            <ColumnMicroChart size="S" press="press" class="sapUiSmallMargin" height="5rem" />
+         </m:HBox>
+         <m:HBox>
+            <m:GenericTile header="Revenue Dynamics" frameType="OneByOne" press="press">
+               <m:tileContent>
+                  <m:TileContent footer="Column chart">
+                     <m:content>
+                        <ColumnMicroChart size="Responsive">
+                           <columns>
+                              <ColumnMicroChartData value="65" color="Error" />
+                              <ColumnMicroChartData value="90" color="Error" />
+                              <ColumnMicroChartData value="75" color="Error" />
+                              <ColumnMicroChartData value="95" color="Error" />
+                              <ColumnMicroChartData value="100" color="Error" />
+                              <ColumnMicroChartData value="90" color="Error" />
+                              <ColumnMicroChartData value="80" color="Error" />
+                              <ColumnMicroChartData value="35" color="Neutral" />
+                              <ColumnMicroChartData value="65" color="Neutral" />
+                              <ColumnMicroChartData value="55" color="Neutral" />
+                              <ColumnMicroChartData value="60" color="Neutral" />
+                              <ColumnMicroChartData value="5" color="Neutral" />
+                              <ColumnMicroChartData value="15" color="Neutral" />
+                              <ColumnMicroChartData value="15" color="Neutral" />
+                           </columns>
+                        </ColumnMicroChart>
+                     </m:content>
+                  </m:TileContent>
+               </m:tileContent>
+            </m:GenericTile>
+            <m:GenericTile header="Revenue Dynamics" frameType="TwoByOne" press="press" class="sapUiSmallMarginBegin">
+               <m:tileContent>
+                  <m:TileContent footer="Column chart with labels">
+                     <m:content>
+                        <ColumnMicroChart size="Responsive">
+                           <leftTopLabel>
+                              <ColumnMicroChartLabel label="0M" />
+                           </leftTopLabel>
+                           <rightTopLabel>
+                              <ColumnMicroChartLabel label="80M" />
+                           </rightTopLabel>
+                           <leftBottomLabel>
+                              <ColumnMicroChartLabel label="June 1" />
+                           </leftBottomLabel>
+                           <rightBottomLabel>
+                              <ColumnMicroChartLabel label="June 30" />
+                           </rightBottomLabel>
+                           <columns>
+                              <ColumnMicroChartData value="65" color="Error" />
+                              <ColumnMicroChartData value="90" color="Error" />
+                              <ColumnMicroChartData value="75" color="Error" />
+                              <ColumnMicroChartData value="95" color="Error" />
+                              <ColumnMicroChartData value="100" color="Error" />
+                              <ColumnMicroChartData value="90" color="Error" />
+                              <ColumnMicroChartData value="80" color="Error" />
+                              <ColumnMicroChartData value="35" color="Neutral" />
+                              <ColumnMicroChartData value="65" color="Neutral" />
+                              <ColumnMicroChartData value="55" color="Neutral" />
+                              <ColumnMicroChartData value="60" color="Neutral" />
+                              <ColumnMicroChartData value="5" color="Neutral" />
+                              <ColumnMicroChartData value="15" color="Neutral" />
+                              <ColumnMicroChartData value="15" color="Neutral" />
+                           </columns>
+                        </ColumnMicroChart>
+                     </m:content>
+                  </m:TileContent>
+               </m:tileContent>
+               <m:tileContent>
+                  <m:TileContent footer="Column chart">
+                     <m:content>
+                        <ColumnMicroChart size="Responsive">
+                           <columns>
+                              <ColumnMicroChartData value="60" color="Error" />
+                              <ColumnMicroChartData value="100" color="Error" />
+                              <ColumnMicroChartData value="-20" color="Error" />
+                              <ColumnMicroChartData value="60" color="Neutral" />
+                              <ColumnMicroChartData value="55" color="Neutral" />
+                              <ColumnMicroChartData value="15" color="Neutral" />
+                           </columns>
+                        </ColumnMicroChart>
+                     </m:content>
+                  </m:TileContent>
+               </m:tileContent>
+            </m:GenericTile>
+         </m:HBox>
+         <m:HBox>
+            <ComparisonMicroChart size="S" scale="M" class="sapUiSmallMargin" press="press">
+               <data>
+                  <ComparisonMicroChartData title="EMEA" displayValue="USD 0" color="Good" />
+                  <ComparisonMicroChartData title="EMEA" value="50" color="Good" />
+                  <ComparisonMicroChartData title="APAC" value="-20" color="Error" />
+               </data>
+            </ComparisonMicroChart>
+            <ComparisonMicroChart size="M" scale="M" class="sapUiSmallMargin" press="press">
+               <data>
+                  <ComparisonMicroChartData title="Americas" value="10" color="Good" />
+                  <ComparisonMicroChartData title="EMEA" value="50" color="Good" />
+                  <ComparisonMicroChartData title="APAC" value="-20" color="Error" />
+               </data>
+            </ComparisonMicroChart>
+            <ComparisonMicroChart size="M" scale="M" class="sapUiSmallMargin" press="press" shrinkable="true" colorPalette="sapUiChartPaletteQualitativeHue1, sapUiChartPaletteQualitativeHue2, sapUiChartPaletteQualitativeHue3,                   sapUiChartPaletteQualitativeHue4, sapUiChartPaletteQualitativeHue5, sapUiChartPaletteQualitativeHue6, sapUiChartPaletteQualitativeHue7,                   sapUiChartPaletteQualitativeHue8, sapUiChartPaletteQualitativeHue9, sapUiChartPaletteQualitativeHue10, sapUiChartPaletteQualitativeHue11">
+               <data>
+                  <ComparisonMicroChartData title="Americas" value="10" />
+                  <ComparisonMicroChartData title="EMEA" value="50" />
+                  <ComparisonMicroChartData title="APAC" value="-20" />
+                  <ComparisonMicroChartData title="LTA" value="60" />
+                  <ComparisonMicroChartData title="ALPS" value="-20" />
+                  <ComparisonMicroChartData title="Australia" value="55" />
+               </data>
+            </ComparisonMicroChart>
+         </m:HBox>
+         <m:HBox >
+            <m:GenericTile header="Revenue Dynamics" frameType="TwoByOne" press="press" >
+               <m:tileContent>
+                  <m:TileContent footer="Red Delta">
+                     <m:content>
+                        <DeltaMicroChart value1="-105" size="Responsive" value2="-98" title1="May 2014" title2="Apr 2014" displayValue1="-105 Mio" displayValue2="-98 Mio" deltaDisplayValue="7 Mio" color="Error" />
+                     </m:content>
+                  </m:TileContent>
+                  <m:TileContent footer="Yellow Delta">
+                     <m:content>
+                        <DeltaMicroChart value1="-7" size="Responsive" value2="16" title1="May 2014" title2="Apr 2014" displayValue1="-7 Mio" displayValue2="16 Mio" deltaDisplayValue="23 Mio" color="Critical" />
+                     </m:content>
+                  </m:TileContent>
+               </m:tileContent>
+            </m:GenericTile>
+            <m:GenericTile press="press" class="sapUiSmallMarginBegin" header="Total Income Change" subheader="By year" frameType="TwoByOne" state="Loaded">
+               <m:tileContent>
+                  <m:TileContent unit="EUR" footer="Current vs previous" frameType="TwoByOne">
+                     <m:content>
+                        <DeltaMicroChart value1="35" value2="33" size="Responsive" title1="Jan 2015" title2="Jan 2014" displayValue1="35 Mio" displayValue2="33 Mio" deltaDisplayValue="2 Mio" color="Good" />
+                     </m:content>
+                  </m:TileContent>
+               </m:tileContent>
+            </m:GenericTile>
+            <m:GenericTile header="Revenue Dynamics" class="sapUiSmallMarginBegin" frameType="OneByOne" press="press">
+               <m:tileContent>
+                  <m:TileContent footer="Green Delta">
+                     <m:content>
+                        <DeltaMicroChart value1="105" size="Responsive" value2="98" title1="May 2014" title2="Apr 2014" displayValue1="105 Mio" displayValue2="98 Mio" deltaDisplayValue="7 Mio" color="Good" />
+                     </m:content>
+                  </m:TileContent>
+               </m:tileContent>
+            </m:GenericTile>
+            <m:GenericTile header="Total Income Change" class="sapUiSmallMarginBegin" subheader="By year" frameType="OneByOne" press="press">
+               <m:tileContent>
+                  <m:TileContent footer="Current vs previous" unit="EUR">
+                     <m:content>
+                        <DeltaMicroChart value1="35" value2="33" size="Responsive" title1="Jan 2015" title2="Jan 2014" displayValue1="35 Mio" displayValue2="33 Mio" deltaDisplayValue="2 Mio" color="Good" />
+                     </m:content>
+                  </m:TileContent>
+               </m:tileContent>
+            </m:GenericTile>
+         </m:HBox>
+         <m:HBox class="sapUiSmallMarginTop">
+            <HarveyBallMicroChart size="L" total="360" totalScale="Mrd" press="press">
+               <items>
+                  <HarveyBallMicroChartItem fraction="8" color="Good" fractionScale="Mrd" />
+               </items>
+            </HarveyBallMicroChart>
+            <HarveyBallMicroChart size="M" total="100" totalScale="Mrd" press="press">
+               <items>
+                  <HarveyBallMicroChartItem fraction="63.5" color="Good" fractionScale="Mrd" />
+               </items>
+            </HarveyBallMicroChart>
+            <HarveyBallMicroChart size="S" total="100" totalScale="Mrd" press="press">
+               <items>
+                  <HarveyBallMicroChartItem fraction="63.5" color="Good" fractionScale="Mrd" />
+               </items>
+            </HarveyBallMicroChart>
+            <HarveyBallMicroChart size="XS" total="100" totalScale="Mrd" press="press">
+               <items>
+                  <HarveyBallMicroChartItem fraction="63.5" color="Good" fractionScale="Mrd" />
+               </items>
+            </HarveyBallMicroChart>
+         </m:HBox>
+      </m:VBox>
+   </m:Panel>
 </core:FragmentDefinition>
