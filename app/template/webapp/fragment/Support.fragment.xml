@@ -1,0 +1,45 @@
+<core:FragmentDefinition height="100%" 
+    displayBlock="true"
+    xmlns:core="sap.ui.core"
+    xmlns="sap.m"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:l="sap.ui.layout">
+   <Page id="supportPage" backgroundDesign="List" title="Support Contact Form">
+        <content>
+            <f:SimpleForm
+                id="supportContactForm"
+                layout="ResponsiveGridLayout"
+                editable="true">
+
+                <f:content>
+                    <Label text="Support page" />
+                    <Text text="{header}" />
+
+                    <Label text="Global Data Analytics  BI Team:" />
+                    <Link text="{title}" href="{titleUrl}" />
+
+                    <Label text="Email Global Data Analytics:" />
+                    <Text text="{emailSubject}" />
+
+                    <Label text="Report Owner:" />
+                    <Text text="Fill in Name" />
+
+                    <Label text="Contact:" />
+                    <Text text=" Fill in contact" />
+
+                    <Label text="Ticket  Support:" />
+                    <Text text="{heading}" />
+
+                    <Label text="HelpDesk:" />
+                    <Link text="{label}" href="{url}" />
+
+                    <Label text="For further questions or problems, please contact" />
+                    <Link text="https://helpline.stadlerrail.ch/helplinePortal" />
+
+                    <Label text="Phone" />
+                    <Text text="Phone +41 71 626 25 25 | STAUS - Phone +41 71 626 25 55" />
+                </f:content>
+            </f:SimpleForm>
+        </content>
+    </Page>
+</core:FragmentDefinition>

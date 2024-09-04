@@ -1,0 +1,47 @@
+<core:FragmentDefinition 
+    xmlns:grid="sap.ui.layout.cssgrid"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true" 
+    xmlns:core="sap.ui.core" 
+    xmlns="sap.m" 
+    xmlns:tnt="sap.tnt" 
+    xmlns:card="sap.f.cards" 
+    xmlns:form="sap.ui.layout.form" 
+    xmlns:f="sap.f" 
+    xmlns:l="sap.ui.layout">
+    <Page showHeader="false" id="cockpitPage" title="Cockpit" backgroundDesign="Transparent">
+        <grid:CSSGrid items="{/Cards}" width="100%" gridTemplateColumns="repeat(auto-fit, 320px)" gridTemplateRows="repeat(4, 150px)" gridGap="2.5rem" gridAutoRows="auto" gridAutoFlow="Row">
+           <f:GridListItem detailPress="onPressFinanzenCard" type="Active" press="onPressFinanzenCard" class="sapUiSmallMarginTop">
+				<VBox width="320px">
+					<HBox class="sapUiSmallMargin" alignItems="Center" justifyContent="SpaceBetween">
+						<HBox>
+							<core:Icon class="sapUiSmallMarginEnd" src="{Icon}" size="30px" />
+							<VBox justifyContent="End">
+								<Title titleStyle="H4" text="{Title}" />
+							</VBox>
+						</HBox>
+						<!-- <Button icon="sap-icon://add" id="finanzen" class="sapUiLargeMarginBegin" press="onPressAddBtn" /> -->
+					</HBox>
+					<Toolbar height="1px" />
+					<HBox width="" class="sapUiSmallMargin" justifyContent="SpaceBetween">
+						<VBox justifyContent="Center">
+							<Title titleStyle="H3" text="{MainValue}" />
+						</VBox>
+						<VBox width="25%">
+							<Title titleStyle="H6" wrapping="true" text="{SubTitle}" />
+						</VBox>
+						<VBox>
+							<Text titleStyle="H5" text="{Comparison1}" />
+							<Text titleStyle="H5" text="{Comparison2}" />
+						</VBox>
+						<VBox justifyContent="Start">
+							<ObjectStatus class="boldObjectStatus" state="{Status1State}" text="{Status1Value}" />
+							<ObjectStatus class="boldObjectStatus" state="{Status2State}" text="{Status2Value}" />
+						</VBox>
+					</HBox>
+				</VBox>
+			</f:GridListItem>
+
+        </grid:CSSGrid>
+    </Page>
+</core:FragmentDefinition>

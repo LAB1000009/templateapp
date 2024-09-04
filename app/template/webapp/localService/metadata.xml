@@ -1,0 +1,718 @@
+<edmx:Edmx xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData" Version="1.0">
+<edmx:Reference xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Uri="https://sap.github.io/odata-vocabularies/vocabularies/Common.xml">
+<edmx:Include Alias="Common" Namespace="com.sap.vocabularies.Common.v1"/>
+</edmx:Reference>
+<edmx:Reference xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Uri="https://oasis-tcs.github.io/odata-vocabularies/vocabularies/Org.OData.Core.V1.xml">
+<edmx:Include Alias="Core" Namespace="Org.OData.Core.V1"/>
+</edmx:Reference>
+<edmx:Reference xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Uri="https://sap.github.io/odata-vocabularies/vocabularies/UI.xml">
+<edmx:Include Alias="UI" Namespace="com.sap.vocabularies.UI.v1"/>
+</edmx:Reference>
+<edmx:Reference xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Uri="https://oasis-tcs.github.io/odata-vocabularies/vocabularies/Org.OData.Validation.V1.xml">
+<edmx:Include Alias="Validation" Namespace="Org.OData.Validation.V1"/>
+</edmx:Reference>
+<edmx:DataServices m:DataServiceVersion="2.0">
+<Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" Namespace="RiskService">
+<EntityContainer Name="EntityContainer" m:IsDefaultEntityContainer="true">
+<EntitySet Name="Risks2" EntityType="RiskService.Risks2"/>
+<FunctionImport Name="Risks2_draftPrepare" EntitySet="Risks2" ReturnType="RiskService.Risks2" m:HttpMethod="POST" sap:action-for="RiskService.Risks2">
+<Parameter Name="ID" Type="Edm.Guid" Nullable="false" Mode="In"/>
+<Parameter Name="IsActiveEntity" Type="Edm.Boolean" Nullable="false" Mode="In"/>
+<Parameter Name="SideEffectsQualifier" Type="Edm.String" Mode="In" Nullable="true"/>
+</FunctionImport>
+<FunctionImport Name="Risks2_draftActivate" EntitySet="Risks2" ReturnType="RiskService.Risks2" m:HttpMethod="POST" sap:action-for="RiskService.Risks2">
+<Parameter Name="ID" Type="Edm.Guid" Nullable="false" Mode="In"/>
+<Parameter Name="IsActiveEntity" Type="Edm.Boolean" Nullable="false" Mode="In"/>
+</FunctionImport>
+<FunctionImport Name="Risks2_draftEdit" EntitySet="Risks2" ReturnType="RiskService.Risks2" m:HttpMethod="POST" sap:action-for="RiskService.Risks2">
+<Parameter Name="ID" Type="Edm.Guid" Nullable="false" Mode="In"/>
+<Parameter Name="IsActiveEntity" Type="Edm.Boolean" Nullable="false" Mode="In"/>
+<Parameter Name="PreserveChanges" Type="Edm.Boolean" Mode="In" Nullable="true"/>
+</FunctionImport>
+<EntitySet Name="Mitigations" EntityType="RiskService.Mitigations"/>
+<FunctionImport Name="Mitigations_draftPrepare" EntitySet="Mitigations" ReturnType="RiskService.Mitigations" m:HttpMethod="POST" sap:action-for="RiskService.Mitigations">
+<Parameter Name="ID" Type="Edm.Guid" Nullable="false" Mode="In"/>
+<Parameter Name="IsActiveEntity" Type="Edm.Boolean" Nullable="false" Mode="In"/>
+<Parameter Name="SideEffectsQualifier" Type="Edm.String" Mode="In" Nullable="true"/>
+</FunctionImport>
+<FunctionImport Name="Mitigations_draftActivate" EntitySet="Mitigations" ReturnType="RiskService.Mitigations" m:HttpMethod="POST" sap:action-for="RiskService.Mitigations">
+<Parameter Name="ID" Type="Edm.Guid" Nullable="false" Mode="In"/>
+<Parameter Name="IsActiveEntity" Type="Edm.Boolean" Nullable="false" Mode="In"/>
+</FunctionImport>
+<FunctionImport Name="Mitigations_draftEdit" EntitySet="Mitigations" ReturnType="RiskService.Mitigations" m:HttpMethod="POST" sap:action-for="RiskService.Mitigations">
+<Parameter Name="ID" Type="Edm.Guid" Nullable="false" Mode="In"/>
+<Parameter Name="IsActiveEntity" Type="Edm.Boolean" Nullable="false" Mode="In"/>
+<Parameter Name="PreserveChanges" Type="Edm.Boolean" Mode="In" Nullable="true"/>
+</FunctionImport>
+<EntitySet Name="ListOfRisks" EntityType="RiskService.ListOfRisks"/>
+<EntitySet Name="ChangeLog" EntityType="RiskService.ChangeLog"/>
+<FunctionImport Name="ChangeLog_draftPrepare" EntitySet="ChangeLog" ReturnType="RiskService.ChangeLog" m:HttpMethod="POST" sap:action-for="RiskService.ChangeLog">
+<Parameter Name="ID" Type="Edm.Guid" Nullable="false" Mode="In"/>
+<Parameter Name="IsActiveEntity" Type="Edm.Boolean" Nullable="false" Mode="In"/>
+<Parameter Name="SideEffectsQualifier" Type="Edm.String" Mode="In" Nullable="true"/>
+</FunctionImport>
+<EntitySet Name="TableEntity" EntityType="RiskService.TableEntity"/>
+<EntitySet Name="CommentEntity" EntityType="RiskService.CommentEntity"/>
+<EntitySet Name="SupportContact" EntityType="RiskService.SupportContact"/>
+<EntitySet Name="Cards" EntityType="RiskService.Cards"/>
+<EntitySet Name="Priority" EntityType="RiskService.Priority"/>
+<EntitySet Name="DraftAdministrativeData" EntityType="RiskService.DraftAdministrativeData"/>
+<EntitySet Name="Priority_texts" EntityType="RiskService.Priority_texts"/>
+<AssociationSet Name="Risks2_prio" Association="RiskService.Risks2_prio">
+<End Role="Risks2" EntitySet="Risks2"/>
+<End Role="Priority" EntitySet="Priority"/>
+</AssociationSet>
+<AssociationSet Name="Risks2_miti" Association="RiskService.Risks2_miti">
+<End Role="Risks2" EntitySet="Risks2"/>
+<End Role="Mitigations" EntitySet="Mitigations"/>
+</AssociationSet>
+<AssociationSet Name="Risks2_DraftAdministrativeData" Association="RiskService.Risks2_DraftAdministrativeData">
+<End Role="Risks2" EntitySet="Risks2"/>
+<End Role="DraftAdministrativeData" EntitySet="DraftAdministrativeData"/>
+</AssociationSet>
+<AssociationSet Name="Risks2_SiblingEntity" Association="RiskService.Risks2_SiblingEntity">
+<End Role="Risks2" EntitySet="Risks2"/>
+<End Role="Risks21" EntitySet="Risks2"/>
+</AssociationSet>
+<AssociationSet Name="Mitigations_DraftAdministrativeData" Association="RiskService.Mitigations_DraftAdministrativeData">
+<End Role="Mitigations" EntitySet="Mitigations"/>
+<End Role="DraftAdministrativeData" EntitySet="DraftAdministrativeData"/>
+</AssociationSet>
+<AssociationSet Name="Mitigations_SiblingEntity" Association="RiskService.Mitigations_SiblingEntity">
+<End Role="Mitigations" EntitySet="Mitigations"/>
+<End Role="Mitigations1" EntitySet="Mitigations"/>
+</AssociationSet>
+<AssociationSet Name="ChangeLog_risk" Association="RiskService.ChangeLog_risk">
+<End Role="ChangeLog" EntitySet="ChangeLog"/>
+<End Role="Risks2" EntitySet="Risks2"/>
+</AssociationSet>
+<AssociationSet Name="ChangeLog_DraftAdministrativeData" Association="RiskService.ChangeLog_DraftAdministrativeData">
+<End Role="ChangeLog" EntitySet="ChangeLog"/>
+<End Role="DraftAdministrativeData" EntitySet="DraftAdministrativeData"/>
+</AssociationSet>
+<AssociationSet Name="ChangeLog_SiblingEntity" Association="RiskService.ChangeLog_SiblingEntity">
+<End Role="ChangeLog" EntitySet="ChangeLog"/>
+<End Role="ChangeLog1" EntitySet="ChangeLog"/>
+</AssociationSet>
+<AssociationSet Name="Priority_texts_1" Association="RiskService.Priority_texts_1">
+<End Role="Priority" EntitySet="Priority"/>
+<End Role="Priority_texts" EntitySet="Priority_texts"/>
+</AssociationSet>
+<AssociationSet Name="Priority_localized" Association="RiskService.Priority_localized">
+<End Role="Priority" EntitySet="Priority"/>
+<End Role="Priority_texts" EntitySet="Priority_texts"/>
+</AssociationSet>
+</EntityContainer>
+<EntityType Name="Risks2">
+<Key>
+<PropertyRef Name="ID"/>
+<PropertyRef Name="IsActiveEntity"/>
+</Key>
+<Property Name="ID" Type="Edm.Guid" Nullable="false"/>
+<Property Name="createdAt" Type="Edm.DateTimeOffset" Precision="7"/>
+<Property Name="createdBy" Type="Edm.String" MaxLength="255"/>
+<Property Name="modifiedAt" Type="Edm.DateTimeOffset" Precision="7"/>
+<Property Name="modifiedBy" Type="Edm.String" MaxLength="255"/>
+<Property Name="title" Type="Edm.String" MaxLength="100"/>
+<Property Name="owner" Type="Edm.String"/>
+<NavigationProperty Name="prio" Relationship="RiskService.Risks2_prio" FromRole="Risks2" ToRole="Priority"/>
+<Property Name="prio_code" Type="Edm.String"/>
+<Property Name="descr" Type="Edm.String"/>
+<NavigationProperty Name="miti" Relationship="RiskService.Risks2_miti" FromRole="Risks2" ToRole="Mitigations"/>
+<Property Name="miti_ID" Type="Edm.Guid"/>
+<Property Name="impact" Type="Edm.Int32"/>
+<Property Name="criticality" Type="Edm.Int32"/>
+<Property Name="PrioCriticality" Type="Edm.Int32"/>
+<NavigationProperty Name="changeLogs" Relationship="RiskService.ChangeLog_risk" FromRole="Risks2" ToRole="ChangeLog"/>
+<Property Name="IsActiveEntity" Type="Edm.Boolean" Nullable="false"/>
+<Property Name="HasActiveEntity" Type="Edm.Boolean" Nullable="false"/>
+<Property Name="HasDraftEntity" Type="Edm.Boolean" Nullable="false"/>
+<NavigationProperty Name="DraftAdministrativeData" Relationship="RiskService.Risks2_DraftAdministrativeData" FromRole="Risks2" ToRole="DraftAdministrativeData"/>
+<Property Name="DraftAdministrativeData_DraftUUID" Type="Edm.Guid"/>
+<NavigationProperty Name="SiblingEntity" Relationship="RiskService.Risks2_SiblingEntity" FromRole="Risks2" ToRole="Risks21"/>
+</EntityType>
+<EntityType Name="Mitigations">
+<Key>
+<PropertyRef Name="ID"/>
+<PropertyRef Name="IsActiveEntity"/>
+</Key>
+<Property Name="ID" Type="Edm.Guid" Nullable="false"/>
+<Property Name="createdAt" Type="Edm.DateTimeOffset" Precision="7"/>
+<Property Name="createdBy" Type="Edm.String" MaxLength="255"/>
+<Property Name="modifiedAt" Type="Edm.DateTimeOffset" Precision="7"/>
+<Property Name="modifiedBy" Type="Edm.String" MaxLength="255"/>
+<Property Name="descr" Type="Edm.String"/>
+<Property Name="owner" Type="Edm.String"/>
+<Property Name="timeline" Type="Edm.String"/>
+<NavigationProperty Name="risks" Relationship="RiskService.Risks2_miti" FromRole="Mitigations" ToRole="Risks2"/>
+<Property Name="IsActiveEntity" Type="Edm.Boolean" Nullable="false"/>
+<Property Name="HasActiveEntity" Type="Edm.Boolean" Nullable="false"/>
+<Property Name="HasDraftEntity" Type="Edm.Boolean" Nullable="false"/>
+<NavigationProperty Name="DraftAdministrativeData" Relationship="RiskService.Mitigations_DraftAdministrativeData" FromRole="Mitigations" ToRole="DraftAdministrativeData"/>
+<Property Name="DraftAdministrativeData_DraftUUID" Type="Edm.Guid"/>
+<NavigationProperty Name="SiblingEntity" Relationship="RiskService.Mitigations_SiblingEntity" FromRole="Mitigations" ToRole="Mitigations1"/>
+</EntityType>
+<EntityType Name="ListOfRisks">
+<Key>
+<PropertyRef Name="ID"/>
+</Key>
+<Property Name="ID" Type="Edm.Guid" Nullable="false"/>
+<Property Name="title" Type="Edm.String" MaxLength="100"/>
+<Property Name="owner" Type="Edm.String"/>
+</EntityType>
+<EntityType Name="ChangeLog">
+<Key>
+<PropertyRef Name="ID"/>
+<PropertyRef Name="IsActiveEntity"/>
+</Key>
+<Property Name="ID" Type="Edm.Guid" Nullable="false"/>
+<Property Name="createdAt" Type="Edm.DateTimeOffset" Precision="7"/>
+<Property Name="createdBy" Type="Edm.String" MaxLength="255"/>
+<Property Name="modifiedAt" Type="Edm.DateTimeOffset" Precision="7"/>
+<Property Name="modifiedBy" Type="Edm.String" MaxLength="255"/>
+<Property Name="changeDate" Type="Edm.DateTimeOffset"/>
+<Property Name="changedBy" Type="Edm.String"/>
+<Property Name="changeType" Type="Edm.String"/>
+<Property Name="changeNote" Type="Edm.String"/>
+<NavigationProperty Name="risk" Relationship="RiskService.ChangeLog_risk" FromRole="ChangeLog" ToRole="Risks2"/>
+<Property Name="risk_ID" Type="Edm.Guid"/>
+<Property Name="IsActiveEntity" Type="Edm.Boolean" Nullable="false"/>
+<Property Name="HasActiveEntity" Type="Edm.Boolean" Nullable="false"/>
+<Property Name="HasDraftEntity" Type="Edm.Boolean" Nullable="false"/>
+<NavigationProperty Name="DraftAdministrativeData" Relationship="RiskService.ChangeLog_DraftAdministrativeData" FromRole="ChangeLog" ToRole="DraftAdministrativeData"/>
+<Property Name="DraftAdministrativeData_DraftUUID" Type="Edm.Guid"/>
+<NavigationProperty Name="SiblingEntity" Relationship="RiskService.ChangeLog_SiblingEntity" FromRole="ChangeLog" ToRole="ChangeLog1"/>
+</EntityType>
+<EntityType Name="TableEntity">
+<Key>
+<PropertyRef Name="ID"/>
+</Key>
+<Property Name="ID" Type="Edm.Guid" Nullable="false"/>
+<Property Name="createdAt" Type="Edm.DateTimeOffset" Precision="7"/>
+<Property Name="createdBy" Type="Edm.String" MaxLength="255"/>
+<Property Name="modifiedAt" Type="Edm.DateTimeOffset" Precision="7"/>
+<Property Name="modifiedBy" Type="Edm.String" MaxLength="255"/>
+<Property Name="TransactionType" Type="Edm.String" MaxLength="50"/>
+<Property Name="PerfomDateTime" Type="Edm.DateTimeOffset" Precision="7"/>
+<Property Name="Amount" Type="Edm.Decimal" Precision="10" Scale="2"/>
+<Property Name="CurrencyCode" Type="Edm.String" MaxLength="3"/>
+</EntityType>
+<EntityType Name="CommentEntity">
+<Key>
+<PropertyRef Name="ID"/>
+</Key>
+<Property Name="ID" Type="Edm.Guid" Nullable="false"/>
+<Property Name="createdAt" Type="Edm.DateTimeOffset" Precision="7"/>
+<Property Name="createdBy" Type="Edm.String" MaxLength="255"/>
+<Property Name="modifiedAt" Type="Edm.DateTimeOffset" Precision="7"/>
+<Property Name="modifiedBy" Type="Edm.String" MaxLength="255"/>
+<Property Name="Author" Type="Edm.String"/>
+<Property Name="AuthorPicUrl" Type="Edm.String"/>
+<Property Name="Type" Type="Edm.String"/>
+<Property Name="Date" Type="Edm.DateTimeOffset"/>
+<Property Name="Text" Type="Edm.String"/>
+</EntityType>
+<EntityType Name="SupportContact">
+<Key>
+<PropertyRef Name="ID"/>
+</Key>
+<Property Name="ID" Type="Edm.Guid" Nullable="false"/>
+<Property Name="pageId" Type="Edm.String" MaxLength="100"/>
+<Property Name="header" Type="Edm.String" MaxLength="255"/>
+<Property Name="title" Type="Edm.String" MaxLength="255"/>
+<Property Name="titleUrl" Type="Edm.String" MaxLength="255"/>
+<Property Name="description" Type="Edm.String" MaxLength="255"/>
+<Property Name="icon" Type="Edm.String" MaxLength="255"/>
+<Property Name="displayShape" Type="Edm.String" MaxLength="50"/>
+<Property Name="heading" Type="Edm.String" MaxLength="255"/>
+<Property Name="label" Type="Edm.String" MaxLength="255"/>
+<Property Name="value" Type="Edm.String" MaxLength="255"/>
+<Property Name="url" Type="Edm.String" MaxLength="255"/>
+<Property Name="elementType" Type="Edm.String" MaxLength="50"/>
+<Property Name="pageLinkId" Type="Edm.String" MaxLength="100"/>
+<Property Name="emailSubject" Type="Edm.String" MaxLength="255"/>
+<Property Name="target" Type="Edm.String" MaxLength="50"/>
+</EntityType>
+<EntityType Name="Cards">
+<Key>
+<PropertyRef Name="ID"/>
+</Key>
+<Property Name="ID" Type="Edm.Guid" Nullable="false"/>
+<Property Name="Title" Type="Edm.String" MaxLength="255"/>
+<Property Name="Icon" Type="Edm.String" MaxLength="255"/>
+<Property Name="MainValue" Type="Edm.Decimal" Precision="10" Scale="2"/>
+<Property Name="MainValueUnit" Type="Edm.String" MaxLength="10"/>
+<Property Name="SubTitle" Type="Edm.String" MaxLength="255"/>
+<Property Name="Comparison1" Type="Edm.String" MaxLength="50"/>
+<Property Name="Comparison2" Type="Edm.String" MaxLength="50"/>
+<Property Name="Status1Value" Type="Edm.Decimal" Precision="10" Scale="2"/>
+<Property Name="Status1State" Type="Edm.String" MaxLength="20"/>
+<Property Name="Status2Value" Type="Edm.Decimal" Precision="10" Scale="2"/>
+<Property Name="Status2State" Type="Edm.String" MaxLength="20"/>
+</EntityType>
+<EntityType Name="Priority">
+<Key>
+<PropertyRef Name="code"/>
+</Key>
+<Property Name="name" Type="Edm.String" MaxLength="255"/>
+<Property Name="descr" Type="Edm.String" MaxLength="1000"/>
+<Property Name="code" Type="Edm.String" Nullable="false"/>
+<NavigationProperty Name="texts" Relationship="RiskService.Priority_texts_1" FromRole="Priority" ToRole="Priority_texts"/>
+<NavigationProperty Name="localized" Relationship="RiskService.Priority_localized" FromRole="Priority" ToRole="Priority_texts"/>
+</EntityType>
+<EntityType Name="DraftAdministrativeData">
+<Key>
+<PropertyRef Name="DraftUUID"/>
+</Key>
+<Property Name="DraftUUID" Type="Edm.Guid" Nullable="false"/>
+<Property Name="CreationDateTime" Type="Edm.DateTimeOffset" Precision="7"/>
+<Property Name="CreatedByUser" Type="Edm.String" MaxLength="256"/>
+<Property Name="DraftIsCreatedByMe" Type="Edm.Boolean"/>
+<Property Name="LastChangeDateTime" Type="Edm.DateTimeOffset" Precision="7"/>
+<Property Name="LastChangedByUser" Type="Edm.String" MaxLength="256"/>
+<Property Name="InProcessByUser" Type="Edm.String" MaxLength="256"/>
+<Property Name="DraftIsProcessedByMe" Type="Edm.Boolean"/>
+</EntityType>
+<EntityType Name="Priority_texts">
+<Key>
+<PropertyRef Name="locale"/>
+<PropertyRef Name="code"/>
+</Key>
+<Property Name="locale" Type="Edm.String" MaxLength="14" Nullable="false"/>
+<Property Name="name" Type="Edm.String" MaxLength="255"/>
+<Property Name="descr" Type="Edm.String" MaxLength="1000"/>
+<Property Name="code" Type="Edm.String" Nullable="false"/>
+</EntityType>
+<Association Name="Risks2_prio">
+<End Role="Risks2" Type="RiskService.Risks2" Multiplicity="*"/>
+<End Role="Priority" Type="RiskService.Priority" Multiplicity="0..1"/>
+<ReferentialConstraint>
+<Principal Role="Priority">
+<PropertyRef Name="code"/>
+</Principal>
+<Dependent Role="Risks2">
+<PropertyRef Name="prio_code"/>
+</Dependent>
+</ReferentialConstraint>
+</Association>
+<Association Name="Risks2_miti">
+<End Role="Risks2" Type="RiskService.Risks2" Multiplicity="*"/>
+<End Role="Mitigations" Type="RiskService.Mitigations" Multiplicity="0..1"/>
+</Association>
+<Association Name="Risks2_DraftAdministrativeData">
+<End Role="Risks2" Type="RiskService.Risks2" Multiplicity="*"/>
+<End Role="DraftAdministrativeData" Type="RiskService.DraftAdministrativeData" Multiplicity="0..1"/>
+<ReferentialConstraint>
+<Principal Role="DraftAdministrativeData">
+<PropertyRef Name="DraftUUID"/>
+</Principal>
+<Dependent Role="Risks2">
+<PropertyRef Name="DraftAdministrativeData_DraftUUID"/>
+</Dependent>
+</ReferentialConstraint>
+</Association>
+<Association Name="Risks2_SiblingEntity">
+<End Role="Risks2" Type="RiskService.Risks2" Multiplicity="*"/>
+<End Role="Risks21" Type="RiskService.Risks2" Multiplicity="0..1"/>
+</Association>
+<Association Name="Mitigations_DraftAdministrativeData">
+<End Role="Mitigations" Type="RiskService.Mitigations" Multiplicity="*"/>
+<End Role="DraftAdministrativeData" Type="RiskService.DraftAdministrativeData" Multiplicity="0..1"/>
+<ReferentialConstraint>
+<Principal Role="DraftAdministrativeData">
+<PropertyRef Name="DraftUUID"/>
+</Principal>
+<Dependent Role="Mitigations">
+<PropertyRef Name="DraftAdministrativeData_DraftUUID"/>
+</Dependent>
+</ReferentialConstraint>
+</Association>
+<Association Name="Mitigations_SiblingEntity">
+<End Role="Mitigations" Type="RiskService.Mitigations" Multiplicity="*"/>
+<End Role="Mitigations1" Type="RiskService.Mitigations" Multiplicity="0..1"/>
+</Association>
+<Association Name="ChangeLog_risk">
+<End Role="ChangeLog" Type="RiskService.ChangeLog" Multiplicity="*"/>
+<End Role="Risks2" Type="RiskService.Risks2" Multiplicity="0..1">
+<OnDelete Action="Cascade"/>
+</End>
+</Association>
+<Association Name="ChangeLog_DraftAdministrativeData">
+<End Role="ChangeLog" Type="RiskService.ChangeLog" Multiplicity="*"/>
+<End Role="DraftAdministrativeData" Type="RiskService.DraftAdministrativeData" Multiplicity="0..1"/>
+<ReferentialConstraint>
+<Principal Role="DraftAdministrativeData">
+<PropertyRef Name="DraftUUID"/>
+</Principal>
+<Dependent Role="ChangeLog">
+<PropertyRef Name="DraftAdministrativeData_DraftUUID"/>
+</Dependent>
+</ReferentialConstraint>
+</Association>
+<Association Name="ChangeLog_SiblingEntity">
+<End Role="ChangeLog" Type="RiskService.ChangeLog" Multiplicity="*"/>
+<End Role="ChangeLog1" Type="RiskService.ChangeLog" Multiplicity="0..1"/>
+</Association>
+<Association Name="Priority_texts_1">
+<End Role="Priority" Type="RiskService.Priority" Multiplicity="1">
+<OnDelete Action="Cascade"/>
+</End>
+<End Role="Priority_texts" Type="RiskService.Priority_texts" Multiplicity="*"/>
+</Association>
+<Association Name="Priority_localized">
+<End Role="Priority" Type="RiskService.Priority" Multiplicity="*"/>
+<End Role="Priority_texts" Type="RiskService.Priority_texts" Multiplicity="0..1"/>
+</Association>
+<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="RiskService.EntityContainer/Risks2">
+<Annotation Term="Common.DraftRoot">
+<Record Type="Common.DraftRootType">
+<PropertyValue Property="ActivationAction" String="RiskService.EntityContainer/Risks2_draftActivate"/>
+<PropertyValue Property="EditAction" String="RiskService.EntityContainer/Risks2_draftEdit"/>
+<PropertyValue Property="PreparationAction" String="RiskService.EntityContainer/Risks2_draftPrepare"/>
+</Record>
+</Annotation>
+</Annotations>
+<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="RiskService.Risks2/ID">
+<Annotation Term="Core.ComputedDefaultValue" Bool="true"/>
+</Annotations>
+<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="RiskService.Risks2/createdAt">
+<Annotation Term="UI.HiddenFilter" Bool="true"/>
+<Annotation Term="UI.ExcludeFromNavigationContext" Bool="true"/>
+<Annotation Term="Core.Immutable" Bool="true"/>
+<Annotation Term="Core.Computed" Bool="true"/>
+<Annotation Term="Common.Label" String="Created On"/>
+</Annotations>
+<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="RiskService.Risks2/createdBy">
+<Annotation Term="UI.HiddenFilter" Bool="true"/>
+<Annotation Term="UI.ExcludeFromNavigationContext" Bool="true"/>
+<Annotation Term="Core.Immutable" Bool="true"/>
+<Annotation Term="Core.Computed" Bool="true"/>
+<Annotation Term="Core.Description" String="User's unique ID"/>
+<Annotation Term="Common.Label" String="Created By"/>
+</Annotations>
+<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="RiskService.Risks2/modifiedAt">
+<Annotation Term="UI.HiddenFilter" Bool="true"/>
+<Annotation Term="UI.ExcludeFromNavigationContext" Bool="true"/>
+<Annotation Term="Core.Computed" Bool="true"/>
+<Annotation Term="Common.Label" String="Changed On"/>
+</Annotations>
+<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="RiskService.Risks2/modifiedBy">
+<Annotation Term="UI.HiddenFilter" Bool="true"/>
+<Annotation Term="UI.ExcludeFromNavigationContext" Bool="true"/>
+<Annotation Term="Core.Computed" Bool="true"/>
+<Annotation Term="Core.Description" String="User's unique ID"/>
+<Annotation Term="Common.Label" String="Changed By"/>
+</Annotations>
+<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="RiskService.Risks2/prio_code">
+<Annotation Term="Common.ValueList">
+<Record Type="Common.ValueListType">
+<PropertyValue Property="Label" String="Priority"/>
+<PropertyValue Property="CollectionPath" String="Priority"/>
+<PropertyValue Property="Parameters">
+<Collection>
+<Record Type="Common.ValueListParameterInOut">
+<PropertyValue Property="LocalDataProperty" PropertyPath="prio_code"/>
+<PropertyValue Property="ValueListProperty" String="code"/>
+</Record>
+<Record Type="Common.ValueListParameterDisplayOnly">
+<PropertyValue Property="ValueListProperty" String="name"/>
+</Record>
+</Collection>
+</PropertyValue>
+</Record>
+</Annotation>
+</Annotations>
+<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="RiskService.Risks2/criticality">
+<Annotation Term="Core.Computed" Bool="true"/>
+</Annotations>
+<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="RiskService.Risks2/PrioCriticality">
+<Annotation Term="Core.Computed" Bool="true"/>
+</Annotations>
+<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="RiskService.Risks2/IsActiveEntity">
+<Annotation Term="UI.Hidden" Bool="true"/>
+</Annotations>
+<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="RiskService.Risks2/HasActiveEntity">
+<Annotation Term="UI.Hidden" Bool="true"/>
+</Annotations>
+<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="RiskService.Risks2/HasDraftEntity">
+<Annotation Term="UI.Hidden" Bool="true"/>
+</Annotations>
+<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="RiskService.Risks2/DraftAdministrativeData">
+<Annotation Term="UI.Hidden" Bool="true"/>
+</Annotations>
+<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="RiskService.Risks2/DraftAdministrativeData_DraftUUID">
+<Annotation Term="UI.Hidden" Bool="true"/>
+</Annotations>
+<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="RiskService.EntityContainer/Mitigations">
+<Annotation Term="Common.DraftRoot">
+<Record Type="Common.DraftRootType">
+<PropertyValue Property="ActivationAction" String="RiskService.EntityContainer/Mitigations_draftActivate"/>
+<PropertyValue Property="EditAction" String="RiskService.EntityContainer/Mitigations_draftEdit"/>
+<PropertyValue Property="PreparationAction" String="RiskService.EntityContainer/Mitigations_draftPrepare"/>
+</Record>
+</Annotation>
+</Annotations>
+<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="RiskService.Mitigations/ID">
+<Annotation Term="Core.ComputedDefaultValue" Bool="true"/>
+</Annotations>
+<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="RiskService.Mitigations/createdAt">
+<Annotation Term="UI.HiddenFilter" Bool="true"/>
+<Annotation Term="UI.ExcludeFromNavigationContext" Bool="true"/>
+<Annotation Term="Core.Immutable" Bool="true"/>
+<Annotation Term="Core.Computed" Bool="true"/>
+<Annotation Term="Common.Label" String="Created On"/>
+</Annotations>
+<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="RiskService.Mitigations/createdBy">
+<Annotation Term="UI.HiddenFilter" Bool="true"/>
+<Annotation Term="UI.ExcludeFromNavigationContext" Bool="true"/>
+<Annotation Term="Core.Immutable" Bool="true"/>
+<Annotation Term="Core.Computed" Bool="true"/>
+<Annotation Term="Core.Description" String="User's unique ID"/>
+<Annotation Term="Common.Label" String="Created By"/>
+</Annotations>
+<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="RiskService.Mitigations/modifiedAt">
+<Annotation Term="UI.HiddenFilter" Bool="true"/>
+<Annotation Term="UI.ExcludeFromNavigationContext" Bool="true"/>
+<Annotation Term="Core.Computed" Bool="true"/>
+<Annotation Term="Common.Label" String="Changed On"/>
+</Annotations>
+<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="RiskService.Mitigations/modifiedBy">
+<Annotation Term="UI.HiddenFilter" Bool="true"/>
+<Annotation Term="UI.ExcludeFromNavigationContext" Bool="true"/>
+<Annotation Term="Core.Computed" Bool="true"/>
+<Annotation Term="Core.Description" String="User's unique ID"/>
+<Annotation Term="Common.Label" String="Changed By"/>
+</Annotations>
+<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="RiskService.Mitigations/IsActiveEntity">
+<Annotation Term="UI.Hidden" Bool="true"/>
+</Annotations>
+<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="RiskService.Mitigations/HasActiveEntity">
+<Annotation Term="UI.Hidden" Bool="true"/>
+</Annotations>
+<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="RiskService.Mitigations/HasDraftEntity">
+<Annotation Term="UI.Hidden" Bool="true"/>
+</Annotations>
+<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="RiskService.Mitigations/DraftAdministrativeData">
+<Annotation Term="UI.Hidden" Bool="true"/>
+</Annotations>
+<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="RiskService.Mitigations/DraftAdministrativeData_DraftUUID">
+<Annotation Term="UI.Hidden" Bool="true"/>
+</Annotations>
+<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="RiskService.ListOfRisks/ID">
+<Annotation Term="Core.ComputedDefaultValue" Bool="true"/>
+</Annotations>
+<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="RiskService.EntityContainer/ChangeLog">
+<Annotation Term="Common.DraftNode">
+<Record Type="Common.DraftNodeType">
+<PropertyValue Property="PreparationAction" String="RiskService.EntityContainer/ChangeLog_draftPrepare"/>
+</Record>
+</Annotation>
+</Annotations>
+<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="RiskService.ChangeLog/ID">
+<Annotation Term="Core.ComputedDefaultValue" Bool="true"/>
+</Annotations>
+<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="RiskService.ChangeLog/createdAt">
+<Annotation Term="UI.HiddenFilter" Bool="true"/>
+<Annotation Term="UI.ExcludeFromNavigationContext" Bool="true"/>
+<Annotation Term="Core.Immutable" Bool="true"/>
+<Annotation Term="Core.Computed" Bool="true"/>
+<Annotation Term="Common.Label" String="Created On"/>
+</Annotations>
+<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="RiskService.ChangeLog/createdBy">
+<Annotation Term="UI.HiddenFilter" Bool="true"/>
+<Annotation Term="UI.ExcludeFromNavigationContext" Bool="true"/>
+<Annotation Term="Core.Immutable" Bool="true"/>
+<Annotation Term="Core.Computed" Bool="true"/>
+<Annotation Term="Core.Description" String="User's unique ID"/>
+<Annotation Term="Common.Label" String="Created By"/>
+</Annotations>
+<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="RiskService.ChangeLog/modifiedAt">
+<Annotation Term="UI.HiddenFilter" Bool="true"/>
+<Annotation Term="UI.ExcludeFromNavigationContext" Bool="true"/>
+<Annotation Term="Core.Computed" Bool="true"/>
+<Annotation Term="Common.Label" String="Changed On"/>
+</Annotations>
+<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="RiskService.ChangeLog/modifiedBy">
+<Annotation Term="UI.HiddenFilter" Bool="true"/>
+<Annotation Term="UI.ExcludeFromNavigationContext" Bool="true"/>
+<Annotation Term="Core.Computed" Bool="true"/>
+<Annotation Term="Core.Description" String="User's unique ID"/>
+<Annotation Term="Common.Label" String="Changed By"/>
+</Annotations>
+<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="RiskService.ChangeLog/IsActiveEntity">
+<Annotation Term="UI.Hidden" Bool="true"/>
+</Annotations>
+<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="RiskService.ChangeLog/HasActiveEntity">
+<Annotation Term="UI.Hidden" Bool="true"/>
+</Annotations>
+<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="RiskService.ChangeLog/HasDraftEntity">
+<Annotation Term="UI.Hidden" Bool="true"/>
+</Annotations>
+<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="RiskService.ChangeLog/DraftAdministrativeData">
+<Annotation Term="UI.Hidden" Bool="true"/>
+</Annotations>
+<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="RiskService.ChangeLog/DraftAdministrativeData_DraftUUID">
+<Annotation Term="UI.Hidden" Bool="true"/>
+</Annotations>
+<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="RiskService.TableEntity/ID">
+<Annotation Term="Core.ComputedDefaultValue" Bool="true"/>
+</Annotations>
+<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="RiskService.TableEntity/createdAt">
+<Annotation Term="UI.HiddenFilter" Bool="true"/>
+<Annotation Term="UI.ExcludeFromNavigationContext" Bool="true"/>
+<Annotation Term="Core.Immutable" Bool="true"/>
+<Annotation Term="Core.Computed" Bool="true"/>
+<Annotation Term="Common.Label" String="Created On"/>
+</Annotations>
+<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="RiskService.TableEntity/createdBy">
+<Annotation Term="UI.HiddenFilter" Bool="true"/>
+<Annotation Term="UI.ExcludeFromNavigationContext" Bool="true"/>
+<Annotation Term="Core.Immutable" Bool="true"/>
+<Annotation Term="Core.Computed" Bool="true"/>
+<Annotation Term="Core.Description" String="User's unique ID"/>
+<Annotation Term="Common.Label" String="Created By"/>
+</Annotations>
+<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="RiskService.TableEntity/modifiedAt">
+<Annotation Term="UI.HiddenFilter" Bool="true"/>
+<Annotation Term="UI.ExcludeFromNavigationContext" Bool="true"/>
+<Annotation Term="Core.Computed" Bool="true"/>
+<Annotation Term="Common.Label" String="Changed On"/>
+</Annotations>
+<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="RiskService.TableEntity/modifiedBy">
+<Annotation Term="UI.HiddenFilter" Bool="true"/>
+<Annotation Term="UI.ExcludeFromNavigationContext" Bool="true"/>
+<Annotation Term="Core.Computed" Bool="true"/>
+<Annotation Term="Core.Description" String="User's unique ID"/>
+<Annotation Term="Common.Label" String="Changed By"/>
+</Annotations>
+<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="RiskService.CommentEntity/ID">
+<Annotation Term="Core.ComputedDefaultValue" Bool="true"/>
+</Annotations>
+<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="RiskService.CommentEntity/createdAt">
+<Annotation Term="UI.HiddenFilter" Bool="true"/>
+<Annotation Term="UI.ExcludeFromNavigationContext" Bool="true"/>
+<Annotation Term="Core.Immutable" Bool="true"/>
+<Annotation Term="Core.Computed" Bool="true"/>
+<Annotation Term="Common.Label" String="Created On"/>
+</Annotations>
+<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="RiskService.CommentEntity/createdBy">
+<Annotation Term="UI.HiddenFilter" Bool="true"/>
+<Annotation Term="UI.ExcludeFromNavigationContext" Bool="true"/>
+<Annotation Term="Core.Immutable" Bool="true"/>
+<Annotation Term="Core.Computed" Bool="true"/>
+<Annotation Term="Core.Description" String="User's unique ID"/>
+<Annotation Term="Common.Label" String="Created By"/>
+</Annotations>
+<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="RiskService.CommentEntity/modifiedAt">
+<Annotation Term="UI.HiddenFilter" Bool="true"/>
+<Annotation Term="UI.ExcludeFromNavigationContext" Bool="true"/>
+<Annotation Term="Core.Computed" Bool="true"/>
+<Annotation Term="Common.Label" String="Changed On"/>
+</Annotations>
+<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="RiskService.CommentEntity/modifiedBy">
+<Annotation Term="UI.HiddenFilter" Bool="true"/>
+<Annotation Term="UI.ExcludeFromNavigationContext" Bool="true"/>
+<Annotation Term="Core.Computed" Bool="true"/>
+<Annotation Term="Core.Description" String="User's unique ID"/>
+<Annotation Term="Common.Label" String="Changed By"/>
+</Annotations>
+<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="RiskService.SupportContact/ID">
+<Annotation Term="Core.ComputedDefaultValue" Bool="true"/>
+</Annotations>
+<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="RiskService.Cards/ID">
+<Annotation Term="Core.ComputedDefaultValue" Bool="true"/>
+</Annotations>
+<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="RiskService.Priority">
+<Annotation Term="UI.Identification">
+<Collection>
+<Record Type="UI.DataField">
+<PropertyValue Property="Value" Path="name"/>
+</Record>
+</Collection>
+</Annotation>
+</Annotations>
+<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="RiskService.Priority/name">
+<Annotation Term="Common.Label" String="Name"/>
+</Annotations>
+<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="RiskService.Priority/descr">
+<Annotation Term="Common.Label" String="Description"/>
+</Annotations>
+<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="RiskService.Priority/code">
+<Annotation Term="Validation.AllowedValues">
+<Collection>
+<Record Type="Validation.AllowedValue">
+<Annotation Term="Core.SymbolicName" String="high"/>
+<PropertyValue Property="Value" String="H"/>
+</Record>
+<Record Type="Validation.AllowedValue">
+<Annotation Term="Core.SymbolicName" String="medium"/>
+<PropertyValue Property="Value" String="M"/>
+</Record>
+<Record Type="Validation.AllowedValue">
+<Annotation Term="Core.SymbolicName" String="low"/>
+<PropertyValue Property="Value" String="L"/>
+</Record>
+</Collection>
+</Annotation>
+</Annotations>
+<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="RiskService.DraftAdministrativeData">
+<Annotation Term="Common.Label" String="Draft Administrative Data"/>
+</Annotations>
+<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="RiskService.DraftAdministrativeData/DraftUUID">
+<Annotation Term="UI.Hidden" Bool="true"/>
+<Annotation Term="Common.Label" String="Draft (Technical ID)"/>
+<Annotation Term="Core.ComputedDefaultValue" Bool="true"/>
+</Annotations>
+<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="RiskService.DraftAdministrativeData/CreationDateTime">
+<Annotation Term="Common.Label" String="Draft Created On"/>
+</Annotations>
+<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="RiskService.DraftAdministrativeData/CreatedByUser">
+<Annotation Term="Common.Label" String="Draft Created By"/>
+</Annotations>
+<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="RiskService.DraftAdministrativeData/DraftIsCreatedByMe">
+<Annotation Term="UI.Hidden" Bool="true"/>
+<Annotation Term="Common.Label" String="Draft Created By Me"/>
+</Annotations>
+<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="RiskService.DraftAdministrativeData/LastChangeDateTime">
+<Annotation Term="Common.Label" String="Draft Last Changed On"/>
+</Annotations>
+<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="RiskService.DraftAdministrativeData/LastChangedByUser">
+<Annotation Term="Common.Label" String="Draft Last Changed By"/>
+</Annotations>
+<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="RiskService.DraftAdministrativeData/InProcessByUser">
+<Annotation Term="Common.Label" String="Draft In Process By"/>
+</Annotations>
+<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="RiskService.DraftAdministrativeData/DraftIsProcessedByMe">
+<Annotation Term="UI.Hidden" Bool="true"/>
+<Annotation Term="Common.Label" String="Draft In Process By Me"/>
+</Annotations>
+<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="RiskService.Priority_texts/locale">
+<Annotation Term="Common.Label" String="Language Code"/>
+</Annotations>
+<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="RiskService.Priority_texts/name">
+<Annotation Term="Common.Label" String="Name"/>
+</Annotations>
+<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="RiskService.Priority_texts/descr">
+<Annotation Term="Common.Label" String="Description"/>
+</Annotations>
+<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="RiskService.Priority_texts/code">
+<Annotation Term="Validation.AllowedValues">
+<Collection>
+<Record Type="Validation.AllowedValue">
+<Annotation Term="Core.SymbolicName" String="high"/>
+<PropertyValue Property="Value" String="H"/>
+</Record>
+<Record Type="Validation.AllowedValue">
+<Annotation Term="Core.SymbolicName" String="medium"/>
+<PropertyValue Property="Value" String="M"/>
+</Record>
+<Record Type="Validation.AllowedValue">
+<Annotation Term="Core.SymbolicName" String="low"/>
+<PropertyValue Property="Value" String="L"/>
+</Record>
+</Collection>
+</Annotation>
+</Annotations>
+</Schema>
+</edmx:DataServices>
+</edmx:Edmx>

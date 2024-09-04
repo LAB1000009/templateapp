@@ -1,8 +1,8 @@
 <core:FragmentDefinition xmlns:l="sap.ui.layout" xmlns="sap.m"
 	xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core">
-    <Page title="Comments">
+    <Page title="Comments" id="commentPage" backgroundDesign="List">
         <List
-                items="{/CommentEntity}" >
+            items="{/CommentEntity}" >
             <FeedListItem
                     sender="{Author}"
                     icon="{AuthorPicUrl}"

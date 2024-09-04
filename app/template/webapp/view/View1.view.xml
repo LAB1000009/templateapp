@@ -63,6 +63,7 @@
                                     <items>
                                         <IconTabFilter key="Chart" text="Chart" />
                                         <IconTabFilter key="Table" text="Table" />
+                                        <IconTabFilter key="Cockpit" text="Cockpit" />
                                         <IconTabFilter key="Comment" text="Comments" count="12" />
                                         <IconTabFilter key="Support" text="Support"/>
                                     </items>
