@@ -49,12 +49,14 @@ entity ChangeLog : cuid, managed {
     risk       : Association to Risks;
 }
 
+
 entity TableEntity : cuid, managed {
     TransactionType : String(50);
     PerfomDateTime  : Timestamp;
     Amount          : Decimal(10,2);
     CurrencyCode    : String(3);
 }
+
 
 entity CommentEntity : cuid, managed {
     Author        : String;       
@@ -79,6 +81,21 @@ entity SupportContact : cuid {
     pageLinkId    : String(100);
     emailSubject  : String(255);
     target        : String(50);
+}
+
+entity Cards {
+    key ID          : UUID;
+    Title           : String(255);
+    Icon            : String(255);
+    MainValue       : Decimal(10,2);
+    MainValueUnit   : String(10);
+    SubTitle        : String(255);
+    Comparison1     : String(50);
+    Comparison2     : String(50);
+    Status1Value    : Decimal(10,2);
+    Status1State    : String(20);
+    Status2Value    : Decimal(10,2);
+    Status2State    : String(20);
 }
 
 

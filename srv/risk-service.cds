@@ -4,8 +4,8 @@ using { riskmanagement as rm } from '../db/schema';
 service RiskService {
 
     @cds.redirection.target: 'RiskService.Risks'
-    entity Risks as projection on rm.Risks;
-    annotate Risks with @odata.draft.enabled;
+    entity Risks2 as projection on rm.Risks;
+    annotate Risks2 with @odata.draft.enabled;
 
     entity Mitigations as projection on rm.Mitigations;
     annotate Mitigations with @odata.draft.enabled;
@@ -16,4 +16,5 @@ service RiskService {
     entity TableEntity as projection on rm.TableEntity;
     entity CommentEntity as projection on rm.CommentEntity;
     entity SupportContact as projection on rm.SupportContact;
+    entity Cards as projection on rm.Cards;
 }

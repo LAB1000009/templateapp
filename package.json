@@ -17,7 +17,9 @@
     "@cap-js/sqlite": "^1.7.3"
   },
   "scripts": {
-    "start": "cds-serve"
+    "start": "cds-serve",
+    "start1": "cds deploy && cds watch",
+    "start-sqlite": "cds deploy --to sqlite:db.sqlite && cds run"
   },
   "cds": {
     "requires": {
