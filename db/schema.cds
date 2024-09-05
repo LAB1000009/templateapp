@@ -51,10 +51,20 @@ entity ChangeLog : cuid, managed {
 
 
 entity TableEntity : cuid, managed {
-    TransactionType : String(50);
-    PerfomDateTime  : Timestamp;
-    Amount          : Decimal(10,2);
-    CurrencyCode    : String(3);
+    EEID            : String(10);          // Employee ID
+    FullName        : String(100);         // Full name of the employee
+    JobTitle        : String(50);          // Job title
+    Department      : String(50);          // Department
+    BusinessUnit    : String(100);         // Business unit
+    Gender          : String(10);          // Gender
+    Ethnicity       : String(30);          // Ethnicity
+    Age             : Integer;             // Age
+    HireDate        : Date;                // Hire date
+    AnnualSalary    : Decimal(15,2);       // Annual salary with precision
+    Bonus           : Decimal(5,2);        // Bonus in percentage
+    Country         : String(50);          // Country
+    City            : String(50);          // City
+    ExitDate        : Date;                // Exit date (nullable)
 }
 
 

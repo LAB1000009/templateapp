@@ -9,7 +9,7 @@
     xmlns:form="sap.ui.layout.form" 
     xmlns:f="sap.f" 
     xmlns:l="sap.ui.layout">
-    <Panel  id="cockpitPage" height="100%" headerText="Cockpit" backgroundDesign="Solid">
+    <Panel  id="cockpitPage" height="100%" headerText="{i18n>CockpitTab_Title}" backgroundDesign="Solid">
         <grid:CSSGrid items="{/Cards}" width="100%" gridTemplateColumns="repeat(auto-fit, 310px)" gridTemplateRows="repeat(5, 150px)" gridGap="1rem" gridAutoRows="auto" gridAutoFlow="Row">
            <f:GridListItem detailPress="onPressFinanzenCard" type="Active" press="onPressFinanzenCard" class="sapUiSmallMarginTop">
 				<VBox width="320px">

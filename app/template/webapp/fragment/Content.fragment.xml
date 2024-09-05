@@ -4,7 +4,7 @@
          <layoutData>
             <l:SplitterLayoutData size="{=!${treeModel&gt;/showSideContent} ? '0%' : '30%'}" />
          </layoutData>
-            <Panel headerText="Filter Settings" expanded="true" expandable="true">
+            <Panel headerText="{i18n>FL_Title}" expanded="true" expandable="true">
                 <f:SimpleForm 
                     editable="true" 
                     layout="ResponsiveGridLayout" 
@@ -41,7 +41,7 @@
                     </f:content>
                 </f:SimpleForm>
             </Panel>
-            <Panel headerText="Additional Filters" class="sapUiSmallMarginTop" expanded="false" expandable="true">
+            <Panel headerText="{i18n>FL_AddTitle}" class="sapUiSmallMarginTop" expanded="false" expandable="true">
                 <f:SimpleForm 
                     editable="true" 
                     layout="ResponsiveGridLayout" 

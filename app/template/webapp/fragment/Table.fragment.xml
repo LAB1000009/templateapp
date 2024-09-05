@@ -1,5 +1,5 @@
 <core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:card="sap.f.cards" xmlns:f="sap.f" xmlns:form="sap.ui.layout.form" xmlns:l="sap.ui.layout" xmlns:mvc="sap.ui.core.mvc" xmlns:tnt="sap.tnt" height="100%" displayBlock="true">
-   <Panel height="100%" id="tablePage" class="sapUiContentPadding" backgroundDesign="List" headerText="Payments">
+   <Panel height="100%" id="tablePage" class="sapUiContentPadding" backgroundDesign="List" headerText="{i18n>TableTab_Title}">
       <Table id="payments-table" inset="false" items="{path: '/TableEntity'}">
          <headerToolbar>
             <OverflowToolbar>
@@ -29,9 +29,9 @@
          <items>
             <ColumnListItem>
                <cells>
-                  <Text text="{ path: 'PerfomDateTime', formatter: '._dateFormatter'}" />
-                  <Text text="{TransactionType}" />
-                  <ObjectNumber number="{                         parts:[{path:'Amount'},{path:'CurrencyCode'}],                         type: 'sap.ui.model.type.Currency',                         formatOptions: {showMeasure: false}                     }" unit="{CurrencyCode}" />
+                  <Text text="{ path: 'HireDate', formatter: '._dateFormatter'}" />
+                  <Text text="{EEID}" />
+                  <ObjectNumber number="{                         parts:[{path:'AnnualSalary'},{path:'CurrencyCode'}],                         type: 'sap.ui.model.type.Currency',                         formatOptions: {showMeasure: false}                     }" unit="{CurrencyCode}" />
                </cells>
             </ColumnListItem>
          </items>

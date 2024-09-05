@@ -1,6 +1,6 @@
 <core:FragmentDefinition xmlns:l="sap.ui.layout" xmlns="sap.m"
 	xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core">
-    <Panel headerText="Comments" id="commentPage" height="100%" backgroundDesign="List">
+    <Panel headerText="{i18n>CommentsTab_Title}" id="commentPage" height="100%" backgroundDesign="List">
         <List
             items="{/CommentEntity}" >
             <FeedListItem

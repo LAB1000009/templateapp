@@ -16,17 +16,17 @@
             <HBox width="100%" alignItems="Center" height="50px">
                 <VBox width="50%">
                     <HBox width="100%">
-                        <Title text="{treeModel>/headerTitle}"/>
+                        <Title text="{i18n>H_Title}"/>
                     </HBox>
-                    <Label text="{treeModel>/headerSubTitle}"/>
+                    <Label text="{i18n>H_SubTitle}"/>
                 </VBox>
                 <HBox width="50%" justifyContent="SpaceBetween" alignItems="Center" renderType="Bare">
                     
                         <Title text="{treeModel>/headerActDate}"/>
                         
-                        <Title text="{treeModel>/headerCurrUser}"/>
+                        <Title text="{i18n>H_User}"/>
                     
-                        <Image src="../logo/mosec_logo.png" height="50px" class="sapUiTinyMarginEnd"/>
+                        <Image src="../logo/mosec_logo.svg" height="50px" class="sapUiTinyMarginEnd"/>
                         
                 </HBox>
             </HBox>
@@ -48,13 +48,13 @@
                             <ToolbarSpacer />
                             <IconTabHeader mode="Inline" tabDensityMode="Compact" select="onSelectIconTabHeader">
                                     <items>
-                                        <IconTabFilter key="Chart" text="Chart" />
-                                        <IconTabFilter key="Table" text="Table" />
-                                        <IconTabFilter key="Cockpit" text="Cockpit" />
-                                        <IconTabFilter key="Dashboard" text="Dashboard" />
-                                        <IconTabFilter key="Comment" text="Comments" count="4" />
-                                        <IconTabFilter key="Report" text="Report" />
-                                        <IconTabFilter key="Support" text="Support"/>
+                                        <IconTabFilter key="Chart" text="{i18n>B_ChartTab}" />
+                                        <IconTabFilter key="Table" text="{i18n>B_TableTab}" />
+                                        <IconTabFilter key="Cockpit" text="{i18n>B_CockpitTab}" />
+                                        <IconTabFilter key="Dashboard" text="{i18n>B_DashboardTab}" />
+                                        <IconTabFilter key="Comment" text="{i18n>B_CommentsTab}" count="4" />
+                                        <IconTabFilter key="Report" text="{i18n>B_ReportInfoTab}" />
+                                        <IconTabFilter key="Support" text="{i18n>B_SupportTab}"/>
                                     </items>
                             </IconTabHeader>
                         </OverflowToolbar>
@@ -83,13 +83,13 @@
         
             <OverflowToolbar design="Transparent">
                 <content>
-                    <Title text="{treeModel>/footerCopyright}" class="sapUiTinyMarginBegin"/>
+                    <Title text="{i18n>F_Copyright}" class="sapUiTinyMarginBegin"/>
                     <ToolbarSpacer />
                     <Title text="{treeModel>/footerClass}"  titleStyle="H6" />
                     <ToolbarSpacer />
                     <Title text="{treeModel>/footerPO}" class="owerviewColorTitle" titleStyle="H6" />
                     <ToolbarSpacer />
-                    <Link text="{treeModel>/footerDetails}" press="onPressFooterBtn" titleStyle="H6" class="sapUiTinyMarginEnd" />
+                    <Link text="{i18n>F_Details}" press="onPressFooterBtn" titleStyle="H6" class="sapUiTinyMarginEnd" />
                 </content>
             </OverflowToolbar>
     </VBox>  
