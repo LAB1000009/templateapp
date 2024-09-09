@@ -26,7 +26,7 @@
                         
                         <Title text="{i18n>H_User}"/>
                     
-                        <Image src="../logo/mosec_logo.svg" height="50px" class="sapUiTinyMarginEnd"/>
+                        <Image src="./logo/mosec_logo.svg" height="50px" class="sapUiTinyMarginEnd"/>
                         
                 </HBox>
             </HBox>
@@ -35,7 +35,7 @@
                 class="sapUiNoContentPadding"
                 id="plannerSemanticPage" showHeader="true" enableScrolling="false">
                  <headerContent>
-                        <OverflowToolbar width="100%" height="auto">
+                        <OverflowToolbar width="100%" height="auto" class="sapUiNoContentPadding">
                             <OverflowToolbarToggleButton press="OverflowToolbarToggleButton" pressed="{treeModel>/showSideContent}" icon="sap-icon://bullet-text" class="sapUiTinyMarginBegi"/>
                             <VBox>
                                 <Breadcrumbs currentLocationText="Super portable deluxe" separatorStyle="{/selected}" class="sapUiTinyMarginBegin sapUiTinyMarginTop">
@@ -46,13 +46,13 @@
                                 </Breadcrumbs>
                             </VBox>
                             <ToolbarSpacer />
-                            <IconTabHeader mode="Inline" tabDensityMode="Compact" select="onSelectIconTabHeader">
+                            <IconTabHeader mode="Inline"  tabDensityMode="Compact" select="onSelectIconTabHeader" class="zoomed ">
                                     <items>
                                         <IconTabFilter key="Chart" text="{i18n>B_ChartTab}" />
                                         <IconTabFilter key="Table" text="{i18n>B_TableTab}" />
                                         <IconTabFilter key="Cockpit" text="{i18n>B_CockpitTab}" />
                                         <IconTabFilter key="Dashboard" text="{i18n>B_DashboardTab}" />
-                                        <IconTabFilter key="Comment" text="{i18n>B_CommentsTab}" count="4" />
+                                        <IconTabFilter key="Comment" text="{i18n>B_CommentsTab}" />
                                         <IconTabFilter key="Report" text="{i18n>B_ReportInfoTab}" />
                                         <IconTabFilter key="Support" text="{i18n>B_SupportTab}"/>
                                     </items>
@@ -60,24 +60,8 @@
                         </OverflowToolbar>
                     </headerContent>
                 <Page showHeader="false" id="contentPage" enableScrolling="false">
-                    <!-- <customHeader>
-                        <Toolbar width="100%" class="sapUiNoContentPadding">
-                            <Breadcrumbs currentLocationText="Laptop" separatorStyle="{/selected}" class="sapUiTinyMarginBegin">
-                                <Link press="onPress" text="Products"/>
-                                <Link press="onPress" text="Suppliers"/>
-                                <Link press="onPress" text="Titanium"/>
-                                <Link press="onPress" text="Ultra portable"/>
-                                <Link press="onPress" text="12 inch"/>
-                                <Link press="onPress" text="Super portable deluxe"/>
-                            </Breadcrumbs>
-                        </Toolbar>
-                    </customHeader> -->
                    
-                    <!-- <OverflowToolbar design="Transparent" class="sapUiNoContentPadding">
-                    <OverflowToolbarToggleButton press="OverflowToolbarToggleButton" pressed="{treeModel>/showSideContent}" icon="sap-icon://bullet-text" />
-                    </OverflowToolbar> -->
-                    
-                    </Page>
+                </Page>
                     
             </Page>
         

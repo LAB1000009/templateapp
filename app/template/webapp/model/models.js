@@ -13,7 +13,11 @@ function (JSONModel, Device) {
             var oModel = new JSONModel(Device);
             oModel.setDefaultBindingMode("OneWay");
             return oModel;
-        }
+        },
+        
+        _dateFormatter: function(oDate) {
+            return DateFormat.getDateTimeInstance({pattern: "MMMM dd YY, hh:mm:ss"}).format(oDate);
+        },
     };
 
 });

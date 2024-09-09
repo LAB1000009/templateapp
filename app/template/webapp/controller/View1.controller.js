@@ -7,10 +7,12 @@ sap.ui.define([
     'sap/ui/model/FilterOperator',
     'sap/viz/ui5/format/ChartFormatter',
     'sap/viz/ui5/api/env/Format',
-    'sap/ui/Device'
+    'sap/ui/Device',
+    'sap/m/DynamicDateRange',
+	"../model/models"
 
 ],
-    function (Controller, JSONModel, Dialog, Button, UI5Date, DynamicDateRange, Filter, FilterOperator, ChartFormatter, Format, Device) {
+    function (Controller, JSONModel, Dialog, Button, Filter, FilterOperator, ChartFormatter, Format, Device, DynamicDateRange) {
         "use strict";
 
         return Controller.extend("ui.template.controller.View1", {
@@ -27,6 +29,7 @@ sap.ui.define([
 
                 var oTreeModel = new JSONModel({
                     //////////////
+                    cockpitDetailsVisible:false,
                     headerTitle: "HR template",
                     headerSubTitle: "HR dashboard template from Mosec Solutions",
                     headerActDate: new Intl.DateTimeFormat(['ban', 'id']).format(new Date()),
@@ -106,7 +109,43 @@ sap.ui.define([
                 this.getView().addDependent(oFragment);
                 this.getView().byId("navCon").addPage(oFragment);
             },
+            onChange: function(oEvent) {
+                var oDynamicDateRange = oEvent.oSource,
+                    bValid = oEvent.getParameter("valid"),
+                    oTableItemsBinding, oValue, oTable, oFilter;
+        
+                if (bValid) {
+                    oTable = this.getView().byId('Table--payments-table')
+                    oTableItemsBinding = oTable.getBinding("items");
+                    oValue = oEvent.getParameter("value");
+                    oFilter = this._createFilter(oValue);
+                    oTableItemsBinding.filter(oFilter, "Application");
+                    oDynamicDateRange.setValueState("None");
+                } else {
+                    oDynamicDateRange.setValueState("Error");
+                }
+            },
+            _createFilter: function(oValue) {
+                if (oValue) {
+                    var aDates = DynamicDateRange.toDates(oValue);
+                    var oDateFormat = sap.ui.core.format.DateFormat.getDateInstance({
+                        pattern: "yyyy-MM-dd'T'HH:mm:ss'Z'",
+                        UTC: true
+                    });
+                    
+                    if (oValue.operator === "FROM" || oValue.operator === "FROMDATETIME") {
+                        return new Filter("HireDate", FilterOperator.GT, oDateFormat.format(aDates[0]));
+                    } else if (oValue.operator === "TO" || oValue.operator === "TODATETIME") {
+                        return new Filter("HireDate", FilterOperator.LT, oDateFormat.format(aDates[0]));
+                    }
+                    return new Filter("HireDate", FilterOperator.BT, oDateFormat.format(aDates[0]), oDateFormat.format(aDates[1]));
+                } else {
+                    // Reset the currently applied filters
+                    return [];
+                }
+            },
 
+            
             _loadFragments: async function (sSelectedKey) {
                 this._fragments = this._fragments || {};
 

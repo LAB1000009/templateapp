@@ -17,4 +17,14 @@ service RiskService {
     entity CommentEntity as projection on rm.CommentEntity;
     entity SupportContact as projection on rm.SupportContact;
     entity Cards as projection on rm.Cards;
+    entity cardDetails as projection on rm.cardDetails;
+
+    @odata.draft.enabled
+    entity Items as projection on rm.Items;
+
+    @cds.function
+    function getItemsByQuantity(quantity: Integer) returns array of Items;
+
+    @cds.action
+    action createItem(title: String, descr: String, quantity: Integer) returns Items;
 }

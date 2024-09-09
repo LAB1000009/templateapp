@@ -1,0 +1,4 @@
+ID,cardID,cardTitle,YTDText,BUDvsYTDText,YTDValue,BUDvsYTDValue,StatusText,StatusState,IconSrc
+1,001,IT FTE,YTD AM,BUD vs YTD,134.00,14.20,"[+9.6%]","Success","sap-icon://pending"
+2,002,HR FTE,YTD AM,BUD vs YTD,120.00,10.50,"[+8.3%]","Warning","sap-icon://alert"
+3,003,Finance FTE,YTD AM,BUD vs YTD,145.00,15.60,"[+6.4%]","Success","sap-icon://complete"

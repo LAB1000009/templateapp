@@ -1,0 +1,49 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout" height="100%" displayBlock="true">
+   <Panel id="CockpitDetails" backgroundDesign="List" headerText="{i18n>SupportTab_Title}" height="100%">
+      <content>
+          <List id="cardDetailsList" items="{path: '/cardDetails'}">
+        <items>
+            <CustomListItem>
+                <content>
+                    <VBox class="sapUiTinyMargin">
+                        <items>
+                            <HBox>
+                                <items>
+                                    <Title text="{Title}" class="sapUiTinyMarginBegin"/>
+                                </items>
+                            </HBox>
+                            <HBox justifyContent="SpaceBetween">
+                                <items>
+                                    <VBox justifyContent="Center">
+                                        <items>
+                                            <Text text="{YTDText}"/>
+                                            <Text text="{BUDvsYTDText}"/>
+                                        </items>
+                                    </VBox>
+                                    <VBox justifyContent="Center">
+                                        <items>
+                                            <Title text="{YTDValue}"/>
+                                            <Title text="{BUDvsYTDValue}"/>
+                                        </items>
+                                    </VBox>
+                                    <VBox justifyContent="End">
+                                        <items>
+                                            <ObjectStatus text="{StatusText}" state="{StatusState}" class="boldObjectStatus sapUiTinyMarginBottom"/>
+                                        </items>
+                                    </VBox>
+                                    <VBox justifyContent="Center">
+                                        <items>
+                                            <core:Icon src="{IconSrc}" size="2.5rem"/>
+                                        </items>
+                                    </VBox>
+                                </items>
+                            </HBox>
+                        </items>
+                    </VBox>
+                </content>
+            </CustomListItem>
+        </items>
+    </List>
+      </content>
+   </Panel>
+</core:FragmentDefinition>

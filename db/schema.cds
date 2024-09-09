@@ -14,7 +14,6 @@ entity Risks : cuid, managed {
     descr                    : String;
     miti                     : Association to Mitigations;
     impact                   : Integer;
-    // bp : Association to BusinessPartners;
     virtual criticality      : Integer;
     virtual PrioCriticality  : Integer;
     changeLogs               : Composition of many ChangeLog on changeLogs.risk = $self;
@@ -49,7 +48,6 @@ entity ChangeLog : cuid, managed {
     risk       : Association to Risks;
 }
 
-
 entity TableEntity : cuid, managed {
     EEID            : String(10);          // Employee ID
     FullName        : String(100);         // Full name of the employee
@@ -59,14 +57,13 @@ entity TableEntity : cuid, managed {
     Gender          : String(10);          // Gender
     Ethnicity       : String(30);          // Ethnicity
     Age             : Integer;             // Age
-    HireDate        : Date;                // Hire date
+    HireDate        : Timestamp;                // Hire date
     AnnualSalary    : Decimal(15,2);       // Annual salary with precision
     Bonus           : Decimal(5,2);        // Bonus in percentage
     Country         : String(50);          // Country
     City            : String(50);          // City
-    ExitDate        : Date;                // Exit date (nullable)
+    ExitDate        : Timestamp;                // Exit date (nullable)
 }
-
 
 entity CommentEntity : cuid, managed {
     Author        : String;       
@@ -75,6 +72,7 @@ entity CommentEntity : cuid, managed {
     Date          : DateTime;     
     Text          : String;       
 }
+
 entity SupportContact : cuid {
     pageId        : String(100);
     header        : String(255);
@@ -108,8 +106,20 @@ entity Cards {
     Status2State    : String(20);
 }
 
+entity Items : cuid, managed {
+    title   : String(100);
+    descr   : String;
+    quantity: Integer;
+}
 
-
-
-
-
+entity cardDetails : cuid, managed {
+    cardID     : String(10);
+    cardTitle  : String(100);
+    YTDText    : String(50);
+    BUDvsYTDText : String(50);
+    YTDValue   : Decimal(10,2);
+    BUDvsYTDValue : Decimal(10,2);
+    StatusText : String(50);
+    StatusState: String(20);
+    IconSrc    : String(100);
+}

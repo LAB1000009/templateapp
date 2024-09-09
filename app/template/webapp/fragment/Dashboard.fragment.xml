@@ -2,6 +2,7 @@
 <core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.suite.ui.microchart" xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns:m="sap.m" height="100%" displayBlock="true">
    <m:Panel height="100%" headerText="{i18n>DashboardTab_Title}" id="dashboardm:Page" class="contentPadding" backgroundDesign="List">
       <m:VBox height="100%" width="100%">
+         <m:Panel expanded="true" headerText="Example"  expandable="true" >
          <m:HBox>
             <ColumnMicroChart size="M" press="press" class="sapUiSmallMargin">
                <columns>
@@ -58,8 +59,9 @@
                </columns>
             </ColumnMicroChart>
             <ColumnMicroChart size="S" press="press" class="sapUiSmallMargin" height="5rem" />
-         </m:HBox>
-         <m:HBox>
+             </m:HBox>
+         </m:Panel >
+         <m:Panel expanded="true" headerText="Example 2" expandable="true" >
             <m:GenericTile header="Revenue Dynamics" frameType="OneByOne" press="press">
                <m:tileContent>
                   <m:TileContent footer="Column chart">
@@ -140,8 +142,9 @@
                   </m:TileContent>
                </m:tileContent>
             </m:GenericTile>
-         </m:HBox>
-         <m:HBox>
+         </m:Panel >
+         <m:Panel expanded="true" expandable="true"  headerText="Example 3">
+          <m:HBox>
             <ComparisonMicroChart size="S" scale="M" class="sapUiSmallMargin" press="press">
                <data>
                   <ComparisonMicroChartData title="EMEA" displayValue="USD 0" color="Good" />
@@ -166,8 +169,10 @@
                   <ComparisonMicroChartData title="Australia" value="55" />
                </data>
             </ComparisonMicroChart>
-         </m:HBox>
-         <m:HBox >
+             </m:HBox>
+         </m:Panel >
+         <m:Panel headerText="Example 4"  expanded="true" expandable="true">
+          <m:HBox>
             <m:GenericTile header="Revenue Dynamics" frameType="TwoByOne" press="press" >
                <m:tileContent>
                   <m:TileContent footer="Red Delta">
@@ -209,29 +214,32 @@
                   </m:TileContent>
                </m:tileContent>
             </m:GenericTile>
-         </m:HBox>
-         <m:HBox class="sapUiSmallMarginTop">
-            <HarveyBallMicroChart size="L" total="360" totalScale="Mrd" press="press">
-               <items>
-                  <HarveyBallMicroChartItem fraction="8" color="Good" fractionScale="Mrd" />
-               </items>
-            </HarveyBallMicroChart>
-            <HarveyBallMicroChart size="M" total="100" totalScale="Mrd" press="press">
-               <items>
-                  <HarveyBallMicroChartItem fraction="63.5" color="Good" fractionScale="Mrd" />
-               </items>
-            </HarveyBallMicroChart>
-            <HarveyBallMicroChart size="S" total="100" totalScale="Mrd" press="press">
-               <items>
-                  <HarveyBallMicroChartItem fraction="63.5" color="Good" fractionScale="Mrd" />
-               </items>
-            </HarveyBallMicroChart>
-            <HarveyBallMicroChart size="XS" total="100" totalScale="Mrd" press="press">
-               <items>
-                  <HarveyBallMicroChartItem fraction="63.5" color="Good" fractionScale="Mrd" />
-               </items>
-            </HarveyBallMicroChart>
-         </m:HBox>
+             </m:HBox>
+         </m:Panel >
+         <m:Panel headerText="Example 5"  class="sapUiTinyMarginTop" expanded="true" expandable="true">
+             <m:HBox>
+               <HarveyBallMicroChart size="L" total="360" totalScale="Mrd" press="press">
+                  <items>
+                     <HarveyBallMicroChartItem fraction="8" color="Good" fractionScale="Mrd" />
+                  </items>
+               </HarveyBallMicroChart>
+               <HarveyBallMicroChart size="M" total="100" totalScale="Mrd" press="press">
+                  <items>
+                     <HarveyBallMicroChartItem fraction="63.5" color="Good" fractionScale="Mrd" />
+                  </items>
+               </HarveyBallMicroChart>
+               <HarveyBallMicroChart size="S" total="100" totalScale="Mrd" press="press">
+                  <items>
+                     <HarveyBallMicroChartItem fraction="63.5" color="Good" fractionScale="Mrd" />
+                  </items>
+               </HarveyBallMicroChart>
+               <HarveyBallMicroChart size="XS" total="100" totalScale="Mrd" press="press">
+                  <items>
+                     <HarveyBallMicroChartItem fraction="63.5" color="Good" fractionScale="Mrd" />
+                  </items>
+               </HarveyBallMicroChart>
+             </m:HBox>
+         </m:Panel >
       </m:VBox>
    </m:Panel>
 </core:FragmentDefinition>

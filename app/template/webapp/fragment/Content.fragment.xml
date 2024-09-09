@@ -1,34 +1,23 @@
 <core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout" xmlns:u="sap.ui.unified">
-   <l:Splitter height="100%">
-      <Panel height="100%"  backgroundDesign="Transparent" class="sapUiContentPadding" visible="{treeModel&gt;/showSideContent}">
-         <layoutData>
-            <l:SplitterLayoutData size="{=!${treeModel&gt;/showSideContent} ? '0%' : '30%'}" />
-         </layoutData>
-            <Panel headerText="{i18n>FL_Title}" expanded="true" expandable="true">
-                <f:SimpleForm 
-                    editable="true" 
-                    layout="ResponsiveGridLayout" 
-                    labelSpanXL="4" 
-                    labelSpanL="3" 
-                    labelSpanM="4" 
-                    labelSpanS="12" 
-                    adjustLabelSpan="false" 
-                    emptySpanXL="0" 
-                    emptySpanL="4" 
-                    emptySpanM="0" 
-                    emptySpanS="0" 
-                    columnsXL="2" 
-                    columnsL="2" 
-                    columnsM="1" 
-                    singleContainerFullSize="false">
-                    <f:content>
+   <l:ResponsiveSplitter defaultPane="default">
+      <l:PaneContainer resize=".onRootContainerResize">
+         <l:SplitPane height="100%">
+            <l:layoutData>
+               <l:SplitterLayoutData size="{=!${treeModel&gt;/showSideContent} ? '0%' : '30%'}" />
+            </l:layoutData>
+            <Panel height="100%" backgroundDesign="Transparent" class="sapUiContentPadding" visible="{treeModel&gt;/showSideContent}">
+               <Panel headerText="{i18n&gt;FL_Title}" expanded="true" expandable="true">
+                  <f:SimpleForm editable="true" layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="3" labelSpanM="4" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="4" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="1" singleContainerFullSize="false">
+                     <f:content>
+                        <Label visible="false" text="Transaction date" labelFor="dynamic-range" />
+                        <DynamicDateRange id="dynamicRange" change="onChange" width="{env&gt;/filterInputWidth}" />
                         <Label text="Filter1" />
                         <ComboBox width="100%">
-                            <items>
-                                <core:Item key="Option1" text="Option 1" />
-                                <core:Item key="Option2" text="Option 2" />
-                                <core:Item key="Option3" text="Option 3" />
-                            </items>
+                           <items>
+                              <core:Item key="Option1" text="Option 1" />
+                              <core:Item key="Option2" text="Option 2" />
+                              <core:Item key="Option3" text="Option 3" />
+                           </items>
                         </ComboBox>
                         <Label text="Enable Feature" />
                         <Switch width="100%" />
@@ -38,45 +27,30 @@
                         <Input width="100%" placeholder="Enter your username" />
                         <Label text="Select Date" />
                         <DatePicker width="100%" />
-                    </f:content>
-                </f:SimpleForm>
-            </Panel>
-            <Panel headerText="{i18n>FL_AddTitle}" class="sapUiSmallMarginTop" expanded="false" expandable="true">
-                <f:SimpleForm 
-                    editable="true" 
-                    layout="ResponsiveGridLayout" 
-                    labelSpanXL="4" 
-                    labelSpanL="3" 
-                    labelSpanM="4" 
-                    labelSpanS="12" 
-                    adjustLabelSpan="false" 
-                    emptySpanXL="0" 
-                    emptySpanL="4" 
-                    emptySpanM="0" 
-                    emptySpanS="0" 
-                    columnsXL="2" 
-                    columnsL="2" 
-                    columnsM="1" 
-                    singleContainerFullSize="false">
-                    <f:content>
+                     </f:content>
+                  </f:SimpleForm>
+               </Panel>
+               <Panel headerText="{i18n&gt;FL_AddTitle}" class="sapUiSmallMarginTop" expanded="false" expandable="true">
+                  <f:SimpleForm editable="true" layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="3" labelSpanM="4" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="4" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="1" singleContainerFullSize="false">
+                     <f:content>
                         <Label text="Email Address" />
                         <Input type="Email" width="100%" placeholder="Enter your email" />
                         <Label text="Contact Number" />
                         <Input type="Tel" width="100%" placeholder="Enter your phone number" />
                         <Label text="Country" />
                         <Select width="100%">
-                            <items>
-                                <core:Item key="US" text="United States" />
-                                <core:Item key="DE" text="Germany" />
-                                <core:Item key="FR" text="France" />
-                            </items>
+                           <items>
+                              <core:Item key="US" text="United States" />
+                              <core:Item key="DE" text="Germany" />
+                              <core:Item key="FR" text="France" />
+                           </items>
                         </Select>
                         <Label text="Contact Method" />
                         <RadioButtonGroup columns="2">
-                            <buttons>
-                                <RadioButton text="Email" />
-                                <RadioButton text="Phone" />
-                            </buttons>
+                           <buttons>
+                              <RadioButton text="Email" />
+                              <RadioButton text="Phone" />
+                           </buttons>
                         </RadioButtonGroup>
                         <Label text="Newsletter Subscription" />
                         <Switch width="100%" />
@@ -84,17 +58,19 @@
                         <RatingIndicator width="100%" maxValue="5" />
                         <Label text="Agreement" />
                         <CheckBox text="I agree to the terms and conditions" />
-                    </f:content>
-                </f:SimpleForm>
+                     </f:content>
+                  </f:SimpleForm>
+               </Panel>
             </Panel>
-
-               
-      </Panel>
-      <Panel height="100%" width="auto" class="sapUiContentPadding" backgroundDesign="Transparent">
-         <layoutData>
-            <l:SplitterLayoutData size="{=!${treeModel&gt;/showSideContent} ? '100%' : '70%'}" resizable="{treeModel&gt;/showSideContent}" />
-         </layoutData>
-         <NavContainer navigationFinished="onNavigationFinished" id="navCon" class="navContainerControl" />
-      </Panel>
-   </l:Splitter>
+         </l:SplitPane>
+         <l:SplitPane>
+            <l:layoutData>
+               <l:SplitterLayoutData size="{=!${treeModel&gt;/showSideContent} ? '100%' : '70%'}" resizable="{treeModel&gt;/showSideContent}" />
+            </l:layoutData>
+            <Panel height="100%" width="auto" class="sapUiContentPadding" backgroundDesign="Transparent">
+               <NavContainer navigationFinished="onNavigationFinished" id="navCon" class="navContainerControl" />
+            </Panel>
+         </l:SplitPane>
+      </l:PaneContainer>
+   </l:ResponsiveSplitter>
 </core:FragmentDefinition>

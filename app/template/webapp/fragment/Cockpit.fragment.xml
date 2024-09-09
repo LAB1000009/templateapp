@@ -1,47 +1,95 @@
-<core:FragmentDefinition 
-    xmlns:grid="sap.ui.layout.cssgrid"
-    xmlns:mvc="sap.ui.core.mvc"
-    displayBlock="true" 
-    xmlns:core="sap.ui.core" 
-    xmlns="sap.m" 
-    xmlns:tnt="sap.tnt" 
-    xmlns:card="sap.f.cards" 
-    xmlns:form="sap.ui.layout.form" 
-    xmlns:f="sap.f" 
-    xmlns:l="sap.ui.layout">
-    <Panel  id="cockpitPage" height="100%" headerText="{i18n>CockpitTab_Title}" backgroundDesign="Solid">
-        <grid:CSSGrid items="{/Cards}" width="100%" gridTemplateColumns="repeat(auto-fit, 310px)" gridTemplateRows="repeat(5, 150px)" gridGap="1rem" gridAutoRows="auto" gridAutoFlow="Row">
-           <f:GridListItem detailPress="onPressFinanzenCard" type="Active" press="onPressFinanzenCard" class="sapUiSmallMarginTop">
-				<VBox width="320px">
-					<HBox class="sapUiSmallMargin" alignItems="Center" justifyContent="SpaceBetween">
-						<HBox>
-							<core:Icon class="sapUiSmallMarginEnd" src="{Icon}" size="30px" />
-							<VBox justifyContent="End">
-								<Title titleStyle="H4" text="{Title}" />
-							</VBox>
-						</HBox>
-						<!-- <Button icon="sap-icon://add" id="finanzen" class="sapUiLargeMarginBegin" press="onPressAddBtn" /> -->
-					</HBox>
-					<Toolbar height="1px" />
-					<HBox width="" class="sapUiTinyMargin sapUiSmallMarginEnd" justifyContent="SpaceBetween">
-						<VBox justifyContent="Center">
-							<Title titleStyle="H3" text="{MainValue}" />
-						</VBox>
-						<VBox width="25%">
-							<Title titleStyle="H6" wrapping="true" text="{SubTitle}" />
-						</VBox>
-						<VBox>
-							<Text titleStyle="H5" text="{Comparison1}" />
-							<Text titleStyle="H5" text="{Comparison2}" />
-						</VBox>
-						<VBox justifyContent="Start">
-							<ObjectStatus class="boldObjectStatus" state="{Status1State}" text="{Status1Value}" />
-							<ObjectStatus class="boldObjectStatus" state="{Status2State}" text="{Status2Value}" />
-						</VBox>
-					</HBox>
-				</VBox>
-			</f:GridListItem>
-
-        </grid:CSSGrid>
-    </Panel>
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:card="sap.f.cards" xmlns:f="sap.f" xmlns:form="sap.ui.layout.form" xmlns:grid="sap.ui.layout.cssgrid" xmlns:l="sap.ui.layout" xmlns:mvc="sap.ui.core.mvc" xmlns:tnt="sap.tnt" displayBlock="true">
+   <l:ResponsiveSplitter defaultPane="">
+      <l:PaneContainer resize=".onRootContainerResize">
+         <l:SplitPane height="100%">
+		 	 <l:layoutData>
+               <l:SplitterLayoutData size="{=!${treeModel>/cockpitDetailsVisible} ? '100%' : '50%'}" resizable="{treeModel>/cockpitDetailsVisible}" />
+            </l:layoutData>
+            <Panel id="cockpitPage" height="100%" headerText="{i18n>CockpitTab_Title}" backgroundDesign="Solid">
+               <grid:CSSGrid items="{/Cards}" width="100%" gridTemplateColumns="repeat(auto-fit, 310px)" gridTemplateRows="repeat(5, 150px)" gridGap="1rem" gridAutoRows="auto" gridAutoFlow="Row">
+                  <f:GridListItem detailPress="onPressFinanzenCard" type="Active" press="onPressFinanzenCard" class="sapUiSmallMarginTop">
+                     <VBox width="320px">
+                        <HBox class="sapUiSmallMargin" alignItems="Center" justifyContent="SpaceBetween">
+                           <HBox>
+                              <core:Icon class="sapUiSmallMarginEnd" src="{Icon}" size="30px" />
+                              <VBox justifyContent="End">
+                                 <Title titleStyle="H4" text="{Title}" />
+                              </VBox>
+                           </HBox>
+                           <!-- <Button icon="sap-icon://add" id="finanzen" class="sapUiLargeMarginBegin" press="onPressAddBtn" /> -->
+                        </HBox>
+                        <Toolbar height="1px" />
+                        <HBox width="" class="sapUiTinyMargin sapUiSmallMarginEnd" justifyContent="SpaceBetween">
+                           <VBox justifyContent="Center">
+                              <Title titleStyle="H3" text="{MainValue}" />
+                           </VBox>
+                           <VBox width="25%">
+                              <Title titleStyle="H6" wrapping="true" text="{SubTitle}" />
+                           </VBox>
+                           <VBox>
+                              <Text titleStyle="H5" text="{Comparison1}" />
+                              <Text titleStyle="H5" text="{Comparison2}" />
+                           </VBox>
+                           <VBox justifyContent="Start">
+                              <ObjectStatus class="boldObjectStatus" state="{Status1State}" text="{Status1Value}" />
+                              <ObjectStatus class="boldObjectStatus" state="{Status2State}" text="{Status2Value}" />
+                           </VBox>
+                        </HBox>
+                     </VBox>
+                  </f:GridListItem>
+               </grid:CSSGrid>
+            </Panel>
+         </l:SplitPane>
+		 <l:SplitPane height="100%">
+            <l:layoutData>
+               <l:SplitterLayoutData size="{=!${treeModel>/cockpitDetailsVisible} ? '0%' : '50%'}" resizable="{treeModel>/cockpitDetailsVisible}" />
+            </l:layoutData>
+            <Panel  id="cockpitDetailsPanel" headerText="Details" height="100%" width="auto" class="sapUiContentPadding" backgroundDesign="Solid">
+               <List id="cardDetailsList" items="{path: '/cardDetails'}">
+                  <items>
+                     <CustomListItem>
+                        <content>
+                           <VBox class="sapUiTinyMargin">
+                              <items>
+                                 <HBox>
+                                    <items>
+                                       <Title text="{Title}" class="sapUiTinyMarginBegin" />
+                                    </items>
+                                 </HBox>
+                                 <HBox justifyContent="SpaceBetween">
+                                    <items>
+                                       <VBox justifyContent="Center">
+                                          <items>
+                                             <Text text="{YTDText}" />
+                                             <Text text="{BUDvsYTDText}" />
+                                          </items>
+                                       </VBox>
+                                       <VBox justifyContent="Center">
+                                          <items>
+                                             <Title text="{YTDValue}" />
+                                             <Title text="{BUDvsYTDValue}" />
+                                          </items>
+                                       </VBox>
+                                       <VBox justifyContent="End">
+                                          <items>
+                                             <ObjectStatus text="{StatusText}" state="{StatusState}" class="boldObjectStatus sapUiTinyMarginBottom" />
+                                          </items>
+                                       </VBox>
+                                       <VBox justifyContent="Center">
+                                          <items>
+                                             <core:Icon src="{IconSrc}" size="2.5rem" />
+                                          </items>
+                                       </VBox>
+                                    </items>
+                                 </HBox>
+                              </items>
+                           </VBox>
+                        </content>
+                     </CustomListItem>
+                  </items>
+               </List>
+            </Panel>
+         </l:SplitPane>
+      </l:PaneContainer>
+   </l:ResponsiveSplitter>
 </core:FragmentDefinition>

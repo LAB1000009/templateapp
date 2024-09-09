@@ -1,149 +1,188 @@
-<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" 	xmlns:grid="sap.ui.layout.cssgrid" height="100%" displayBlock="true">
-   <Panel height="100%" id="reportPage" class="sapUiContentPadding" backgroundDesign="List" headerText="Payments">
-     <VBox width="100%">
-        <!-- CSSGrid for Table Layout -->
-        <grid:CSSGrid
-            gridTemplateColumns="repeat(5, 1fr)"
-            gridGap="1rem"
-            width="100%"
-            class="sapUiSmallMargin">
-            
-            <!-- Row 1: Header -->
-            <VBox>
-                <Label text="Owner" />
-                <Label text="Steve Otieno" />
-            </VBox>
-            <VBox>
-                <Label text="Objective" />
-                <Label text="Measure staff turnover" />
-            </VBox>
-            <VBox>
-                <Label text="Date of creation" />
-                <Label text="14.05.2022" />
-            </VBox>
-            <VBox>
-                <Label text="Version" />
-                <Label text="1.0" />
-            </VBox>
-            <VBox>
-                <Label text="Report Designer" />
-                <Label text="Steve Otieno" />
-            </VBox>
 
-            <!-- Row 2 -->
-            <VBox class="sapUiSmallMarginTop">
-                <Label text="Report Name [Technical Name]" />
-                <Label text="" />
-            </VBox>
-            <VBox class="sapUiSmallMarginTop">
-                <Label text="Classification  Cluster" />
-                <Label text="" />
-            </VBox>
-            <VBox class="sapUiSmallMarginTop">
-                <Label text="Report description including User Story" />
-                <Label text="" />
-            </VBox>
-            <VBox class="sapUiSmallMarginTop" />
-            <VBox class="sapUiSmallMarginTop" />
-
-            <!-- Row 3: Single full-width row -->
-            <VBox gridColumn="span 5">
-                <Label text="Report objectives and Actionable Intelligence  Processes, and measurable achievements" />
-                <Label text="" />
-            </VBox>
-
-            <!-- Row 4 -->
-            <VBox>
-                <Label text="GOAL [Question answered or problem solved by the report]" />
-                <Label text="" />
-            </VBox>
-            <VBox>
-                <Label text="Process" />
-                <Label text="" />
-            </VBox>
-            <VBox>
-                <Label text="Time to Target" />
-                <Label text="" />
-            </VBox>
-            <VBox />
-            <VBox />
-
-            <!-- Row 5 -->
-            <VBox>
-                <Label text="Target Audience" />
-                <Label text="" />
-            </VBox>
-            <VBox>
-                <Label text="Necessary Resources" />
-                <Label text="" />
-            </VBox>
-            <VBox>
-                <Label text="Known-Issues  Troubleshooting" />
-                <Label text="" />
-            </VBox>
-            <VBox />
-            <VBox />
-
-            <!-- Row 6 -->
-            <VBox>
-                <Label text="Data Source" />
-                <Label text="DWH" />
-                <Label text="Ext. DB" />
-                <Label text="Flatfiles" />
-            </VBox>
-            <VBox>
-                <Label text="Data Quality Assurance [Responsible]" />
-                <Label text="Performed" />
-                <Label text="Not Performed" />
-            </VBox>
-            <VBox>
-                <Label text="Schedules  Automated Refresh" />
-                <Label text="Schedules" />
-                <Label text="Automated Refreshes" />
-            </VBox>
-            <VBox>
-                <Label text="Data Manager" />
-            </VBox>
-            <VBox>
-                <Label text="Analyst | Expert" />
-            </VBox>
-
-            <!-- Row 7: ChangeLog Intake -->
-            <VBox gridColumn="span 5">
-                <Label text="ChangeLog Intake" />
-            </VBox>
-            <VBox>
-                <Label text="Date" />
-                <Label text="" />
-            </VBox>
-            <VBox>
-                <Label text="Requested by" />
-                <Label text="" />
-            </VBox>
-            <VBox gridColumn="span 3">
-                <Label text="Description" />
-                <Label text="" />
-            </VBox>
-
-            <!-- Row 8: Report Planning  Project Documentation -->
-            <VBox gridColumn="span 5">
-                <Label text="Report Planning  Project Documentation" />
-            </VBox>
-            <VBox>
-                <Label text="Related Report" />
-                <Label text="" />
-            </VBox>
-            <VBox>
-                <Label text="KPIs" />
-                <Label text="Measures" />
-            </VBox>
-            <VBox>
-                <Label text="Roadmap" />
-                <Label text="" />
-            </VBox>
-            <VBox gridColumn="span 2" />
-
-        </grid:CSSGrid>
-    </VBox>
-   </Panel>
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:layout="sap.ui.layout">
+   <Page showHeader="false">
+   <Panel>
+      <layout:BlockLayout keepFontSize="true" id="blockLayout" class="sapUiNoContentPadding"  background="Dashboard">
+         <!-- Row 1 -->
+         <layout:BlockLayoutRow>
+            <layout:BlockLayoutCell title="Owner" titleAlignment="Center">
+               <HBox justifyContent="Center">
+                  <Text text="Steve Otieno" />
+               </HBox>
+            </layout:BlockLayoutCell>
+            <layout:BlockLayoutCell title="Objective" titleAlignment="Center">
+               <Text text="Measure staff turnover" />
+            </layout:BlockLayoutCell>
+            <layout:BlockLayoutCell title="Date of creation" titleAlignment="Center">
+               <Text text="14.05.2022" />
+            </layout:BlockLayoutCell>
+            <layout:BlockLayoutCell title="Version" titleAlignment="Center">
+               <Text text="1.0" />
+            </layout:BlockLayoutCell>
+            <layout:BlockLayoutCell title="Report Designer" titleAlignment="Center">
+               <Text text="Steve Otieno" />
+            </layout:BlockLayoutCell>
+         </layout:BlockLayoutRow>
+         <!-- Row 2 -->
+         <layout:BlockLayoutRow>
+            <layout:BlockLayoutCell title="Report Name [Technical Name]" titleAlignment="Center" />
+            <layout:BlockLayoutCell title="Classification  Cluster" titleAlignment="Center" />
+            <layout:BlockLayoutCell title="Report description including User Story" titleAlignment="Center" />
+         </layout:BlockLayoutRow>
+         <layout:BlockLayoutRow>
+            <layout:BlockLayoutCell title="Report objectives and Actionable Intelligence  Processes, and measurable achievements" titleAlignment="Center">
+               <Text text="" />
+            </layout:BlockLayoutCell>
+         </layout:BlockLayoutRow>
+         <!-- Row 3 -->
+         <layout:BlockLayoutRow>
+            <layout:BlockLayoutCell title="GOAL [Question answered or problem solved by the report]" titleAlignment="Center">
+               <Text text="" />
+            </layout:BlockLayoutCell>
+            <layout:BlockLayoutCell title="Processes" titleAlignment="Center">
+               <Text text="" />
+            </layout:BlockLayoutCell>
+            <layout:BlockLayoutCell title="Time to Target" titleAlignment="Center">
+               <Text text="" />
+            </layout:BlockLayoutCell>
+         </layout:BlockLayoutRow>
+         <!-- Row 4 -->
+         <layout:BlockLayoutRow>
+            <layout:BlockLayoutCell title="Target Audience" titleAlignment="Center">
+               <Text text="" />
+            </layout:BlockLayoutCell>
+            <layout:BlockLayoutCell title="Necessary Resources" titleAlignment="Center">
+               <Text text="" />
+            </layout:BlockLayoutCell>
+            <layout:BlockLayoutCell title="Known-Issues and Troubleshooting" titleAlignment="Center">
+               <Text text="" />
+            </layout:BlockLayoutCell>
+         </layout:BlockLayoutRow>
+         <!-- Row 5 -->
+         <layout:BlockLayoutRow>
+            <layout:BlockLayoutCell title="Data Source" titleAlignment="Center">
+               <layout:BlockLayout>
+                  <layout:BlockLayoutRow>
+                     <layout:BlockLayoutCell title="title" titleAlignment="Center" />
+                  </layout:BlockLayoutRow>
+               </layout:BlockLayout>
+               <layout:BlockLayout>
+                  <layout:BlockLayoutRow>
+                  <layout:BlockLayoutCell  titleAlignment="Center">
+                  <HBox justifyContent="SpaceBetween" class="">
+                  <Text text="DWH" />
+                  <Text text="Ext. DB" />
+                  <Text text="Flatfiles" />
+                  </HBox>
+                  </layout:BlockLayoutCell>
+                     <!-- <layout:BlockLayoutCell title="DWH" titleAlignment="Center">
+                        <Text text="" />
+                     </layout:BlockLayoutCell>
+                     <layout:BlockLayoutCell title="Ext. DB" titleAlignment="Center">
+                        <Text text="" />
+                     </layout:BlockLayoutCell>
+                     <layout:BlockLayoutCell title="Flatfiles" titleAlignment="Center">
+                        <Text text="" />
+                     </layout:BlockLayoutCell> -->
+                  </layout:BlockLayoutRow>
+               </layout:BlockLayout>
+               <layout:BlockLayout>
+                  <layout:BlockLayoutRow>
+                  <layout:BlockLayoutCell  titleAlignment="Center">
+                  <HBox justifyContent="SpaceBetween">
+                  <Text text="SAP" />
+                  <Text text="SP List" />
+                  <Text text="Local" />
+                  </HBox>
+                  </layout:BlockLayoutCell>
+                     <!-- <layout:BlockLayoutCell title="SAP" titleAlignment="Center">
+                        <Text text="" />
+                     </layout:BlockLayoutCell>
+                     <layout:BlockLayoutCell title="SP List" titleAlignment="Center">
+                        <Text text="" />
+                     </layout:BlockLayoutCell>
+                     <layout:BlockLayoutCell title="Local" titleAlignment="Center">
+                        <Text text="" />
+                     </layout:BlockLayoutCell> -->
+                  </layout:BlockLayoutRow>
+               </layout:BlockLayout>
+            </layout:BlockLayoutCell>
+            <layout:BlockLayoutCell title="Data Quality Assurance [Responsible]" titleAlignment="Center">
+               <layout:BlockLayout>
+                  <layout:BlockLayoutRow>
+                     <layout:BlockLayoutCell title="0" titleAlignment="Center" />
+                  </layout:BlockLayoutRow>
+               </layout:BlockLayout>
+               <layout:BlockLayout>
+                  <layout:BlockLayoutRow>
+                  <layout:BlockLayoutCell  titleAlignment="Center">
+                  <HBox justifyContent="SpaceBetween">
+                  <Text text="Performed" />
+                  <Text text="Not Performed" />
+                  
+                  </HBox>
+                  </layout:BlockLayoutCell>
+                     <!-- <layout:BlockLayoutCell title="Performed" titleAlignment="Center">
+                        <Text text="" />
+                     </layout:BlockLayoutCell>
+                     <layout:BlockLayoutCell title="Not Performed" titleAlignment="Center">
+                        <Text text="" />
+                     </layout:BlockLayoutCell> -->
+                  </layout:BlockLayoutRow>
+               </layout:BlockLayout>
+               
+            </layout:BlockLayoutCell>
+            <layout:BlockLayoutCell title="Schedules  Automated Refresh" titleAlignment="Center">
+               <layout:BlockLayout>
+                  <layout:BlockLayoutRow>
+                     <layout:BlockLayoutCell title="0" titleAlignment="Center" />
+                  </layout:BlockLayoutRow>
+               </layout:BlockLayout>
+               <layout:BlockLayout>
+                  <layout:BlockLayoutRow>
+                  <layout:BlockLayoutCell  titleAlignment="Center">
+                  <HBox justifyContent="SpaceBetween">
+                  <Text text="Schedules" />
+                  <Text text="Automated Refreshes" />
+                  </HBox>
+                  </layout:BlockLayoutCell>
+                     <!-- <layout:BlockLayoutCell title="Schedules" titleAlignment="Center">
+                        <Text text="" />
+                     </layout:BlockLayoutCell>
+                     <layout:BlockLayoutCell title="Automated Refreshes" titleAlignment="Center">
+                        <Text text="" />
+                     </layout:BlockLayoutCell> -->
+                  </layout:BlockLayoutRow>
+               </layout:BlockLayout>
+               <layout:BlockLayout>
+                  <layout:BlockLayoutRow>
+                  <layout:BlockLayoutCell  titleAlignment="Center">
+                  <HBox justifyContent="SpaceBetween">
+                  <Text text="Data Manager" />
+                  <Text text="Analyst | Expert" />
+                  </HBox>
+                  </layout:BlockLayoutCell>
+                     <!-- <layout:BlockLayoutCell title="Data Manager" titleAlignment="Center">
+                        <Text text="" />
+                     </layout:BlockLayoutCell>
+                     <layout:BlockLayoutCell title="Analyst | Expert" titleAlignment="Center">
+                        <Text text="" />
+                     </layout:BlockLayoutCell>
+                      -->
+                  </layout:BlockLayoutRow>
+               </layout:BlockLayout>
+            </layout:BlockLayoutCell>
+         </layout:BlockLayoutRow>
+         <!-- Row 6 -->
+         <layout:BlockLayoutRow>
+            <layout:BlockLayoutCell title="ChangeLog Intake" titleAlignment="Center">
+               <Text text="" />
+            </layout:BlockLayoutCell>
+             <layout:BlockLayoutCell title="KPIs and Measures" titleAlignment="Center">
+                 <Text text="" />
+            </layout:BlockLayoutCell>
+         </layout:BlockLayoutRow>
+      </layout:BlockLayout>
+      </Panel>
+   </Page>
 </core:FragmentDefinition>
