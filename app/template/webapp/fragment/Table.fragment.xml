@@ -1,38 +1,90 @@
-<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:card="sap.f.cards" xmlns:f="sap.f" xmlns:form="sap.ui.layout.form" xmlns:l="sap.ui.layout" xmlns:mvc="sap.ui.core.mvc" xmlns:tnt="sap.tnt" height="100%" displayBlock="true">
+<core:FragmentDefinition xmlns:table="sap.ui.table" xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:card="sap.f.cards" xmlns:f="sap.f" xmlns:form="sap.ui.layout.form" xmlns:l="sap.ui.layout" xmlns:mvc="sap.ui.core.mvc" xmlns:tnt="sap.tnt" height="100%" displayBlock="true">
    <Panel height="100%" id="tablePage" class="sapUiContentPadding" backgroundDesign="List" headerText="{i18n>TableTab_Title}">
-      <Table id="payments-table" inset="false" items="{path: '/TableEntity'}">
-         <columns>
-            <Column>
-               <Text text="Name" />
-            </Column>
-            <Column hAlign="Center">
-               <Text text="Job" />
-            </Column>
-            <Column hAlign="End">
-               <Text text="Department" />
-            </Column>
-            <Column hAlign="End">
-               <Text text="BusinessUnit" />
-            </Column>
-            <Column hAlign="End">
-               <Text text="Hire Date" />
-            </Column>
-             <Column hAlign="End">
-               <Text text="Annual Salary" />
-            </Column>
-         </columns>
-         <items>
-            <ColumnListItem  key="{EEID}">
-               <cells>
+      
+        <Panel headerText="Grid Table" expanded="true" expandable="true">
+         <table:Table
+            id="ui-table"
+            cellClick="onPressCell"
+            rows="{path: '/TableEntity'}"
+            visibleRowCount="10"
+            selectionMode="MultiToggle"
+            enableSelectAll="true">
+            
+            <table:columns>
+            <table:Column sortProperty="FullName" filterProperty="FullName">
+               <Label text="Name" />
+               <table:template>
                   <Text text="{FullName}" />
+               </table:template>
+            </table:Column>
+            <table:Column hAlign="Center" sortProperty="JobTitle" filterProperty="JobTitle">
+               <Label text="Job" />
+               <table:template>
                   <Text text="{JobTitle}" />
+               </table:template>
+            </table:Column>
+            <table:Column hAlign="End" sortProperty="Department" filterProperty="Department">
+               <Label text="Department" />
+               <table:template>
                   <Text text="{Department}" />
+               </table:template>
+            </table:Column>
+            <table:Column hAlign="End" sortProperty="BusinessUnit" filterProperty="BusinessUnit">
+               <Label text="Business Unit" />
+               <table:template>
                   <Text text="{BusinessUnit}" />
+               </table:template>
+            </table:Column>
+            <table:Column hAlign="End" sortProperty="HireDate" filterProperty="HireDate">
+               <Label text="Hire Date" />
+               <table:template>
                   <Text text="{ path: 'HireDate', formatter: '_dateFormatter'}" />
-                  <ObjectNumber number="{parts:[{path:'AnnualSalary'},{path:'CurrencyCode'}],type: 'sap.ui.model.type.Currency',                         formatOptions: {showMeasure: false}                     }" unit="{CurrencyCode}" />
-               </cells>
-            </ColumnListItem>
-         </items>
-      </Table>
+               </table:template>
+            </table:Column>
+            <table:Column hAlign="End" sortProperty="AnnualSalary" filterProperty="AnnualSalary">
+               <Label text="Annual Salary" />
+               <table:template>
+                  <ObjectNumber number="{parts:[{path:'AnnualSalary'},{path:'CurrencyCode'}],type: 'sap.ui.model.type.Currency', formatOptions: {showMeasure: false}}" unit="{CurrencyCode}" />
+               </table:template>
+            </table:Column>
+         </table:columns>
+         </table:Table>
+       </Panel>
+       <Panel headerText="Responsive Table" expanded="false" expandable="true">
+         <Table id="payments-table" inset="false" items="{path: '/TableEntity'}">
+            <columns>
+               <Column>
+                  <Text text="Name" />
+               </Column>
+               <Column hAlign="Center">
+                  <Text text="Job" />
+               </Column>
+               <Column hAlign="End">
+                  <Text text="Department" />
+               </Column>
+               <Column hAlign="End">
+                  <Text text="BusinessUnit" />
+               </Column>
+               <Column hAlign="End">
+                  <Text text="Hire Date" />
+               </Column>
+               <Column hAlign="End">
+                  <Text text="Annual Salary" />
+               </Column>
+            </columns>
+            <items>
+               <ColumnListItem  key="{EEID}">
+                  <cells>
+                     <Text text="{FullName}" />
+                     <Text text="{JobTitle}" />
+                     <Text text="{Department}" />
+                     <Text text="{BusinessUnit}" />
+                     <Text text="{ path: 'HireDate', formatter: '_dateFormatter'}" />
+                     <ObjectNumber number="{parts:[{path:'AnnualSalary'},{path:'CurrencyCode'}],type: 'sap.ui.model.type.Currency',                         formatOptions: {showMeasure: false}                     }" unit="{CurrencyCode}" />
+                  </cells>
+               </ColumnListItem>
+            </items>
+         </Table>
+       </Panel>
    </Panel>
 </core:FragmentDefinition>

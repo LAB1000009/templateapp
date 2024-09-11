@@ -1,5 +1,6 @@
 
 <core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:layout="sap.ui.layout">
+<Dialog stretch="true">
    <Page showHeader="false">
    <Panel>
       <layout:BlockLayout keepFontSize="true" id="blockLayout" class="sapUiNoContentPadding"  background="Dashboard">
@@ -185,4 +186,8 @@
       </layout:BlockLayout>
       </Panel>
    </Page>
+   <endButton>
+      <Button text="Close" press="onCloseFooterDialog"/>
+   </endButton>
+   </Dialog>
 </core:FragmentDefinition>

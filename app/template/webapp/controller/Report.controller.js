@@ -17,6 +17,9 @@ var Controller = Controller.extend("ui.template.controller.Table", {
     
         var oModel = new sap.ui.model.json.JSONModel(oData);
         this.getView().setModel(oModel, "reportModel");
+    },
+    onCloseFooterDialog:function(oEvent){
+        oEvent.getSource().getParent().close();
     }
 });
 

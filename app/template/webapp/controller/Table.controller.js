@@ -53,6 +53,9 @@ var Controller = Controller.extend("ui.template.controller.Table", {
             return [];
         }
     },
+    onPressCell:function(oEvent){
+        
+    }
 });
 
 return Controller;

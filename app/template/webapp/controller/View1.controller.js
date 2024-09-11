@@ -9,7 +9,7 @@ sap.ui.define([
     'sap/viz/ui5/api/env/Format',
     'sap/ui/Device',
     'sap/m/DynamicDateRange',
-	"../model/models"
+    "../model/models"
 
 ],
     function (Controller, JSONModel, Dialog, Button, Filter, FilterOperator, ChartFormatter, Format, Device, DynamicDateRange) {
@@ -25,11 +25,11 @@ sap.ui.define([
                     .then((oFragment) => {
                         this.getView().byId("contentPage").addContent(oFragment);
                     })
-                    .then(this._loadFragments.bind(this, "Chart"));
+                    .then(this._loadFragments.bind(this, "Chart", true));
 
                 var oTreeModel = new JSONModel({
                     //////////////
-                    cockpitDetailsVisible:false,
+                    cockpitDetailsVisible: false,
                     headerTitle: "HR template",
                     headerSubTitle: "HR dashboard template from Mosec Solutions",
                     headerActDate: new Intl.DateTimeFormat(['ban', 'id']).format(new Date()),
@@ -48,37 +48,43 @@ sap.ui.define([
                 this.getView().setModel(oTreeModel, "treeModel");
             },
 
+            // onPressFooterBtn: function (oEvent) {
+            //     this.oFooterPopover = new sap.m.ResponsivePopover({
+            //         showHeader: false,
+            //         showArrow: false,
+            //         placement: "Top",
+            //         content: [
+            //             new sap.m.VBox({
+            //                 items: [
+            //                     new sap.m.HBox({
+            //                         alignItems: "Center",
+            //                         items: [
+            //                             new sap.m.Title({ text: "AM" }).addStyleClass("sapUiSmallMarginEnd"),
+            //                             new sap.m.ObjectStatus({ text: "Aktueller Monat", active: true })
+            //                         ]
+            //                     }),
+            //                     new sap.m.HBox({
+            //                         alignItems: "Center",
+            //                         items: [
+            //                             new sap.m.Title({ text: "VM" }).addStyleClass("sapUiSmallMarginEnd"),
+            //                             new sap.m.ObjectStatus({ text: "Vergangenen Monat", active: true })
+            //                         ]
+            //                     })
+            //                 ]
+            //             })
+            //         ]
+            //     }).addStyleClass("sapUiSizeCompact sapUiContentPadding");
+            //     this.oFooterPopover.openBy(oEvent.getSource());;
+            // },
             onPressFooterBtn: function (oEvent) {
-                this.oFooterPopover = new sap.m.ResponsivePopover({
-                    showHeader: false,
-                    showArrow: false,
-                    placement: "Top",
-                    content: [
-                        new sap.m.VBox({
-                            items: [
-                                new sap.m.HBox({
-                                    alignItems: "Center",
-                                    items: [
-                                        new sap.m.Title({ text: "AM" }).addStyleClass("sapUiSmallMarginEnd"),
-                                        new sap.m.ObjectStatus({ text: "Aktueller Monat", active: true })
-                                    ]
-                                }),
-                                new sap.m.HBox({
-                                    alignItems: "Center",
-                                    items: [
-                                        new sap.m.Title({ text: "VM" }).addStyleClass("sapUiSmallMarginEnd"),
-                                        new sap.m.ObjectStatus({ text: "Vergangenen Monat", active: true })
-                                    ]
-                                })
-                            ]
-                        })
-                    ]
-                }).addStyleClass("sapUiSizeCompact sapUiContentPadding");
-                this.oFooterPopover.openBy(oEvent.getSource());;
+                var oReportDialog = this._loadFragments("Report", false);
+                oReportDialog.then((dialog) => {
+                    dialog.open();
+                })
             },
-            onSelectIconTabHeader: async function (oEvent) {  // Сделаем метод асинхронным
+            onSelectIconTabHeader: async function (oEvent) {
                 var sSelectedKey = oEvent.getSource().getSelectedKey();
-                var oPage = await this._loadFragments(sSelectedKey);
+                var oPage = await this._loadFragments(sSelectedKey, true);
                 if (this.getView().byId("navCon").getCurrentPage() === this._fragments[sSelectedKey]) {
                     return
                 }
@@ -109,11 +115,11 @@ sap.ui.define([
                 this.getView().addDependent(oFragment);
                 this.getView().byId("navCon").addPage(oFragment);
             },
-            onChange: function(oEvent) {
+            onChange: function (oEvent) {
                 var oDynamicDateRange = oEvent.oSource,
                     bValid = oEvent.getParameter("valid"),
                     oTableItemsBinding, oValue, oTable, oFilter;
-        
+
                 if (bValid) {
                     oTable = this.getView().byId('Table--payments-table')
                     oTableItemsBinding = oTable.getBinding("items");
@@ -125,14 +131,14 @@ sap.ui.define([
                     oDynamicDateRange.setValueState("Error");
                 }
             },
-            _createFilter: function(oValue) {
+            _createFilter: function (oValue) {
                 if (oValue) {
                     var aDates = DynamicDateRange.toDates(oValue);
                     var oDateFormat = sap.ui.core.format.DateFormat.getDateInstance({
                         pattern: "yyyy-MM-dd'T'HH:mm:ss'Z'",
                         UTC: true
                     });
-                    
+
                     if (oValue.operator === "FROM" || oValue.operator === "FROMDATETIME") {
                         return new Filter("HireDate", FilterOperator.GT, oDateFormat.format(aDates[0]));
                     } else if (oValue.operator === "TO" || oValue.operator === "TODATETIME") {
@@ -145,17 +151,16 @@ sap.ui.define([
                 }
             },
 
-            
-            _loadFragments: async function (sSelectedKey) {
+            _loadFragments: async function (sSelectedKey, bSetInTab) {
                 this._fragments = this._fragments || {};
 
                 if (!this._fragments[sSelectedKey]) {
                     const oController = this._loadController(sSelectedKey);
                     const oFragment = await this._initializeFragment(sSelectedKey, oController);
-
-                    this._addFragmentToView(sSelectedKey, oFragment);
+                    if (bSetInTab) {
+                        this._addFragmentToView(sSelectedKey, oFragment);
+                    }
                     this._fragments[sSelectedKey] = oFragment;
-
                     if (typeof oController.onInit === 'function') {
                         oController.onInit();
                     }
