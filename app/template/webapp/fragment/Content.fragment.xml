@@ -1,4 +1,4 @@
-<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout" xmlns:u="sap.ui.unified">
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:smartFilterBar="sap.ui.comp.smartfilterbar"  xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout" xmlns:u="sap.ui.unified">
    <l:ResponsiveSplitter defaultPane="default">
       <l:PaneContainer resize=".onRootContainerResize">
          <l:SplitPane height="100%">
@@ -7,7 +7,11 @@
             </l:layoutData>
             <Panel height="100%" backgroundDesign="Transparent" class="sapUiContentPadding" visible="{treeModel&gt;/showSideContent}">
                <Panel headerText="{i18n&gt;FL_Title}" expanded="true" expandable="true">
-                  <f:SimpleForm editable="true" layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="3" labelSpanM="4" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="4" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="1" singleContainerFullSize="false">
+                <smartFilterBar:SmartFilterBar id="smartFilterBar" entitySet="TableEntity" persistencyKey="SmartFilter_Explored">
+   
+               </smartFilterBar:SmartFilterBar>
+
+                  <!-- <f:SimpleForm editable="true" layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="3" labelSpanM="4" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="4" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="1" singleContainerFullSize="false">
                      <f:content>
                         <Label visible="false" text="Transaction date" labelFor="dynamic-range" />
                         <DynamicDateRange id="dynamicRange" change="onChange" width="{env&gt;/filterInputWidth}" />
@@ -28,9 +32,9 @@
                         <Label text="Select Date" />
                         <DatePicker width="100%" />
                      </f:content>
-                  </f:SimpleForm>
+                  </f:SimpleForm> -->
                </Panel>
-               <Panel headerText="{i18n&gt;FL_AddTitle}" class="sapUiSmallMarginTop" expanded="false" expandable="true">
+               <!-- <Panel headerText="{i18n&gt;FL_AddTitle}" class="sapUiSmallMarginTop" expanded="false" expandable="true">
                   <f:SimpleForm editable="true" layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="3" labelSpanM="4" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="4" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="1" singleContainerFullSize="false">
                      <f:content>
                         <Label text="Email Address" />
@@ -60,7 +64,7 @@
                         <CheckBox text="I agree to the terms and conditions" />
                      </f:content>
                   </f:SimpleForm>
-               </Panel>
+               </Panel> -->
             </Panel>
          </l:SplitPane>
          <l:SplitPane>

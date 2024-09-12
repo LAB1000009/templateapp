@@ -1,193 +1,338 @@
 
-<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:layout="sap.ui.layout">
-<Dialog stretch="true">
-   <Page showHeader="false">
-   <Panel>
-      <layout:BlockLayout keepFontSize="true" id="blockLayout" class="sapUiNoContentPadding"  background="Dashboard">
-         <!-- Row 1 -->
-         <layout:BlockLayoutRow>
-            <layout:BlockLayoutCell title="Owner" titleAlignment="Center">
-               <HBox justifyContent="Center">
-                  <Text text="Steve Otieno" />
-               </HBox>
-            </layout:BlockLayoutCell>
-            <layout:BlockLayoutCell title="Objective" titleAlignment="Center">
-               <Text text="Measure staff turnover" />
-            </layout:BlockLayoutCell>
-            <layout:BlockLayoutCell title="Date of creation" titleAlignment="Center">
-               <Text text="14.05.2022" />
-            </layout:BlockLayoutCell>
-            <layout:BlockLayoutCell title="Version" titleAlignment="Center">
-               <Text text="1.0" />
-            </layout:BlockLayoutCell>
-            <layout:BlockLayoutCell title="Report Designer" titleAlignment="Center">
-               <Text text="Steve Otieno" />
-            </layout:BlockLayoutCell>
-         </layout:BlockLayoutRow>
-         <!-- Row 2 -->
-         <layout:BlockLayoutRow>
-            <layout:BlockLayoutCell title="Report Name [Technical Name]" titleAlignment="Center" />
-            <layout:BlockLayoutCell title="Classification  Cluster" titleAlignment="Center" />
-            <layout:BlockLayoutCell title="Report description including User Story" titleAlignment="Center" />
-         </layout:BlockLayoutRow>
-         <layout:BlockLayoutRow>
-            <layout:BlockLayoutCell title="Report objectives and Actionable Intelligence  Processes, and measurable achievements" titleAlignment="Center">
-               <Text text="" />
-            </layout:BlockLayoutCell>
-         </layout:BlockLayoutRow>
-         <!-- Row 3 -->
-         <layout:BlockLayoutRow>
-            <layout:BlockLayoutCell title="GOAL [Question answered or problem solved by the report]" titleAlignment="Center">
-               <Text text="" />
-            </layout:BlockLayoutCell>
-            <layout:BlockLayoutCell title="Processes" titleAlignment="Center">
-               <Text text="" />
-            </layout:BlockLayoutCell>
-            <layout:BlockLayoutCell title="Time to Target" titleAlignment="Center">
-               <Text text="" />
-            </layout:BlockLayoutCell>
-         </layout:BlockLayoutRow>
-         <!-- Row 4 -->
-         <layout:BlockLayoutRow>
-            <layout:BlockLayoutCell title="Target Audience" titleAlignment="Center">
-               <Text text="" />
-            </layout:BlockLayoutCell>
-            <layout:BlockLayoutCell title="Necessary Resources" titleAlignment="Center">
-               <Text text="" />
-            </layout:BlockLayoutCell>
-            <layout:BlockLayoutCell title="Known-Issues and Troubleshooting" titleAlignment="Center">
-               <Text text="" />
-            </layout:BlockLayoutCell>
-         </layout:BlockLayoutRow>
-         <!-- Row 5 -->
-         <layout:BlockLayoutRow>
-            <layout:BlockLayoutCell title="Data Source" titleAlignment="Center">
-               <layout:BlockLayout>
-                  <layout:BlockLayoutRow>
-                     <layout:BlockLayoutCell title="title" titleAlignment="Center" />
-                  </layout:BlockLayoutRow>
-               </layout:BlockLayout>
-               <layout:BlockLayout>
-                  <layout:BlockLayoutRow>
-                  <layout:BlockLayoutCell  titleAlignment="Center">
-                  <HBox justifyContent="SpaceBetween" class="">
-                  <Text text="DWH" />
-                  <Text text="Ext. DB" />
-                  <Text text="Flatfiles" />
-                  </HBox>
-                  </layout:BlockLayoutCell>
-                     <!-- <layout:BlockLayoutCell title="DWH" titleAlignment="Center">
-                        <Text text="" />
-                     </layout:BlockLayoutCell>
-                     <layout:BlockLayoutCell title="Ext. DB" titleAlignment="Center">
-                        <Text text="" />
-                     </layout:BlockLayoutCell>
-                     <layout:BlockLayoutCell title="Flatfiles" titleAlignment="Center">
-                        <Text text="" />
-                     </layout:BlockLayoutCell> -->
-                  </layout:BlockLayoutRow>
-               </layout:BlockLayout>
-               <layout:BlockLayout>
-                  <layout:BlockLayoutRow>
-                  <layout:BlockLayoutCell  titleAlignment="Center">
-                  <HBox justifyContent="SpaceBetween">
-                  <Text text="SAP" />
-                  <Text text="SP List" />
-                  <Text text="Local" />
-                  </HBox>
-                  </layout:BlockLayoutCell>
-                     <!-- <layout:BlockLayoutCell title="SAP" titleAlignment="Center">
-                        <Text text="" />
-                     </layout:BlockLayoutCell>
-                     <layout:BlockLayoutCell title="SP List" titleAlignment="Center">
-                        <Text text="" />
-                     </layout:BlockLayoutCell>
-                     <layout:BlockLayoutCell title="Local" titleAlignment="Center">
-                        <Text text="" />
-                     </layout:BlockLayoutCell> -->
-                  </layout:BlockLayoutRow>
-               </layout:BlockLayout>
-            </layout:BlockLayoutCell>
-            <layout:BlockLayoutCell title="Data Quality Assurance [Responsible]" titleAlignment="Center">
-               <layout:BlockLayout>
-                  <layout:BlockLayoutRow>
-                     <layout:BlockLayoutCell title="0" titleAlignment="Center" />
-                  </layout:BlockLayoutRow>
-               </layout:BlockLayout>
-               <layout:BlockLayout>
-                  <layout:BlockLayoutRow>
-                  <layout:BlockLayoutCell  titleAlignment="Center">
-                  <HBox justifyContent="SpaceBetween">
-                  <Text text="Performed" />
-                  <Text text="Not Performed" />
-                  
-                  </HBox>
-                  </layout:BlockLayoutCell>
-                     <!-- <layout:BlockLayoutCell title="Performed" titleAlignment="Center">
-                        <Text text="" />
-                     </layout:BlockLayoutCell>
-                     <layout:BlockLayoutCell title="Not Performed" titleAlignment="Center">
-                        <Text text="" />
-                     </layout:BlockLayoutCell> -->
-                  </layout:BlockLayoutRow>
-               </layout:BlockLayout>
-               
-            </layout:BlockLayoutCell>
-            <layout:BlockLayoutCell title="Schedules  Automated Refresh" titleAlignment="Center">
-               <layout:BlockLayout>
-                  <layout:BlockLayoutRow>
-                     <layout:BlockLayoutCell title="0" titleAlignment="Center" />
-                  </layout:BlockLayoutRow>
-               </layout:BlockLayout>
-               <layout:BlockLayout>
-                  <layout:BlockLayoutRow>
-                  <layout:BlockLayoutCell  titleAlignment="Center">
-                  <HBox justifyContent="SpaceBetween">
-                  <Text text="Schedules" />
-                  <Text text="Automated Refreshes" />
-                  </HBox>
-                  </layout:BlockLayoutCell>
-                     <!-- <layout:BlockLayoutCell title="Schedules" titleAlignment="Center">
-                        <Text text="" />
-                     </layout:BlockLayoutCell>
-                     <layout:BlockLayoutCell title="Automated Refreshes" titleAlignment="Center">
-                        <Text text="" />
-                     </layout:BlockLayoutCell> -->
-                  </layout:BlockLayoutRow>
-               </layout:BlockLayout>
-               <layout:BlockLayout>
-                  <layout:BlockLayoutRow>
-                  <layout:BlockLayoutCell  titleAlignment="Center">
-                  <HBox justifyContent="SpaceBetween">
-                  <Text text="Data Manager" />
-                  <Text text="Analyst | Expert" />
-                  </HBox>
-                  </layout:BlockLayoutCell>
-                     <!-- <layout:BlockLayoutCell title="Data Manager" titleAlignment="Center">
-                        <Text text="" />
-                     </layout:BlockLayoutCell>
-                     <layout:BlockLayoutCell title="Analyst | Expert" titleAlignment="Center">
-                        <Text text="" />
-                     </layout:BlockLayoutCell>
-                      -->
-                  </layout:BlockLayoutRow>
-               </layout:BlockLayout>
-            </layout:BlockLayoutCell>
-         </layout:BlockLayoutRow>
-         <!-- Row 6 -->
-         <layout:BlockLayoutRow>
-            <layout:BlockLayoutCell title="ChangeLog Intake" titleAlignment="Center">
-               <Text text="" />
-            </layout:BlockLayoutCell>
-             <layout:BlockLayoutCell title="KPIs and Measures" titleAlignment="Center">
-                 <Text text="" />
-            </layout:BlockLayoutCell>
-         </layout:BlockLayoutRow>
-      </layout:BlockLayout>
-      </Panel>
-   </Page>
-   <endButton>
-      <Button text="Close" press="onCloseFooterDialog"/>
-   </endButton>
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:f="sap.ui.layout.form">
+   <Dialog  title="Dashboard details" draggable="true" resizable="true" contentWidth="500px" contentHeight="1000px">
+      <Page class="sapUiContentPadding" showHeader="false">
+         <content>
+           
+               <Panel class="">
+                  <f:Form editable="false">
+                
+                     <f:layout>
+                        <f:ResponsiveGridLayout labelSpanXL="12" labelSpanL="12" labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="2" columnsL="5" columnsM="1" singleContainerFullSize="false" />
+                     </f:layout>
+                     <f:title>
+                        <core:Title text="Report Information" />
+                     </f:title>
+                     <f:formContainers>
+                        <!-- Report Information Section -->
+                        <f:FormContainer>
+                           <f:formElements>
+                              <f:FormElement label="Owner">
+                                 <f:fields>
+                                    <Text text="Steve Otieno" />
+                                 </f:fields>
+                              </f:FormElement>
+                           </f:formElements>
+                        </f:FormContainer>
+                        <f:FormContainer>
+                           <f:formElements>
+                              <f:FormElement label="Objective">
+                                 <f:fields>
+                                    <Text text="Measure staff turnover" />
+                                 </f:fields>
+                              </f:FormElement>
+                           </f:formElements>
+                        </f:FormContainer>
+                        <f:FormContainer>
+                           <f:formElements>
+                              <f:FormElement label="Date of Creation">
+                                 <f:fields>
+                                    <Text text="14.05.2022" />
+                                 </f:fields>
+                              </f:FormElement>
+                           </f:formElements>
+                        </f:FormContainer>
+                        <f:FormContainer>
+                           <f:formElements>
+                              <f:FormElement label="Version">
+                                 <f:fields>
+                                    <Text text="1.0" />
+                                 </f:fields>
+                              </f:FormElement>
+                           </f:formElements>
+                        </f:FormContainer>
+                        <f:FormContainer>
+                           <f:formElements>
+                              <f:FormElement label="Report Designer">
+                                 <f:fields>
+                                    <Text text="Steve Otieno" />
+                                 </f:fields>
+                              </f:FormElement>
+                           </f:formElements>
+                        </f:FormContainer>
+                     </f:formContainers>
+                  </f:Form>
+               </Panel>
+                <Panel class="sapUiSmallMarginTop">
+                  <f:Form editable="false">
+                     <f:layoutData>
+                           <FlexItemData
+                              growFactor="1"
+                              baseSize="0"
+                              backgroundDesign="Solid"
+                              styleClass="sapUiTinyMargin" />
+                     </f:layoutData>
+                     <f:layout>
+                           <f:ResponsiveGridLayout
+                              labelSpanXL="12"
+                              labelSpanL="12"
+                              labelSpanM="12"
+                              labelSpanS="12"
+                              adjustLabelSpan="false"
+                              emptySpanXL="4"
+                              emptySpanL="4"
+                              emptySpanM="4"
+                              emptySpanS="0"
+                              columnsXL="2"
+                              columnsL="2"
+                              columnsM="1"
+                              singleContainerFullSize="false" />
+                     </f:layout>
+                     <f:title>
+                           <core:Title text="Report Information" />
+                     </f:title>
+                     <f:formContainers>
+                           <f:FormContainer>
+                              <f:formElements>
+                                 <f:FormElement label="Report Name [Technical Name]">
+                                       <f:fields>
+                                          <Text text="Empty" />
+                                       </f:fields>
+                                 </f:FormElement>
+                              </f:formElements>
+                           </f:FormContainer>
+
+                           <f:FormContainer>
+                              <f:formElements>
+                                 <f:FormElement label="Classification and Cluster">
+                                       <f:fields>
+                                          <Text text="Empty" />
+                                       </f:fields>
+                                 </f:FormElement>
+                              </f:formElements>
+                           </f:FormContainer>
+                     </f:formContainers>
+                  </f:Form>
+               </Panel>
+
+              <Panel class="sapUiSmallMarginTop">
+    <f:Form editable="false">
+        <f:layout>
+            <f:ResponsiveGridLayout
+                labelSpanXL="12"
+                labelSpanL="12"
+                labelSpanM="12"
+                labelSpanS="12"
+                adjustLabelSpan="false"
+                emptySpanXL="4"
+                emptySpanL="4"
+                emptySpanM="4"
+                emptySpanS="0"
+                columnsXL="6"
+                columnsL="6"
+                columnsM="1"
+                singleContainerFullSize="false" />
+        </f:layout>
+        <f:title>
+            <core:Title text="Report Details" />
+        </f:title>
+        <f:formContainers>
+            <f:FormContainer>
+                <f:formElements>
+                    <f:FormElement >
+                    <f:label>
+                     <Label design="Bold" text='Goal (Problem solved by report)'/>
+                    </f:label>
+                        <f:fields>
+                            <Text text="Empty" />
+                        </f:fields>
+                    </f:FormElement>
+                </f:formElements>
+            </f:FormContainer>
+
+            <f:FormContainer>
+                <f:formElements>
+                    <f:FormElement label="Process">
+                        <f:fields>
+                            <Text text="Empty" />
+                        </f:fields>
+                    </f:FormElement>
+                </f:formElements>
+            </f:FormContainer>
+
+            <f:FormContainer>
+                <f:formElements>
+                    <f:FormElement label="Time to Target">
+                        <f:fields>
+                            <Text text="Empty" />
+                        </f:fields>
+                    </f:FormElement>
+                </f:formElements>
+            </f:FormContainer>
+
+            <f:FormContainer>
+                <f:formElements>
+                    <f:FormElement label="Target Audience">
+                        <f:fields>
+                            <Text text="Empty" />
+                        </f:fields>
+                    </f:FormElement>
+                </f:formElements>
+            </f:FormContainer>
+
+            <f:FormContainer>
+                <f:formElements>
+                    <f:FormElement label="Necessary Resources">
+                        <f:fields>
+                            <Text text="Empty" />
+                        </f:fields>
+                    </f:FormElement>
+                </f:formElements>
+            </f:FormContainer>
+
+            <f:FormContainer>
+                <f:formElements>
+                    <f:FormElement label="Known Issues and Troubleshooting">
+                        <f:fields>
+                            <Text text="Empty" />
+                        </f:fields>
+                    </f:FormElement>
+                </f:formElements>
+            </f:FormContainer>
+        </f:formContainers>
+    </f:Form>
+</Panel>
+
+               <Panel class="sapUiSmallMarginTop">
+                  <f:Form editable="false">
+                     <f:layout>
+                        <f:ResponsiveGridLayout labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="1" singleContainerFullSize="false" />
+                     </f:layout>
+                     <f:title>
+                        <core:Title text="Data Source" />
+                     </f:title>
+                     <f:formContainers>
+                        <f:FormContainer>
+                           <f:formElements>
+                              <f:FormElement label="Data Source">
+                                 <f:fields>
+                                    <Text text="DWH, Ext. DB, Flatfiles" />
+                                 </f:fields>
+                              </f:FormElement>
+                              <f:FormElement label="Data Quality Assurance">
+                                 <f:fields>
+                                    <Text text="Performed, Not Performed" />
+                                 </f:fields>
+                              </f:FormElement>
+                              <f:FormElement label="Schedules and Automated Refresh">
+                                 <f:fields>
+                                    <Text text="Automated Refreshes" />
+                                 </f:fields>
+                              </f:FormElement>
+                              <f:FormElement label="Schedule Responsible">
+                                 <f:fields>
+                                    <Text text="Analyst | Expert" />
+                                 </f:fields>
+                              </f:FormElement>
+                           </f:formElements>
+                        </f:FormContainer>
+                     </f:formContainers>
+                  </f:Form>
+               </Panel>
+            
+            <Panel class="sapUiSmallMarginTop">
+               <f:Form editable="false">
+                  <f:layout>
+                     <f:ResponsiveGridLayout labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="1" singleContainerFullSize="false" />
+                  </f:layout>
+                  <f:title>
+                     <core:Title text="ChangeLog Intake" />
+                  </f:title>
+                  <f:formContainers>
+                     <!-- ChangeLog Intake Section -->
+                     <f:FormContainer>
+                        <f:formElements>
+                           <f:FormElement label="Date">
+                              <f:fields>
+                                 <Text text="Empty" />
+                              </f:fields>
+                           </f:FormElement>
+                           <f:FormElement label="Requested By">
+                              <f:fields>
+                                 <Text text="Empty" />
+                              </f:fields>
+                           </f:FormElement>
+                           <f:FormElement label="Description">
+                              <f:fields>
+                                 <Text text="Empty" />
+                              </f:fields>
+                           </f:FormElement>
+                        </f:formElements>
+                     </f:FormContainer>
+                  </f:formContainers>
+               </f:Form>
+            </Panel>
+            <Panel class="sapUiSmallMarginTop">
+               <f:Form editable="false">
+                  <f:layout>
+                     <f:ResponsiveGridLayout labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="1" singleContainerFullSize="false" />
+                  </f:layout>
+                  <f:title>
+                     <core:Title text="KPI and Measures" />
+                  </f:title>
+                  <f:formContainers>
+                     <!-- KPI and Measures Section -->
+                     <f:FormContainer>
+                        <f:formElements>
+                           <f:FormElement label="KPI">
+                              <f:fields>
+                                 <Text text="Empty" />
+                              </f:fields>
+                           </f:FormElement>
+                           <f:FormElement label="Measures">
+                              <f:fields>
+                                 <Text text="Empty" />
+                              </f:fields>
+                           </f:FormElement>
+                        </f:formElements>
+                     </f:FormContainer>
+                  </f:formContainers>
+               </f:Form>
+            </Panel>
+            <Panel class="sapUiSmallMarginTop">
+               <f:Form editable="false">
+                  <f:layout>
+                     <f:ResponsiveGridLayout labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="1" singleContainerFullSize="false" />
+                  </f:layout>
+                  <f:title>
+                     <core:Title text="Project Documentation" />
+                  </f:title>
+                  <f:formContainers>
+                     <f:FormContainer>
+                        <f:formElements>
+                           <f:FormElement label="Roadmap">
+                              <f:fields>
+                                 <Text text="Empty" />
+                              </f:fields>
+                           </f:FormElement>
+                        </f:formElements>
+                     </f:FormContainer>
+                     <f:FormContainer>
+                        <f:formElements>
+                           <f:FormElement label="Related Report">
+                              <f:fields>
+                                 <Text text="Empty" />
+                              </f:fields>
+                           </f:FormElement>
+                        </f:formElements>
+                     </f:FormContainer>
+                  </f:formContainers>
+               </f:Form>
+            </Panel>
+         </content>
+      </Page>
+      <endButton>
+         <Button text="Close" press="onCloseFooterDialog" />
+      </endButton>
    </Dialog>
 </core:FragmentDefinition>

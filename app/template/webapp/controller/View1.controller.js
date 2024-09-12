@@ -18,14 +18,7 @@ sap.ui.define([
         return Controller.extend("ui.template.controller.View1", {
 
             onInit: function () {
-                this.aAppFragments = {};
-                this.oDialog ??= this.loadFragment({
-                    name: "ui.template.fragment.Content"
-                })
-                    .then((oFragment) => {
-                        this.getView().byId("contentPage").addContent(oFragment);
-                    })
-                    .then(this._loadFragments.bind(this, "Chart", true));
+                
 
                 var oTreeModel = new JSONModel({
                     //////////////
@@ -46,6 +39,16 @@ sap.ui.define([
 
                 });
                 this.getView().setModel(oTreeModel, "treeModel");
+            },
+            onAfterRendering:function(){
+                this.aAppFragments = {};
+                this.oDialog ??= this.loadFragment({
+                    name: "ui.template.fragment.Content"
+                })
+                    .then((oFragment) => {
+                        this.getView().byId("contentPage").addContent(oFragment);
+                    })
+                    .then(this._loadFragments.bind(this, "Chart", true));
             },
 
             // onPressFooterBtn: function (oEvent) {

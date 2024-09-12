@@ -1,56 +1,15 @@
-<core:FragmentDefinition xmlns:table="sap.ui.table" xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:card="sap.f.cards" xmlns:f="sap.f" xmlns:form="sap.ui.layout.form" xmlns:l="sap.ui.layout" xmlns:mvc="sap.ui.core.mvc" xmlns:tnt="sap.tnt" height="100%" displayBlock="true">
-   <Panel height="100%" id="tablePage" class="sapUiContentPadding" backgroundDesign="List" headerText="{i18n>TableTab_Title}">
-      
-        <Panel headerText="Grid Table" expanded="true" expandable="true">
-         <table:Table
-            id="ui-table"
-            cellClick="onPressCell"
-            rows="{path: '/TableEntity'}"
-            visibleRowCount="10"
-            selectionMode="MultiToggle"
-            enableSelectAll="true">
-            
-            <table:columns>
-            <table:Column sortProperty="FullName" filterProperty="FullName">
-               <Label text="Name" />
-               <table:template>
-                  <Text text="{FullName}" />
-               </table:template>
-            </table:Column>
-            <table:Column hAlign="Center" sortProperty="JobTitle" filterProperty="JobTitle">
-               <Label text="Job" />
-               <table:template>
-                  <Text text="{JobTitle}" />
-               </table:template>
-            </table:Column>
-            <table:Column hAlign="End" sortProperty="Department" filterProperty="Department">
-               <Label text="Department" />
-               <table:template>
-                  <Text text="{Department}" />
-               </table:template>
-            </table:Column>
-            <table:Column hAlign="End" sortProperty="BusinessUnit" filterProperty="BusinessUnit">
-               <Label text="Business Unit" />
-               <table:template>
-                  <Text text="{BusinessUnit}" />
-               </table:template>
-            </table:Column>
-            <table:Column hAlign="End" sortProperty="HireDate" filterProperty="HireDate">
-               <Label text="Hire Date" />
-               <table:template>
-                  <Text text="{ path: 'HireDate', formatter: '_dateFormatter'}" />
-               </table:template>
-            </table:Column>
-            <table:Column hAlign="End" sortProperty="AnnualSalary" filterProperty="AnnualSalary">
-               <Label text="Annual Salary" />
-               <table:template>
-                  <ObjectNumber number="{parts:[{path:'AnnualSalary'},{path:'CurrencyCode'}],type: 'sap.ui.model.type.Currency', formatOptions: {showMeasure: false}}" unit="{CurrencyCode}" />
-               </table:template>
-            </table:Column>
-         </table:columns>
-         </table:Table>
-       </Panel>
-       <Panel headerText="Responsive Table" expanded="false" expandable="true">
+<?xml version="1.0" encoding="UTF-8"?>
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:card="sap.f.cards" xmlns:f="sap.f" xmlns:form="sap.ui.layout.form" xmlns:l="sap.ui.layout" xmlns:mvc="sap.ui.core.mvc" xmlns:smartTable="sap.ui.comp.smarttable" xmlns:table="sap.ui.table" xmlns:tnt="sap.tnt" height="100%" displayBlock="true">
+   <Panel height="100%" id="tablePage" class="sapUiContentPadding" backgroundDesign="List" headerText="{i18n&gt;TableTab_Title}">
+      <Panel headerText="Grid Table" expanded="true" expandable="true">
+       
+         <smartTable:SmartTable entitySet="TableEntity" smartFilterId="smartFilterBar" useExportToExcel="true" beforeExport="onBeforeExport" useVariantManagement="true" useTablePersonalisation="true"  showRowCount="true" persistencyKey="SmartTableRefApp_Explored" enableAutoBinding="true" class="sapUiResponsiveContentPadding" enableAutoColumnWidth="true">
+            <table:Table id="ui-table" rows="{path: '/TableEntity'}" visibleRowCount="10" selectionMode="MultiToggle" enableSelectAll="true">
+              
+            </table:Table>
+         </smartTable:SmartTable>
+      </Panel>
+      <Panel headerText="Responsive Table" expanded="false" expandable="true">
          <Table id="payments-table" inset="false" items="{path: '/TableEntity'}">
             <columns>
                <Column>
@@ -73,7 +32,7 @@
                </Column>
             </columns>
             <items>
-               <ColumnListItem  key="{EEID}">
+               <ColumnListItem key="{EEID}">
                   <cells>
                      <Text text="{FullName}" />
                      <Text text="{JobTitle}" />
@@ -85,6 +44,6 @@
                </ColumnListItem>
             </items>
          </Table>
-       </Panel>
+      </Panel>
    </Panel>
 </core:FragmentDefinition>
