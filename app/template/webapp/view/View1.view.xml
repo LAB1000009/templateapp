@@ -53,7 +53,7 @@
                                         <IconTabFilter key="Cockpit" text="{i18n>B_CockpitTab}" />
                                         <IconTabFilter key="Dashboard" text="{i18n>B_DashboardTab}" />
                                         <IconTabFilter key="Comment" text="{i18n>B_CommentsTab}" />
-                                        <IconTabFilter key="Report" text="{i18n>B_ReportInfoTab}" />
+                                        <!-- <IconTabFilter key="Report" text="{i18n>B_ReportInfoTab}" /> -->
                                         <IconTabFilter key="Support" text="{i18n>B_SupportTab}"/>
                                     </items>
                             </IconTabHeader>

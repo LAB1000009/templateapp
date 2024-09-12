@@ -1,66 +1,143 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.suite.ui.microchart" xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns:m="sap.m" height="100%" displayBlock="true">
+<core:FragmentDefinition xmlns:core="sap.ui.core" 	xmlns:l="sap.ui.layout" xmlns="sap.suite.ui.microchart" xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns:m="sap.m" height="100%" displayBlock="true">
    <m:Panel height="100%" headerText="{i18n>DashboardTab_Title}" id="dashboardm:Page" class="contentPadding" backgroundDesign="List">
       <m:VBox height="100%" width="100%">
          <m:Panel expanded="true" headerText="Example"  expandable="true" >
          <m:HBox>
-            <ColumnMicroChart size="M" press="press" class="sapUiSmallMargin">
-               <columns>
-                  <ColumnMicroChartData value="100" color="Error" />
-                  <ColumnMicroChartData value="60" color="Neutral" />
-               </columns>
-            </ColumnMicroChart>
-            <ColumnMicroChart size="M" press="press" class="sapUiSmallMargin">
-               <columns>
-                  <ColumnMicroChartData value="60" color="Error" />
-                  <ColumnMicroChartData value="80" color="Error" />
-                  <ColumnMicroChartData value="100" color="Error" />
-                  <ColumnMicroChartData value="60" color="Neutral" />
-                  <ColumnMicroChartData value="55" color="Neutral" />
-                  <ColumnMicroChartData value="15" color="Neutral" />
-               </columns>
-            </ColumnMicroChart>
-            <ColumnMicroChart size="S" press="press" class="sapUiSmallMargin">
-               <columns>
-                  <ColumnMicroChartData value="60" color="Error" />
-                  <ColumnMicroChartData value="100" color="Error" />
-                  <ColumnMicroChartData value="-20" color="Error" />
-                  <ColumnMicroChartData value="60" color="Neutral" />
-                  <ColumnMicroChartData value="55" color="Neutral" />
-                  <ColumnMicroChartData value="15" color="Neutral" />
-               </columns>
-            </ColumnMicroChart>
-            <ColumnMicroChart size="S" press="press" class="sapUiSmallMargin">
-               <columns>
-                  <ColumnMicroChartData value="65" color="Error" />
-                  <ColumnMicroChartData value="90" color="Error" />
-                  <ColumnMicroChartData value="75" color="Error" />
-                  <ColumnMicroChartData value="95" color="Error" />
-                  <ColumnMicroChartData value="100" color="Error" />
-                  <ColumnMicroChartData value="90" color="Error" />
-                  <ColumnMicroChartData value="80" color="Error" />
-                  <ColumnMicroChartData value="35" color="Neutral" />
-                  <ColumnMicroChartData value="65" color="Neutral" />
-                  <ColumnMicroChartData value="55" color="Neutral" />
-                  <ColumnMicroChartData value="60" color="Neutral" />
-                  <ColumnMicroChartData value="5" color="Neutral" />
-                  <ColumnMicroChartData value="15" color="Neutral" />
-                  <ColumnMicroChartData value="15" color="Neutral" />
-               </columns>
-            </ColumnMicroChart>
-            <ColumnMicroChart size="S" press="press" class="sapUiSmallMargin">
-               <columns>
-                  <ColumnMicroChartData value="60" color="Good" />
-                  <ColumnMicroChartData value="100" color="Good" />
-                  <ColumnMicroChartData value="-20" color="Error" />
-                  <ColumnMicroChartData value="60" color="Good" />
-                  <ColumnMicroChartData value="55" color="Neutral" />
-                  <ColumnMicroChartData value="15" color="Critical" />
-               </columns>
-            </ColumnMicroChart>
-            <ColumnMicroChart size="S" press="press" class="sapUiSmallMargin" height="5rem" />
+               <ColumnMicroChart size="M" press="press" class="sapUiSmallMargin">
+                  <columns>
+                     <ColumnMicroChartData value="100" color="Error" />
+                     <ColumnMicroChartData value="60" color="Neutral" />
+                  </columns>
+               </ColumnMicroChart>
+               <ColumnMicroChart size="M" press="press" class="sapUiSmallMargin">
+                  <columns>
+                     <ColumnMicroChartData value="60" color="Error" />
+                     <ColumnMicroChartData value="80" color="Error" />
+                     <ColumnMicroChartData value="100" color="Error" />
+                     <ColumnMicroChartData value="60" color="Neutral" />
+                     <ColumnMicroChartData value="55" color="Neutral" />
+                     <ColumnMicroChartData value="15" color="Neutral" />
+                  </columns>
+               </ColumnMicroChart>
+               <ColumnMicroChart size="S" press="press" class="sapUiSmallMargin">
+                  <columns>
+                     <ColumnMicroChartData value="60" color="Error" />
+                     <ColumnMicroChartData value="100" color="Error" />
+                     <ColumnMicroChartData value="-20" color="Error" />
+                     <ColumnMicroChartData value="60" color="Neutral" />
+                     <ColumnMicroChartData value="55" color="Neutral" />
+                     <ColumnMicroChartData value="15" color="Neutral" />
+                  </columns>
+               </ColumnMicroChart>
+               <ColumnMicroChart size="S" press="press" class="sapUiSmallMargin">
+                  <columns>
+                     <ColumnMicroChartData value="65" color="Error" />
+                     <ColumnMicroChartData value="90" color="Error" />
+                     <ColumnMicroChartData value="75" color="Error" />
+                     <ColumnMicroChartData value="95" color="Error" />
+                     <ColumnMicroChartData value="100" color="Error" />
+                     <ColumnMicroChartData value="90" color="Error" />
+                     <ColumnMicroChartData value="80" color="Error" />
+                     <ColumnMicroChartData value="35" color="Neutral" />
+                     <ColumnMicroChartData value="65" color="Neutral" />
+                     <ColumnMicroChartData value="55" color="Neutral" />
+                     <ColumnMicroChartData value="60" color="Neutral" />
+                     <ColumnMicroChartData value="5" color="Neutral" />
+                     <ColumnMicroChartData value="15" color="Neutral" />
+                     <ColumnMicroChartData value="15" color="Neutral" />
+                  </columns>
+               </ColumnMicroChart>
+               <ColumnMicroChart size="S" press="press" class="sapUiSmallMargin">
+                  <columns>
+                     <ColumnMicroChartData value="60" color="Good" />
+                     <ColumnMicroChartData value="100" color="Good" />
+                     <ColumnMicroChartData value="-20" color="Error" />
+                     <ColumnMicroChartData value="60" color="Good" />
+                     <ColumnMicroChartData value="55" color="Neutral" />
+                     <ColumnMicroChartData value="15" color="Critical" />
+                  </columns>
+               </ColumnMicroChart>
+               <ColumnMicroChart size="S" press="press" class="sapUiSmallMargin" height="5rem" />
              </m:HBox>
          </m:Panel >
+          <m:Panel expanded="true" headerText="Example (Border)"  expandable="true" >
+            <m:HBox>
+            	<l:HorizontalLayout class="sapUiContentPadding border sapUiSmallMargin">
+    <ColumnMicroChart size="M" press="press">
+        <columns>
+            <ColumnMicroChartData value="100" color="Error" />
+            <ColumnMicroChartData value="60" color="Neutral" />
+        </columns>
+    </ColumnMicroChart>
+</l:HorizontalLayout>
+
+<l:HorizontalLayout class="sapUiContentPadding border sapUiSmallMargin">
+    <ColumnMicroChart size="M" press="press">
+        <columns>
+            <ColumnMicroChartData value="60" color="Error" />
+            <ColumnMicroChartData value="80" color="Error" />
+            <ColumnMicroChartData value="100" color="Error" />
+            <ColumnMicroChartData value="60" color="Neutral" />
+            <ColumnMicroChartData value="55" color="Neutral" />
+            <ColumnMicroChartData value="15" color="Neutral" />
+        </columns>
+    </ColumnMicroChart>
+</l:HorizontalLayout>
+
+<l:HorizontalLayout class="sapUiContentPadding border sapUiSmallMargin">
+    <ColumnMicroChart size="S" press="press">
+        <columns>
+            <ColumnMicroChartData value="60" color="Error" />
+            <ColumnMicroChartData value="100" color="Error" />
+            <ColumnMicroChartData value="-20" color="Error" />
+            <ColumnMicroChartData value="60" color="Neutral" />
+            <ColumnMicroChartData value="55" color="Neutral" />
+            <ColumnMicroChartData value="15" color="Neutral" />
+        </columns>
+    </ColumnMicroChart>
+</l:HorizontalLayout>
+
+<l:HorizontalLayout class="sapUiContentPadding border sapUiSmallMargin">
+    <ColumnMicroChart size="S" press="press">
+        <columns>
+            <ColumnMicroChartData value="65" color="Error" />
+            <ColumnMicroChartData value="90" color="Error" />
+            <ColumnMicroChartData value="75" color="Error" />
+            <ColumnMicroChartData value="95" color="Error" />
+            <ColumnMicroChartData value="100" color="Error" />
+            <ColumnMicroChartData value="90" color="Error" />
+            <ColumnMicroChartData value="80" color="Error" />
+            <ColumnMicroChartData value="35" color="Neutral" />
+            <ColumnMicroChartData value="65" color="Neutral" />
+            <ColumnMicroChartData value="55" color="Neutral" />
+            <ColumnMicroChartData value="60" color="Neutral" />
+            <ColumnMicroChartData value="5" color="Neutral" />
+            <ColumnMicroChartData value="15" color="Neutral" />
+            <ColumnMicroChartData value="15" color="Neutral" />
+        </columns>
+    </ColumnMicroChart>
+</l:HorizontalLayout>
+
+<l:HorizontalLayout class="sapUiContentPadding border sapUiSmallMargin">
+    <ColumnMicroChart size="S" press="press">
+        <columns>
+            <ColumnMicroChartData value="60" color="Good" />
+            <ColumnMicroChartData value="100" color="Good" />
+            <ColumnMicroChartData value="-20" color="Error" />
+            <ColumnMicroChartData value="60" color="Good" />
+            <ColumnMicroChartData value="55" color="Neutral" />
+            <ColumnMicroChartData value="15" color="Critical" />
+        </columns>
+    </ColumnMicroChart>
+</l:HorizontalLayout>
+
+<l:HorizontalLayout class="sapUiContentPadding">
+    <ColumnMicroChart size="S" press="press" height="5rem" />
+</l:HorizontalLayout>
+
+               </m:HBox>
+            </m:Panel >
          <m:Panel expanded="true" headerText="Example 2" expandable="true" >
             <m:GenericTile header="Revenue Dynamics" frameType="OneByOne" press="press">
                <m:tileContent>

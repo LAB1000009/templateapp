@@ -1,20 +1,18 @@
-<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:smartFilterBar="sap.ui.comp.smartfilterbar"  xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout" xmlns:u="sap.ui.unified">
+<?xml version="1.0" encoding="UTF-8"?>
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout" xmlns:smartFilterBar="sap.ui.comp.smartfilterbar" xmlns:u="sap.ui.unified">
    <l:ResponsiveSplitter defaultPane="default">
       <l:PaneContainer resize=".onRootContainerResize">
          <l:SplitPane height="100%">
             <l:layoutData>
-               <l:SplitterLayoutData size="{=!${treeModel&gt;/showSideContent} ? '0%' : '30%'}" />
+               <l:SplitterLayoutData size="{=!${treeModel>/showSideContent} ? '0%' : '30%'}" />
             </l:layoutData>
-            <Panel height="100%" backgroundDesign="Transparent" class="sapUiContentPadding" visible="{treeModel&gt;/showSideContent}">
-               <Panel headerText="{i18n&gt;FL_Title}" expanded="true" expandable="true">
-                <smartFilterBar:SmartFilterBar id="smartFilterBar" entitySet="TableEntity" persistencyKey="SmartFilter_Explored">
-   
-               </smartFilterBar:SmartFilterBar>
-
+            <Panel height="100%" backgroundDesign="Transparent" class="sapUiContentPadding" visible="{treeModel>/showSideContent}">
+               <Panel headerText="{i18n>FL_Title}" expanded="true" expandable="true">
+                  <smartFilterBar:SmartFilterBar id="smartFilterBar" entitySet="TableEntity" persistencyKey="SmartFilter_Explored" />
                   <!-- <f:SimpleForm editable="true" layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="3" labelSpanM="4" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="4" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="1" singleContainerFullSize="false">
                      <f:content>
                         <Label visible="false" text="Transaction date" labelFor="dynamic-range" />
-                        <DynamicDateRange id="dynamicRange" change="onChange" width="{env&gt;/filterInputWidth}" />
+                        <DynamicDateRange id="dynamicRange" change="onChange" width="{env>/filterInputWidth}" />
                         <Label text="Filter1" />
                         <ComboBox width="100%">
                            <items>
@@ -34,7 +32,7 @@
                      </f:content>
                   </f:SimpleForm> -->
                </Panel>
-               <!-- <Panel headerText="{i18n&gt;FL_AddTitle}" class="sapUiSmallMarginTop" expanded="false" expandable="true">
+               <Panel headerText="{i18n>FL_AddTitle}" class="sapUiSmallMarginTop" expanded="false" expandable="true">
                   <f:SimpleForm editable="true" layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="3" labelSpanM="4" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="4" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="1" singleContainerFullSize="false">
                      <f:content>
                         <Label text="Email Address" />
@@ -64,12 +62,12 @@
                         <CheckBox text="I agree to the terms and conditions" />
                      </f:content>
                   </f:SimpleForm>
-               </Panel> -->
+               </Panel>
             </Panel>
          </l:SplitPane>
          <l:SplitPane>
             <l:layoutData>
-               <l:SplitterLayoutData size="{=!${treeModel&gt;/showSideContent} ? '100%' : '70%'}" resizable="{treeModel&gt;/showSideContent}" />
+               <l:SplitterLayoutData size="{=!${treeModel>/showSideContent} ? '100%' : '70%'}" resizable="{treeModel>/showSideContent}" />
             </l:layoutData>
             <Panel height="100%" width="auto" class="sapUiContentPadding" backgroundDesign="Transparent">
                <NavContainer navigationFinished="onNavigationFinished" id="navCon" class="navContainerControl" />
