@@ -22,6 +22,7 @@
                 </VBox>
                 <HBox width="50%" justifyContent="SpaceBetween" alignItems="Center" renderType="Bare">
                     
+                        <Title text="{i18n>H_Date}"/>
                         <Title text="{treeModel>/headerActDate}"/>
                         
                         <Title text="{i18n>H_User}"/>
