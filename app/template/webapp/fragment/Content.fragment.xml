@@ -4,7 +4,7 @@
       <l:PaneContainer resize=".onRootContainerResize">
          <l:SplitPane height="100%">
             <l:layoutData>
-               <l:SplitterLayoutData size="{=!${treeModel>/showSideContent} ? '0%' : '30%'}" />
+               <l:SplitterLayoutData size="{=!${treeModel>/showSideContent} ? '0%' : '35%'}" />
             </l:layoutData>
             <Panel height="100%" backgroundDesign="Transparent" class="sapUiContentPadding" visible="{treeModel>/showSideContent}">
                <Panel headerText="{i18n>FL_Title}" expanded="true" expandable="true">
@@ -33,7 +33,7 @@
                   </f:SimpleForm> -->
                </Panel>
                <Panel headerText="{i18n>FL_AddTitle}" class="sapUiSmallMarginTop" expanded="false" expandable="true">
-                  <f:SimpleForm editable="true" layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="3" labelSpanM="4" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="4" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="1" singleContainerFullSize="false">
+                  <!-- <f:SimpleForm editable="true" layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="3" labelSpanM="4" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="4" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="1" singleContainerFullSize="false">
                      <f:content>
                         <Label text="Email Address" />
                         <Input type="Email" width="100%" placeholder="Enter your email" />
@@ -61,13 +61,13 @@
                         <Label text="Agreement" />
                         <CheckBox text="I agree to the terms and conditions" />
                      </f:content>
-                  </f:SimpleForm>
+                  </f:SimpleForm> -->
                </Panel>
             </Panel>
          </l:SplitPane>
          <l:SplitPane>
             <l:layoutData>
-               <l:SplitterLayoutData size="{=!${treeModel>/showSideContent} ? '100%' : '70%'}" resizable="{treeModel>/showSideContent}" />
+               <l:SplitterLayoutData size="{=!${treeModel>/showSideContent} ? '100%' : '65%'}" resizable="{treeModel>/showSideContent}" />
             </l:layoutData>
             <Panel height="100%" width="auto" class="sapUiContentPadding" backgroundDesign="Transparent">
                <NavContainer navigationFinished="onNavigationFinished" id="navCon" class="navContainerControl" />

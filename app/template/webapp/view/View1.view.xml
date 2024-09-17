@@ -21,10 +21,10 @@
                     <Label text="{i18n>H_SubTitle}"/>
                 </VBox>
                 <HBox width="50%" justifyContent="SpaceBetween" alignItems="Center" renderType="Bare">
-                    
-                        <Title text="{i18n>H_Date}"/>
-                        <Title text="{treeModel>/headerActDate}"/>
-                        
+                        <HBox>
+                            <!-- <Title text="{i18n>H_Date}"/> -->
+                            <Title text="{i18n>H_Date} {treeModel>/headerActDate}"/>
+                        </HBox>
                         <Title text="{i18n>H_User}"/>
                     
                         <Image src="./logo/mosec_logo.svg" height="50px" class="sapUiTinyMarginEnd"/>
@@ -68,7 +68,7 @@
         
             <OverflowToolbar design="Transparent">
                 <content>
-                    <Title text="{i18n>F_Copyright}" class="sapUiTinyMarginBegin"/>
+                    <Title titleStyle="H6" text="{i18n>F_Copyright} 2024" class="sapUiTinyMarginBegin"/>
                     <ToolbarSpacer />
                     <Title text="{treeModel>/footerClass}"  titleStyle="H6" />
                     <ToolbarSpacer />

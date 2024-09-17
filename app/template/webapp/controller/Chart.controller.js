@@ -932,33 +932,33 @@ var Controller = Controller.extend("ui.template.controller.Chart", {
     oVizFrame : null, chartTypeSelect : null, chart : null,
 
     onInit: function(oTemplateController) {
-        Format.numericFormatter(ChartFormatter.getInstance());
+        // Format.numericFormatter(ChartFormatter.getInstance());
     
-        var oData = {
-            chart: {
-                milk: [
-                    { Date: "2024-08-01", Revenue: 500 },
-                    { Date: "2024-08-02", Revenue: 700 },
-                    { Date: "2024-08-03", Revenue: 900 },
-                    { Date: "2024-08-04", Revenue: 700 },
-                    { Date: "2024-08-05", Revenue: 700 }
-                    // Дополнительные данные...
-                ]
-            }
-        };
+        // var oData = {
+        //     chart: {
+        //         milk: [
+        //             { Date: "2024-08-01", Revenue: 500 },
+        //             { Date: "2024-08-02", Revenue: 700 },
+        //             { Date: "2024-08-03", Revenue: 900 },
+        //             { Date: "2024-08-04", Revenue: 700 },
+        //             { Date: "2024-08-05", Revenue: 700 }
+        //             // Дополнительные данные...
+        //         ]
+        //     }
+        // };
     
-        var oModel = new sap.ui.model.json.JSONModel(oData);
-        this.getView().setModel(oModel, "chart");
+        // var oModel = new sap.ui.model.json.JSONModel(oData);
+        // this.getView().setModel(oModel, "chart");
     
-        var oVizFrame = this.getPrefixedControl("idVizFrame");
-        oVizFrame.setVizProperties(this.settingsModel.chartType.values[3].vizProperties);
+        // var oVizFrame = this.getPrefixedControl("idVizFrame");
+        // oVizFrame.setVizProperties(this.settingsModel.chartType.values[3].vizProperties);
     
-        var oPopOver = this.getPrefixedControl("idPopOver");
-        oPopOver.connect(oVizFrame.getVizUid());
-        oPopOver.setFormatString({
-            "Cost": ChartFormatter.DefaultPattern.STANDARDFLOAT,
-            "Revenue": ChartFormatter.DefaultPattern.STANDARDFLOAT
-        });
+        // var oPopOver = this.getPrefixedControl("idPopOver");
+        // oPopOver.connect(oVizFrame.getVizUid());
+        // oPopOver.setFormatString({
+        //     "Cost": ChartFormatter.DefaultPattern.STANDARDFLOAT,
+        //     "Revenue": ChartFormatter.DefaultPattern.STANDARDFLOAT
+        // });
     },
     
     getPrefixedControl: function(id) {

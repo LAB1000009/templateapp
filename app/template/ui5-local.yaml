@@ -24,7 +24,7 @@ server:
       afterMiddleware: compression
       configuration:
         services:
-          - urlPath: '/v2/odata/v4/service/risk'
+          - urlPath: '/odata/v2/service/risk'
             metadataPath: './webapp/localService/metadata.xml'
             mockdataPath: './webapp/localService/data'
             generateMockData: false

@@ -14,6 +14,14 @@
    </edmx:Reference>
    <edmx:DataServices m:DataServiceVersion="2.0">
       <Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" Namespace="RiskService">
+         <Annotation Term="Core.Links">
+            <Collection>
+               <Record>
+                  <PropertyValue Property="rel" String="author" />
+                  <PropertyValue Property="href" String="https://cap.cloud.sap" />
+               </Record>
+            </Collection>
+         </Annotation>
          <EntityContainer Name="EntityContainer" m:IsDefaultEntityContainer="true">
             <EntitySet Name="Risks2" EntityType="RiskService.Risks2" />
             <FunctionImport Name="Risks2_draftPrepare" EntitySet="Risks2" ReturnType="RiskService.Risks2" m:HttpMethod="POST" sap:action-for="RiskService.Risks2">
@@ -653,85 +661,23 @@
             <Annotation Term="UI.Hidden" Bool="true" />
          </Annotations>
          <Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="RiskService.TableEntity">
-            <Annotation Term="UI.FieldGroup" Qualifier="GeneratedGroup">
-               <Record Type="UI.FieldGroupType">
-                  <PropertyValue Property="Data">
+            <Annotation Term="UI.Chart">
+               <Record Type="UI.ChartDefinitionType">
+                  <PropertyValue Property="ChartType" EnumMember="UI.ChartType/Column" />
+                  <PropertyValue Property="Dimensions">
                      <Collection>
-                        <Record Type="UI.DataField">
-                           <PropertyValue Property="Label" String="EEID" />
-                           <PropertyValue Property="Value" Path="EEID" />
-                        </Record>
-                        <Record Type="UI.DataField">
-                           <PropertyValue Property="Label" String="FullName" />
-                           <PropertyValue Property="Value" Path="FullName" />
-                        </Record>
-                        <Record Type="UI.DataField">
-                           <PropertyValue Property="Label" String="JobTitle" />
-                           <PropertyValue Property="Value" Path="JobTitle" />
-                        </Record>
-                        <Record Type="UI.DataField">
-                           <PropertyValue Property="Label" String="Department" />
-                           <PropertyValue Property="Value" Path="Department" />
-                        </Record>
-                        <Record Type="UI.DataField">
-                           <PropertyValue Property="Label" String="BusinessUnit" />
-                           <PropertyValue Property="Value" Path="BusinessUnit" />
-                        </Record>
-                        <Record Type="UI.DataField">
-                           <PropertyValue Property="Label" String="Gender" />
-                           <PropertyValue Property="Value" Path="Gender" />
-                        </Record>
-                        <Record Type="UI.DataField">
-                           <PropertyValue Property="Label" String="Ethnicity" />
-                           <PropertyValue Property="Value" Path="Ethnicity" />
-                        </Record>
-                        <Record Type="UI.DataField">
-                           <PropertyValue Property="Label" String="Age" />
-                           <PropertyValue Property="Value" Path="Age" />
-                        </Record>
-                        <Record Type="UI.DataField">
-                           <PropertyValue Property="Label" String="HireDate" />
-                           <PropertyValue Property="Value" Path="HireDate" />
-                        </Record>
-                        <Record Type="UI.DataField">
-                           <PropertyValue Property="Label" String="AnnualSalary" />
-                           <PropertyValue Property="Value" Path="AnnualSalary" />
-                        </Record>
-                        <Record Type="UI.DataField">
-                           <PropertyValue Property="Label" String="Bonus" />
-                           <PropertyValue Property="Value" Path="Bonus" />
-                        </Record>
-                        <Record Type="UI.DataField">
-                           <PropertyValue Property="Label" String="Country" />
-                           <PropertyValue Property="Value" Path="Country" />
-                        </Record>
-                        <Record Type="UI.DataField">
-                           <PropertyValue Property="Label" String="City" />
-                           <PropertyValue Property="Value" Path="City" />
-                        </Record>
-                        <Record Type="UI.DataField">
-                           <PropertyValue Property="Label" String="ExitDate" />
-                           <PropertyValue Property="Value" Path="ExitDate" />
-                        </Record>
+                        <PropertyPath>Department</PropertyPath>
+                     </Collection>
+                  </PropertyValue>
+                  <PropertyValue Property="Measures">
+                     <Collection>
+                        <PropertyPath>AnnualSalary</PropertyPath>
                      </Collection>
                   </PropertyValue>
                </Record>
             </Annotation>
-            <Annotation Term="UI.Facets">
-               <Collection>
-                  <Record Type="UI.ReferenceFacet">
-                     <PropertyValue Property="ID" String="GeneratedFacet1" />
-                     <PropertyValue Property="Label" String="General Information" />
-                     <PropertyValue Property="Target" AnnotationPath="@UI.FieldGroup#GeneratedGroup" />
-                  </Record>
-               </Collection>
-            </Annotation>
             <Annotation Term="UI.LineItem">
                <Collection>
-                  <Record Type="UI.DataField">
-                     <PropertyValue Property="Label" String="EEID" />
-                     <PropertyValue Property="Value" Path="EEID" />
-                  </Record>
                   <Record Type="UI.DataField">
                      <PropertyValue Property="Label" String="FullName" />
                      <PropertyValue Property="Value" Path="FullName" />
@@ -748,18 +694,34 @@
                      <PropertyValue Property="Label" String="BusinessUnit" />
                      <PropertyValue Property="Value" Path="BusinessUnit" />
                   </Record>
+                  <Record Type="UI.DataField">
+                     <PropertyValue Property="Label" String="Gender" />
+                     <PropertyValue Property="Value" Path="Gender" />
+                  </Record>
+                  <Record Type="UI.DataField">
+                     <PropertyValue Property="Label" String="Ethnicity" />
+                     <PropertyValue Property="Value" Path="Ethnicity" />
+                  </Record>
+                  <Record Type="UI.DataField">
+                     <PropertyValue Property="Label" String="Age" />
+                     <PropertyValue Property="Value" Path="Age" />
+                  </Record>
+                  <Record Type="UI.DataField">
+                     <PropertyValue Property="Label" String="HireDate" />
+                     <PropertyValue Property="Value" Path="HireDate" />
+                  </Record>
+                  <Record Type="UI.DataField">
+                     <PropertyValue Property="Label" String="ExitDate" />
+                     <PropertyValue Property="Value" Path="ExitDate" />
+                  </Record>
                </Collection>
             </Annotation>
             <Annotation Term="UI.SelectionFields">
                <Collection>
-                  <PropertyPath>Age</PropertyPath>
-                  <PropertyPath>Bonus</PropertyPath>
-                  <PropertyPath>AnnualSalary</PropertyPath>
-                  <PropertyPath>BusinessUnit</PropertyPath>
-                  <PropertyPath>City</PropertyPath>
                   <PropertyPath>Country</PropertyPath>
+                  <PropertyPath>City</PropertyPath>
                   <PropertyPath>Department</PropertyPath>
-                  <PropertyPath>EEID</PropertyPath>
+                  <PropertyPath>BusinessUnit</PropertyPath>
                   <PropertyPath>Ethnicity</PropertyPath>
                </Collection>
             </Annotation>
@@ -794,33 +756,6 @@
             <Annotation Term="Core.Computed" Bool="true" />
             <Annotation Term="Core.Description" String="User's unique ID" />
             <Annotation Term="Common.Label" String="Changed By" />
-         </Annotations>
-         <Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="RiskService.TableEntity/EEID">
-            <Annotation Term="Common.Label" String="EEID" />
-         </Annotations>
-         <Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="RiskService.TableEntity/Department">
-            <Annotation Term="Common.Label" String="Department" />
-         </Annotations>
-         <Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="RiskService.TableEntity/BusinessUnit">
-            <Annotation Term="Common.Label" String="BusinessUnit" />
-         </Annotations>
-         <Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="RiskService.TableEntity/Ethnicity">
-            <Annotation Term="Common.Label" String="Ethnicity" />
-         </Annotations>
-         <Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="RiskService.TableEntity/Age">
-            <Annotation Term="Common.Label" String="Age" />
-         </Annotations>
-         <Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="RiskService.TableEntity/AnnualSalary">
-            <Annotation Term="Common.Label" String="AnnualSalary" />
-         </Annotations>
-         <Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="RiskService.TableEntity/Bonus">
-            <Annotation Term="Common.Label" String="Bonus" />
-         </Annotations>
-         <Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="RiskService.TableEntity/Country">
-            <Annotation Term="Common.Label" String="Country" />
-         </Annotations>
-         <Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="RiskService.TableEntity/City">
-            <Annotation Term="Common.Label" String="City" />
          </Annotations>
          <Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="RiskService.CommentEntity/ID">
             <Annotation Term="Core.ComputedDefaultValue" Bool="true" />

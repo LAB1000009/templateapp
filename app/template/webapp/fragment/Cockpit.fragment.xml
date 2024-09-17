@@ -45,6 +45,13 @@
                <l:SplitterLayoutData size="{=!${treeModel>/cockpitDetailsVisible} ? '0%' : '50%'}" resizable="{treeModel>/cockpitDetailsVisible}" />
             </l:layoutData>
             <Panel  id="cockpitDetailsPanel" headerText="Details" height="100%" width="auto" class="sapUiContentPadding" backgroundDesign="Solid">
+            <headerToolbar>
+            <OverflowToolbar>
+               <Title text="{treeModel>/selectedTileName}"/>
+               <ToolbarSpacer />
+               <Button text="Close" press="onPressCloseDetailsPalelBtn" />
+            </OverflowToolbar>
+		</headerToolbar>
                <List id="cardDetailsList" items="{path: '/cardDetails'}">
                   <items>
                      <CustomListItem>

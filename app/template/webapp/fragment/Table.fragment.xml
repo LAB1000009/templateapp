@@ -3,7 +3,7 @@
    <Panel height="100%" id="tablePage" class="sapUiContentPadding" backgroundDesign="List" headerText="{i18n&gt;TableTab_Title}">
       <Panel headerText="Grid Table" expanded="true" expandable="true">
        
-         <smartTable:SmartTable entitySet="TableEntity" smartFilterId="smartFilterBar" useExportToExcel="true" beforeExport="onBeforeExport" useVariantManagement="true" useTablePersonalisation="true"  showRowCount="true" persistencyKey="SmartTableRefApp_Explored" enableAutoBinding="true" class="sapUiResponsiveContentPadding" enableAutoColumnWidth="true">
+         <smartTable:SmartTable requestAtLeastFields="ExitDate" entitySet="TableEntity" smartFilterId="smartFilterBar" useExportToExcel="true" beforeExport="onBeforeExport" useVariantManagement="true" useTablePersonalisation="true"  showRowCount="false" persistencyKey="SmartTableRefApp_Explored" enableAutoBinding="true" class="sapUiResponsiveContentPadding" enableAutoColumnWidth="true">
             <table:Table id="ui-table" rows="{path: '/TableEntity'}" visibleRowCount="10" selectionMode="MultiToggle" enableSelectAll="true">
               
             </table:Table>

@@ -21,7 +21,8 @@ var Controller = Controller.extend("ui.template.controller.Cockpit", {
         });
         return this.CockpitDetailsFragment;
     },
-    onPressFinanzenCard: async function () {
+    onPressFinanzenCard: async function (oEvent) {
+        this.getView().getModel("treeModel").setProperty("/selectedTileName",oEvent.getSource().getBindingContext().getObject().Title)
         this.getView().getModel("treeModel").setProperty("/cockpitDetailsVisible",true)
         if(this.CockpitDetailsFragment){
             return;
@@ -30,11 +31,12 @@ var Controller = Controller.extend("ui.template.controller.Cockpit", {
             .then((oFragment) => {
                 debugger;
         oFragment.setModel(this.getView().getModel());
-        this.getView().addDependent(oFragment);
-       // this.getView().byId("cockpitDetailsPanel").addContent(oFragment)
-        //this.getView().getModel("treeModel").setProperty("/cockpitDetailsVisible",true)
-            });
+            this.getView().addDependent(oFragment);
+        });
     },
+    onPressCloseDetailsPalelBtn:function(){
+        this.getView().getModel("treeModel").setProperty("/cockpitDetailsVisible",false);
+    }
 
 });
 
