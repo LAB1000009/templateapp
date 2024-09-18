@@ -1,11 +1,12 @@
-<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:card="sap.f.cards" xmlns:f="sap.f" xmlns:form="sap.ui.layout.form" xmlns:grid="sap.ui.layout.cssgrid" xmlns:l="sap.ui.layout" xmlns:mvc="sap.ui.core.mvc" xmlns:tnt="sap.tnt" displayBlock="true">
-   <l:ResponsiveSplitter defaultPane="">
-      <l:PaneContainer resize=".onRootContainerResize">
+<?xml version="1.0" encoding="UTF-8"?>
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:card="sap.f.cards" xmlns:f="sap.f" xmlns:form="sap.ui.layout.form" xmlns:grid="sap.ui.layout.cssgrid" xmlns:l="sap.ui.layout" xmlns:mvc="sap.ui.core.mvc" xmlns:smartchart="sap.ui.comp.smartchart" xmlns:tnt="sap.tnt" displayBlock="true">
+   <l:ResponsiveSplitter id="responsiveSplitter" defaultPane="">
+      <l:PaneContainer id="paneContainer" resize=".onRootContainerResize">
          <l:SplitPane height="100%">
-		 	 <l:layoutData>
-               <l:SplitterLayoutData size="{=!${treeModel>/cockpitDetailsVisible} ? '100%' : '50%'}" resizable="{treeModel>/cockpitDetailsVisible}" />
+            <l:layoutData>
+               <l:SplitterLayoutData size="{=!${treeModel&gt;/cockpitDetailsVisible} ? '100%' : '50%'}" resizable="{treeModel&gt;/cockpitDetailsVisible}" />
             </l:layoutData>
-            <Panel id="cockpitPage" height="100%" headerText="{i18n>CockpitTab_Title}" backgroundDesign="Solid">
+            <Panel id="cockpitPage" height="100%" headerText="{i18n&gt;CockpitTab_Title}" backgroundDesign="Solid">
                <grid:CSSGrid items="{/Cards}" width="100%" gridTemplateColumns="repeat(auto-fit, 310px)" gridTemplateRows="repeat(5, 150px)" gridGap="1rem" gridAutoRows="auto" gridAutoFlow="Row">
                   <f:GridListItem detailPress="onPressFinanzenCard" type="Active" press="onPressFinanzenCard" class="sapUiSmallMarginTop">
                      <VBox width="320px">
@@ -40,61 +41,76 @@
                </grid:CSSGrid>
             </Panel>
          </l:SplitPane>
-		 <l:SplitPane height="100%">
+         <l:SplitPane height="100%">
             <l:layoutData>
-               <l:SplitterLayoutData size="{=!${treeModel>/cockpitDetailsVisible} ? '0%' : '50%'}" resizable="{treeModel>/cockpitDetailsVisible}" />
+               <l:SplitterLayoutData size="{=!${treeModel&gt;/cockpitDetailsVisible} ? '0%' : '50%'}" resizable="{treeModel&gt;/cockpitDetailsVisible}" />
             </l:layoutData>
-            <Panel  id="cockpitDetailsPanel" headerText="Details" height="100%" width="auto" class="sapUiContentPadding" backgroundDesign="Solid">
-            <headerToolbar>
-            <OverflowToolbar>
-               <Title text="{treeModel>/selectedTileName}"/>
-               <ToolbarSpacer />
-               <Button text="Close" press="onPressCloseDetailsPalelBtn" />
-            </OverflowToolbar>
-		</headerToolbar>
-               <List id="cardDetailsList" items="{path: '/cardDetails'}">
-                  <items>
-                     <CustomListItem>
-                        <content>
-                           <VBox class="sapUiTinyMargin">
-                              <items>
-                                 <HBox>
+            <Panel id="cockpitDetailsPanel" headerText="Details" height="100%" width="auto" class="sapUiContentPadding" backgroundDesign="Transparent">
+               <headerToolbar>
+                  <OverflowToolbar>
+                     <Title text="{treeModel&gt;/selectedTileName}" />
+                     <ToolbarSpacer />
+                     <Button text="Close" press="onPressCloseDetailsPalelBtn" />
+                  </OverflowToolbar>
+               </headerToolbar>
+               <l:Splitter height="100%" width="100%" orientation="Vertical">
+                  <Panel class="sapUiContentPadding" height="100%">
+                     <layoutData>
+                        <l:SplitterLayoutData size="40%" />
+                     </layoutData>
+                     <List id="cardDetailsList" items="{path: '/cardDetails'}" selectionChange="_loadCockpitDetailsFragment" mode="SingleSelectMaster">
+                        <items>
+                           <CustomListItem>
+                              <content>
+                                 <VBox class="sapUiTinyMargin">
                                     <items>
-                                       <Title text="{Title}" class="sapUiTinyMarginBegin" />
+                                       <HBox>
+                                          <items>
+                                             <Title text="{Title}" class="sapUiTinyMarginBegin" />
+                                          </items>
+                                       </HBox>
+                                       <HBox justifyContent="SpaceBetween">
+                                          <items>
+                                             <VBox justifyContent="Center">
+                                                <items>
+                                                   <Text text="{YTDText}" />
+                                                   <Text text="{BUDvsYTDText}" />
+                                                </items>
+                                             </VBox>
+                                             <VBox justifyContent="Center">
+                                                <items>
+                                                   <Title text="{YTDValue}" />
+                                                   <Title text="{BUDvsYTDValue}" />
+                                                </items>
+                                             </VBox>
+                                             <VBox justifyContent="End">
+                                                <items>
+                                                   <ObjectStatus text="{StatusText}" state="{StatusState}" class="boldObjectStatus sapUiTinyMarginBottom" />
+                                                </items>
+                                             </VBox>
+                                             <VBox justifyContent="Center">
+                                                <items>
+                                                   <core:Icon src="{IconSrc}" size="2.5rem" />
+                                                </items>
+                                             </VBox>
+                                          </items>
+                                       </HBox>
                                     </items>
-                                 </HBox>
-                                 <HBox justifyContent="SpaceBetween">
-                                    <items>
-                                       <VBox justifyContent="Center">
-                                          <items>
-                                             <Text text="{YTDText}" />
-                                             <Text text="{BUDvsYTDText}" />
-                                          </items>
-                                       </VBox>
-                                       <VBox justifyContent="Center">
-                                          <items>
-                                             <Title text="{YTDValue}" />
-                                             <Title text="{BUDvsYTDValue}" />
-                                          </items>
-                                       </VBox>
-                                       <VBox justifyContent="End">
-                                          <items>
-                                             <ObjectStatus text="{StatusText}" state="{StatusState}" class="boldObjectStatus sapUiTinyMarginBottom" />
-                                          </items>
-                                       </VBox>
-                                       <VBox justifyContent="Center">
-                                          <items>
-                                             <core:Icon src="{IconSrc}" size="2.5rem" />
-                                          </items>
-                                       </VBox>
-                                    </items>
-                                 </HBox>
-                              </items>
-                           </VBox>
-                        </content>
-                     </CustomListItem>
-                  </items>
-               </List>
+                                 </VBox>
+                              </content>
+                           </CustomListItem>
+                        </items>
+                     </List>
+                  </Panel>
+                  <Panel class="sapUiContentPadding sapUiSmallMarginTop" height="100%">
+                  <layoutData>
+                        <l:SplitterLayoutData size="60%" />
+                     </layoutData>
+                     <VBox>
+                        <smartchart:SmartChart enableAutoBinding="true" entitySet="cardDetails" useVariantManagement="false" persistencyKey="PKeyChartExample9" useChartPersonalisation="true" showFullScreenButton="true" selectionMode="Multi" showChartTooltip="true" showDrillBreadcrumbs="false" showDetailsButton="false" showDrillButtons="true" showSemanticNavigationButton="true" />
+                     </VBox>
+                  </Panel>
+               </l:Splitter>
             </Panel>
          </l:SplitPane>
       </l:PaneContainer>

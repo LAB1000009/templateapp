@@ -69,5 +69,19 @@ annotate service.TableEntity with @(
         Ethnicity
     ]
 );
+annotate service.cardDetails with @(
+    UI.Chart : {
+        $Type : 'UI.ChartDefinitionType',
+        ChartType : #Column,
+        Dimensions : [
+            cardID, cardTitle, YTDValue
+        ],
+       
+        Measures : [
+           BUDvsYTDValue, StatusState
+        ]
+       
+    }
+);
 
 

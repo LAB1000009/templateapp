@@ -794,6 +794,26 @@
          <Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="RiskService.Cards/ID">
             <Annotation Term="Core.ComputedDefaultValue" Bool="true" />
          </Annotations>
+         <Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="RiskService.cardDetails">
+            <Annotation Term="UI.Chart">
+               <Record Type="UI.ChartDefinitionType">
+                  <PropertyValue Property="ChartType" EnumMember="UI.ChartType/Column" />
+                  <PropertyValue Property="Dimensions">
+                     <Collection>
+                        <PropertyPath>cardID</PropertyPath>
+                        <PropertyPath>cardTitle</PropertyPath>
+                        <PropertyPath>YTDValue</PropertyPath>
+                     </Collection>
+                  </PropertyValue>
+                  <PropertyValue Property="Measures">
+                     <Collection>
+                        <PropertyPath>BUDvsYTDValue</PropertyPath>
+                        <PropertyPath>StatusState</PropertyPath>
+                     </Collection>
+                  </PropertyValue>
+               </Record>
+            </Annotation>
+         </Annotations>
          <Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="RiskService.cardDetails/ID">
             <Annotation Term="Core.ComputedDefaultValue" Bool="true" />
          </Annotations>
