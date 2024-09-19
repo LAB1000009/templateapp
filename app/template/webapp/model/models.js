@@ -18,6 +18,25 @@ function (JSONModel, Device) {
         _dateFormatter: function(oDate) {
             return DateFormat.getDateTimeInstance({pattern: "MMMM dd YY, hh:mm:ss"}).format(oDate);
         },
+        formatCurrentLocationText: function(selectedTab, selectedCockpit, selectedCardDetails) {
+            var locationText = selectedTab || ""; 
+        
+            if (selectedCockpit) {
+                locationText += " / " + selectedCockpit;
+            }
+        
+            if (selectedCardDetails) {
+                locationText += " / " + selectedCardDetails;
+            }
+        
+            
+            if (!locationText) {
+                locationText = "Super portable deluxe"; 
+            }
+        
+            return locationText;
+        }
+        
     };
 
 });

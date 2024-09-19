@@ -35,6 +35,10 @@ sap.ui.define([
                     footerDetails: "Dashboard details",
                     ////////////////test
                     showSideContent: false,
+                    selectedTab:"Chart",
+                    selectedCockpit:"",
+                    selectedCardDetails:"",
+                    cockpitDetailsCardVisible:false,
                     payments: []
 
                 });
@@ -43,7 +47,7 @@ sap.ui.define([
             onAfterRendering:function(){
                 this.aAppFragments = {};
                 this.oDialog ??= this.loadFragment({
-                    name: "ui.template.fragment.Content"
+                    name: "ui.template.view.fragment.Content"
                 })
                     .then((oFragment) => {
                         this.getView().byId("contentPage").addContent(oFragment);
@@ -86,11 +90,13 @@ sap.ui.define([
                 })
             },
             onSelectIconTabHeader: async function (oEvent) {
+                
                 var sSelectedKey = oEvent.getSource().getSelectedKey();
                 var oPage = await this._loadFragments(sSelectedKey, true);
                 if (this.getView().byId("navCon").getCurrentPage() === this._fragments[sSelectedKey]) {
                     return
                 }
+                this.getView().getModel("treeModel").setProperty("/selectedTab",sSelectedKey);
                 this.getView().byId("navCon").to(this._fragments[sSelectedKey])
 
             },
@@ -105,7 +111,7 @@ sap.ui.define([
             _initializeFragment: async function (sSelectedKey, oController) {
                 const oFragment = await sap.ui.core.Fragment.load({
                     id: this.createId(sSelectedKey),
-                    name: "ui.template.fragment." + sSelectedKey,
+                    name: "ui.template.view.fragment." + sSelectedKey,
                     controller: oController
                 });
                 oFragment.setModel(this.getView().getModel());

@@ -39,11 +39,13 @@
                         <OverflowToolbar width="100%" height="auto" class="sapUiNoContentPadding">
                             <OverflowToolbarToggleButton press="OverflowToolbarToggleButton" pressed="{treeModel>/showSideContent}" icon="sap-icon://bullet-text" class="sapUiTinyMarginBegi"/>
                             <VBox>
-                                <Breadcrumbs currentLocationText="Super portable deluxe" separatorStyle="{/selected}" class="sapUiTinyMarginBegin sapUiTinyMarginTop">
-                                        <Link press="onPress" text="Products"/>
-                                        <Link press="onPress" text="Ultra portable"/>
+                                <Breadcrumbs currentLocationText="{= ${treeModel>/selectedTab} === 'Cockpit' ? ${treeModel>/selectedCardDetails} : '' }" separatorStyle="{/selected}" class="sapUiTinyMarginBegin sapUiTinyMarginTop">
+                                        <Link press="onPress" text="{treeModel>/selectedTab}"/>
+                                        <Link  visible="{= ${treeModel>/selectedCockpit} !== '' &amp;&amp; ${treeModel>/selectedTab} === 'Cockpit' }" press="onPress" text="{treeModel>/selectedCockpit}"/>
+                                        <!-- <Link visible="{=${treeModel>/selectedCardDetails} !== '' }" press="onPress" text="{treeModel>/selectedCardDetails}"/> -->
+                                        <!-- <Link press="onPress" text="Ultra portable"/>
                                         <Link press="onPress" text="12 inch"/>
-                                        <Link press="onPress" text="Super portable deluxe"/>
+                                        <Link press="onPress" text="Super portable deluxe"/> -->
                                 </Breadcrumbs>
                             </VBox>
                             <ToolbarSpacer />
