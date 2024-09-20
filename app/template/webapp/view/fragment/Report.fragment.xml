@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:f="sap.ui.layout.form">
-   <Dialog title="Dashboard details" draggable="true" resizable="true" contentWidth="500px" contentHeight="1000px">
+   <Dialog title="{i18n>DD_Title}" draggable="true" resizable="true" contentWidth="500px" contentHeight="1000px">
       <Page class="sapUiContentPadding" showHeader="false">
          <content>
             <Panel class="">
@@ -9,13 +9,16 @@
                      <f:ResponsiveGridLayout labelSpanXL="12" labelSpanL="12" labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="2" columnsL="5" columnsM="1" singleContainerFullSize="false" />
                   </f:layout>
                   <f:title>
-                     <core:Title text="Report Information" />
+                     <core:Title text="{i18n>DD_GenInfoSect_Title}" />
                   </f:title>
                   <f:formContainers>
                      <!-- Report Information Section -->
                      <f:FormContainer>
                         <f:formElements>
-                           <f:FormElement label="Owner">
+                           <f:FormElement>
+                              <f:label>
+                                 <Label design="Bold" text="{i18n>GenInfoSect_OwnerLb}" />
+                              </f:label>
                               <f:fields>
                                  <Text text="Steve Otieno" />
                               </f:fields>
@@ -24,25 +27,34 @@
                      </f:FormContainer>
                      <f:FormContainer>
                         <f:formElements>
-                           <f:FormElement label="Objective">
+                           <f:FormElement>
+                              <f:label>
+                                 <Label design="Bold" text="{i18n>GenInfoSect_ObjLb}" />
+                              </f:label>
                               <f:fields>
-                                 <Text text="Measure staff turnover" />
+                                 <Text text="Human Resources" />
                               </f:fields>
                            </f:FormElement>
                         </f:formElements>
                      </f:FormContainer>
                      <f:FormContainer>
                         <f:formElements>
-                           <f:FormElement label="Date of Creation">
+                           <f:FormElement>
+                              <f:label>
+                                 <Label design="Bold" text="{i18n>GenInfoSect_DateLb}" />
+                              </f:label>
                               <f:fields>
-                                 <Text text="14.05.2022" />
+                                 <Text text="19.09.2024" />
                               </f:fields>
                            </f:FormElement>
                         </f:formElements>
                      </f:FormContainer>
                      <f:FormContainer>
                         <f:formElements>
-                           <f:FormElement label="Version">
+                           <f:FormElement>
+                              <f:label>
+                                 <Label design="Bold" text="{i18n>GenInfoSect_VersLb}" />
+                              </f:label>
                               <f:fields>
                                  <Text text="1.0" />
                               </f:fields>
@@ -51,9 +63,12 @@
                      </f:FormContainer>
                      <f:FormContainer>
                         <f:formElements>
-                           <f:FormElement label="Report Designer">
+                           <f:FormElement>
+                              <f:label>
+                                 <Label design="Bold" text="{i18n>GenInfoSect_RepDesignerLb}" />
+                              </f:label>
                               <f:fields>
-                                 <Text text="Steve Otieno" />
+                                 <Text text="Mosec Solutions Development Team" />
                               </f:fields>
                            </f:FormElement>
                         </f:formElements>
@@ -70,32 +85,41 @@
                      <f:ResponsiveGridLayout labelSpanXL="12" labelSpanL="12" labelSpanM="12" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="1" singleContainerFullSize="false" />
                   </f:layout>
                   <f:title>
-                     <core:Title text="Report Information" />
+                     <core:Title text="{i18n>DD_RepInfoSect_Title}" />
                   </f:title>
                   <f:formContainers>
                      <f:FormContainer>
                         <f:formElements>
-                           <f:FormElement label="Report Name [Technical Name]">
+                           <f:FormElement>
+                              <f:label>
+                                 <Label design="Bold" text="{i18n>RepInfoSect_RepNameLb}" />
+                              </f:label>
                               <f:fields>
-                                 <Text text="Empty" />
+                                 <Text text="ZHR_UI5REPORT_01" />
                               </f:fields>
                            </f:FormElement>
                         </f:formElements>
                      </f:FormContainer>
                      <f:FormContainer>
                         <f:formElements>
-                           <f:FormElement label="Classification and Cluster">
+                           <f:FormElement>
+                              <f:label>
+                                 <Label design="Bold" text="{i18n>RepInfoSect_ClassClusterLb}" />
+                              </f:label>
                               <f:fields>
-                                 <Text text="Empty" />
+                                 <Text text="Templates" />
                               </f:fields>
                            </f:FormElement>
                         </f:formElements>
                      </f:FormContainer>
                      <f:FormContainer>
                         <f:formElements>
-                           <f:FormElement label="Report description including User Story">
+                           <f:FormElement>
+                              <f:label>
+                                 <Label design="Bold" text="{i18n>RepInfoSect_RepDescLb}" />
+                              </f:label>
                               <f:fields>
-                                 <Text text="Empty" />
+                                 <Text text="General HR report template designed for demonstration purposes" />
                               </f:fields>
                            </f:FormElement>
                         </f:formElements>
@@ -109,14 +133,26 @@
                      <f:ResponsiveGridLayout labelSpanXL="12" labelSpanL="12" labelSpanM="12" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="6" columnsL="6" columnsM="1" singleContainerFullSize="false" />
                   </f:layout>
                   <f:title>
-                     <core:Title text="Report Details" />
+                     <core:Title text="{i18n>DD_RepObjSect_Title}" />
                   </f:title>
                   <f:formContainers>
                      <f:FormContainer>
                         <f:formElements>
                            <f:FormElement>
                               <f:label>
-                                 <Label design="Bold" text="Goal (Problem solved by report)" />
+                                 <Label design="Bold" text="{i18n>RepObjSect_GoalLb}" />
+                              </f:label>
+                              <f:fields>
+                                 <Text text="To provide detailed information about the company's employees and allows Human Resource teams to track, analyze and report on HR KPIs" />
+                              </f:fields>
+                           </f:FormElement>
+                        </f:formElements>
+                     </f:FormContainer>
+                     <f:FormContainer>
+                        <f:formElements>
+                           <f:FormElement>
+                              <f:label>
+                                 <Label design="Bold" text="{i18n>RepObjSect_ProcessLb}" />
                               </f:label>
                               <f:fields>
                                  <Text text="Empty" />
@@ -126,9 +162,33 @@
                      </f:FormContainer>
                      <f:FormContainer>
                         <f:formElements>
-                           <f:FormElement >
-                            <f:label>
-                                 <Label design="Bold" text="Process" />
+                           <f:FormElement>
+                              <f:label>
+                                 <Label design="Bold" text="{i18n>RepObjSect_TimeLb}" />
+                              </f:label>
+                              <f:fields>
+                                 <Text text="January 2025" />
+                              </f:fields>
+                           </f:FormElement>
+                        </f:formElements>
+                     </f:FormContainer>
+                     <f:FormContainer>
+                        <f:formElements>
+                           <f:FormElement>
+                              <f:label>
+                                 <Label design="Bold" text="{i18n>RepObjSect_TarAudLb}" />
+                              </f:label>
+                              <f:fields>
+                                 <Text text="HR managers" />
+                              </f:fields>
+                           </f:FormElement>
+                        </f:formElements>
+                     </f:FormContainer>
+                     <f:FormContainer>
+                        <f:formElements>
+                           <f:FormElement>
+                              <f:label>
+                                 <Label design="Bold" text="{i18n>RepObjSect_NessResLb}" />
                               </f:label>
                               <f:fields>
                                  <Text text="Empty" />
@@ -138,36 +198,12 @@
                      </f:FormContainer>
                      <f:FormContainer>
                         <f:formElements>
-                           <f:FormElement label="Time to Target">
+                           <f:FormElement>
+                              <f:label>
+                                 <Label design="Bold" text="{i18n>RepObjSect_IssuesLb}" />
+                              </f:label>
                               <f:fields>
-                                 <Text text="Empty" />
-                              </f:fields>
-                           </f:FormElement>
-                        </f:formElements>
-                     </f:FormContainer>
-                     <f:FormContainer>
-                        <f:formElements>
-                           <f:FormElement label="Target Audience">
-                              <f:fields>
-                                 <Text text="Empty" />
-                              </f:fields>
-                           </f:FormElement>
-                        </f:formElements>
-                     </f:FormContainer>
-                     <f:FormContainer>
-                        <f:formElements>
-                           <f:FormElement label="Necessary Resources">
-                              <f:fields>
-                                 <Text text="Empty" />
-                              </f:fields>
-                           </f:FormElement>
-                        </f:formElements>
-                     </f:FormContainer>
-                     <f:FormContainer>
-                        <f:formElements>
-                           <f:FormElement label="Known Issues and Troubleshooting">
-                              <f:fields>
-                                 <Text text="Empty" />
+                                 <Text text="None" />
                               </f:fields>
                            </f:FormElement>
                         </f:formElements>
@@ -181,39 +217,57 @@
                      <f:ResponsiveGridLayout labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="1" singleContainerFullSize="false" />
                   </f:layout>
                   <f:title>
-                     <core:Title text="Data Source" />
+                     <core:Title text="{i18n>DD_DSSect_Title}" />
                   </f:title>
                   <f:formContainers>
                      <f:FormContainer>
                         <f:formElements>
-                           <f:FormElement label="DWH">
+                           <f:FormElement>
+                              <f:label>
+                                 <Label design="Bold" text="{i18n>DSSect_DWHLb}" />
+                              </f:label>
                               <f:fields>
-                                 <Text text="Empty" />
+                                 <Text text="None" />
                               </f:fields>
                            </f:FormElement>
-                           <f:FormElement label="Ext. DB">
+                           <f:FormElement>
+                              <f:label>
+                                 <Label design="Bold" text="{i18n>DSSect_ExtDBLb}" />
+                              </f:label>
                               <f:fields>
-                                 <Text text="Empty" />
+                                 <Text text="None" />
                               </f:fields>
                            </f:FormElement>
-                           <f:FormElement label="Flatfiles">
+                           <f:FormElement>
+                              <f:label>
+                                 <Label design="Bold" text="{i18n>DSSect_FlatfilesLb}" />
+                              </f:label>
                               <f:fields>
-                                 <Text text="Empty" />
+                                 <Text text="None" />
                               </f:fields>
                            </f:FormElement>
-                           <f:FormElement label="SAP">
+                           <f:FormElement>
+                              <f:label>
+                                 <Label design="Bold" text="{i18n>DSSect_SAPLb}" />
+                              </f:label>
                               <f:fields>
-                                 <Text text="Empty" />
+                                 <Text text="None" />
                               </f:fields>
                            </f:FormElement>
-                           <f:FormElement label="SAP List">
+                           <f:FormElement>
+                              <f:label>
+                                 <Label design="Bold" text="{i18n>DSSect_SAPListLb}" />
+                              </f:label>
                               <f:fields>
-                                 <Text text="Empty" />
+                                 <Text text="None" />
                               </f:fields>
                            </f:FormElement>
-                           <f:FormElement label="Local">
+                           <f:FormElement>
+                              <f:label>
+                                 <Label design="Bold" text="{i18n>DSSect_LocalLb}" />
+                              </f:label>
                               <f:fields>
-                                 <Text text="Empty" />
+                                 <Text text="Mock Data Server" />
                               </f:fields>
                            </f:FormElement>
                         </f:formElements>
@@ -227,17 +281,23 @@
                      <f:ResponsiveGridLayout labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="1" singleContainerFullSize="false" />
                   </f:layout>
                   <f:title>
-                     <core:Title text="Data Quality Assurence" />
+                     <core:Title text="{i18n>DD_DataQualSect_Title}" />
                   </f:title>
                   <f:formContainers>
                      <f:FormContainer>
                         <f:formElements>
-                           <f:FormElement label="Performed">
+                           <f:FormElement>
+                              <f:label>
+                                 <Label design="Bold" text="{i18n>DataQualSect_PerformedLb}" />
+                              </f:label>
                               <f:fields>
                                  <Text text="Empty" />
                               </f:fields>
                            </f:FormElement>
-                           <f:FormElement label="not Performed">
+                           <f:FormElement>
+                              <f:label>
+                                 <Label design="Bold" text="{i18n>DataQualSect_NotPerformedLb}" />
+                              </f:label>
                               <f:fields>
                                  <Text text="Empty" />
                               </f:fields>
@@ -253,27 +313,39 @@
                      <f:ResponsiveGridLayout labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="1" singleContainerFullSize="false" />
                   </f:layout>
                   <f:title>
-                     <core:Title text="Schedules and Automated Refresh" />
+                     <core:Title text="{i18n>DD_SheduleSect_Title}" />
                   </f:title>
                   <f:formContainers>
                      <f:FormContainer>
                         <f:formElements>
-                           <f:FormElement label="Schedules">
+                           <f:FormElement>
+                              <f:label>
+                                 <Label design="Bold" text="{i18n>SheduleSect_SchedulesLb}" />
+                              </f:label>
                               <f:fields>
                                  <Text text="Empty" />
                               </f:fields>
                            </f:FormElement>
-                           <f:FormElement label="Automated Refresh">
+                           <f:FormElement>
+                              <f:label>
+                                 <Label design="Bold" text="{i18n>SheduleSect_AutoRefreshLb}" />
+                              </f:label>
                               <f:fields>
                                  <Text text="Empty" />
                               </f:fields>
                            </f:FormElement>
-                           <f:FormElement label="Data manager">
+                           <f:FormElement>
+                              <f:label>
+                                 <Label design="Bold" text="{i18n>SheduleSect_DataManagerLb}" />
+                              </f:label>
                               <f:fields>
                                  <Text text="Empty" />
                               </f:fields>
                            </f:FormElement>
-                           <f:FormElement label="Analyst Expert">
+                           <f:FormElement>
+                              <f:label>
+                                 <Label design="Bold" text="{i18n>SheduleSect_AnalystExpertLb}" />
+                              </f:label>
                               <f:fields>
                                  <Text text="Empty" />
                               </f:fields>
@@ -289,25 +361,34 @@
                      <f:ResponsiveGridLayout labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="1" singleContainerFullSize="false" />
                   </f:layout>
                   <f:title>
-                     <core:Title text="ChangeLog Intake" />
+                     <core:Title text="{i18n>DD_ChangeLogSect_Title}" />
                   </f:title>
                   <f:formContainers>
                      <!-- ChangeLog Intake Section -->
                      <f:FormContainer>
                         <f:formElements>
-                           <f:FormElement label="Date">
+                           <f:FormElement>
+                              <f:label>
+                                 <Label design="Bold" text="{i18n>ChangeLogSect_DateLb}" />
+                              </f:label>
                               <f:fields>
-                                 <Text text="Empty" />
+                                 <Text text="19.09.2024" />
                               </f:fields>
                            </f:FormElement>
-                           <f:FormElement label="Requested By">
+                           <f:FormElement>
+                              <f:label>
+                                 <Label design="Bold" text="{i18n>ChangeLogSect_ReqByLb}" />
+                              </f:label>
                               <f:fields>
-                                 <Text text="Empty" />
+                                 <Text text="Steve Otieno" />
                               </f:fields>
                            </f:FormElement>
-                           <f:FormElement label="Description">
+                           <f:FormElement>
+                              <f:label>
+                                 <Label design="Bold" text="{i18n>ChangeLogSect_DescLb}" />
+                              </f:label>
                               <f:fields>
-                                 <Text text="Empty" />
+                                 <Text text="Changing the Report Info tab" />
                               </f:fields>
                            </f:FormElement>
                         </f:formElements>
@@ -321,18 +402,45 @@
                      <f:ResponsiveGridLayout labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="1" singleContainerFullSize="false" />
                   </f:layout>
                   <f:title>
-                     <core:Title text="KPI and Measures" />
+                     <core:Title text="{i18n>DD_KPISect_Title}" />
                   </f:title>
                   <f:formContainers>
                      <!-- KPI and Measures Section -->
                      <f:FormContainer>
                         <f:formElements>
-                           <f:FormElement label="KPI">
+                           <f:FormElement>
+                              <f:label>
+                                 <Label design="Bold" text="{i18n>KPISect_KPILb}" />
+                              </f:label>
                               <f:fields>
                                  <Text text="Empty" />
                               </f:fields>
                            </f:FormElement>
-                           <f:FormElement label="Measures">
+                           <f:FormElement>
+                              <f:label>
+                                 <Label design="Bold" text="{i18n>KPISect_MeasuresLb}" />
+                              </f:label>
+                              <f:fields>
+                                 <Text text="Annual Salary, Bonus %" />
+                              </f:fields>
+                           </f:FormElement>
+                        </f:formElements>
+                     </f:FormContainer>
+                  </f:formContainers>
+               </f:Form>
+            </Panel>
+            <Panel class="sapUiSmallMarginTop">
+               <f:Form editable="false">
+                  <f:layout>
+                     <f:ResponsiveGridLayout labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="1" singleContainerFullSize="false" />
+                  </f:layout>
+                  <f:title>
+                     <core:Title text="{i18n>DD_PlanDocuSect_Title}" />
+                  </f:title>
+                  <f:formContainers>
+                     <f:FormContainer>
+                        <f:formElements>
+                           <f:FormElement label="">
                               <f:fields>
                                  <Text text="Empty" />
                               </f:fields>
@@ -348,18 +456,9 @@
                      <f:ResponsiveGridLayout labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="1" singleContainerFullSize="false" />
                   </f:layout>
                   <f:title>
-                     <core:Title text="Report planning and Project Documentation" />
+                     <core:Title text="{i18n>DD_RelatedRepSect_Title}" />
                   </f:title>
                   <f:formContainers>
-                     <f:FormContainer>
-                        <f:formElements>
-                           <f:FormElement label="">
-                              <f:fields>
-                                 <Text text="Empty" />
-                              </f:fields>
-                           </f:FormElement>
-                        </f:formElements>
-                     </f:FormContainer>
                      <f:FormContainer>
                         <f:formElements>
                            <f:FormElement label="">
@@ -378,7 +477,7 @@
                      <f:ResponsiveGridLayout labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="1" singleContainerFullSize="false" />
                   </f:layout>
                   <f:title>
-                     <core:Title text="Related Report" />
+                     <core:Title text="{i18n>DD_RoadmapSect_Title}" />
                   </f:title>
                   <f:formContainers>
                      <f:FormContainer>
@@ -389,33 +488,6 @@
                               </f:fields>
                            </f:FormElement>
                         </f:formElements>
-                     </f:FormContainer>
-                     <f:FormContainer>
-                        <f:formElements />
-                     </f:FormContainer>
-                  </f:formContainers>
-               </f:Form>
-            </Panel>
-            <Panel class="sapUiSmallMarginTop">
-               <f:Form editable="false">
-                  <f:layout>
-                     <f:ResponsiveGridLayout labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="1" singleContainerFullSize="false" />
-                  </f:layout>
-                  <f:title>
-                     <core:Title text="Roadmap" />
-                  </f:title>
-                  <f:formContainers>
-                     <f:FormContainer>
-                        <f:formElements>
-                           <f:FormElement label="">
-                              <f:fields>
-                                 <Text text="Empty" />
-                              </f:fields>
-                           </f:FormElement>
-                        </f:formElements>
-                     </f:FormContainer>
-                     <f:FormContainer>
-                        <f:formElements />
                      </f:FormContainer>
                   </f:formContainers>
                </f:Form>
