@@ -7,12 +7,12 @@
                <l:SplitterLayoutData size="{=!${treeModel>/cockpitDetailsVisible} ? '100%' : '50%'}" resizable="{treeModel>/cockpitDetailsVisible}" />
             </l:layoutData>
             <Panel id="cockpitPage" height="100%" headerText="{i18n>CockpitTab_Title}" backgroundDesign="Solid">
-               <grid:CSSGrid items="{/Cards}" width="100%" gridTemplateColumns="repeat(auto-fit, 310px)" gridTemplateRows="repeat(5, 150px)" gridGap="1rem" gridAutoRows="auto" gridAutoFlow="Row">
-                  <f:GridListItem detailPress="onPressFinanzenCard" type="Active" press="onPressFinanzenCard" class="sapUiSmallMarginTop">
-                     <VBox width="320px">
-                        <HBox class="sapUiSmallMargin" alignItems="Center" justifyContent="SpaceBetween">
+               <grid:CSSGrid items="{/Cards}" width="100%" gridTemplateColumns="repeat(auto-fit, 320px)" gridTemplateRows="repeat(5, 130px)" gridGap="1rem" gridAutoRows="auto" gridAutoFlow="Row">
+                  <f:GridListItem detailPress="onPressFinanzenCard" type="Active" press="onPressFinanzenCard" >
+                     <VBox width="320px" class="sapUiContentPadding">
+                        <HBox class="sapUiContentPadding" alignItems="Center" justifyContent="SpaceBetween">
                            <HBox>
-                              <core:Icon class="sapUiSmallMarginEnd" src="{Icon}" size="30px" />
+                              <core:Icon  src="{Icon}" size="30px" class="sapUiTinyMarginEnd"/>
                               <VBox justifyContent="End">
                                  <Title titleStyle="H4" text="{Title}" />
                               </VBox>
@@ -20,11 +20,11 @@
                            <!-- <Button icon="sap-icon://add" id="finanzen" class="sapUiLargeMarginBegin" press="onPressAddBtn" /> -->
                         </HBox>
                         <Toolbar height="1px" />
-                        <HBox width="" class="sapUiTinyMargin sapUiSmallMarginEnd" justifyContent="SpaceBetween">
+                        <HBox width="" class="sapUiContentPadding" justifyContent="SpaceBetween">
                            <VBox justifyContent="Center">
                               <Title titleStyle="H3" text="{MainValue}" />
                            </VBox>
-                           <VBox width="25%">
+                           <VBox width="20%" justifyContent="Center">
                               <Title titleStyle="H6" wrapping="true" text="{SubTitle}" />
                            </VBox>
                            <VBox>
@@ -32,8 +32,14 @@
                               <Text titleStyle="H5" text="{Comparison2}" />
                            </VBox>
                            <VBox justifyContent="Start">
-                              <ObjectStatus class="boldObjectStatus" state="{Status1State}" text="{Status1Value}" />
-                              <ObjectStatus class="boldObjectStatus" state="{Status2State}" text="{Status2Value}" />
+                              <HBox alignItems="Center"> 
+                                 <ObjectStatus  class="sapUiTinyMarginEnd" state="{Status1State}" text="{Status1Value}" />
+                                 <core:Icon  src="sap-icon://up" color="red" size="15px" />
+                              </HBox>
+                              <HBox alignItems="Center">
+                                 <ObjectStatus class="sapUiTinyMarginEnd" state="{Status2State}" text="{Status2Value}" />
+                                 <core:Icon  color="green" src="sap-icon://down" size="15px" />
+                              </HBox>
                            </VBox>
                         </HBox>
                      </VBox>

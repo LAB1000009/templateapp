@@ -1,144 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<core:FragmentDefinition xmlns:core="sap.ui.core" 	xmlns:l="sap.ui.layout" xmlns="sap.suite.ui.microchart" xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns:m="sap.m" height="100%" displayBlock="true">
-   <m:Panel height="100%" headerText="{i18n>DashboardTab_Title}" id="dashboardm:Page" class="contentPadding" backgroundDesign="List">
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.suite.ui.microchart" xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns:l="sap.ui.layout" xmlns:m="sap.m" height="100%" displayBlock="true">
+   <m:Panel height="100%" headerText="{i18n&gt;DashboardTab_Title}" id="dashboardm:Page" class="contentPadding" backgroundDesign="List">
       <m:VBox height="100%" width="100%">
-         <m:Panel expanded="true" headerText="Example"  expandable="true" >
-         <m:HBox>
-               <ColumnMicroChart size="M" press="press" class="sapUiSmallMargin">
-                  <columns>
-                     <ColumnMicroChartData value="100" color="Error" />
-                     <ColumnMicroChartData value="60" color="Neutral" />
-                  </columns>
-               </ColumnMicroChart>
-               <ColumnMicroChart size="M" press="press" class="sapUiSmallMargin">
-                  <columns>
-                     <ColumnMicroChartData value="60" color="Error" />
-                     <ColumnMicroChartData value="80" color="Error" />
-                     <ColumnMicroChartData value="100" color="Error" />
-                     <ColumnMicroChartData value="60" color="Neutral" />
-                     <ColumnMicroChartData value="55" color="Neutral" />
-                     <ColumnMicroChartData value="15" color="Neutral" />
-                  </columns>
-               </ColumnMicroChart>
-               <ColumnMicroChart size="S" press="press" class="sapUiSmallMargin">
-                  <columns>
-                     <ColumnMicroChartData value="60" color="Error" />
-                     <ColumnMicroChartData value="100" color="Error" />
-                     <ColumnMicroChartData value="-20" color="Error" />
-                     <ColumnMicroChartData value="60" color="Neutral" />
-                     <ColumnMicroChartData value="55" color="Neutral" />
-                     <ColumnMicroChartData value="15" color="Neutral" />
-                  </columns>
-               </ColumnMicroChart>
-               <ColumnMicroChart size="S" press="press" class="sapUiSmallMargin">
-                  <columns>
-                     <ColumnMicroChartData value="65" color="Error" />
-                     <ColumnMicroChartData value="90" color="Error" />
-                     <ColumnMicroChartData value="75" color="Error" />
-                     <ColumnMicroChartData value="95" color="Error" />
-                     <ColumnMicroChartData value="100" color="Error" />
-                     <ColumnMicroChartData value="90" color="Error" />
-                     <ColumnMicroChartData value="80" color="Error" />
-                     <ColumnMicroChartData value="35" color="Neutral" />
-                     <ColumnMicroChartData value="65" color="Neutral" />
-                     <ColumnMicroChartData value="55" color="Neutral" />
-                     <ColumnMicroChartData value="60" color="Neutral" />
-                     <ColumnMicroChartData value="5" color="Neutral" />
-                     <ColumnMicroChartData value="15" color="Neutral" />
-                     <ColumnMicroChartData value="15" color="Neutral" />
-                  </columns>
-               </ColumnMicroChart>
-               <ColumnMicroChart size="S" press="press" class="sapUiSmallMargin">
-                  <columns>
-                     <ColumnMicroChartData value="60" color="Good" />
-                     <ColumnMicroChartData value="100" color="Good" />
-                     <ColumnMicroChartData value="-20" color="Error" />
-                     <ColumnMicroChartData value="60" color="Good" />
-                     <ColumnMicroChartData value="55" color="Neutral" />
-                     <ColumnMicroChartData value="15" color="Critical" />
-                  </columns>
-               </ColumnMicroChart>
-               <ColumnMicroChart size="S" press="press" class="sapUiSmallMargin" height="5rem" />
-             </m:HBox>
-         </m:Panel >
-          <m:Panel expanded="true" headerText="Example (Border)"  expandable="true" >
-            <m:HBox>
-            	<l:HorizontalLayout class="sapUiContentPadding border sapUiSmallMargin">
-    <ColumnMicroChart size="M" press="press">
-        <columns>
-            <ColumnMicroChartData value="100" color="Error" />
-            <ColumnMicroChartData value="60" color="Neutral" />
-        </columns>
-    </ColumnMicroChart>
-</l:HorizontalLayout>
-
-<l:HorizontalLayout class="sapUiContentPadding border sapUiSmallMargin">
-    <ColumnMicroChart size="M" press="press">
-        <columns>
-            <ColumnMicroChartData value="60" color="Error" />
-            <ColumnMicroChartData value="80" color="Error" />
-            <ColumnMicroChartData value="100" color="Error" />
-            <ColumnMicroChartData value="60" color="Neutral" />
-            <ColumnMicroChartData value="55" color="Neutral" />
-            <ColumnMicroChartData value="15" color="Neutral" />
-        </columns>
-    </ColumnMicroChart>
-</l:HorizontalLayout>
-
-<l:HorizontalLayout class="sapUiContentPadding border sapUiSmallMargin">
-    <ColumnMicroChart size="S" press="press">
-        <columns>
-            <ColumnMicroChartData value="60" color="Error" />
-            <ColumnMicroChartData value="100" color="Error" />
-            <ColumnMicroChartData value="-20" color="Error" />
-            <ColumnMicroChartData value="60" color="Neutral" />
-            <ColumnMicroChartData value="55" color="Neutral" />
-            <ColumnMicroChartData value="15" color="Neutral" />
-        </columns>
-    </ColumnMicroChart>
-</l:HorizontalLayout>
-
-<l:HorizontalLayout class="sapUiContentPadding border sapUiSmallMargin">
-    <ColumnMicroChart size="S" press="press">
-        <columns>
-            <ColumnMicroChartData value="65" color="Error" />
-            <ColumnMicroChartData value="90" color="Error" />
-            <ColumnMicroChartData value="75" color="Error" />
-            <ColumnMicroChartData value="95" color="Error" />
-            <ColumnMicroChartData value="100" color="Error" />
-            <ColumnMicroChartData value="90" color="Error" />
-            <ColumnMicroChartData value="80" color="Error" />
-            <ColumnMicroChartData value="35" color="Neutral" />
-            <ColumnMicroChartData value="65" color="Neutral" />
-            <ColumnMicroChartData value="55" color="Neutral" />
-            <ColumnMicroChartData value="60" color="Neutral" />
-            <ColumnMicroChartData value="5" color="Neutral" />
-            <ColumnMicroChartData value="15" color="Neutral" />
-            <ColumnMicroChartData value="15" color="Neutral" />
-        </columns>
-    </ColumnMicroChart>
-</l:HorizontalLayout>
-
-<l:HorizontalLayout class="sapUiContentPadding border sapUiSmallMargin">
-    <ColumnMicroChart size="S" press="press">
-        <columns>
-            <ColumnMicroChartData value="60" color="Good" />
-            <ColumnMicroChartData value="100" color="Good" />
-            <ColumnMicroChartData value="-20" color="Error" />
-            <ColumnMicroChartData value="60" color="Good" />
-            <ColumnMicroChartData value="55" color="Neutral" />
-            <ColumnMicroChartData value="15" color="Critical" />
-        </columns>
-    </ColumnMicroChart>
-</l:HorizontalLayout>
-
-<l:HorizontalLayout class="sapUiContentPadding">
-    <ColumnMicroChart size="S" press="press" height="5rem" />
-</l:HorizontalLayout>
-
-               </m:HBox>
-            </m:Panel >
-         <m:Panel expanded="true" headerText="Example 2" expandable="true" >
+       
+         <m:Panel expanded="true" headerText="Example 2" expandable="true">
             <m:GenericTile header="Revenue Dynamics" frameType="OneByOne" press="press">
                <m:tileContent>
                   <m:TileContent footer="Column chart">
@@ -219,104 +84,81 @@
                   </m:TileContent>
                </m:tileContent>
             </m:GenericTile>
-         </m:Panel >
-         <m:Panel expanded="true" expandable="true"  headerText="Example 3">
-          <m:HBox>
-            <ComparisonMicroChart size="S" scale="M" class="sapUiSmallMargin" press="press">
-               <data>
-                  <ComparisonMicroChartData title="EMEA" displayValue="USD 0" color="Good" />
-                  <ComparisonMicroChartData title="EMEA" value="50" color="Good" />
-                  <ComparisonMicroChartData title="APAC" value="-20" color="Error" />
-               </data>
-            </ComparisonMicroChart>
-            <ComparisonMicroChart size="M" scale="M" class="sapUiSmallMargin" press="press">
-               <data>
-                  <ComparisonMicroChartData title="Americas" value="10" color="Good" />
-                  <ComparisonMicroChartData title="EMEA" value="50" color="Good" />
-                  <ComparisonMicroChartData title="APAC" value="-20" color="Error" />
-               </data>
-            </ComparisonMicroChart>
-            <ComparisonMicroChart size="M" scale="M" class="sapUiSmallMargin" press="press" shrinkable="true" colorPalette="sapUiChartPaletteQualitativeHue1, sapUiChartPaletteQualitativeHue2, sapUiChartPaletteQualitativeHue3,                   sapUiChartPaletteQualitativeHue4, sapUiChartPaletteQualitativeHue5, sapUiChartPaletteQualitativeHue6, sapUiChartPaletteQualitativeHue7,                   sapUiChartPaletteQualitativeHue8, sapUiChartPaletteQualitativeHue9, sapUiChartPaletteQualitativeHue10, sapUiChartPaletteQualitativeHue11">
-               <data>
-                  <ComparisonMicroChartData title="Americas" value="10" />
-                  <ComparisonMicroChartData title="EMEA" value="50" />
-                  <ComparisonMicroChartData title="APAC" value="-20" />
-                  <ComparisonMicroChartData title="LTA" value="60" />
-                  <ComparisonMicroChartData title="ALPS" value="-20" />
-                  <ComparisonMicroChartData title="Australia" value="55" />
-               </data>
-            </ComparisonMicroChart>
-             </m:HBox>
-         </m:Panel >
-         <m:Panel headerText="Example 4"  expanded="true" expandable="true">
-          <m:HBox>
-            <m:GenericTile header="Revenue Dynamics" frameType="TwoByOne" press="press" >
-               <m:tileContent>
-                  <m:TileContent footer="Red Delta">
-                     <m:content>
-                        <DeltaMicroChart value1="-105" size="Responsive" value2="-98" title1="May 2014" title2="Apr 2014" displayValue1="-105 Mio" displayValue2="-98 Mio" deltaDisplayValue="7 Mio" color="Error" />
-                     </m:content>
-                  </m:TileContent>
-                  <m:TileContent footer="Yellow Delta">
-                     <m:content>
-                        <DeltaMicroChart value1="-7" size="Responsive" value2="16" title1="May 2014" title2="Apr 2014" displayValue1="-7 Mio" displayValue2="16 Mio" deltaDisplayValue="23 Mio" color="Critical" />
-                     </m:content>
-                  </m:TileContent>
-               </m:tileContent>
-            </m:GenericTile>
-            <m:GenericTile press="press" class="sapUiSmallMarginBegin" header="Total Income Change" subheader="By year" frameType="TwoByOne" state="Loaded">
-               <m:tileContent>
-                  <m:TileContent unit="EUR" footer="Current vs previous" frameType="TwoByOne">
-                     <m:content>
-                        <DeltaMicroChart value1="35" value2="33" size="Responsive" title1="Jan 2015" title2="Jan 2014" displayValue1="35 Mio" displayValue2="33 Mio" deltaDisplayValue="2 Mio" color="Good" />
-                     </m:content>
-                  </m:TileContent>
-               </m:tileContent>
-            </m:GenericTile>
-            <m:GenericTile header="Revenue Dynamics" class="sapUiSmallMarginBegin" frameType="OneByOne" press="press">
-               <m:tileContent>
-                  <m:TileContent footer="Green Delta">
-                     <m:content>
-                        <DeltaMicroChart value1="105" size="Responsive" value2="98" title1="May 2014" title2="Apr 2014" displayValue1="105 Mio" displayValue2="98 Mio" deltaDisplayValue="7 Mio" color="Good" />
-                     </m:content>
-                  </m:TileContent>
-               </m:tileContent>
-            </m:GenericTile>
-            <m:GenericTile header="Total Income Change" class="sapUiSmallMarginBegin" subheader="By year" frameType="OneByOne" press="press">
-               <m:tileContent>
-                  <m:TileContent footer="Current vs previous" unit="EUR">
-                     <m:content>
-                        <DeltaMicroChart value1="35" value2="33" size="Responsive" title1="Jan 2015" title2="Jan 2014" displayValue1="35 Mio" displayValue2="33 Mio" deltaDisplayValue="2 Mio" color="Good" />
-                     </m:content>
-                  </m:TileContent>
-               </m:tileContent>
-            </m:GenericTile>
-             </m:HBox>
-         </m:Panel >
-         <m:Panel headerText="Example 5"  class="sapUiTinyMarginTop" expanded="true" expandable="true">
-             <m:HBox>
-               <HarveyBallMicroChart size="L" total="360" totalScale="Mrd" press="press">
-                  <items>
-                     <HarveyBallMicroChartItem fraction="8" color="Good" fractionScale="Mrd" />
-                  </items>
-               </HarveyBallMicroChart>
-               <HarveyBallMicroChart size="M" total="100" totalScale="Mrd" press="press">
-                  <items>
-                     <HarveyBallMicroChartItem fraction="63.5" color="Good" fractionScale="Mrd" />
-                  </items>
-               </HarveyBallMicroChart>
-               <HarveyBallMicroChart size="S" total="100" totalScale="Mrd" press="press">
-                  <items>
-                     <HarveyBallMicroChartItem fraction="63.5" color="Good" fractionScale="Mrd" />
-                  </items>
-               </HarveyBallMicroChart>
-               <HarveyBallMicroChart size="XS" total="100" totalScale="Mrd" press="press">
-                  <items>
-                     <HarveyBallMicroChartItem fraction="63.5" color="Good" fractionScale="Mrd" />
-                  </items>
-               </HarveyBallMicroChart>
-             </m:HBox>
-         </m:Panel >
+         </m:Panel>
+         <m:Panel expanded="true" expandable="true" headerText="Example 3">
+            <m:HBox>
+               <ComparisonMicroChart size="S" scale="M" class="sapUiSmallMargin" press="press">
+                  <data>
+                     <ComparisonMicroChartData title="EMEA" displayValue="USD 0" color="Good" />
+                     <ComparisonMicroChartData title="EMEA" value="50" color="Good" />
+                     <ComparisonMicroChartData title="APAC" value="-20" color="Error" />
+                  </data>
+               </ComparisonMicroChart>
+               <ComparisonMicroChart size="M" scale="M" class="sapUiSmallMargin" press="press">
+                  <data>
+                     <ComparisonMicroChartData title="Americas" value="10" color="Good" />
+                     <ComparisonMicroChartData title="EMEA" value="50" color="Good" />
+                     <ComparisonMicroChartData title="APAC" value="-20" color="Error" />
+                  </data>
+               </ComparisonMicroChart>
+               <ComparisonMicroChart size="M" scale="M" class="sapUiSmallMargin" press="press" shrinkable="true" colorPalette="sapUiChartPaletteQualitativeHue1, sapUiChartPaletteQualitativeHue2, sapUiChartPaletteQualitativeHue3,                   sapUiChartPaletteQualitativeHue4, sapUiChartPaletteQualitativeHue5, sapUiChartPaletteQualitativeHue6, sapUiChartPaletteQualitativeHue7,                   sapUiChartPaletteQualitativeHue8, sapUiChartPaletteQualitativeHue9, sapUiChartPaletteQualitativeHue10, sapUiChartPaletteQualitativeHue11">
+                  <data>
+                     <ComparisonMicroChartData title="Americas" value="10" />
+                     <ComparisonMicroChartData title="EMEA" value="50" />
+                     <ComparisonMicroChartData title="APAC" value="-20" />
+                     <ComparisonMicroChartData title="LTA" value="60" />
+                     <ComparisonMicroChartData title="ALPS" value="-20" />
+                     <ComparisonMicroChartData title="Australia" value="55" />
+                  </data>
+               </ComparisonMicroChart>
+            </m:HBox>
+         </m:Panel>
+         <m:Panel headerText="Example 4" expanded="true" expandable="true">
+            <m:HBox>
+               <m:GenericTile header="Revenue Dynamics" frameType="TwoByOne" press="press">
+                  <m:tileContent>
+                     <m:TileContent footer="Red Delta">
+                        <m:content>
+                           <DeltaMicroChart value1="-105" size="Responsive" value2="-98" title1="May 2014" title2="Apr 2014" displayValue1="-105 Mio" displayValue2="-98 Mio" deltaDisplayValue="7 Mio" color="Error" />
+                        </m:content>
+                     </m:TileContent>
+                     <m:TileContent footer="Yellow Delta">
+                        <m:content>
+                           <DeltaMicroChart value1="-7" size="Responsive" value2="16" title1="May 2014" title2="Apr 2014" displayValue1="-7 Mio" displayValue2="16 Mio" deltaDisplayValue="23 Mio" color="Critical" />
+                        </m:content>
+                     </m:TileContent>
+                  </m:tileContent>
+               </m:GenericTile>
+               <m:GenericTile press="press" class="sapUiSmallMarginBegin" header="Total Income Change" subheader="By year" frameType="TwoByOne" state="Loaded">
+                  <m:tileContent>
+                     <m:TileContent unit="EUR" footer="Current vs previous" frameType="TwoByOne">
+                        <m:content>
+                           <DeltaMicroChart value1="35" value2="33" size="Responsive" title1="Jan 2015" title2="Jan 2014" displayValue1="35 Mio" displayValue2="33 Mio" deltaDisplayValue="2 Mio" color="Good" />
+                        </m:content>
+                     </m:TileContent>
+                  </m:tileContent>
+               </m:GenericTile>
+               <m:GenericTile header="Revenue Dynamics" class="sapUiSmallMarginBegin" frameType="OneByOne" press="press">
+                  <m:tileContent>
+                     <m:TileContent footer="Green Delta">
+                        <m:content>
+                           <DeltaMicroChart value1="105" size="Responsive" value2="98" title1="May 2014" title2="Apr 2014" displayValue1="105 Mio" displayValue2="98 Mio" deltaDisplayValue="7 Mio" color="Good" />
+                        </m:content>
+                     </m:TileContent>
+                  </m:tileContent>
+               </m:GenericTile>
+               <m:GenericTile header="Total Income Change" class="sapUiSmallMarginBegin" subheader="By year" frameType="OneByOne" press="press">
+                  <m:tileContent>
+                     <m:TileContent footer="Current vs previous" unit="EUR">
+                        <m:content>
+                           <DeltaMicroChart value1="35" value2="33" size="Responsive" title1="Jan 2015" title2="Jan 2014" displayValue1="35 Mio" displayValue2="33 Mio" deltaDisplayValue="2 Mio" color="Good" />
+                        </m:content>
+                     </m:TileContent>
+                  </m:tileContent>
+               </m:GenericTile>
+            </m:HBox>
+         </m:Panel>
+        
       </m:VBox>
    </m:Panel>
 </core:FragmentDefinition>
