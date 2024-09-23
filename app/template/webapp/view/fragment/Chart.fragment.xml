@@ -4,7 +4,7 @@
     <Panel class='sapUiContentPadding' headerText="{i18n>ChartTab_Title}" backgroundDesign="List" height="100%"
         showFooter="false" showHeader="false" showSubHeader="true">          
         <VBox>
-            <smartchart:SmartChart enableAutoBinding="true"
+            <smartchart:SmartChart enableAutoBinding="true" beforeRebindChart="onBeforeRebind"
 							entitySet="TableEntity" useVariantManagement="true" smartFilterId="smartFilterBar"
 							persistencyKey="PKeyChartExample9" useChartPersonalisation="true"
 							showFullScreenButton="true" selectionMode="Multi"

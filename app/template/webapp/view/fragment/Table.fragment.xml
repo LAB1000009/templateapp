@@ -3,14 +3,16 @@
    <Panel height="100%" id="tablePage" class="sapUiContentPadding" backgroundDesign="List" headerText="{i18n&gt;TableTab_Title}">
       <Panel headerText="Grid Table" expanded="true" expandable="true">
        
-         <smartTable:SmartTable requestAtLeastFields="ExitDate" entitySet="TableEntity" smartFilterId="smartFilterBar" useExportToExcel="true" beforeExport="onBeforeExport" useVariantManagement="true" useTablePersonalisation="true"  showRowCount="false" persistencyKey="SmartTableRefApp_Explored" enableAutoBinding="true" class="sapUiResponsiveContentPadding" enableAutoColumnWidth="true">
-            <table:Table id="ui-table" rows="{path: '/TableEntity'}" visibleRowCount="10" selectionMode="MultiToggle" enableSelectAll="true">
+         <smartTable:SmartTable requestAtLeastFields="ExitDate" entitySet="TableEntity" smartFilterId="smartFilterBar" useExportToExcel="true"
+          beforeExport="onBeforeExport" useVariantManagement="true" useTablePersonalisation="true"  showRowCount="false" 
+          persistencyKey="SmartTableRefApp_Explored" enableAutoBinding="true" class="sapUiResponsiveContentPadding" enableAutoColumnWidth="true" beforeRebindTable="onBeforeRebind">
+            <table:Table id="table" rows="{path: '/TableEntity'}" visibleRowCount="10" selectionMode="MultiToggle" enableSelectAll="true">
               
             </table:Table>
          </smartTable:SmartTable>
       </Panel >
       <Panel headerText="ResponsiveTable Table" expanded="false" expandable="true">
-        <smartTable:SmartTable requestAtLeastFields="ExitDate" tableType="ResponsiveTable" 
+        <smartTable:SmartTable requestAtLeastFields="ExitDate" tableType="ResponsiveTable" beforeRebindTable="onBeforeRebind"
         entitySet="TableEntity" smartFilterId="smartFilterBar" useExportToExcel="true" 
         beforeExport="onBeforeExport" useVariantManagement="true" useTablePersonalisation="true"  
         showRowCount="false" persistencyKey="SmartTableRefApp_Explored" enableAutoBinding="true" 

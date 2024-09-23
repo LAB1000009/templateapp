@@ -20,7 +20,8 @@ function getIcrementedDateFromToday(iDays, iMonths, iYears) {
 var Controller = Controller.extend("ui.template.controller.Table", {
     
     onInit : function (oTemplateController) {
-        
+        this.oBaseController = oTemplateController;
+        this.getView().byId("Table-table").getColumns().forEach((oColumn)=>{oColumn.setAutoResizable(true)})
        
     },
     onChange: function(oEvent) {
@@ -53,6 +54,13 @@ var Controller = Controller.extend("ui.template.controller.Table", {
             return [];
         }
     },
+    onBeforeRebind: function(oEvent) {
+        var oDateFilter = this.oBaseController.oDateFilter;
+        if(oDateFilter){
+            var bindingParams = oEvent.getParameters().bindingParams;
+            bindingParams.filters.push(oDateFilter);
+        }
+    }
 });
 
 return Controller;

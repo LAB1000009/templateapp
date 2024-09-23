@@ -932,145 +932,19 @@ var Controller = Controller.extend("ui.template.controller.Chart", {
     oVizFrame : null, chartTypeSelect : null, chart : null,
 
     onInit: function(oTemplateController) {
-        // Format.numericFormatter(ChartFormatter.getInstance());
-    
-        // var oData = {
-        //     chart: {
-        //         milk: [
-        //             { Date: "2024-08-01", Revenue: 500 },
-        //             { Date: "2024-08-02", Revenue: 700 },
-        //             { Date: "2024-08-03", Revenue: 900 },
-        //             { Date: "2024-08-04", Revenue: 700 },
-        //             { Date: "2024-08-05", Revenue: 700 }
-        //             // Дополнительные данные...
-        //         ]
-        //     }
-        // };
-    
-        // var oModel = new sap.ui.model.json.JSONModel(oData);
-        // this.getView().setModel(oModel, "chart");
-    
-        // var oVizFrame = this.getPrefixedControl("idVizFrame");
-        // oVizFrame.setVizProperties(this.settingsModel.chartType.values[3].vizProperties);
-    
-        // var oPopOver = this.getPrefixedControl("idPopOver");
-        // oPopOver.connect(oVizFrame.getVizUid());
-        // oPopOver.setFormatString({
-        //     "Cost": ChartFormatter.DefaultPattern.STANDARDFLOAT,
-        //     "Revenue": ChartFormatter.DefaultPattern.STANDARDFLOAT
-        // });
+        this.oBaseController = oTemplateController;
     },
     
     getPrefixedControl: function(id) {
         return this.getView().byId("Chart--" + id);
     },
-    onChartTypeChanged : function(oEvent){
-        if (this.oVizFrame){
-            var selectedKey = this.chart = parseInt(oEvent.getSource().getSelectedKey());
-            var bindValue = this.settingsModel.chartType.values[selectedKey];
-            this.oVizFrame.destroyDataset();
-            this.oVizFrame.destroyFeeds();
-            this.oVizFrame.setVizType(bindValue.vizType);
-            var dataModel = new JSONModel(this.dataPath + bindValue.json);
-            this.oVizFrame.setModel(dataModel);
-            var oDataset = new FlattenedDataset(bindValue.dataset);
-            this.oVizFrame.setDataset(oDataset);
-            var props = bindValue.vizProperties;
-            if (selectedKey !== 8 && props.plotArea) {
-                props.plotArea.dataPointStyle = null;
-            }
-            this.oVizFrame.setVizProperties(props);
-            var feedValueAxis, feedValueAxis2, feedActualValues, feedTargetValues;
-            if (selectedKey === 7) {
-                feedValueAxis = new FeedItem({
-                    'uid': "valueAxis",
-                    'type': "Measure",
-                    'values': [bindValue.value[0]]
-                });
-                feedValueAxis2 = new FeedItem({
-                    'uid': "valueAxis2",
-                    'type': "Measure",
-                    'values': [bindValue.value[1]]
-                });
-            } else if (selectedKey === 8 || selectedKey === 9) {
-                feedActualValues = new FeedItem({
-                    'uid': "actualValues",
-                    'type': "Measure",
-                    'values': [bindValue.value[0]]
-                });
-                feedTargetValues = new FeedItem({
-                    'uid': "targetValues",
-                    'type': "Measure",
-                    'values': [bindValue.value[1]]
-                });
-            } else {
-                feedValueAxis = new FeedItem({
-                    'uid': "valueAxis",
-                    'type': "Measure",
-                    'values': bindValue.value
-                });
-            }
-
-            var feedTimeAxis = new FeedItem({
-                'uid': "timeAxis",
-                'type': "Dimension",
-                'values': ["Date"]
-            }),
-            feedBubbleWidth = new FeedItem({
-                "uid": "bubbleWidth",
-                "type": "Measure",
-                "values": ["Revenue"]
-            }),
-            feedTimeBulletColor = new FeedItem({
-                "uid":"color",
-                "type":"Dimension",
-                "values":["Country"]
-            });
-            switch (selectedKey){
-                case 0:
-                    this.oVizFrame.addFeed(feedValueAxis);
-                    this.oVizFrame.addFeed(feedTimeAxis);
-                    this.oVizFrame.addFeed(feedBubbleWidth);
-                    break;
-                case 7:
-                    this.oVizFrame.addFeed(feedValueAxis);
-                    this.oVizFrame.addFeed(feedValueAxis2);
-                    this.oVizFrame.addFeed(feedTimeAxis);
-                    break;
-                case 9:
-                    this.oVizFrame.addFeed(feedTimeBulletColor);
-                    // fall through
-                case 8:
-                    this.oVizFrame.addFeed(feedActualValues);
-                    this.oVizFrame.addFeed(feedTargetValues);
-                    this.oVizFrame.addFeed(feedTimeAxis);
-                    this.oVizFrame.addFeed(feedValueAxis);
-                    break;
-                default:
-                    this.oVizFrame.addFeed(feedValueAxis);
-                    this.oVizFrame.addFeed(feedTimeAxis);
-                    break;
-            }
+    onBeforeRebind: function(oEvent) {
+        var oDateFilter = this.oBaseController.oDateFilter;
+        if(oDateFilter){
+            var bindingParams = oEvent.getParameters().bindingParams;
+            bindingParams.filters.push(oDateFilter);
         }
     },
-    onNavToDashboard:function(oEvent){
-        this.getOwnerComponent().getRouter().navTo("Dashboard", false);
-    },
-    onNavToKpi:function(oEvent){
-        this.onNavBack();
-    },
-    onPressNavButton:function(oEvent){
-        this.onNavBack();
-    },
-    onNavBack : function() {
-        var sPreviousHash = History.getInstance().getPreviousHash();
-
-            if (sPreviousHash !== undefined) {
-            history.go(-1);
-        } else {
-            this.getOwnerComponent().getRouter().navTo("Dashboard", {}, true);
-        }
-    }
 });
 
 return Controller;

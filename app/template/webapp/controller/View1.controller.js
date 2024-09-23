@@ -43,6 +43,14 @@ sap.ui.define([
 
                 });
                 this.getView().setModel(oTreeModel, "treeModel");
+                sap.ui.getCore().attachLocalizationChanged(function (oEvent) {
+                    var oChanges = oEvent.getParameter("changes");
+                    sap.ui.getCore().getConfiguration().setLanguage(oChanges.language);
+                }.bind(this));
+            },
+            onSelectLanguage: function (oEvent) {
+                var sLanguage = this.getView().byId("language").getSelectedKey();
+                sap.ui.getCore().getConfiguration().setLanguage(sLanguage);
             },
             onAfterRendering:function(){
                 this.aAppFragments = {};
@@ -127,19 +135,20 @@ sap.ui.define([
             onChange: function (oEvent) {
                 var oDynamicDateRange = oEvent.oSource,
                     bValid = oEvent.getParameter("valid"),
-                    oTableItemsBinding, oValue, oTable, oFilter;
+                    oTableItemsBinding, oValue, oTable;
 
                 if (bValid) {
-                    oTable = this.getView().byId('Table--payments-table')
-                    oTableItemsBinding = oTable.getBinding("items");
+                    //oTable = this.getView().byId('Table--table')
+                   // oTableItemsBinding = oTable.getBinding("items");
                     oValue = oEvent.getParameter("value");
-                    oFilter = this._createFilter(oValue);
-                    oTableItemsBinding.filter(oFilter, "Application");
+                    this.oDateFilter = this._createFilter(oValue);
+                    //oTableItemsBinding.filter(this.oDateFilter, "Application");
                     oDynamicDateRange.setValueState("None");
                 } else {
                     oDynamicDateRange.setValueState("Error");
                 }
             },
+          
             _createFilter: function (oValue) {
                 if (oValue) {
                     var aDates = DynamicDateRange.toDates(oValue);
@@ -171,7 +180,7 @@ sap.ui.define([
                     }
                     this._fragments[sSelectedKey] = oFragment;
                     if (typeof oController.onInit === 'function') {
-                        oController.onInit();
+                        oController.onInit(this);
                     }
                 }
 

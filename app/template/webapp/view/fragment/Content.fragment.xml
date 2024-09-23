@@ -8,7 +8,20 @@
             </l:layoutData>
             <Panel height="100%" backgroundDesign="Transparent" class="sapUiContentPadding" visible="{treeModel>/showSideContent}">
                <Panel headerText="{i18n>FL_Title}" expanded="true" expandable="true">
-                  <smartFilterBar:SmartFilterBar id="smartFilterBar" entitySet="TableEntity" persistencyKey="SmartFilter_Explored" />
+                  <smartFilterBar:SmartFilterBar id="smartFilterBar" entitySet="TableEntity" persistencyKey="SmartFilter_Explored">
+                  <smartFilterBar:controlConfiguration>
+						<smartFilterBar:ControlConfiguration
+							key="HireDate"
+							index="1"
+							label="Custom MultiComboBox Field"
+							width="300px"
+							visibleInAdvancedArea="true">
+							<smartFilterBar:customControl>
+							<DynamicDateRange id="dynamicRange" change="onChange" width="{env>/filterInputWidth}" />
+							</smartFilterBar:customControl>
+						</smartFilterBar:ControlConfiguration>
+					</smartFilterBar:controlConfiguration>
+               </smartFilterBar:SmartFilterBar>
                   <!-- <f:SimpleForm editable="true" layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="3" labelSpanM="4" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="4" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="1" singleContainerFullSize="false">
                      <f:content>
                         <Label visible="false" text="Transaction date" labelFor="dynamic-range" />
@@ -33,11 +46,17 @@
                   </f:SimpleForm> -->
                </Panel>
                <Panel headerText="{i18n>FL_AddTitle}" class="sapUiSmallMarginTop" expanded="false" expandable="true">
-                  <!-- <f:SimpleForm editable="true" layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="3" labelSpanM="4" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="4" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="1" singleContainerFullSize="false">
+                  <f:SimpleForm editable="true" layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="3" labelSpanM="4" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="4" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="1" singleContainerFullSize="false">
                      <f:content>
-                        <Label text="Email Address" />
-                        <Input type="Email" width="100%" placeholder="Enter your email" />
-                        <Label text="Contact Number" />
+                        <Label text="Change Language" />
+                        <Select change="onSelectLanguage"
+                           id="language"
+                           selectedKey="{oViewModel>/SelectedLanguage}">
+                           <core:Item key="EN" text="EN" />
+                           <core:Item key="DE" text="DE" />
+                           <core:Item key="FR" text="FR" />
+                        </Select>
+                        <!-- <Label text="Contact Number" />
                         <Input type="Tel" width="100%" placeholder="Enter your phone number" />
                         <Label text="Country" />
                         <Select width="100%">
@@ -59,9 +78,9 @@
                         <Label text="Rating" />
                         <RatingIndicator width="100%" maxValue="5" />
                         <Label text="Agreement" />
-                        <CheckBox text="I agree to the terms and conditions" />
+                        <CheckBox text="I agree to the terms and conditions" /> -->
                      </f:content>
-                  </f:SimpleForm> -->
+                  </f:SimpleForm>
                </Panel>
             </Panel>
          </l:SplitPane>

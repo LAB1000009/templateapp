@@ -1,136 +1,111 @@
-<core:FragmentDefinition xmlns:core="sap.ui.core"  xmlns="sap.m" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout" height="100%" displayBlock="true">
-    <l:SplitPane height="100%">
-            <l:layoutData>
-               <l:SplitterLayoutData size="{=!${treeModel>/selectedCard} ? '0%' : '30%'}" resizable="{treeModel>/selectedCard}" />
-            </l:layoutData>
-            <Panel id="cockpitDetailsPanel2" headerText="Details" height="100%" width="auto" class="sapUiContentPadding" backgroundDesign="Solid">
-               <headerToolbar>
-                  <OverflowToolbar>
-                     <Title text="{treeModel>/selectedTileName}" />
-                     <ToolbarSpacer />
-                     <Button text="Close" press="onPressCloseDetailsPalelBtn" />
-                  </OverflowToolbar>
-               </headerToolbar>
-              <f:Form editable="false">
-   <f:layoutData>
-      <FlexItemData
-         growFactor="1"
-         baseSize="0"
-         backgroundDesign="Solid"
-         styleClass="sapUiTinyMargin" />
-   </f:layoutData>
-   <f:layout>
-      <f:ResponsiveGridLayout
-         labelSpanXL="12"
-         labelSpanL="12"
-         labelSpanM="12"
-         labelSpanS="12"
-         adjustLabelSpan="false"
-         emptySpanXL="4"
-         emptySpanL="4"
-         emptySpanM="4"
-         emptySpanS="0"
-         columnsXL="2"
-         columnsL="2"
-         columnsM="1"
-         singleContainerFullSize="false" />
-   </f:layout>
-   <f:title>
-      <core:Title text="Card Details" />
-   </f:title>
-   <f:formContainers>
-      <f:FormContainer>
-         <f:formElements>
-            <f:FormElement label="Card ID">
-               <f:fields>
-                  <Text text="{/cardID}" />
-               </f:fields>
-            </f:FormElement>
-         </f:formElements>
-      </f:FormContainer>
-
-      <f:FormContainer>
-         <f:formElements>
-            <f:FormElement label="Card Title">
-               <f:fields>
-                  <Text text="{/cardTitle}" />
-               </f:fields>
-            </f:FormElement>
-         </f:formElements>
-      </f:FormContainer>
-
-      <f:FormContainer>
-         <f:formElements>
-            <f:FormElement label="YTD Text">
-               <f:fields>
-                  <Text text="{/YTDText}" />
-               </f:fields>
-            </f:FormElement>
-         </f:formElements>
-      </f:FormContainer>
-
-      <f:FormContainer>
-         <f:formElements>
-            <f:FormElement label="BUD vs YTD Text">
-               <f:fields>
-                  <Text text="{/BUDvsYTDText}" />
-               </f:fields>
-            </f:FormElement>
-         </f:formElements>
-      </f:FormContainer>
-
-      <f:FormContainer>
-         <f:formElements>
-            <f:FormElement label="YTD Value">
-               <f:fields>
-                  <Text text="{/YTDValue}" />
-               </f:fields>
-            </f:FormElement>
-         </f:formElements>
-      </f:FormContainer>
-
-      <f:FormContainer>
-         <f:formElements>
-            <f:FormElement label="BUD vs YTD Value">
-               <f:fields>
-                  <Text text="{/BUDvsYTDValue}" />
-               </f:fields>
-            </f:FormElement>
-         </f:formElements>
-      </f:FormContainer>
-
-      <f:FormContainer>
-         <f:formElements>
-            <f:FormElement label="Status Text">
-               <f:fields>
-                  <Text text="{/StatusText}" />
-               </f:fields>
-            </f:FormElement>
-         </f:formElements>
-      </f:FormContainer>
-
-      <f:FormContainer>
-         <f:formElements>
-            <f:FormElement label="Status State">
-               <f:fields>
-                  <Text text="{/StatusState}" />
-               </f:fields>
-            </f:FormElement>
-         </f:formElements>
-      </f:FormContainer>
-
-      <f:FormContainer>
-         <f:formElements>
-            <f:FormElement label="Icon Source">
-               <f:fields>
-                  <Text text="{/IconSrc}" />
-               </f:fields>
-            </f:FormElement>
-         </f:formElements>
-      </f:FormContainer>
-   </f:formContainers>
-</f:Form>
-
-            </Panel>
-         </l:SplitPane>
+<?xml version="1.0" encoding="UTF-8"?>
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout" height="100%" displayBlock="true">
+   <l:SplitPane height="100%">
+      <l:layoutData>
+         <l:SplitterLayoutData size="{=!${treeModel&gt;/selectedCard} ? '0%' : '30%'}" resizable="{treeModel&gt;/selectedCard}" />
+      </l:layoutData>
+      <Panel id="cockpitDetailsPanel2" headerText="Details" height="100%" width="auto" class="sapUiContentPadding" backgroundDesign="Solid">
+         <headerToolbar>
+            <OverflowToolbar>
+               <Title text="{treeModel&gt;/selectedTileName}" />
+               <ToolbarSpacer />
+               <Button text="Close" press="onPressCloseDetailsPalelBtn" />
+            </OverflowToolbar>
+         </headerToolbar>
+         <f:Form editable="false">
+            <f:layoutData>
+               <FlexItemData growFactor="1" baseSize="0" backgroundDesign="Solid" styleClass="sapUiTinyMargin" />
+            </f:layoutData>
+            <f:layout>
+               <f:ResponsiveGridLayout labelSpanXL="12" labelSpanL="12" labelSpanM="12" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="1" singleContainerFullSize="false" />
+            </f:layout>
+            <f:title>
+               <core:Title text="Card Details" />
+            </f:title>
+            <f:formContainers>
+               <f:FormContainer>
+                  <f:formElements>
+                     <f:FormElement label="Card ID">
+                        <f:fields>
+                           <Text text="{/cardID}" />
+                        </f:fields>
+                     </f:FormElement>
+                  </f:formElements>
+               </f:FormContainer>
+               <f:FormContainer>
+                  <f:formElements>
+                     <f:FormElement label="Card Title">
+                        <f:fields>
+                           <Text text="{/cardTitle}" />
+                        </f:fields>
+                     </f:FormElement>
+                  </f:formElements>
+               </f:FormContainer>
+               <f:FormContainer>
+                  <f:formElements>
+                     <f:FormElement label="YTD Text">
+                        <f:fields>
+                           <Text text="{/YTDText}" />
+                        </f:fields>
+                     </f:FormElement>
+                  </f:formElements>
+               </f:FormContainer>
+               <f:FormContainer>
+                  <f:formElements>
+                     <f:FormElement label="BUD vs YTD Text">
+                        <f:fields>
+                           <Text text="{/BUDvsYTDText}" />
+                        </f:fields>
+                     </f:FormElement>
+                  </f:formElements>
+               </f:FormContainer>
+               <f:FormContainer>
+                  <f:formElements>
+                     <f:FormElement label="YTD Value">
+                        <f:fields>
+                           <Text text="{/YTDValue}" />
+                        </f:fields>
+                     </f:FormElement>
+                  </f:formElements>
+               </f:FormContainer>
+               <f:FormContainer>
+                  <f:formElements>
+                     <f:FormElement label="BUD vs YTD Value">
+                        <f:fields>
+                           <Text text="{/BUDvsYTDValue}" />
+                        </f:fields>
+                     </f:FormElement>
+                  </f:formElements>
+               </f:FormContainer>
+               <f:FormContainer>
+                  <f:formElements>
+                     <f:FormElement label="Status Text">
+                        <f:fields>
+                           <Text text="{/StatusText}" />
+                        </f:fields>
+                     </f:FormElement>
+                  </f:formElements>
+               </f:FormContainer>
+               <f:FormContainer>
+                  <f:formElements>
+                     <f:FormElement label="Status State">
+                        <f:fields>
+                           <Text text="{/StatusState}" />
+                        </f:fields>
+                     </f:FormElement>
+                  </f:formElements>
+               </f:FormContainer>
+               <f:FormContainer>
+                  <f:formElements>
+                     <f:FormElement label="Icon Source">
+                        <f:fields>
+                           <Text text="{/IconSrc}" />
+                        </f:fields>
+                     </f:FormElement>
+                  </f:formElements>
+               </f:FormContainer>
+            </f:formContainers>
+         </f:Form>
+      </Panel>
+   </l:SplitPane>
 </core:FragmentDefinition>

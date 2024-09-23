@@ -34,11 +34,11 @@
                            <VBox justifyContent="Start">
                               <HBox alignItems="Center"> 
                                  <ObjectStatus  class="sapUiTinyMarginEnd" state="{Status1State}" text="{Status1Value}" />
-                                 <core:Icon  src="sap-icon://up" color="red" size="15px" />
+                                 <core:Icon  src="sap-icon://up" color="green" size="15px" />
                               </HBox>
                               <HBox alignItems="Center">
                                  <ObjectStatus class="sapUiTinyMarginEnd" state="{Status2State}" text="{Status2Value}" />
-                                 <core:Icon  color="green" src="sap-icon://down" size="15px" />
+                                 <core:Icon  color="red" src="sap-icon://down" size="15px" />
                               </HBox>
                            </VBox>
                         </HBox>
