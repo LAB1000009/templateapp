@@ -440,9 +440,28 @@
                   <f:formContainers>
                      <f:FormContainer>
                         <f:formElements>
-                           <f:FormElement label="">
+                           <f:FormElement>
+                              <f:label>
+                                 <Label design="Bold" text="{i18n>PlanDocuSect_JiraLb}" />
+                              </f:label>
                               <f:fields>
-                                 <Text text="Empty" />
+                                 <Link text="Paste link here" />
+                              </f:fields>
+                           </f:FormElement>
+                           <f:FormElement>
+                              <f:label>
+                                 <Label design="Bold" text="{i18n>PlanDocuSect_ConfLb}" />
+                              </f:label>
+                              <f:fields>
+                                 <Link text="Paste link here" />
+                              </f:fields>
+                           </f:FormElement>
+                           <f:FormElement>
+                              <f:label>
+                                 <Label design="Bold" text="{i18n>PlanDocuSect_ShPointLb}" />
+                              </f:label>
+                              <f:fields>
+                                 <Link text="Paste link here" />
                               </f:fields>
                            </f:FormElement>
                         </f:formElements>
