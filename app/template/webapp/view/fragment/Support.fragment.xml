@@ -1,10 +1,7 @@
 <core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout" height="100%" displayBlock="true">
    <Panel id="supportPage" backgroundDesign="List" headerText="{i18n>SupportTab_Title}" height="100%">
       <content>
-         <f:SimpleForm id="supportContactForm" layout="ResponsiveGridLayout" editable="false"
-            labelSpanL="12" labelSpanM="12" labelSpanS="12"
-            emptySpanL="0" emptySpanM="0" emptySpanS="0"
-            columnsL="1" columnsM="1" columnsS="1">
+         <f:SimpleForm id="supportContactForm" layout="ResponsiveGridLayout" editable="false" labelSpanL="12" labelSpanM="12" labelSpanS="12" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsL="1" columnsM="1" columnsS="1">
             <f:content>
                <core:Title text="{i18n>SupportTab_BITeamSect}" class="owerviewColorTitle" titleStyle="H6" />
                <Label text="{i18n>SupportTab_EmailLb}" />
@@ -13,7 +10,6 @@
                <Text text="Fill in Name" />
                <Label text="{i18n>SupportTab_ContactLb}" />
                <Text text="Fill in contact" />
-               
                <core:Title text="{i18n>SupportTab_TktSuppSect}" class="owerviewColorTitle" titleStyle="H6" />
                <Label text="{i18n>SupportTab_HelpDeskLb}" />
                <Link text="{label}" href="{url}" />

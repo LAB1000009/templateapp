@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:card="sap.f.cards" xmlns:f="sap.f" xmlns:form="sap.ui.layout.form" xmlns:grid="sap.ui.layout.cssgrid" xmlns:l="sap.ui.layout" xmlns:mvc="sap.ui.core.mvc" xmlns:smartchart="sap.ui.comp.smartchart" xmlns:tnt="sap.tnt" displayBlock="true">
    <l:ResponsiveSplitter id="responsiveSplitter" defaultPane="">
       <l:PaneContainer id="paneContainer" resize=".onRootContainerResize">
@@ -8,11 +7,11 @@
             </l:layoutData>
             <Panel id="cockpitPage" height="100%" headerText="{i18n>CockpitTab_Title}" backgroundDesign="Solid">
                <grid:CSSGrid items="{/Cards}" width="100%" gridTemplateColumns="repeat(auto-fit, 320px)" gridTemplateRows="repeat(5, 130px)" gridGap="1rem" gridAutoRows="auto" gridAutoFlow="Row">
-                  <f:GridListItem detailPress="onPressFinanzenCard" type="Active" press="onPressFinanzenCard" >
+                  <f:GridListItem detailPress="onPressFinanzenCard" type="Active" press="onPressFinanzenCard">
                      <VBox width="320px" class="sapUiContentPadding">
                         <HBox class="sapUiContentPadding" alignItems="Center" justifyContent="SpaceBetween">
                            <HBox>
-                              <core:Icon  src="{Icon}" size="30px" class="sapUiTinyMarginEnd"/>
+                              <core:Icon src="{Icon}" size="30px" class="sapUiTinyMarginEnd" />
                               <VBox justifyContent="End">
                                  <Title titleStyle="H4" text="{Title}" />
                               </VBox>
@@ -32,13 +31,13 @@
                               <Text titleStyle="H5" text="{Comparison2}" />
                            </VBox>
                            <VBox justifyContent="Start">
-                              <HBox alignItems="Center"> 
-                                 <ObjectStatus  class="sapUiTinyMarginEnd" state="{Status1State}" text="{Status1Value}" />
-                                 <core:Icon  src="sap-icon://up" color="green" size="15px" />
+                              <HBox alignItems="Center">
+                                 <ObjectStatus class="sapUiTinyMarginEnd" state="{Status1State}" text="{Status1Value}" />
+                                 <core:Icon src="sap-icon://up" color="green" size="15px" />
                               </HBox>
                               <HBox alignItems="Center">
                                  <ObjectStatus class="sapUiTinyMarginEnd" state="{Status2State}" text="{Status2Value}" />
-                                 <core:Icon  color="red" src="sap-icon://down" size="15px" />
+                                 <core:Icon color="red" src="sap-icon://down" size="15px" />
                               </HBox>
                            </VBox>
                         </HBox>
@@ -62,7 +61,7 @@
                <l:Splitter height="100%" width="100%" orientation="Vertical">
                   <Panel class="sapUiContentPadding" height="100%">
                      <layoutData>
-                        <l:SplitterLayoutData size="{=!${treeModel>/cockpitDetailsCardVisible} ? '100%' : '30%'}"  resizable="{treeModel>/cockpitDetailsCardVisible}"/>
+                        <l:SplitterLayoutData size="{=!${treeModel>/cockpitDetailsCardVisible} ? '100%' : '30%'}" resizable="{treeModel>/cockpitDetailsCardVisible}" />
                      </layoutData>
                      <List id="cardDetailsList" items="{path: '/cardDetails'}" selectionChange="_loadCockpitDetailsFragment" mode="SingleSelectMaster">
                         <items>
@@ -109,7 +108,7 @@
                      </List>
                   </Panel>
                   <Panel class="sapUiContentPadding sapUiSmallMarginTop" height="100%">
-                  <layoutData>
+                     <layoutData>
                         <l:SplitterLayoutData size="{=!${treeModel>/cockpitDetailsCardVisible} ? '0%' : '70%'}" resizable="{treeModel>/cockpitDetailsCardVisible}" />
                      </layoutData>
                      <VBox>

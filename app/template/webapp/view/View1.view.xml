@@ -1,83 +1,63 @@
-<mvc:View controllerName="ui.template.controller.View1"
-	xmlns="sap.m"
-	xmlns:t="sap.ui.table"
-	xmlns:mvc="sap.ui.core.mvc"
-	xmlns:m="sap.m"
-	xmlns:layout="sap.ui.layout"
-	xmlns:semantic="sap.f.semantic"
-	xmlns:u="sap.ui.unified"
-	xmlns:dnd="sap.ui.core.dnd"
-	xmlns:core="sap.ui.core"
-	xmlns:l="sap.ui.layout"
-	xmlns:smartTable="sap.ui.comp.smarttable"
-	>
-    <VBox renderType="Bare" backgroundDesign="Solid" fitContainer="true">
-        <HBox class="sapUiContentPadding">
-            <HBox width="100%" alignItems="Center" height="50px">
-                <VBox width="50%">
-                    <HBox width="100%">
-                        <Title text="{i18n>H_Title}"/>
-                    </HBox>
-                    <Label text="{i18n>H_SubTitle}"/>
-                </VBox>
-                <HBox width="50%" justifyContent="SpaceBetween" alignItems="Center" renderType="Bare">
-                        <HBox>
-                            <!-- <Title text="{i18n>H_Date}"/> -->
-                            <Title text="{i18n>H_Date} {treeModel>/headerActDate}"/>
-                        </HBox>
-                        <Title text="{i18n>H_User}"/>
-                    
-                        <Image src="./logo/mosec_logo.svg" height="50px" class="sapUiTinyMarginEnd"/>
-                        
-                </HBox>
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:dnd="sap.ui.core.dnd" xmlns:l="sap.ui.layout" xmlns:layout="sap.ui.layout" xmlns:m="sap.m" xmlns:semantic="sap.f.semantic" xmlns:smartTable="sap.ui.comp.smarttable" xmlns:t="sap.ui.table" xmlns:u="sap.ui.unified" controllerName="ui.template.controller.View1">
+   <VBox renderType="Bare" backgroundDesign="Solid" fitContainer="true">
+      <HBox class="sapUiContentPadding">
+         <HBox width="100%" alignItems="Center" height="50px">
+            <VBox width="50%">
+               <HBox width="100%">
+                  <Title text="{i18n>H_Title}" />
+               </HBox>
+               <Label text="{i18n>H_SubTitle}" />
+            </VBox>
+            <HBox width="50%" justifyContent="SpaceBetween" alignItems="Center" renderType="Bare">
+               <HBox>
+                  <!-- <Title text="{i18n>H_Date}"/> -->
+                  <Title text="{i18n>H_Date} {treeModel>/headerActDate}" />
+               </HBox>
+               <Title text="{i18n>H_User}" />
+               <Image src="./logo/mosec_logo.svg" height="50px" class="sapUiTinyMarginEnd" />
             </HBox>
-            </HBox>
-            <Page
-                class="sapUiNoContentPadding"
-                id="plannerSemanticPage" showHeader="true" enableScrolling="false">
-                 <headerContent>
-                        <OverflowToolbar width="100%" height="auto" class="sapUiNoContentPadding">
-                            <OverflowToolbarToggleButton press="OverflowToolbarToggleButton" pressed="{treeModel>/showSideContent}" icon="sap-icon://bullet-text" class="sapUiTinyMarginBegi"/>
-                            <VBox>
-                                <Breadcrumbs currentLocationText="{= ${treeModel>/selectedTab} === 'Cockpit' ? ${treeModel>/selectedCardDetails} : '' }" separatorStyle="{/selected}" class="sapUiTinyMarginBegin sapUiTinyMarginTop">
-                                        <Link press="onPress" text="{treeModel>/selectedTab}"/>
-                                        <Link  visible="{= ${treeModel>/selectedCockpit} !== '' &amp;&amp; ${treeModel>/selectedTab} === 'Cockpit' }" press="onPress" text="{treeModel>/selectedCockpit}"/>
-                                        <!-- <Link visible="{=${treeModel>/selectedCardDetails} !== '' }" press="onPress" text="{treeModel>/selectedCardDetails}"/> -->
-                                        <!-- <Link press="onPress" text="Ultra portable"/>
+         </HBox>
+      </HBox>
+      <Page class="sapUiNoContentPadding" id="plannerSemanticPage" showHeader="true" enableScrolling="false">
+         <headerContent>
+            <OverflowToolbar width="100%" height="auto" class="sapUiNoContentPadding">
+               <OverflowToolbarToggleButton press="OverflowToolbarToggleButton" pressed="{treeModel>/showSideContent}" icon="sap-icon://bullet-text" class="sapUiTinyMarginBegi" />
+               <VBox>
+                  <Breadcrumbs currentLocationText="{= ${treeModel>/selectedTab} === 'Cockpit' ? ${treeModel>/selectedCardDetails} : '' }" separatorStyle="{/selected}" class="sapUiTinyMarginBegin sapUiTinyMarginTop">
+                     <Link press="onPress" text="{treeModel>/selectedTab}" />
+                     <Link visible="{= ${treeModel>/selectedCockpit} !== '' &amp;&amp; ${treeModel>/selectedTab} === 'Cockpit' }" press="onPress" text="{treeModel>/selectedCockpit}" />
+                     <!-- <Link visible="{=${treeModel>/selectedCardDetails} !== '' }" press="onPress" text="{treeModel>/selectedCardDetails}"/> -->
+                     <!-- <Link press="onPress" text="Ultra portable"/>
                                         <Link press="onPress" text="12 inch"/>
                                         <Link press="onPress" text="Super portable deluxe"/> -->
-                                </Breadcrumbs>
-                            </VBox>
-                            <ToolbarSpacer />
-                            <IconTabHeader mode="Inline"  tabDensityMode="Compact" select="onSelectIconTabHeader" class="zoomed ">
-                                    <items>
-                                        <IconTabFilter key="Chart" text="{i18n>B_ChartTab}" />
-                                        <IconTabFilter key="Table" text="{i18n>B_TableTab}" />
-                                        <IconTabFilter key="Cockpit" text="{i18n>B_CockpitTab}" />
-                                        <IconTabFilter key="Dashboard" text="{i18n>B_DashboardTab}" />
-                                        <IconTabFilter key="Comment" text="{i18n>B_CommentsTab}" />
-                                        <!-- <IconTabFilter key="Report" text="{i18n>B_ReportInfoTab}" /> -->
-                                        <IconTabFilter key="Support" text="{i18n>B_SupportTab}"/>
-                                    </items>
-                            </IconTabHeader>
-                        </OverflowToolbar>
-                    </headerContent>
-                <Page showHeader="false" id="contentPage" enableScrolling="false">
-                   
-                </Page>
-                    
-            </Page>
-        
-            <OverflowToolbar design="Transparent">
-                <content>
-                    <Title titleStyle="H6" text="{i18n>F_Copyright} 2024" class="sapUiTinyMarginBegin"/>
-                    <ToolbarSpacer />
-                    <Title text="{treeModel>/footerClass}"  titleStyle="H6" />
-                    <ToolbarSpacer />
-                    <Title text="{treeModel>/footerPO}" class="owerviewColorTitle" titleStyle="H6" />
-                    <ToolbarSpacer />
-                    <Link text="{i18n>F_Details}" press="onPressFooterBtn" titleStyle="H6" class="sapUiTinyMarginEnd" />
-                </content>
+                  </Breadcrumbs>
+               </VBox>
+               <ToolbarSpacer />
+               <IconTabHeader mode="Inline" tabDensityMode="Compact" select="onSelectIconTabHeader" class="zoomed ">
+                  <items>
+                     <IconTabFilter key="Chart" text="{i18n>B_ChartTab}" />
+                     <IconTabFilter key="Table" text="{i18n>B_TableTab}" />
+                     <IconTabFilter key="Cockpit" text="{i18n>B_CockpitTab}" />
+                     <IconTabFilter key="Dashboard" text="{i18n>B_DashboardTab}" />
+                     <IconTabFilter key="Comment" text="{i18n>B_CommentsTab}" />
+                     <!-- <IconTabFilter key="Report" text="{i18n>B_ReportInfoTab}" /> -->
+                     <IconTabFilter key="Support" text="{i18n>B_SupportTab}" />
+                  </items>
+               </IconTabHeader>
             </OverflowToolbar>
-    </VBox>  
+         </headerContent>
+         <Page showHeader="false" id="contentPage" enableScrolling="false" />
+      </Page>
+      <OverflowToolbar design="Transparent">
+         <content>
+            <Title titleStyle="H6" text="{i18n>F_Copyright} 2024" class="sapUiTinyMarginBegin" />
+            <ToolbarSpacer />
+            <Title text="{treeModel>/footerClass}" titleStyle="H6" />
+            <ToolbarSpacer />
+            <Title text="{treeModel>/footerPO}" class="owerviewColorTitle" titleStyle="H6" />
+            <ToolbarSpacer />
+            <Link text="{i18n>F_Details}" press="onPressFooterBtn" titleStyle="H6" class="sapUiTinyMarginEnd" />
+         </content>
+      </OverflowToolbar>
+   </VBox>
 </mvc:View>

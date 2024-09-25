@@ -1,18 +1,8 @@
-<core:FragmentDefinition xmlns:l="sap.ui.layout" xmlns="sap.m"
-	xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core">
-    <Panel headerText="{i18n>CommentsTab_Title}" id="commentPage" height="100%" backgroundDesign="List">
-        <List
-            items="{/CommentEntity}" >
-            <FeedListItem
-                    sender="{Author}"
-                    icon="{AuthorPicUrl}"
-                    iconDensityAware="false"
-                    info="{Type}"
-                    timestamp="{Date}"
-                    text="{Text}" />
-        </List>
-        <FeedInput
-                showIcon="true"
-                icon="http://upload.wikimedia.org/wikipedia/commons/2/25/George_Washington_as_CIC_of_the_Continental_Army_bust.jpg" />
-    </Panel>
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:mvc="sap.ui.core.mvc">
+   <Panel headerText="{i18n>CommentsTab_Title}" id="commentPage" height="100%" backgroundDesign="List">
+      <List items="{/CommentEntity}">
+         <FeedListItem sender="{Author}" icon="{AuthorPicUrl}" iconDensityAware="false" info="{Type}" timestamp="{Date}" text="{Text}" />
+      </List>
+      <FeedInput showIcon="true" icon="http://upload.wikimedia.org/wikipedia/commons/2/25/George_Washington_as_CIC_of_the_Continental_Army_bust.jpg" />
+   </Panel>
 </core:FragmentDefinition>

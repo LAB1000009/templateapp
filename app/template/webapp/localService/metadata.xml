@@ -1,10 +1,13 @@
-<?xml version="1.0" encoding="UTF-8"?>
+
 <edmx:Edmx xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData" Version="1.0">
    <edmx:Reference xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Uri="https://sap.github.io/odata-vocabularies/vocabularies/Common.xml">
       <edmx:Include Alias="Common" Namespace="com.sap.vocabularies.Common.v1" />
    </edmx:Reference>
    <edmx:Reference xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Uri="https://oasis-tcs.github.io/odata-vocabularies/vocabularies/Org.OData.Core.V1.xml">
       <edmx:Include Alias="Core" Namespace="Org.OData.Core.V1" />
+   </edmx:Reference>
+   <edmx:Reference xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Uri="https://sap.github.io/odata-vocabularies/vocabularies/HTML5.xml">
+      <edmx:Include Alias="HTML5" Namespace="com.sap.vocabularies.HTML5.v1" />
    </edmx:Reference>
    <edmx:Reference xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Uri="https://sap.github.io/odata-vocabularies/vocabularies/UI.xml">
       <edmx:Include Alias="UI" Namespace="com.sap.vocabularies.UI.v1" />
@@ -681,38 +684,83 @@
                   <Record Type="UI.DataField">
                      <PropertyValue Property="Label" String="FullName" />
                      <PropertyValue Property="Value" Path="FullName" />
+                     <Annotation Term="HTML5.CssDefaults">
+                        <Record Type="HTML5.CssDefaultsType">
+                           <PropertyValue Property="width" String="10rem" />
+                        </Record>
+                     </Annotation>
                   </Record>
                   <Record Type="UI.DataField">
                      <PropertyValue Property="Label" String="JobTitle" />
                      <PropertyValue Property="Value" Path="JobTitle" />
+                     <Annotation Term="HTML5.CssDefaults">
+                        <Record Type="HTML5.CssDefaultsType">
+                           <PropertyValue Property="width" String="10rem" />
+                        </Record>
+                     </Annotation>
                   </Record>
                   <Record Type="UI.DataField">
                      <PropertyValue Property="Label" String="Department" />
                      <PropertyValue Property="Value" Path="Department" />
+                     <Annotation Term="HTML5.CssDefaults">
+                        <Record Type="HTML5.CssDefaultsType">
+                           <PropertyValue Property="width" String="10rem" />
+                        </Record>
+                     </Annotation>
                   </Record>
                   <Record Type="UI.DataField">
                      <PropertyValue Property="Label" String="BusinessUnit" />
                      <PropertyValue Property="Value" Path="BusinessUnit" />
+                     <Annotation Term="HTML5.CssDefaults">
+                        <Record Type="HTML5.CssDefaultsType">
+                           <PropertyValue Property="width" String="10rem" />
+                        </Record>
+                     </Annotation>
                   </Record>
                   <Record Type="UI.DataField">
                      <PropertyValue Property="Label" String="Gender" />
                      <PropertyValue Property="Value" Path="Gender" />
+                     <Annotation Term="HTML5.CssDefaults">
+                        <Record Type="HTML5.CssDefaultsType">
+                           <PropertyValue Property="width" String="5rem" />
+                        </Record>
+                     </Annotation>
                   </Record>
                   <Record Type="UI.DataField">
                      <PropertyValue Property="Label" String="Ethnicity" />
                      <PropertyValue Property="Value" Path="Ethnicity" />
+                     <Annotation Term="HTML5.CssDefaults">
+                        <Record Type="HTML5.CssDefaultsType">
+                           <PropertyValue Property="width" String="5rem" />
+                        </Record>
+                     </Annotation>
                   </Record>
                   <Record Type="UI.DataField">
                      <PropertyValue Property="Label" String="Age" />
                      <PropertyValue Property="Value" Path="Age" />
+                     <Annotation Term="HTML5.CssDefaults">
+                        <Record Type="HTML5.CssDefaultsType">
+                           <PropertyValue Property="width" String="5rem" />
+                        </Record>
+                     </Annotation>
                   </Record>
                   <Record Type="UI.DataField">
                      <PropertyValue Property="Label" String="HireDate" />
                      <PropertyValue Property="Value" Path="HireDate" />
+                     <Annotation Term="HTML5.CssDefaults">
+                        <Record Type="HTML5.CssDefaultsType">
+                           <PropertyValue Property="width" String="15rem" />
+                        </Record>
+                     </Annotation>
                   </Record>
                   <Record Type="UI.DataField">
                      <PropertyValue Property="Label" String="ExitDate" />
                      <PropertyValue Property="Value" Path="ExitDate" />
+                     <Annotation Term="HTML5.CssDefaults">
+                        <Record Type="HTML5.CssDefaultsType">
+                           <PropertyValue Property="width" String="15rem" />
+                        </Record>
+                     </Annotation>
                   </Record>
                </Collection>
             </Annotation>

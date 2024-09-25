@@ -1,24 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:card="sap.f.cards" xmlns:f="sap.f" xmlns:form="sap.ui.layout.form" xmlns:l="sap.ui.layout" xmlns:mvc="sap.ui.core.mvc" xmlns:smartTable="sap.ui.comp.smarttable" xmlns:table="sap.ui.table" xmlns:tnt="sap.tnt" height="100%" displayBlock="true">
-   <Panel height="100%" id="tablePage" class="sapUiContentPadding" backgroundDesign="List" headerText="{i18n&gt;TableTab_Title}">
+   <Panel height="100%" id="tablePage" class="sapUiContentPadding" backgroundDesign="List" headerText="{i18n>TableTab_Title}">
       <Panel headerText="Grid Table" expanded="true" expandable="true">
-       
-         <smartTable:SmartTable requestAtLeastFields="ExitDate" entitySet="TableEntity" smartFilterId="smartFilterBar" useExportToExcel="true"
-          beforeExport="onBeforeExport" useVariantManagement="true" useTablePersonalisation="true"  showRowCount="false" 
-          persistencyKey="SmartTableRefApp_Explored" enableAutoBinding="true" class="sapUiResponsiveContentPadding" enableAutoColumnWidth="true" beforeRebindTable="onBeforeRebind">
-            <table:Table id="table" rows="{path: '/TableEntity'}" visibleRowCount="10" selectionMode="MultiToggle" enableSelectAll="true">
-              
-            </table:Table>
+         <smartTable:SmartTable requestAtLeastFields="ExitDate" entitySet="TableEntity" smartFilterId="smartFilterBar" useExportToExcel="true" beforeExport="onBeforeExport" useVariantManagement="true" useTablePersonalisation="true" showRowCount="false" persistencyKey="SmartTableRefApp_Explored" enableAutoBinding="true" class="sapUiResponsiveContentPadding" enableAutoColumnWidth="true" beforeRebindTable="onBeforeRebind">
+            <table:Table id="table" rows="{path: '/TableEntity'}" visibleRowCount="10" selectionMode="MultiToggle" enableSelectAll="true" />
          </smartTable:SmartTable>
-      </Panel >
+      </Panel>
       <Panel headerText="ResponsiveTable Table" expanded="false" expandable="true">
-        <smartTable:SmartTable requestAtLeastFields="ExitDate" tableType="ResponsiveTable" beforeRebindTable="onBeforeRebind"
-        entitySet="TableEntity" smartFilterId="smartFilterBar" useExportToExcel="true" 
-        beforeExport="onBeforeExport" useVariantManagement="true" useTablePersonalisation="true"  
-        showRowCount="false" persistencyKey="SmartTableRefApp_Explored" enableAutoBinding="true" 
-        class="sapUiResponsiveContentPadding" enableAutoColumnWidth="true" >
-          
-         </smartTable:SmartTable>
-         </Panel >
+         <smartTable:SmartTable requestAtLeastFields="ExitDate" tableType="ResponsiveTable" beforeRebindTable="onBeforeRebind" entitySet="TableEntity" smartFilterId="smartFilterBar" useExportToExcel="true" beforeExport="onBeforeExport" useVariantManagement="true" useTablePersonalisation="true" showRowCount="false" persistencyKey="SmartTableRefApp_Explored" enableAutoBinding="true" class="sapUiResponsiveContentPadding" enableAutoColumnWidth="true" />
+      </Panel>
    </Panel>
 </core:FragmentDefinition>

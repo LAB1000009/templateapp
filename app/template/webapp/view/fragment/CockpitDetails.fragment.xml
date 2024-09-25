@@ -1,13 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout" height="100%" displayBlock="true">
    <l:SplitPane height="100%">
       <l:layoutData>
-         <l:SplitterLayoutData size="{=!${treeModel&gt;/selectedCard} ? '0%' : '30%'}" resizable="{treeModel&gt;/selectedCard}" />
+         <l:SplitterLayoutData size="{=!${treeModel>/selectedCard} ? '0%' : '30%'}" resizable="{treeModel>/selectedCard}" />
       </l:layoutData>
       <Panel id="cockpitDetailsPanel2" headerText="Details" height="100%" width="auto" class="sapUiContentPadding" backgroundDesign="Solid">
          <headerToolbar>
             <OverflowToolbar>
-               <Title text="{treeModel&gt;/selectedTileName}" />
+               <Title text="{treeModel>/selectedTileName}" />
                <ToolbarSpacer />
                <Button text="Close" press="onPressCloseDetailsPalelBtn" />
             </OverflowToolbar>

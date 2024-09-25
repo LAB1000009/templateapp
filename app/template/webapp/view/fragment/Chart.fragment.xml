@@ -1,16 +1,7 @@
-<core:FragmentDefinition  xmlns="sap.m"
-    xmlns:smartchart="sap.ui.comp.smartchart"
-    xmlns:core="sap.ui.core" xmlns:viz.data="sap.viz.ui5.data" height="100%" >
-    <Panel class='sapUiContentPadding' headerText="{i18n>ChartTab_Title}" backgroundDesign="List" height="100%"
-        showFooter="false" showHeader="false" showSubHeader="true">          
-        <VBox>
-            <smartchart:SmartChart enableAutoBinding="true" beforeRebindChart="onBeforeRebind"
-							entitySet="TableEntity" useVariantManagement="true" smartFilterId="smartFilterBar"
-							persistencyKey="PKeyChartExample9" useChartPersonalisation="true"
-							showFullScreenButton="true" selectionMode="Multi"
-							showChartTooltip="true" showDrillBreadcrumbs="false"
-							showDetailsButton="false" showDrillButtons="true"
-							showSemanticNavigationButton="true"/>
-        </VBox>            
-    </Panel>
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:smartchart="sap.ui.comp.smartchart" xmlns:viz.data="sap.viz.ui5.data" height="100%">
+   <Panel class="sapUiContentPadding" headerText="{i18n>ChartTab_Title}" backgroundDesign="List" height="100%" showFooter="false" showHeader="false" showSubHeader="true">
+      <VBox>
+         <smartchart:SmartChart enableAutoBinding="true" beforeRebindChart="onBeforeRebind" entitySet="TableEntity" useVariantManagement="true" smartFilterId="smartFilterBar" persistencyKey="PKeyChartExample9" useChartPersonalisation="true" showFullScreenButton="true" selectionMode="Multi" showChartTooltip="true" showDrillBreadcrumbs="false" showDetailsButton="false" showDrillButtons="true" showSemanticNavigationButton="true" />
+      </VBox>
+   </Panel>
 </core:FragmentDefinition>
