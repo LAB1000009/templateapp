@@ -9,7 +9,7 @@
                <Panel headerText="{i18n>FL_Title}" expanded="true" expandable="true">
                   <smartFilterBar:SmartFilterBar id="smartFilterBar" entitySet="TableEntity" persistencyKey="SmartFilter_Explored">
                      <smartFilterBar:controlConfiguration>
-                        <smartFilterBar:ControlConfiguration key="HireDate" index="0" label="Hire Date" width="300px" visibleInAdvancedArea="true">
+                        <smartFilterBar:ControlConfiguration key="HireDate" index="0" label="{i18n>FL_DateComboBox}" width="300px" visibleInAdvancedArea="true">
                            <smartFilterBar:customControl>
                               <DynamicDateRange id="dynamicRange" change="onChange" width="{env>/filterInputWidth}" />
                            </smartFilterBar:customControl>
