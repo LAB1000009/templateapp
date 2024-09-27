@@ -49,21 +49,22 @@ entity ChangeLog : cuid, managed {
 }
 
 entity TableEntity : cuid, managed {
-    ID              : String(10);          // Employee ID
-    FullName        : String(100);         // Full name of the employee
-    JobTitle        : String(50);          // Job title
-    Department      : String(50);          // Department
-    BusinessUnit    : String(100);         // Business unit
-    Gender          : String(10);          // Gender
-    Ethnicity       : String(30);          // Ethnicity
-    Age             : Integer;             // Age
-    HireDate        : Timestamp;           // Hire date
-    AnnualSalary    : Decimal(15,2);       // Annual salary with precision
-    Bonus           : Decimal(5,2);        // Bonus in percentage
-    Country         : String(50);          // Country
-    City            : String(50);          // City
-    ExitDate        : Timestamp;                // Exit date (nullable)
+   key EEID            : String(10);   // Employee ID (primary key)
+   FullName          : String(100); // Full name of the employee
+   JobTitle          : String(50);  // Job title
+   Department        : String(50);  // Department
+   BusinessUnit      : String(10);  // Business unit
+   Gender            : String(10);  // Gender
+   Ethnicity         : String(30);  // Ethnicity
+   Age               : Integer;     // Age
+   HireDate          : Timestamp;   // Hire date
+   AnnualSalary      : Decimal(15,2); // Annual salary with precision
+   Bonus             : Decimal(5,2);  // Bonus in percentage
+   Country           : String(50);  // Country
+   City              : String(50);  // City
+   ExitDate          : Timestamp;   // Exit date (nullable)
 }
+
 
 entity CommentEntity : cuid, managed {
     Author        : String;       
