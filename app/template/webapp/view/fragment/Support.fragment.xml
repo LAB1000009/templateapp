@@ -16,7 +16,7 @@
                <Label text="{i18n>SupportTab_QuestContactLb}" />
                <Link text="Paste link" />
                <Label text="{i18n>SupportTab_PhoneLb}" />
-               <Text text="+41 71 626 25 25 | HR Department +41 71 626 25 55" />
+               <Text text="+11 11 111 11 11 | Department +22 22 222 22 22" />
             </f:content>
          </f:SimpleForm>
       </content>

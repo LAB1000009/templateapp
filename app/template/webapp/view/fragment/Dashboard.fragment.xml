@@ -195,7 +195,7 @@
                   <l:Grid defaultSpan="XL6 L6 M6 S12" content="{dashboardModel>/multiline}">
                      <l:VerticalLayout class="sapUiTinyMargin">
                         <m:Text text="{dashboardModel>description}" width="17rem" />
-                        <LineMicroChart color="{dashboardModel>color}" showPoints="{dashboardModel>showPoints}" size="{dashboardModel>/size}" threshold="{dashboardModel>threshold}" showThresholdLine="{dashboardModel>showThresholdLine}" leftTopLabel="{dashboardModel>leftTopLabel}" leftBottomLabel="{dashboardModel>leftBottomLabel}" rightTopLabel="{dashboardModel>rightTopLabel}" rightBottomLabel="{dashboardModel>rightBottomLabel}" showTopLabels="{dashboardModel>showTopLabels}" showBottomLabels="{dashboardModel>showBottomLabels}" press="press" class="sapUiTinyMarginTop" lines="{                             path: 'dashboardModel>lines',                             templateShareable: true                         }">
+                        <LineMicroChart width="100%" color="{dashboardModel>color}" showPoints="{dashboardModel>showPoints}" size="{dashboardModel>/size}" threshold="{dashboardModel>threshold}" showThresholdLine="{dashboardModel>showThresholdLine}" leftTopLabel="{dashboardModel>leftTopLabel}" leftBottomLabel="{dashboardModel>leftBottomLabel}" rightTopLabel="{dashboardModel>rightTopLabel}" rightBottomLabel="{dashboardModel>rightBottomLabel}" showTopLabels="{dashboardModel>showTopLabels}" showBottomLabels="{dashboardModel>showBottomLabels}" press="press" class="sapUiTinyMarginTop" lines="{                             path: 'dashboardModel>lines',                             templateShareable: true                         }">
                            <lines>
                               <LineMicroChartLine points="{                                     path: 'dashboardModel>points',                                     templateShareable: true                                 }" color="{dashboardModel>color}" showPoints="{dashboardModel>showPoints}" type="{dashboardModel>type}">
                                  <LineMicroChartPoint x="{dashboardModel>x}" y="{dashboardModel>y}" />
@@ -209,7 +209,7 @@
                   <l:Grid defaultSpan="XL6 L6 M6 S12" content="{dashboardModel>/regular}">
                      <l:VerticalLayout class="sapUiTinyMargin">
                         <m:Text text="{dashboardModel>description}" width="17rem" />
-                        <LineMicroChart showPoints="{dashboardModel>showPoints}" size="{dashboardModel>/size}" threshold="{dashboardModel>threshold}" leftTopLabel="{dashboardModel>leftTopLabel}" leftBottomLabel="{dashboardModel>leftBottomLabel}" rightTopLabel="{dashboardModel>rightTopLabel}" rightBottomLabel="{dashboardModel>rightBottomLabel}" color="{dashboardModel>color}" press="press" lines="{                             path: 'dashboardModel>/lines',                             templateShareable: true                         }" showThresholdValue="{dashboardModel>showThresholdValue}" thresholdDisplayValue="{dashboardModel>thresholdDisplayValue}" class="sapUiTinyMarginTop">
+                        <LineMicroChart width="100%" showPoints="{dashboardModel>showPoints}" size="{dashboardModel>/size}" threshold="{dashboardModel>threshold}" leftTopLabel="{dashboardModel>leftTopLabel}" leftBottomLabel="{dashboardModel>leftBottomLabel}" rightTopLabel="{dashboardModel>rightTopLabel}" rightBottomLabel="{dashboardModel>rightBottomLabel}" color="{dashboardModel>color}" press="press" lines="{                             path: 'dashboardModel>/lines',                             templateShareable: true                         }" showThresholdValue="{dashboardModel>showThresholdValue}" thresholdDisplayValue="{dashboardModel>thresholdDisplayValue}" class="sapUiTinyMarginTop">
                            <lines>
                               <LineMicroChartLine points="{                                     path: 'dashboardModel>points',                                     templateShareable: true                                 }">
                                  <LineMicroChartPoint x="{dashboardModel>x}" y="{dashboardModel>y}" />
@@ -223,7 +223,7 @@
                   <l:Grid defaultSpan="XL6 L6 M6 S12" content="{dashboardModel>/emphasized}">
                      <l:VerticalLayout class="sapUiTinyMargin">
                         <m:Text text="{dashboardModel>description}" width="17rem" />
-                        <LineMicroChart size="{dashboardModel>/size}" threshold="{dashboardModel>threshold}" leftTopLabel="{dashboardModel>leftTopLabel}" leftBottomLabel="{dashboardModel>leftBottomLabel}" rightTopLabel="{dashboardModel>rightTopLabel}" rightBottomLabel="{dashboardModel>rightBottomLabel}" color="{dashboardModel>color}" press="press" lines="{                             path: 'dashboardModel>lines',                             templateShareable: true                         }" class="sapUiTinyMarginTop">
+                        <LineMicroChart width="100%" size="{dashboardModel>/size}" threshold="{dashboardModel>threshold}" leftTopLabel="{dashboardModel>leftTopLabel}" leftBottomLabel="{dashboardModel>leftBottomLabel}" rightTopLabel="{dashboardModel>rightTopLabel}" rightBottomLabel="{dashboardModel>rightBottomLabel}" color="{dashboardModel>color}" press="press" lines="{                             path: 'dashboardModel>lines',                             templateShareable: true                         }" class="sapUiTinyMarginTop">
                            <lines>
                               <LineMicroChartLine points="{                                     path: 'dashboardModel>points',                                     templateShareable: true                                 }">
                                  <LineMicroChartEmphasizedPoint x="{dashboardModel>x}" y="{dashboardModel>y}" color="{dashboardModel>color}" show="{dashboardModel>show}" />
@@ -232,9 +232,6 @@
                         </LineMicroChart>
                      </l:VerticalLayout>
                   </l:Grid>
-               </m:Panel>
-               <m:Panel headerText="No Points">
-                  <LineMicroChart size="L" leftTopLabel="120 Mio" leftBottomLabel="140 Mio" rightTopLabel="Sept 2016" rightBottomLabel="Oct 2016" press="press" class="sapUiTinyMarginTop" />
                </m:Panel>
             </m:VBox>
          </m:Panel>

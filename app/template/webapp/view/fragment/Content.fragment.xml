@@ -42,7 +42,7 @@
                <Panel headerText="{i18n>FL_AddTitle}" class="sapUiSmallMarginTop" expanded="false" expandable="true">
                   <f:SimpleForm editable="true" layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="3" labelSpanM="4" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="4" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="1" singleContainerFullSize="false">
                      <f:content>
-                        <Label text="Change Language" />
+                        <Label text="{i18n>FL_Lang}" />
                         <Select change="onSelectLanguage" id="language" selectedKey="{oViewModel>/SelectedLanguage}">
                            <core:Item key="EN" text="EN" />
                            <core:Item key="DE" text="DE" />

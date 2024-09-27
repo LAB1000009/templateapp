@@ -1,0 +1,38 @@
+[
+    {
+      "ID": 1,
+      "pageId": "page1",
+      "header": "Support Page",
+      "title": "Global Data Analytics & BI Team",
+      "titleUrl": "Paste Link",
+      "description": "Description of the team",
+      "icon": "https://example.com/icon.png",
+      "displayShape": "Circle",
+      "heading": "Team Info",
+      "label": "Team",
+      "value": "Global Data Analytics & BI Team",
+      "url": "Paste Link",
+      "elementType": "text",
+      "pageLinkId": "page1",
+      "emailSubject": "Fill in EMail",
+      "target": "_self"
+    },
+    {
+      "ID": 2,
+      "pageId": "page2",
+      "header": "Support Page",
+      "title": "Ticket & Support",
+      "titleUrl": "Paste Link",
+      "description": "Support information",
+      "icon": "https://example.com/icon2.png",
+      "displayShape": "Square",
+      "heading": "Support Details",
+      "label": "Help Desk",
+      "value": "Paste Link",
+      "url": "text",
+      "elementType": "page2",
+      "pageLinkId": "Support Request",
+      "emailSubject": "_blank",
+      "target": ""
+    }
+]

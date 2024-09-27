@@ -1,0 +1,34 @@
+[
+    {
+      "ID": "20466921-7d57-4e76-b14c-e53fd97dcb11",
+      "createdAt": "2019-10-24",
+      "createdBy": "SYSTEM",
+      "descr": "SLA violation: authorize account manager to offer service credits for recent delivery issues",
+      "owner": "suitable BuPa",
+      "timeline": "Q2 2020"
+    },
+    {
+      "ID": "20466921-7d57-4e76-b14c-e53fd97dcb12",
+      "createdAt": "2019-10-24",
+      "createdBy": "SYSTEM",
+      "descr": "SLA violation: review third party contractors to ease service delivery challenges; trigger budget review",
+      "owner": "suitable BuPa",
+      "timeline": "Q3 2020"
+    },
+    {
+      "ID": "20466921-7d57-4e76-b14c-e53fd97dcb13",
+      "createdAt": "2019-10-24",
+      "createdBy": "SYSTEM",
+      "descr": "Embargo violation: investigate source of shipment request, revoke authorization",
+      "owner": "SFSF Employee with link possible?",
+      "timeline": "29.03.2020"
+    },
+    {
+      "ID": "20466921-7d57-4e76-b14c-e53fd97dcb14",
+      "createdAt": "2019-10-24",
+      "createdBy": "SYSTEM",
+      "descr": "Embargo violation: review shipment proceedure and stop delivery until further notice",
+      "owner": "SFSF Employee with link possible?",
+      "timeline": "01.03.2020"
+    }
+]

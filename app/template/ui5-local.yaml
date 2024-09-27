@@ -27,4 +27,4 @@ server:
           - urlPath: '/odata/v2/service/risk'
             metadataPath: './webapp/localService/metadata.xml'
             mockdataPath: './webapp/localService/data'
-            generateMockData: false
+            generateMockData: true

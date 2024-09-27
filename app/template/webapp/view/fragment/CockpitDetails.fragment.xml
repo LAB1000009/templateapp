@@ -8,7 +8,7 @@
             <OverflowToolbar>
                <Title text="{treeModel>/selectedTileName}" />
                <ToolbarSpacer />
-               <Button text="Close" press="onPressCloseDetailsPalelBtn" />
+               <Button text="{i18n>bt_close}" press="onPressCloseDetailsPalelBtn" />
             </OverflowToolbar>
          </headerToolbar>
          <f:Form editable="false">

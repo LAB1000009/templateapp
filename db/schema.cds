@@ -49,7 +49,7 @@ entity ChangeLog : cuid, managed {
 }
 
 entity TableEntity : cuid, managed {
-   key EEID            : String(10);   // Employee ID (primary key)
+   key EEID          : String(10);  // Employee ID (primary key)
    FullName          : String(100); // Full name of the employee
    JobTitle          : String(50);  // Job title
    Department        : String(50);  // Department
@@ -93,7 +93,7 @@ entity SupportContact : cuid {
 }
 
 entity Cards {
-    key ID          : UUID;
+    key ID          : String(10);
     Title           : String(255);
     Icon            : String(255);
     MainValue       : Decimal(10,2);
