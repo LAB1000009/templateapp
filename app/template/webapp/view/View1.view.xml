@@ -8,13 +8,13 @@
                </HBox>
                <Label text="{i18n>H_SubTitle}" />
             </VBox>
-            <HBox width="50%" justifyContent="SpaceBetween" alignItems="Center" renderType="Bare">
-               <HBox>
+            <HBox width="50%" height="100%" justifyContent="SpaceBetween" alignItems="Center" renderType="Bare" >
+               <HBox height="100%" alignItems="Center">
                   <!-- <Title text="{i18n>H_Date}"/> -->
                   <Title text="{i18n>H_Date} {treeModel>/headerActDate}" />
                </HBox>
                <Title text="{i18n>H_User}" />
-               <Image src="./logo/mosec_logo.svg" height="50px" class="sapUiTinyMarginEnd" />
+               <Image src="./logo/mosec_logo.svg" height="50px" class="sapUiTinyMarginEnd sapUiTinyMarginBottom" />
             </HBox>
          </HBox>
       </HBox>
@@ -33,15 +33,15 @@
                   </Breadcrumbs>
                </VBox>
                <ToolbarSpacer />
-               <IconTabHeader mode="Inline" tabDensityMode="Compact" select="onSelectIconTabHeader" class="zoomed ">
+               <IconTabHeader mode="Inline" tabDensityMode="Cozy" select="onSelectIconTabHeader" class="zoomed ">
                   <items>
-                     <IconTabFilter key="Chart" text="{i18n>B_ChartTab}" />
-                     <IconTabFilter key="Table" text="{i18n>B_TableTab}" />
-                     <IconTabFilter key="Cockpit" text="{i18n>B_CockpitTab}" />
-                     <IconTabFilter key="Dashboard" text="{i18n>B_DashboardTab}" />
-                     <IconTabFilter key="Comment" text="{i18n>B_CommentsTab}" />
+                     <IconTabFilter key="Chart" text="{i18n>B_ChartTab}" design="Vertical" />
+                     <IconTabFilter key="Table" text="{i18n>B_TableTab}" design="Vertical" />
+                     <IconTabFilter key="Cockpit" text="{i18n>B_CockpitTab}" design="Vertical" />
+                     <IconTabFilter key="Dashboard" text="{i18n>B_DashboardTab}" design="Vertical" />
+                     <IconTabFilter key="Comment" text="{i18n>B_CommentsTab}" design="Vertical" />
                      <!-- <IconTabFilter key="Report" text="{i18n>B_ReportInfoTab}" /> -->
-                     <IconTabFilter key="Support" text="{i18n>B_SupportTab}" />
+                     <IconTabFilter key="Support" text="{i18n>B_SupportTab}" design="Vertical" />
                   </items>
                </IconTabHeader>
             </OverflowToolbar>

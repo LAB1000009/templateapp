@@ -1,7 +1,7 @@
 <core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.suite.ui.microchart" xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns:l="sap.ui.layout" xmlns:m="sap.m" height="100%" displayBlock="true">
-   <m:Panel height="100%" headerText="{i18n>DashboardTab_Title}" id="dashboardm:Page" class="contentPadding" backgroundDesign="List">
+   <m:Panel height="100%" headerText="{i18n>DashboardTab_Title}" id="dashboarPage" class="contentPadding" backgroundDesign="List">
       <m:VBox height="100%" width="100%">
-         <m:Panel expanded="true" headerText="Example 2" expandable="true">
+         <m:Panel expanded="true" headerText="Example 1" expandable="true">
             <m:GenericTile header="Revenue Dynamics" frameType="OneByOne" press="press">
                <m:tileContent>
                   <m:TileContent footer="Column chart">
@@ -83,7 +83,7 @@
                </m:tileContent>
             </m:GenericTile>
          </m:Panel>
-         <m:Panel expanded="true" expandable="true" headerText="Example 3">
+         <m:Panel expanded="true" expandable="true" headerText="Example 2">
             <m:HBox>
                <ComparisonMicroChart size="S" scale="M" class="sapUiSmallMargin" press="press">
                   <data>
@@ -111,7 +111,7 @@
                </ComparisonMicroChart>
             </m:HBox>
          </m:Panel>
-         <m:Panel headerText="Example 4" expanded="true" expandable="true">
+         <m:Panel headerText="Example 3" expanded="true" expandable="true">
             <m:HBox>
                <m:GenericTile header="Revenue Dynamics" frameType="TwoByOne" press="press">
                   <m:tileContent>
@@ -155,6 +155,88 @@
                   </m:tileContent>
                </m:GenericTile>
             </m:HBox>
+         </m:Panel>
+         <m:Panel headerText="Example 4" expanded="true" expandable="true">
+            <m:HBox alignItems="Center">
+               <StackedBarMicroChart size="M" press="press" class="sapUiSmallMargin">
+                  <bars>
+                     <StackedBarMicroChartBar displayValue="20M" value="20" />
+                     <StackedBarMicroChartBar displayValue="40M" value="40" />
+                     <StackedBarMicroChartBar displayValue="50M" value="50" />
+                  </bars>
+               </StackedBarMicroChart>
+               <StackedBarMicroChart size="L" press="press" precision="0" class="sapUiSmallMargin">
+                  <bars>
+                     <StackedBarMicroChartBar valueColor="Good" value="40" />
+                     <StackedBarMicroChartBar valueColor="Critical" value="20" />
+                     <StackedBarMicroChartBar valueColor="Error" value="50" />
+                  </bars>
+               </StackedBarMicroChart>
+               <StackedBarMicroChart size="S" press="press" precision="0" class="sapUiSmallMargin">
+                  <bars>
+                     <StackedBarMicroChartBar valueColor="sapUiChartPaletteSemanticGood" value="20" />
+                     <StackedBarMicroChartBar valueColor="sapUiChartPaletteSemanticNeutral" value="40" />
+                     <StackedBarMicroChartBar valueColor="sapUiChartPaletteSemanticCritical" value="50" />
+                  </bars>
+               </StackedBarMicroChart>
+               <StackedBarMicroChart size="XS" press="press" precision="0" class="sapUiSmallMargin">
+                  <bars>
+                     <StackedBarMicroChartBar displayValue="20M" value="20" />
+                     <StackedBarMicroChartBar displayValue="40M" valueColor="Neutral" value="40" />
+                     <StackedBarMicroChartBar displayValue="50M" valueColor="sapUiChartPaletteSemanticBad" value="50" />
+                  </bars>
+               </StackedBarMicroChart>
+               <StackedBarMicroChart size="L" press="press" precision="0" class="sapUiSmallMargin" />
+            </m:HBox>
+         </m:Panel>
+         <m:Panel headerText="Example 5" expanded="true" expandable="true">
+            <m:VBox alignItems="Center" renderType="Bare">
+               <m:Panel headerText="Multiple lines">
+                  <l:Grid defaultSpan="XL6 L6 M6 S12" content="{dashboardModel>/multiline}">
+                     <l:VerticalLayout class="sapUiTinyMargin">
+                        <m:Text text="{dashboardModel>description}" width="17rem" />
+                        <LineMicroChart color="{dashboardModel>color}" showPoints="{dashboardModel>showPoints}" size="{dashboardModel>/size}" threshold="{dashboardModel>threshold}" showThresholdLine="{dashboardModel>showThresholdLine}" leftTopLabel="{dashboardModel>leftTopLabel}" leftBottomLabel="{dashboardModel>leftBottomLabel}" rightTopLabel="{dashboardModel>rightTopLabel}" rightBottomLabel="{dashboardModel>rightBottomLabel}" showTopLabels="{dashboardModel>showTopLabels}" showBottomLabels="{dashboardModel>showBottomLabels}" press="press" class="sapUiTinyMarginTop" lines="{                             path: 'dashboardModel>lines',                             templateShareable: true                         }">
+                           <lines>
+                              <LineMicroChartLine points="{                                     path: 'dashboardModel>points',                                     templateShareable: true                                 }" color="{dashboardModel>color}" showPoints="{dashboardModel>showPoints}" type="{dashboardModel>type}">
+                                 <LineMicroChartPoint x="{dashboardModel>x}" y="{dashboardModel>y}" />
+                              </LineMicroChartLine>
+                           </lines>
+                        </LineMicroChart>
+                     </l:VerticalLayout>
+                  </l:Grid>
+               </m:Panel>
+               <m:Panel headerText="Regular Points">
+                  <l:Grid defaultSpan="XL6 L6 M6 S12" content="{dashboardModel>/regular}">
+                     <l:VerticalLayout class="sapUiTinyMargin">
+                        <m:Text text="{dashboardModel>description}" width="17rem" />
+                        <LineMicroChart showPoints="{dashboardModel>showPoints}" size="{dashboardModel>/size}" threshold="{dashboardModel>threshold}" leftTopLabel="{dashboardModel>leftTopLabel}" leftBottomLabel="{dashboardModel>leftBottomLabel}" rightTopLabel="{dashboardModel>rightTopLabel}" rightBottomLabel="{dashboardModel>rightBottomLabel}" color="{dashboardModel>color}" press="press" lines="{                             path: 'dashboardModel>/lines',                             templateShareable: true                         }" showThresholdValue="{dashboardModel>showThresholdValue}" thresholdDisplayValue="{dashboardModel>thresholdDisplayValue}" class="sapUiTinyMarginTop">
+                           <lines>
+                              <LineMicroChartLine points="{                                     path: 'dashboardModel>points',                                     templateShareable: true                                 }">
+                                 <LineMicroChartPoint x="{dashboardModel>x}" y="{dashboardModel>y}" />
+                              </LineMicroChartLine>
+                           </lines>
+                        </LineMicroChart>
+                     </l:VerticalLayout>
+                  </l:Grid>
+               </m:Panel>
+               <m:Panel headerText="Emphasized Points">
+                  <l:Grid defaultSpan="XL6 L6 M6 S12" content="{dashboardModel>/emphasized}">
+                     <l:VerticalLayout class="sapUiTinyMargin">
+                        <m:Text text="{dashboardModel>description}" width="17rem" />
+                        <LineMicroChart size="{dashboardModel>/size}" threshold="{dashboardModel>threshold}" leftTopLabel="{dashboardModel>leftTopLabel}" leftBottomLabel="{dashboardModel>leftBottomLabel}" rightTopLabel="{dashboardModel>rightTopLabel}" rightBottomLabel="{dashboardModel>rightBottomLabel}" color="{dashboardModel>color}" press="press" lines="{                             path: 'dashboardModel>lines',                             templateShareable: true                         }" class="sapUiTinyMarginTop">
+                           <lines>
+                              <LineMicroChartLine points="{                                     path: 'dashboardModel>points',                                     templateShareable: true                                 }">
+                                 <LineMicroChartEmphasizedPoint x="{dashboardModel>x}" y="{dashboardModel>y}" color="{dashboardModel>color}" show="{dashboardModel>show}" />
+                              </LineMicroChartLine>
+                           </lines>
+                        </LineMicroChart>
+                     </l:VerticalLayout>
+                  </l:Grid>
+               </m:Panel>
+               <m:Panel headerText="No Points">
+                  <LineMicroChart size="L" leftTopLabel="120 Mio" leftBottomLabel="140 Mio" rightTopLabel="Sept 2016" rightBottomLabel="Oct 2016" press="press" class="sapUiTinyMarginTop" />
+               </m:Panel>
+            </m:VBox>
          </m:Panel>
       </m:VBox>
    </m:Panel>

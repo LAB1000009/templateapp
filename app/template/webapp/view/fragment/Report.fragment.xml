@@ -8,9 +8,9 @@
                      <f:ResponsiveGridLayout labelSpanXL="12" labelSpanL="12" labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="2" columnsL="5" columnsM="1" singleContainerFullSize="false" />
                   </f:layout>
                   <f:title>
-                     <core:Title text="{i18n>DD_GenInfoSect_Title}" />
+                     <core:Title icon="logo/mosec/Accounting/Report 01.png" text="{i18n>DD_GenInfoSect_Title}" />
                   </f:title>
-                  <f:formContainers>
+                  <f:formContainers >
                      <!-- Report Information Section -->
                      <f:FormContainer>
                         <f:formElements>
@@ -84,7 +84,7 @@
                      <f:ResponsiveGridLayout labelSpanXL="12" labelSpanL="12" labelSpanM="12" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="1" singleContainerFullSize="false" />
                   </f:layout>
                   <f:title>
-                     <core:Title text="{i18n>DD_RepInfoSect_Title}" />
+                     <core:Title icon="logo/mosec/Accounting/Report 02.png" text="{i18n>DD_RepInfoSect_Title}" />
                   </f:title>
                   <f:formContainers>
                      <f:FormContainer>
@@ -132,7 +132,7 @@
                      <f:ResponsiveGridLayout labelSpanXL="12" labelSpanL="12" labelSpanM="12" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="6" columnsL="6" columnsM="1" singleContainerFullSize="false" />
                   </f:layout>
                   <f:title>
-                     <core:Title text="{i18n>DD_RepObjSect_Title}" />
+                     <core:Title icon="logo/mosec/Accounting/Financial Report 02.png" text="{i18n>DD_RepObjSect_Title}" />
                   </f:title>
                   <f:formContainers>
                      <f:FormContainer>
@@ -216,7 +216,7 @@
                      <f:ResponsiveGridLayout labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="1" singleContainerFullSize="false" />
                   </f:layout>
                   <f:title>
-                     <core:Title text="{i18n>DD_DSSect_Title}" />
+                     <core:Title icon="logo/mosec/Technology/Cloud Storage.png" text="{i18n>DD_DSSect_Title}" />
                   </f:title>
                   <f:formContainers>
                      <f:FormContainer>
@@ -280,7 +280,7 @@
                      <f:ResponsiveGridLayout labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="1" singleContainerFullSize="false" />
                   </f:layout>
                   <f:title>
-                     <core:Title text="{i18n>DD_DataQualSect_Title}" />
+                     <core:Title icon="logo/mosec/Technology/Database.png" text="{i18n>DD_DataQualSect_Title}" />
                   </f:title>
                   <f:formContainers>
                      <f:FormContainer>
@@ -312,7 +312,7 @@
                      <f:ResponsiveGridLayout labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="1" singleContainerFullSize="false" />
                   </f:layout>
                   <f:title>
-                     <core:Title text="{i18n>DD_SheduleSect_Title}" />
+                     <core:Title icon="logo/mosec/Accounting/Calendar.png" text="{i18n>DD_SheduleSect_Title}" />
                   </f:title>
                   <f:formContainers>
                      <f:FormContainer>
@@ -360,7 +360,7 @@
                      <f:ResponsiveGridLayout labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="1" singleContainerFullSize="false" />
                   </f:layout>
                   <f:title>
-                     <core:Title text="{i18n>DD_ChangeLogSect_Title}" />
+                     <core:Title icon="logo/mosec/Technology/Cloud Network 01.png" text="{i18n>DD_ChangeLogSect_Title}" />
                   </f:title>
                   <f:formContainers>
                      <!-- ChangeLog Intake Section -->
@@ -401,7 +401,7 @@
                      <f:ResponsiveGridLayout labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="1" singleContainerFullSize="false" />
                   </f:layout>
                   <f:title>
-                     <core:Title text="{i18n>DD_KPISect_Title}" />
+                     <core:Title icon="logo/mosec/Accounting/Financial Report 01.png" text="{i18n>DD_KPISect_Title}" />
                   </f:title>
                   <f:formContainers>
                      <!-- KPI and Measures Section -->
@@ -434,7 +434,7 @@
                      <f:ResponsiveGridLayout labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="1" singleContainerFullSize="false" />
                   </f:layout>
                   <f:title>
-                     <core:Title text="{i18n>DD_PlanDocuSect_Title}" />
+                     <core:Title icon="logo/mosec/Accounting/Financial Report 02.png" text="{i18n>DD_PlanDocuSect_Title}" />
                   </f:title>
                   <f:formContainers>
                      <f:FormContainer>
@@ -474,14 +474,18 @@
                      <f:ResponsiveGridLayout labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="1" singleContainerFullSize="false" />
                   </f:layout>
                   <f:title>
-                     <core:Title text="{i18n>DD_RelatedRepSect_Title}" />
+                     <core:Title icon="logo/mosec/Accounting/Report 01.png" text="{i18n>DD_RelatedRepSect_Title}" />
                   </f:title>
                   <f:formContainers>
                      <f:FormContainer>
                         <f:formElements>
                            <f:FormElement label="">
                               <f:fields>
-                                 <Text text="Empty" />
+                                <HBox alignItems="Center">
+                                    <!-- <Button press="openIFrameDialog" text="Open in didlog" /> -->
+                                    <Link   text="Link to report" target="_blank" href="https://sapui5.hana.ondemand.com/sdk" class="sapUiTinyMarginEnd" />
+                                    <Button icon="sap-icon://action" press="openIFrameDialog"  /> 
+                                </HBox>
                               </f:fields>
                            </f:FormElement>
                         </f:formElements>
@@ -495,7 +499,7 @@
                      <f:ResponsiveGridLayout labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="1" singleContainerFullSize="false" />
                   </f:layout>
                   <f:title>
-                     <core:Title text="{i18n>DD_RoadmapSect_Title}" />
+                     <core:Title icon="logo/mosec/Accounting/Audit 04.png" text="{i18n>DD_RoadmapSect_Title}" />
                   </f:title>
                   <f:formContainers>
                      <f:FormContainer>

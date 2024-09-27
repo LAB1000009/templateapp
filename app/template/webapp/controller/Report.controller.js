@@ -18,6 +18,15 @@ sap.ui.define([
             var oModel = new sap.ui.model.json.JSONModel(oData);
             this.getView().setModel(oModel, "reportModel");
         },
+        openIFrameDialog: function (oEvent) {
+            const oFragment =  sap.ui.core.Fragment.load({
+                id: this.createId("iFrame"),
+                name: "ui.template.view.fragment.iFrame",
+                controller: this
+            }).then((oFragment)=>{
+                oFragment.open()
+            })
+        },
         onCloseFooterDialog: function (oEvent) {
             oEvent.getSource().getParent().close();
         }

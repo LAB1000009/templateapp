@@ -10,8 +10,9 @@
                   <f:GridListItem detailPress="onPressFinanzenCard" type="Active" press="onPressFinanzenCard">
                      <VBox width="320px" class="sapUiContentPadding">
                         <HBox class="sapUiContentPadding" alignItems="Center" justifyContent="SpaceBetween">
-                           <HBox>
-                              <core:Icon src="{Icon}" size="30px" class="sapUiTinyMarginEnd" />
+                           <HBox alignItems="Center">
+                              <!-- <core:Icon src="{Icon}" size="30px" class="sapUiTinyMarginEnd" /> -->
+                              <Image width="30px" src="{Icon}"  class="sapUiTinyMarginEnd" />
                               <VBox justifyContent="End">
                                  <Title titleStyle="H4" text="{Title}" />
                               </VBox>
