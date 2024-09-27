@@ -23,9 +23,13 @@ sap.ui.define([
                 id: this.createId("iFrame"),
                 name: "ui.template.view.fragment.iFrame",
                 controller: this
-            }).then((oFragment)=>{
-                oFragment.open()
-            })
+            }).then(function(oFragment){
+                this.getView().addDependent(oFragment);
+                oFragment.open();
+            }.bind(this))
+        },
+        onOpenLink: function () {
+            window.open("https://sapui5.hana.ondemand.com/sdk", "_blank");
         },
         onCloseFooterDialog: function (oEvent) {
             oEvent.getSource().getParent().close();

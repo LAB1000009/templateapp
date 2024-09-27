@@ -13,8 +13,10 @@
                   <!-- <Title text="{i18n>H_Date}"/> -->
                   <Title text="{i18n>H_Date} {treeModel>/headerActDate}" />
                </HBox>
-               <Title text="{i18n>H_User}" />
-               <Image src="./logo/mosec_logo.svg" height="50px" class="sapUiTinyMarginEnd sapUiTinyMarginBottom" />
+               <HBox height="100%" width="50%"  justifyContent="SpaceBetween" alignItems="Center">
+                  <Title text="{i18n>H_User}" />
+                  <Image src="./logo/mosec_logo.svg" height="50px" class="sapUiTinyMarginEnd sapUiTinyMarginBottom" />
+               </HBox>
             </HBox>
          </HBox>
       </HBox>

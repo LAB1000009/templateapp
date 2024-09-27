@@ -483,8 +483,8 @@
                               <f:fields>
                                 <HBox alignItems="Center">
                                     <!-- <Button press="openIFrameDialog" text="Open in didlog" /> -->
-                                    <Link   text="Link to report" target="_blank" href="https://sapui5.hana.ondemand.com/sdk" class="sapUiTinyMarginEnd" />
-                                    <Button icon="sap-icon://action" press="openIFrameDialog"  /> 
+                                    <Link   text="Link to report"  press="openIFrameDialog"  class="sapUiTinyMarginEnd" />
+                                    <Button icon="sap-icon://action" press="onOpenLink"  /> 
                                 </HBox>
                               </f:fields>
                            </f:FormElement>
