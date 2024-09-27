@@ -1,11 +1,11 @@
 Icon,Title,MainValue,SubTitle,Comparison1,Comparison2,Status1State,Status1Value,Status2State,Status2Value
-sap-icon://money-bills,Finanzen,21.5,IT Coast Group,AM vs VM,AM vs BUD,Success,45,Error,35
-sap-icon://loan,Investments,32.1,Finance Group,AM vs VM,AM vs BUD,Success,30,Error,25
-sap-icon://wallet,Expenses,15.9,Tech Group,AM vs VM,AM vs BUD,Success,50,Error,20
-sap-icon://wallet,Revenue,42.8,Marketing Group,AM vs VM,AM vs BUD,Success,60,Error,40
-sap-icon://leads,Sales,19.6,Sales Group,AM vs VM,AM vs BUD,Success,55,Error,30
-sap-icon://factory,Logistics,25.3,Logistics Group,AM vs VM,AM vs BUD,Success,35,Error,15
-sap-icon://lightbulb,R&D,28.7,R&D Group,AM vs VM,AM vs BUD,Success,40,Error,22
-sap-icon://employee-lookup,Human Resources,33.2,HR Group,AM vs VM,AM vs BUD,Success,48,Error,29
-sap-icon://wrench,Operations,18.4,Operations Group,AM vs VM,AM vs BUD,Success,39,Error,18
-sap-icon://customer-support,Support,27.9,Support Group,AM vs VM,AM vs BUD,Success,47,Error,33
+logo/mosec/Banking/Cash Flow 01@2x.png,Finanzen,21.5,IT Coast Group,AM vs VM,AM vs BUD,Success,45,Error,35
+logo/mosec/Banking/World Economy 02@2x.png,Investments,32.1,Finance Group,AM vs VM,AM vs BUD,Success,30,Error,25
+logo/mosec/Calculator@2x.png,Expenses,15.9,Tech Group,AM vs VM,AM vs BUD,Success,50,Error,20
+logo/mosec/Banking/Cash Flow@2x.png,Revenue,42.8,Marketing Group,AM vs VM,AM vs BUD,Success,60,Error,40
+logo/mosec/Accounting/Sales.png,Sales,19.6,Sales Group,AM vs VM,AM vs BUD,Success,55,Error,30
+logo/mosec/Banking/Report Files@2x.png,Logistics,25.3,Logistics Group,AM vs VM,AM vs BUD,Success,35,Error,15
+logo/mosec/Business/Presentation 01@2x.png,R&D,28.7,R&D Group,AM vs VM,AM vs BUD,Success,40,Error,22
+logo/mosec/People/Co-workers 02.png,Human Resources,33.2,HR Group,AM vs VM,AM vs BUD,Success,48,Error,29
+logo/mosec/Banking/Online Banking 02@2x.png,Operations,18.4,Operations Group,AM vs VM,AM vs BUD,Success,39,Error,18
+logo/mosec/People/Team.png,Support,27.9,Support Group,AM vs VM,AM vs BUD,Success,47,Error,33
