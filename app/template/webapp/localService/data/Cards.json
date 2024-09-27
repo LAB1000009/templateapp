@@ -1,0 +1,122 @@
+[
+    {
+      "Icon": "logo/mosec/Banking/Cash Flow 01@2x.png",
+      "Title": "Finanzen",
+      "MainValue": 21.5,
+      "SubTitle": "IT Coast Group",
+      "Comparison1": "AM vs VM",
+      "Comparison2": "AM vs BUD",
+      "Status1State": "Success",
+      "Status1Value": 45,
+      "Status2State": "Error",
+      "Status2Value": 35
+    },
+    {
+      "Icon": "logo/mosec/Banking/World Economy 02@2x.png",
+      "Title": "Investments",
+      "MainValue": 32.1,
+      "SubTitle": "Finance Group",
+      "Comparison1": "AM vs VM",
+      "Comparison2": "AM vs BUD",
+      "Status1State": "Success",
+      "Status1Value": 30,
+      "Status2State": "Error",
+      "Status2Value": 25
+    },
+    {
+      "Icon": "logo/mosec/Calculator@2x.png",
+      "Title": "Expenses",
+      "MainValue": 15.9,
+      "SubTitle": "Tech Group",
+      "Comparison1": "AM vs VM",
+      "Comparison2": "AM vs BUD",
+      "Status1State": "Success",
+      "Status1Value": 50,
+      "Status2State": "Error",
+      "Status2Value": 20
+    },
+    {
+      "Icon": "logo/mosec/Banking/Cash Flow@2x.png",
+      "Title": "Revenue",
+      "MainValue": 42.8,
+      "SubTitle": "Marketing Group",
+      "Comparison1": "AM vs VM",
+      "Comparison2": "AM vs BUD",
+      "Status1State": "Success",
+      "Status1Value": 60,
+      "Status2State": "Error",
+      "Status2Value": 40
+    },
+    {
+      "Icon": "logo/mosec/Accounting/Sales.png",
+      "Title": "Sales",
+      "MainValue": 19.6,
+      "SubTitle": "Sales Group",
+      "Comparison1": "AM vs VM",
+      "Comparison2": "AM vs BUD",
+      "Status1State": "Success",
+      "Status1Value": 55,
+      "Status2State": "Error",
+      "Status2Value": 30
+    },
+    {
+      "Icon": "logo/mosec/Banking/Report Files@2x.png",
+      "Title": "Logistics",
+      "MainValue": 25.3,
+      "SubTitle": "Logistics Group",
+      "Comparison1": "AM vs VM",
+      "Comparison2": "AM vs BUD",
+      "Status1State": "Success",
+      "Status1Value": 35,
+      "Status2State": "Error",
+      "Status2Value": 15
+    },
+    {
+      "Icon": "logo/mosec/Business/Presentation 01@2x.png",
+      "Title": "R&D",
+      "MainValue": 28.7,
+      "SubTitle": "R&D Group",
+      "Comparison1": "AM vs VM",
+      "Comparison2": "AM vs BUD",
+      "Status1State": "Success",
+      "Status1Value": 40,
+      "Status2State": "Error",
+      "Status2Value": 22
+    },
+    {
+      "Icon": "logo/mosec/People/Co-workers 02.png",
+      "Title": "Human Resources",
+      "MainValue": 33.2,
+      "SubTitle": "HR Group",
+      "Comparison1": "AM vs VM",
+      "Comparison2": "AM vs BUD",
+      "Status1State": "Success",
+      "Status1Value": 48,
+      "Status2State": "Error",
+      "Status2Value": 29
+    },
+    {
+      "Icon": "logo/mosec/Banking/Online Banking 02@2x.png",
+      "Title": "Operations",
+      "MainValue": 18.4,
+      "SubTitle": "Operations Group",
+      "Comparison1": "AM vs VM",
+      "Comparison2": "AM vs BUD",
+      "Status1State": "Success",
+      "Status1Value": 39,
+      "Status2State": "Error",
+      "Status2Value": 18
+    },
+    {
+      "Icon": "logo/mosec/People/Team.png",
+      "Title": "Support",
+      "MainValue": 27.9,
+      "SubTitle": "Support Group",
+      "Comparison1": "AM vs VM",
+      "Comparison2": "AM vs BUD",
+      "Status1State": "Success",
+      "Status1Value": 47,
+      "Status2State": "Error",
+      "Status2Value": 33
+    }
+  ]

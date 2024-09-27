@@ -1,0 +1,38 @@
+[
+    {
+      "ID": 1,
+      "cardID": "001",
+      "cardTitle": "IT FTE",
+      "YTDText": "YTD AM",
+      "BUDvsYTDText": "BUD vs YTD",
+      "YTDValue": 134,
+      "BUDvsYTDValue": 14.2,
+      "StatusText": "[+9.6%]",
+      "StatusState": "Success",
+      "IconSrc": "sap-icon://pending"
+    },
+    {
+      "ID": 2,
+      "cardID": "002",
+      "cardTitle": "HR FTE",
+      "YTDText": "YTD AM",
+      "BUDvsYTDText": "BUD vs YTD",
+      "YTDValue": 120,
+      "BUDvsYTDValue": 10.5,
+      "StatusText": "[+8.3%]",
+      "StatusState": "Warning",
+      "IconSrc": "sap-icon://alert"
+    },
+    {
+      "ID": 3,
+      "cardID": "003",
+      "cardTitle": "Finance FTE",
+      "YTDText": "YTD AM",
+      "BUDvsYTDText": "BUD vs YTD",
+      "YTDValue": 145,
+      "BUDvsYTDValue": 15.6,
+      "StatusText": "[+6.4%]",
+      "StatusState": "Success",
+      "IconSrc": "sap-icon://complete"
+    }
+]
