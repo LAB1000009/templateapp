@@ -49,7 +49,7 @@ entity ChangeLog : cuid, managed {
 }
 
 entity TableEntity : cuid, managed {
-    EEID            : String(10);          // Employee ID
+    ID              : String(10);          // Employee ID
     FullName        : String(100);         // Full name of the employee
     JobTitle        : String(50);          // Job title
     Department      : String(50);          // Department
@@ -57,7 +57,7 @@ entity TableEntity : cuid, managed {
     Gender          : String(10);          // Gender
     Ethnicity       : String(30);          // Ethnicity
     Age             : Integer;             // Age
-    HireDate        : Timestamp;                // Hire date
+    HireDate        : Timestamp;           // Hire date
     AnnualSalary    : Decimal(15,2);       // Annual salary with precision
     Bonus           : Decimal(5,2);        // Bonus in percentage
     Country         : String(50);          // Country
